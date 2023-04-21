@@ -6,7 +6,69 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="ContentArea">
-        
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TimePicker
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Stretch"
+            ClockIdentifier="24HourClock"
+            Header="Click Intervals:"
+            SelectedTime="0:01" />
+
+        <ComboBox
+            Grid.Row="1"
+            Grid.Column="0"
+            Width="Auto"
+            Header="Mouse Button:"
+            SelectedIndex="0">
+            <x:String>Left</x:String>
+            <x:String>Middle</x:String>
+            <x:String>Right</x:String>
+        </ComboBox>
+
+        <RadioButtons
+            Grid.Row="1"
+            Grid.Column="1"
+            Header="Repeat Options:">
+            <NumberBox
+                AcceptsExpression="True"
+                Description="times"
+                Header="Repeat"
+                LargeChange="10"
+                Minimum="1"
+                PlaceholderText="11"
+                SmallChange="1"
+                SpinButtonPlacementMode="Compact"
+                Value="100" />
+            <RadioButton Content="Repeat indefinitely" />
+        </RadioButtons>
+
+        <ComboBox
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="Auto"
+            Header="Click Type"
+            SelectedIndex="0">
+            <x:String>Single</x:String>
+            <x:String>Double</x:String>
+        </ComboBox>
+
+
+        <ToggleButton
+            Grid.Row="4"
+            HorizontalAlignment="Stretch"
+            Content="Start" />
     </Grid>
 </Page>
