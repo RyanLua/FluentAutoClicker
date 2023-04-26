@@ -7,68 +7,99 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        <StackPanel x:Name="ContentArea">
+            <!--  Beta Notice  -->
+            <InfoBar
+                Title="Fluent Auto Clicker is in closed-beta."
+                IsOpen="True"
+                Message="Expect bugs and performance issues.">
+                <InfoBar.ActionButton>
+                    <HyperlinkButton Content="Informational link" NavigateUri="https://www.example.com" />
+                </InfoBar.ActionButton>
+            </InfoBar>
 
-        <TimePicker
-            Grid.Row="0"
-            Grid.Column="0"
-            HorizontalAlignment="Stretch"
-            ClockIdentifier="24HourClock"
-            Header="Click Intervals:"
-            SelectedTime="0:01" />
+            <!--  Autoclicker intervals  -->
+            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Intervals</TextBlock>
 
-        <ComboBox
-            Grid.Row="1"
-            Grid.Column="0"
-            Width="Auto"
-            Header="Mouse Button:"
-            SelectedIndex="0">
-            <x:String>Left</x:String>
-            <x:String>Middle</x:String>
-            <x:String>Right</x:String>
-        </ComboBox>
+            <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                <TextBlock Text="How long between each click" />
+                <StackPanel  Margin="{StaticResource XSmallTopMargin}" Orientation="Horizontal">
+                    <NumberBox
+                        AcceptsExpression="True"
+                        Description="Hours"
+                        Maximum="48"
+                        PlaceholderText="24"
+                        SpinButtonPlacementMode="Compact"
+                        Value="0" />
+                    <NumberBox
+                        AcceptsExpression="True"
+                        Description="Minutes"
+                        LargeChange="10"
+                        Maximum="60"
+                        PlaceholderText="60"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Compact"
+                        Value="0" />
+                    <NumberBox
+                        AcceptsExpression="True"
+                        Description="Seconds"
+                        LargeChange="5"
+                        Maximum="60"
+                        PlaceholderText="60"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Compact"
+                        Value="0" />
+                    <NumberBox
+                        AcceptsExpression="True"
+                        Description="Milliseconds"
+                        LargeChange="25"
+                        Maximum="1000"
+                        PlaceholderText="1000"
+                        SmallChange="5"
+                        SpinButtonPlacementMode="Compact"
+                        Value="100" />
+                </StackPanel>
+            </StackPanel>
 
-        <RadioButtons
-            Grid.Row="1"
-            Grid.Column="1"
-            Header="Repeat Options:">
-            <NumberBox
-                AcceptsExpression="True"
-                Description="times"
-                Header="Repeat"
-                LargeChange="10"
-                Minimum="1"
-                PlaceholderText="11"
-                SmallChange="1"
-                SpinButtonPlacementMode="Compact"
-                Value="100" />
-            <RadioButton Content="Repeat indefinitely" />
-        </RadioButtons>
+            <!--  Autoclicker settings  -->
+            <StackPanel Margin="{StaticResource XSmallTopMargin}" Orientation="Horizontal">
+                <!--  Autoclicker duration  -->
+                <RadioButtons Header="Repeat for">
+                    <NumberBox
+                        AcceptsExpression="True"
+                        Description="clicks"
+                        LargeChange="10"
+                        Minimum="1"
+                        PlaceholderText="11"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Compact"
+                        Value="100" />
+                    <RadioButton Content="∞ clicks (forever)" />
+                </RadioButtons>
+                <!--  Mouse button to click  -->
+                <ComboBox
+                    Width="Auto"
+                    HorizontalAlignment="Right"
+                    Header="Which mouse button to click"
+                    SelectedIndex="0">
+                    <ComboBoxItem Content="Left" />
+                    <ComboBoxItem Content="Middle" />
+                    <ComboBoxItem Content="Right" />
+                </ComboBox>
+                <!--  Click button type  -->
+                <ComboBox
+                    Width="Auto"
+                    Header="Click type"
+                    SelectedIndex="0">
+                    <x:String>Single</x:String>
+                    <x:String>Double</x:String>
+                </ComboBox>
+            </StackPanel>
 
-        <ComboBox
-            Grid.Row="2"
-            Grid.Column="0"
-            Width="Auto"
-            Header="Click Type"
-            SelectedIndex="0">
-            <x:String>Single</x:String>
-            <x:String>Double</x:String>
-        </ComboBox>
+            <!--  Start Button  -->
+            <ToggleButton HorizontalAlignment="Stretch" Content="Start Autoclicker" />
+        </StackPanel>
 
 
-        <ToggleButton
-            Grid.Row="4"
-            HorizontalAlignment="Stretch"
-            Content="Start" />
     </Grid>
 </Page>
