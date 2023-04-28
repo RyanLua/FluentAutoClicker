@@ -124,7 +124,7 @@
     <value>An beautifully designed open-source auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Clicker</value>
+    <value>Autoclicker</value>
   </data>
   <data name="Shell_Blank.Content" xml:space="preserve">
     <value>Jiggler</value>
@@ -163,7 +163,7 @@
     <value>&lt;toast launch="action=ToastClick"&gt;
   &lt;visual&gt;
     &lt;binding template="ToastGeneric"&gt;
-      &lt;text&gt;App Notification&lt;/text&gt;
+      &lt;text&gt;Fluent Auto Clicker has started. (Developer)&lt;/text&gt;
       &lt;text&gt;&lt;/text&gt;
       &lt;image placement="appLogoOverride" hint-crop="circle" src="{0}Assets/WindowIcon.ico"/&gt;
     &lt;/binding&gt;
@@ -175,5 +175,24 @@
   </data>
   <data name="Shell_Speedtest.Content" xml:space="preserve">
     <value>CPS Test</value>
+  </data>
+  <data name="Main_ClickInterval.Text" xml:space="preserve">
+    <value>How long between each click?</value>
+    <comment>Asks the user for how long between each click.</comment>
+  </data>
+  <data name="SettingsPage_GitHubRepositoryLink.Content" xml:space="preserve">
+    <value>GitHub Repository</value>
+  </data>
+  <data name="Main_ButtonType.Header" xml:space="preserve">
+    <value>Click using...</value>
+    <comment>Asks the user for whether to click using left, middle, and right mouse buttons.</comment>
+  </data>
+  <data name="Main_ClickType.Header" xml:space="preserve">
+    <value>Click with...</value>
+    <comment>Asks the user for whether to click once or twice.</comment>
+  </data>
+  <data name="Main_RepeatType.Header" xml:space="preserve">
+    <value>Repeat for...</value>
+    <comment>Asks the user for how long they want the autoclickers to repeat for.</comment>
   </data>
 </root>

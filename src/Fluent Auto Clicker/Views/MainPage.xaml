@@ -8,6 +8,7 @@
 
     <Grid>
         <StackPanel x:Name="ContentArea">
+
             <!--  Beta Notice  -->
             <InfoBar
                 Title="Fluent Auto Clicker is in closed-beta."
@@ -19,11 +20,9 @@
             </InfoBar>
 
             <!--  Autoclicker intervals  -->
-            <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}">Intervals</TextBlock>
-
             <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                <TextBlock Text="How long between each click" />
-                <StackPanel  Margin="{StaticResource XSmallTopMargin}" Orientation="Horizontal">
+                <TextBlock x:Uid="Main_Intervals" />
+                <StackPanel Margin="{StaticResource XSmallTopMargin}" Orientation="Horizontal">
                     <NumberBox
                         AcceptsExpression="True"
                         Description="Hours"
@@ -62,9 +61,12 @@
             </StackPanel>
 
             <!--  Autoclicker settings  -->
-            <StackPanel Margin="{StaticResource XSmallTopMargin}" Orientation="Horizontal">
+            <StackPanel
+                Margin="{StaticResource XSmallTopMargin}"
+                Background="WhiteSmoke"
+                Orientation="Horizontal">
                 <!--  Autoclicker duration  -->
-                <RadioButtons Header="Repeat for">
+                <RadioButtons x:Uid="Main_RepeatType">
                     <NumberBox
                         AcceptsExpression="True"
                         Description="clicks"
@@ -77,20 +79,13 @@
                     <RadioButton Content="∞ clicks (forever)" />
                 </RadioButtons>
                 <!--  Mouse button to click  -->
-                <ComboBox
-                    Width="Auto"
-                    HorizontalAlignment="Right"
-                    Header="Which mouse button to click"
-                    SelectedIndex="0">
+                <ComboBox x:Uid="Main_ButtonType" SelectedIndex="0">
                     <ComboBoxItem Content="Left" />
                     <ComboBoxItem Content="Middle" />
                     <ComboBoxItem Content="Right" />
                 </ComboBox>
                 <!--  Click button type  -->
-                <ComboBox
-                    Width="Auto"
-                    Header="Click type"
-                    SelectedIndex="0">
+                <ComboBox x:Uid="Main_ClickType" SelectedIndex="0">
                     <x:String>Single</x:String>
                     <x:String>Double</x:String>
                 </ComboBox>
@@ -99,7 +94,6 @@
             <!--  Start Button  -->
             <ToggleButton HorizontalAlignment="Stretch" Content="Start Autoclicker" />
         </StackPanel>
-
 
     </Grid>
 </Page>
