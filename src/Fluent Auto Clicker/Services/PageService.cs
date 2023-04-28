@@ -15,9 +15,7 @@ public class PageService : IPageService
     public PageService()
     {
         Configure<MainViewModel, MainPage>();
-        Configure<BlankViewModel, BlankPage>();
         Configure<SettingsViewModel, SettingsPage>();
-        Configure<SpeedtestViewModel, SpeedtestPage>();
     }
 
     public Type GetPageType(string key)

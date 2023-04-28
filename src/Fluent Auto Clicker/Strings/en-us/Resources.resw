@@ -126,9 +126,6 @@
   <data name="Shell_Main.Content" xml:space="preserve">
     <value>Autoclicker</value>
   </data>
-  <data name="Shell_Blank.Content" xml:space="preserve">
-    <value>Jiggler</value>
-  </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>
   </data>
@@ -172,9 +169,6 @@
     &lt;action content="Settings" arguments="action=Settings"/&gt;
   &lt;/actions&gt;
 &lt;/toast&gt;</value>
-  </data>
-  <data name="Shell_Speedtest.Content" xml:space="preserve">
-    <value>CPS Test</value>
   </data>
   <data name="Main_ClickInterval.Text" xml:space="preserve">
     <value>How long between each click?</value>
