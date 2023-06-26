@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -81,8 +81,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
-            Margin="{StaticResource XSmallTopMargin}">
-            <TextBlock x:Uid="Main_ClickOption" Style="{StaticResource SubtitleTextBlockStyle}" />
+            Margin="{StaticResource MediumTopMargin}">
 
             <!--  Mouse button to click  -->
             <ComboBox x:Uid="Main_ButtonType" SelectedIndex="0">
@@ -104,7 +103,7 @@
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
-            Margin="{StaticResource XSmallTopMargin}">
+            Margin="{StaticResource MediumTopMargin}">
             <RadioButtons x:Uid="Main_RepeatType" SelectedIndex="1">
                 <NumberBox
                     AcceptsExpression="True"
@@ -125,7 +124,8 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Margin="{StaticResource MediumBottomMargin}"
             Content="Start Autoclicker" />
-
     </Grid>
 </Page>
