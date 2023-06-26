@@ -11,11 +11,12 @@
 
     <Grid>
         <Grid
-            x:Name="AppTitleBar"
-            Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
-            VerticalAlignment="Top"
-            Canvas.ZIndex="1"
-            IsHitTestVisible="True">
+        x:Name="AppTitleBar"
+        Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
+        VerticalAlignment="Top"
+        Canvas.ZIndex="1"
+        IsHitTestVisible="True"
+        Margin="58,0,0,0">
             <Image
                 Width="16"
                 Height="16"
@@ -37,7 +38,7 @@
         IsBackButtonVisible="Collapsed"
         IsBackEnabled="{x:Bind ViewModel.IsBackEnabled, Mode=OneWay}"
         IsSettingsVisible="True"
-        PaneDisplayMode="LeftCompact"
+        PaneDisplayMode="LeftMinimal"
         SelectedItem="{x:Bind ViewModel.Selected, Mode=OneWay}">
         <NavigationView.MenuItems>
                 <!--
