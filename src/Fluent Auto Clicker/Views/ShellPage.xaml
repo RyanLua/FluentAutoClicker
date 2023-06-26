@@ -15,8 +15,7 @@
         Height="{Binding ElementName=NavigationViewControl, Path=CompactPaneLength}"
         VerticalAlignment="Top"
         Canvas.ZIndex="1"
-        IsHitTestVisible="True"
-        Margin="58,0,0,0">
+        IsHitTestVisible="True">
             <Image
                 Width="16"
                 Height="16"
