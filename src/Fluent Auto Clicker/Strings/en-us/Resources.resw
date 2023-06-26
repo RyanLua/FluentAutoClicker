@@ -124,7 +124,7 @@
     <value>An beautifully designed open-source auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Autoclicker</value>
+    <value>Auto Clicker</value>
   </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>
@@ -171,22 +171,22 @@
 &lt;/toast&gt;</value>
   </data>
   <data name="Main_ClickInterval.Text" xml:space="preserve">
-    <value>How long between each click?</value>
+    <value>Click interval:</value>
     <comment>Asks the user for how long between each click.</comment>
   </data>
   <data name="SettingsPage_GitHubRepositoryLink.Content" xml:space="preserve">
     <value>GitHub Repository</value>
   </data>
   <data name="Main_ButtonType.Header" xml:space="preserve">
-    <value>Click using...</value>
+    <value>Mouse button:</value>
     <comment>Asks the user for whether to click using left, middle, and right mouse buttons.</comment>
   </data>
   <data name="Main_ClickType.Header" xml:space="preserve">
-    <value>Click with...</value>
+    <value>Click type:</value>
     <comment>Asks the user for whether to click once or twice.</comment>
   </data>
   <data name="Main_RepeatType.Header" xml:space="preserve">
-    <value>Repeat for...</value>
+    <value>Click repeat:</value>
     <comment>Asks the user for how long they want the autoclickers to repeat for.</comment>
   </data>
 </root>
