@@ -148,10 +148,10 @@
     <value>An beautifully designed open-source auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="SettingsPage_PrivacyTermsLink.Content" xml:space="preserve">
-    <value>Privacy Statement</value>
+    <value>Privacy statement</value>
   </data>
   <data name="SettingsPage_PrivacyTermsLink.NavigateUri" xml:space="preserve">
-    <value>https://YourPrivacyUrlGoesHere/</value>
+    <value>https://example.com</value>
   </data>
   <data name="SettingsPage_GitHubRepositoryLink.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/Fluent-Auto-Clicker</value>
@@ -175,7 +175,7 @@
     <comment>Asks the user for how long between each click.</comment>
   </data>
   <data name="SettingsPage_GitHubRepositoryLink.Content" xml:space="preserve">
-    <value>GitHub Repository</value>
+    <value>Source code</value>
   </data>
   <data name="Main_ButtonType.Header" xml:space="preserve">
     <value>Mouse button:</value>
@@ -188,5 +188,17 @@
   <data name="Main_RepeatType.Header" xml:space="preserve">
     <value>Click repeat:</value>
     <comment>Asks the user for how long they want the autoclickers to repeat for.</comment>
+  </data>
+  <data name="SettingsPage_GitHubIssueLink.Content" xml:space="preserve">
+    <value>Submit feedback and report bugs</value>
+  </data>
+  <data name="SettingsPage_GitHubIssueLink.NavigateUri" xml:space="preserve">
+    <value>https://github.com/RyanLua/Fluent-Auto-Clicker/issues/new</value>
+  </data>
+  <data name="SettingsPage_ReviewLink.Content" xml:space="preserve">
+    <value>Rate and review us</value>
+  </data>
+  <data name="SettingsPage_ReviewLink.NavigateUri" xml:space="preserve">
+    <value>ms-windows-store://review</value>
   </data>
 </root>
