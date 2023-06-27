@@ -5,7 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid Margin="{StaticResource NavigationViewRightMargin}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -23,7 +22,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Margin="{StaticResource XSmallTopMargin}">
-            <TextBlock x:Uid="Main_ClickInterval" />
+            <TextBlock x:Uid="Main_Interval" />
             <Grid Margin="{StaticResource XSmallTopMargin}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -32,19 +31,19 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <NumberBox
+                    x:Uid="Main_Interval_Hours"
                     Grid.Column="0"
                     Margin="4,0"
                     AcceptsExpression="True"
-                    Description="Hours"
                     Maximum="48"
                     PlaceholderText="24"
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
+                    x:Uid="Main_Interval_Minutes"
                     Grid.Column="1"
                     Margin="4,0"
                     AcceptsExpression="True"
-                    Description="Minutes"
                     LargeChange="10"
                     Maximum="60"
                     PlaceholderText="60"
@@ -52,10 +51,10 @@
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
+                    x:Uid="Main_Interval_Seconds"
                     Grid.Column="2"
                     Margin="4,0"
                     AcceptsExpression="True"
-                    Description="Seconds"
                     LargeChange="5"
                     Maximum="60"
                     PlaceholderText="60"
@@ -63,10 +62,10 @@
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
+                    x:Uid="Main_Interval_Milliseconds"
                     Grid.Column="3"
                     Margin="4,0"
                     AcceptsExpression="True"
-                    Description="Milliseconds"
                     LargeChange="25"
                     Maximum="1000"
                     PlaceholderText="1000"
@@ -75,9 +74,6 @@
                     Value="100" />
             </Grid>
         </StackPanel>
-
-
-        <!--  Click options  -->
         <StackPanel
             Grid.Row="1"
             Grid.Column="0"
@@ -85,17 +81,18 @@
 
             <!--  Mouse button to click  -->
             <ComboBox x:Uid="Main_ButtonType" SelectedIndex="0">
-                <ComboBoxItem Content="Left" />
-                <ComboBoxItem Content="Middle" />
-                <ComboBoxItem Content="Right" />
+                <ComboBoxItem x:Uid="Main_ButtonType_Left" />
+                <ComboBoxItem x:Uid="Main_ButtonType_Middle" />
+                <ComboBoxItem x:Uid="Main_ButtonType_Left" />
             </ComboBox>
+
             <!--  Click button type  -->
             <ComboBox
                 x:Uid="Main_ClickType"
                 Margin="0,8"
                 SelectedIndex="0">
-                <x:String>Single</x:String>
-                <x:String>Double</x:String>
+                <ComboBoxItem x:Uid="Main_ClickType_Single" />
+                <ComboBoxItem x:Uid="Main_ClickType_Double" />
             </ComboBox>
         </StackPanel>
 
@@ -106,26 +103,26 @@
             Margin="{StaticResource MediumTopMargin}">
             <RadioButtons x:Uid="Main_RepeatType" SelectedIndex="1">
                 <NumberBox
+                    x:Uid="Main_RepeatType_Clicks"
                     AcceptsExpression="True"
-                    Description="clicks"
                     LargeChange="10"
                     Minimum="1"
                     PlaceholderText="11"
                     SmallChange="1"
                     SpinButtonPlacementMode="Compact"
                     Value="100" />
-                <RadioButton Content="∞ clicks (forever)" />
+                <RadioButton x:Uid="Main_RepeatType_InfiniteClicks" />
             </RadioButtons>
         </StackPanel>
 
         <!--  Start Button  -->
         <ToggleButton
+            x:Uid="Main_StartClicker"
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Bottom"
             Margin="{StaticResource MediumBottomMargin}"
-            Content="Start Autoclicker" />
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom" />
     </Grid>
 </Page>

@@ -164,7 +164,7 @@
   &lt;/actions&gt;
 &lt;/toast&gt;</value>
   </data>
-  <data name="Main_ClickInterval.Text" xml:space="preserve">
+  <data name="Main_Interval.Text" xml:space="preserve">
     <value>Click interval:</value>
     <comment>Asks the user for how long between each click.</comment>
   </data>
@@ -194,5 +194,41 @@
   </data>
   <data name="SettingsPage_ReviewLink.NavigateUri" xml:space="preserve">
     <value>ms-windows-store://review</value>
+  </data>
+  <data name="Main_ButtonType_Left.Content" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Main_ButtonType_Middle.Content" xml:space="preserve">
+    <value>Middle</value>
+  </data>
+  <data name="Main_ButtonType_Right.Content" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Main_ClickType_Double.Content" xml:space="preserve">
+    <value>Double</value>
+  </data>
+  <data name="Main_ClickType_Single.Content" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="Main_Interval_Hours.Description" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="Main_Interval_Milliseconds.Description" xml:space="preserve">
+    <value>Milliseconds</value>
+  </data>
+  <data name="Main_Interval_Minutes.Description" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="Main_Interval_Seconds.Description" xml:space="preserve">
+    <value>Seconds</value>
+  </data>
+  <data name="Main_RepeatType_Clicks.Description" xml:space="preserve">
+    <value>clicks</value>
+  </data>
+  <data name="Main_RepeatType_InfiniteClicks.Content" xml:space="preserve">
+    <value>∞ clicks (forever)</value>
+  </data>
+  <data name="Main_StartClicker.Content" xml:space="preserve">
+    <value>Start Auto Clicker</value>
   </data>
 </root>
