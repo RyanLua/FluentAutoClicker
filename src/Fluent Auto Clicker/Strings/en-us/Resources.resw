@@ -147,12 +147,6 @@
   <data name="Settings_AboutDescription.Text" xml:space="preserve">
     <value>An beautifully designed open-source auto clicker for Windows 10 &amp; 11.</value>
   </data>
-  <data name="SettingsPage_PrivacyTermsLink.Content" xml:space="preserve">
-    <value>Privacy statement</value>
-  </data>
-  <data name="SettingsPage_PrivacyTermsLink.NavigateUri" xml:space="preserve">
-    <value>https://example.com</value>
-  </data>
   <data name="SettingsPage_GitHubRepositoryLink.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/Fluent-Auto-Clicker</value>
   </data>
