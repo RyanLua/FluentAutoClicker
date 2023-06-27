@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid Margin="{StaticResource NavigationViewRightMargin}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -38,7 +38,7 @@
                     Description="Hours"
                     Maximum="48"
                     PlaceholderText="24"
-                    SpinButtonPlacementMode="Compact"
+                    SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
                     Grid.Column="1"
@@ -49,7 +49,7 @@
                     Maximum="60"
                     PlaceholderText="60"
                     SmallChange="1"
-                    SpinButtonPlacementMode="Compact"
+                    SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
                     Grid.Column="2"
@@ -60,7 +60,7 @@
                     Maximum="60"
                     PlaceholderText="60"
                     SmallChange="1"
-                    SpinButtonPlacementMode="Compact"
+                    SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
                     Grid.Column="3"
@@ -71,7 +71,7 @@
                     Maximum="1000"
                     PlaceholderText="1000"
                     SmallChange="5"
-                    SpinButtonPlacementMode="Compact"
+                    SpinButtonPlacementMode="Hidden"
                     Value="100" />
             </Grid>
         </StackPanel>
