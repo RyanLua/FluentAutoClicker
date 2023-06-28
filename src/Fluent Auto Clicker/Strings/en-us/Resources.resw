@@ -130,7 +130,7 @@
     <value>Personalization</value>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Theme</value>
+    <value>App theme</value>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
     <value>Light</value>
@@ -230,5 +230,14 @@
   </data>
   <data name="Main_StartClicker.Content" xml:space="preserve">
     <value>Start Auto Clicker</value>
+  </data>
+  <data name="Settings_WindowManagement.Text" xml:space="preserve">
+    <value>Window management</value>
+  </data>
+  <data name="Settings_WindowManagement_AlwaysOnTop.Content" xml:space="preserve">
+    <value>Always on top</value>
+  </data>
+  <data name="Settings_WindowManagement_HideWhenMinimized.Content" xml:space="preserve">
+    <value>Hide when minimized</value>
   </data>
 </root>

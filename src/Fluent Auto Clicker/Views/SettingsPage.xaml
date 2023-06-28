@@ -54,6 +54,13 @@
                     </StackPanel>
                 </StackPanel>
 
+                <TextBlock x:Uid="Settings_WindowManagement" Style="{ThemeResource SubtitleTextBlockStyle}" />
+
+                <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                    <CheckBox x:Uid="Settings_WindowManagement_AlwaysOnTop" Content="Always on top" />
+                    <CheckBox x:Uid="Settings_WindowManagement_HideWhenMinimized" Content="Hide when minimized" />
+                </StackPanel>
+
                 <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
 
                 <StackPanel Margin="{StaticResource XSmallTopMargin}">
