@@ -2,6 +2,7 @@
 using Fluent_Auto_Clicker.Helpers;
 
 using Microsoft.UI.Xaml;
+using Param_RootNamespace.Helpers;
 
 namespace Fluent_Auto_Clicker.Services;
 
@@ -37,6 +38,8 @@ public class ThemeSelectorService : IThemeSelectorService
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             rootElement.RequestedTheme = Theme;
+
+            TitleBarHelper.UpdateTitleBar(Theme);
         }
 
         await Task.CompletedTask;
