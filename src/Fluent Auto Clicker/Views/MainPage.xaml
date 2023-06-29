@@ -83,7 +83,10 @@
             Grid.Column="0"
             Margin="{StaticResource MediumTopMargin}">
             <!--  Mouse button to click  -->
-            <ComboBox x:Name="ButtonType" SelectedIndex="0">
+            <ComboBox
+                x:Name="ButtonType"
+                x:Uid="Main_ButtonType"
+                SelectedIndex="0">
                 <ComboBoxItem x:Uid="Main_ButtonType_Left" />
                 <ComboBoxItem x:Uid="Main_ButtonType_Middle" />
                 <ComboBoxItem x:Uid="Main_ButtonType_Right" />
@@ -92,6 +95,7 @@
             <!--  Click button type  -->
             <ComboBox
                 x:Name="ClickType"
+                x:Uid="Main_ClickType"
                 Margin="0,8"
                 SelectedIndex="0">
                 <ComboBoxItem x:Uid="Main_ClickType_Single" />
@@ -100,26 +104,27 @@
         </StackPanel>
 
         <!--  Repeat type  -->
-        <StackPanel
+        <RadioButtons
+            x:Uid="Main_RepeatType"
             Grid.Row="1"
             Grid.Column="1"
-            Margin="{StaticResource MediumTopMargin}">
-            <RadioButton
-                x:Name="RepeatType_Clicks"
-                GroupName="RepeatType"
-                IsChecked="True" />
+            Margin="{StaticResource MediumTopMargin}"
+            SelectedIndex="1">
             <NumberBox
-                x:Name="RepeatType_Clicks_NumberBox"
-                x:Uid="Main_RepeatType_Clicks"
+                x:Name="RepeatType_Clicks"
+                Margin="0,0,0,0"
                 AcceptsExpression="True"
                 LargeChange="10"
                 Minimum="1"
-                PlaceholderText="11"
+                PlaceholderText="100"
                 SmallChange="1"
                 SpinButtonPlacementMode="Compact"
                 Value="100" />
-            <RadioButton x:Uid="Main_RepeatType_InfiniteClicks" GroupName="RepeatType" />
-        </StackPanel>
+            <RadioButton
+                x:Uid="Main_RepeatType_InfiniteClicks"
+                GroupName="RepeatType"
+                IsChecked="True" />
+        </RadioButtons>
 
         <!--  Start Button  -->
         <ToggleButton
