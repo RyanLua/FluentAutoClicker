@@ -24,7 +24,6 @@
                         <RadioButton
                             x:Uid="Settings_Theme_Light"
                             Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                            FontSize="15"
                             GroupName="AppTheme"
                             IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
                             <RadioButton.CommandParameter>
@@ -34,7 +33,6 @@
                         <RadioButton
                             x:Uid="Settings_Theme_Dark"
                             Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                            FontSize="15"
                             GroupName="AppTheme"
                             IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
                             <RadioButton.CommandParameter>
@@ -44,7 +42,6 @@
                         <RadioButton
                             x:Uid="Settings_Theme_Default"
                             Command="{x:Bind ViewModel.SwitchThemeCommand}"
-                            FontSize="15"
                             GroupName="AppTheme"
                             IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}">
                             <RadioButton.CommandParameter>
@@ -54,11 +51,15 @@
                     </StackPanel>
                 </StackPanel>
 
-                <TextBlock x:Uid="Settings_WindowManagement" Style="{ThemeResource SubtitleTextBlockStyle}" />
+                <TextBlock x:Uid="Settings_Behavior" Style="{ThemeResource SubtitleTextBlockStyle}" />
 
-                <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                    <CheckBox x:Uid="Settings_WindowManagement_AlwaysOnTop" Content="Always on top" />
-                    <CheckBox x:Uid="Settings_WindowManagement_HideWhenMinimized" Content="Hide when minimized" />
+                <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                    <TextBlock x:Uid="Settings_Window" />
+
+                    <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                        <CheckBox x:Uid="Settings_Window_AlwaysOnTop" Content="Always on top" />
+                        <CheckBox x:Uid="Settings_Window_HideWhenMinimized" Content="Hide when minimized" />
+                    </StackPanel>
                 </StackPanel>
 
                 <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
