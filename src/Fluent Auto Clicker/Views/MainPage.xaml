@@ -3,8 +3,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="using:Fluent_Auto_Clicker.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:Fluent_Auto_Clicker.ViewModels"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:MainViewModel />
+    </Page.DataContext>
+
     <Grid Margin="{StaticResource NavigationViewRightMargin}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -131,6 +137,8 @@
             Grid.ColumnSpan="2"
             Margin="{StaticResource MediumBottomMargin}"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Bottom" />
+            VerticalAlignment="Bottom"
+            Command="{Binding StartClickerCommand}"
+            IsChecked="{Binding IsAutoclickerRunning, Mode=OneWay}" />
     </Grid>
 </Page>

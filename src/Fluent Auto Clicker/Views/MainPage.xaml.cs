@@ -1,19 +1,26 @@
-﻿using Fluent_Auto_Clicker.ViewModels;
-
+﻿using Fluent_Auto_Clicker.Helpers;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace Fluent_Auto_Clicker.Views;
-
-public sealed partial class MainPage : Page
+namespace Fluent_Auto_Clicker.Views
 {
-    public MainViewModel ViewModel
+    public sealed partial class MainPage : Page
     {
-        get;
-    }
+        public MainPage()
+        {
+            InitializeComponent();
+            StartClicker.Checked += StartClicker_Checked;
+            StartClicker.Unchecked += StartClicker_Unchecked;
+        }
 
-    public MainPage()
-    {
-        ViewModel = App.GetService<MainViewModel>();
-        InitializeComponent();
+        private void StartClicker_Checked(object sender, RoutedEventArgs e)
+        {
+            AutoClickerHelper.StartAutoClicker();
+        }
+
+        private void StartClicker_Unchecked(object sender, RoutedEventArgs e)
+        {
+            // Implement any logic you need when the autoclicker is stopped
+        }
     }
 }
