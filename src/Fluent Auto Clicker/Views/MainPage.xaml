@@ -11,7 +11,7 @@
         <viewModels:MainViewModel />
     </Page.DataContext>
 
-    <Grid Margin="{StaticResource NavigationViewRightMargin}">
+    <Grid Margin="{StaticResource NavigationViewRightMargin}" ColumnSpacing="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <!--  Autoclicker intervals  -->
-        <StackPanel
+        <StackPanel 
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
@@ -88,6 +88,7 @@
             <ComboBox
                 x:Name="ButtonType"
                 x:Uid="Main_ButtonType"
+                HorizontalAlignment="Stretch"
                 SelectedIndex="0"
                 SelectionChanged="ButtonType_SelectionChanged">
                 <ComboBoxItem x:Uid="Main_ButtonType_Left" />
@@ -95,15 +96,14 @@
                 <ComboBoxItem x:Uid="Main_ButtonType_Right" />
             </ComboBox>
 
-            <!--  Click button type  -->
-            <ComboBox
-                x:Name="ClickType"
-                x:Uid="Main_ClickType"
-                Margin="0,8"
-                SelectedIndex="0">
-                <ComboBoxItem x:Uid="Main_ClickType_Single" />
-                <ComboBoxItem x:Uid="Main_ClickType_Double" />
-            </ComboBox>
+            <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                <TextBlock x:Uid="Main_Hotkey" />
+                <Button
+                    Margin="{StaticResource XSmallTopMargin}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Left"
+                    Content="F6" />
+            </StackPanel>
         </StackPanel>
 
         <!--  Repeat type  -->
@@ -117,7 +117,7 @@
             SelectionChanged="RepeatTypeRadioButtons_SelectionChanged">
             <NumberBox
                 x:Name="RepeatType_Clicks"
-                Margin="0,0,0,0"
+                Margin="0,-4,0,0"
                 AcceptsExpression="True"
                 LargeChange="10"
                 Minimum="1"

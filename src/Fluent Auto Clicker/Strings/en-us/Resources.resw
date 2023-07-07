@@ -246,4 +246,7 @@
   <data name="Settings_WindowManagement_WindowBehavior.Text" xml:space="preserve">
     <value>Window behavior</value>
   </data>
+  <data name="Main_Hotkey.Text" xml:space="preserve">
+    <value>Hotkey:</value>
+  </data>
 </root>
