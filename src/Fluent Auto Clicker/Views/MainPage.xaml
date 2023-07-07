@@ -88,7 +88,8 @@
             <ComboBox
                 x:Name="ButtonType"
                 x:Uid="Main_ButtonType"
-                SelectedIndex="0">
+                SelectedIndex="0"
+                SelectionChanged="ButtonType_SelectionChanged">
                 <ComboBoxItem x:Uid="Main_ButtonType_Left" />
                 <ComboBoxItem x:Uid="Main_ButtonType_Middle" />
                 <ComboBoxItem x:Uid="Main_ButtonType_Right" />
