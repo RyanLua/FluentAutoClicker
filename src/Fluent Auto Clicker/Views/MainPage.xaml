@@ -126,10 +126,7 @@
                 SpinButtonPlacementMode="Compact"
                 ValueChanged="RepeatTypeNumberBox_ValueChanged"
                 Value="100" />
-            <RadioButton
-                x:Uid="Main_RepeatType_InfiniteClicks"
-                GroupName="RepeatType"
-                IsChecked="True" />
+            <RadioButton x:Uid="Main_RepeatType_InfiniteClicks" GroupName="RepeatType" />
         </RadioButtons>
 
         <!--  Start Button  -->

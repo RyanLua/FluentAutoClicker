@@ -52,6 +52,10 @@ public sealed partial class MainPage : Page
     private void RepeatTypeNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
     {
         SetClicker_Repeat();
+        if (RepeatType_Clicks.Value != 100)
+        {
+            RepeatTypeRadioButtons.SelectedIndex = 0;
+        }
     }
 
     private void SetClicker_Repeat()
