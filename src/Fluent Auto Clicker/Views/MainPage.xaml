@@ -107,11 +107,13 @@
 
         <!--  Repeat type  -->
         <RadioButtons
+            x:Name="RepeatTypeRadioButtons"
             x:Uid="Main_RepeatType"
             Grid.Row="1"
             Grid.Column="1"
             Margin="{StaticResource MediumTopMargin}"
-            SelectedIndex="1">
+            SelectedIndex="1"
+            SelectionChanged="RepeatTypeRadioButtons_SelectionChanged">
             <NumberBox
                 x:Name="RepeatType_Clicks"
                 Margin="0,0,0,0"
@@ -121,6 +123,7 @@
                 PlaceholderText="100"
                 SmallChange="1"
                 SpinButtonPlacementMode="Compact"
+                ValueChanged="RepeatTypeNumberBox_ValueChanged"
                 Value="100" />
             <RadioButton
                 x:Uid="Main_RepeatType_InfiniteClicks"

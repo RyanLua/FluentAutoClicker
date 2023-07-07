@@ -16,6 +16,7 @@ namespace Fluent_Auto_Clicker.Helpers
         private static Thread _autoClickerThread;
 
         public static int RepeatInterval = 1000;
+        public static int RepeatCount = 0;
 
         public static bool IsAutoClickerRunning => _isAutoClickerRunning;
 
@@ -40,10 +41,18 @@ namespace Fluent_Auto_Clicker.Helpers
 
         private static void AutoClickerThread()
         {
-            while (_isAutoClickerRunning)
+            int clickCount = 0;
+
+            while (_isAutoClickerRunning && (RepeatCount <= 0 || clickCount < RepeatCount))
             {
                 mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
                 mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                
+                if (RepeatCount > 0)
+                {
+                    clickCount++;
+                }
+
                 Thread.Sleep(RepeatInterval);
             }
         }
