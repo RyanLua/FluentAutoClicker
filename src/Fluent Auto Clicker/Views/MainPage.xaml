@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <!--  Autoclicker intervals  -->
-        <StackPanel 
+        <StackPanel
             Grid.Row="0"
             Grid.Column="0"
             Grid.ColumnSpan="2"
@@ -102,6 +102,7 @@
                     Margin="{StaticResource XSmallTopMargin}"
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Left"
+                    Click="Button_Click"
                     Content="F6" />
             </StackPanel>
         </StackPanel>
@@ -141,5 +142,18 @@
             VerticalAlignment="Bottom"
             Command="{Binding StartClickerCommand}"
             IsChecked="{Binding IsAutoclickerRunning, Mode=OneWay}" />
+
+        <ContentDialog
+            x:Name="MyContentDialog"
+            Title="My Dialog"
+            CloseButtonClick="MyContentDialog_CloseButtonClick"
+            CloseButtonText="Cancel"
+            PrimaryButtonClick="MyContentDialog_PrimaryButtonClick"
+            PrimaryButtonText="OK">
+            <StackPanel>
+                <TextBlock Text="This is a content dialog." />
+                <!--  Add any additional content here  -->
+            </StackPanel>
+        </ContentDialog>
     </Grid>
 </Page>

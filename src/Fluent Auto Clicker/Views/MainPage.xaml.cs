@@ -91,4 +91,5 @@ public sealed partial class MainPage : Page
         //AutoClickerHelper.StopAutoClicker();
         Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
     }
+
 }
