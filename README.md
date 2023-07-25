@@ -1,4 +1,4 @@
-<img align=right src="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/eaa22d65-5d28-4153-9265-365c2c378943" />
+<img align=right src="assets/FluentAutoClicker.png" />
 
 # Fluent Auto Clicker
 
