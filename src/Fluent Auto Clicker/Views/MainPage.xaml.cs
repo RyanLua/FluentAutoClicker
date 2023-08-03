@@ -21,9 +21,9 @@ public sealed partial class MainPage : Page
         var comboBox = (ComboBox)sender;
         var mouseButtonIndex = comboBox.SelectedIndex;
 
-        AutoClickerHelper.MouseButton = mouseButtonIndex;
+        AutoClickerHelper.mouseButton = mouseButtonIndex;
 
-        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.MouseButton}");
+        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.mouseButton}");
     }
 
     private void SetClicker_Interval()
@@ -35,9 +35,9 @@ public sealed partial class MainPage : Page
 
         var totalTimeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
 
-        AutoClickerHelper.RepeatInterval = totalTimeInMilliseconds;
+        AutoClickerHelper.clickInterval = totalTimeInMilliseconds;
 
-        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.RepeatInterval}");
+        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.clickInterval}");
     }
 
     private void IntervalNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
@@ -66,14 +66,14 @@ public sealed partial class MainPage : Page
 
         if (repeatTypeIndex == 0)
         {
-            AutoClickerHelper.RepeatCount = repeatCount;
+            AutoClickerHelper.repeatAmount = repeatCount;
         }
         else
         {
-            AutoClickerHelper.RepeatCount = 0;
+            AutoClickerHelper.repeatAmount = 0;
         }
 
-        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.RepeatCount}");
+        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.repeatAmount}");
     }
 
 

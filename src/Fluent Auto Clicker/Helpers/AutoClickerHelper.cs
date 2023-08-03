@@ -19,9 +19,9 @@ public static class AutoClickerHelper
     private static bool _isAutoClickerRunning;
     private static Thread _autoClickerThread;
 
-    public static int RepeatInterval = 1000;
-    public static int RepeatCount = 0;
-    public static int MouseButton = 0; // 0 = Left, 1 = Middle, 2 = Right
+    public static int clickInterval = 1000; // Milliseconds
+    public static int repeatAmount = 0; // How many clicks
+    public static int mouseButton = 0; // 0 = Left, 1 = Middle, 2 = Right
 
     public static bool IsAutoClickerRunning => _isAutoClickerRunning;
 
@@ -48,14 +48,19 @@ public static class AutoClickerHelper
     {
         var clickCount = 0;
 
-        while (_isAutoClickerRunning && (RepeatCount <= 0 || clickCount < RepeatCount))
+        while (true)
         {
-            if (MouseButton == 0)
+            if (clickCount >= repeatAmount && repeatAmount != 0) {
+                StopAutoClicker();
+                break;
+            }
+
+            if (mouseButton == 0)
             {
                 mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
                 mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
             }
-            else if (MouseButton == 1)
+            else if (mouseButton == 1)
             {
                 mouse_event(MOUSEEVENTF_MIDDLEDOWN, 0, 0, 0, 0);
                 mouse_event(MOUSEEVENTF_MIDDLEUP, 0, 0, 0, 0);
@@ -66,12 +71,12 @@ public static class AutoClickerHelper
                 mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
             }
 
-            if (RepeatCount > 0)
+            if (repeatAmount > 0)
             {
                 clickCount++;
             }
 
-            Thread.Sleep(RepeatInterval);
+            Thread.Sleep(clickInterval);
         }
     }
 }
