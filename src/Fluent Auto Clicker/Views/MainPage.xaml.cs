@@ -88,8 +88,24 @@ public sealed partial class MainPage : Page
 
     private void StartClicker_Unchecked(object sender, RoutedEventArgs e)
     {
-        //AutoClickerHelper.StopAutoClicker();
+        AutoClickerHelper.StopAutoClicker();
         Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
     }
 
+    private void KeyboardAccelerator_Invoked(Microsoft.UI.Xaml.Input.KeyboardAccelerator sender, Microsoft.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
+    {
+        if (AutoClickerHelper.IsAutoClickerRunning)
+        {
+            AutoClickerHelper.StopAutoClicker();
+            Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
+        }
+        else
+        {
+            AutoClickerHelper.StartAutoClicker();
+            SetClicker_Interval();
+            SetClicker_Repeat();
+
+            Debug.WriteLine($"Auto Clicker Running: {AutoClickerHelper.IsAutoClickerRunning}");
+        }
+    }
 }

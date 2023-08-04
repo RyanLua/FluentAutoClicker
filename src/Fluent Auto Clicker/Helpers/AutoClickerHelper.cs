@@ -27,30 +27,25 @@ public static class AutoClickerHelper
 
     public static void StartAutoClicker()
     {
-        if (!_isAutoClickerRunning)
-        {
-            _isAutoClickerRunning = true;
-            _autoClickerThread = new Thread(AutoClickerThread);
-            _autoClickerThread.Start();
-        }
+        _isAutoClickerRunning = true;
+        _autoClickerThread = new Thread(AutoClickerThread);
+        _autoClickerThread.Start();
     }
 
     public static void StopAutoClicker()
     {
-        if (_isAutoClickerRunning)
-        {
-            _isAutoClickerRunning = false;
-            _autoClickerThread.Join();
-        }
+        _isAutoClickerRunning = false;
+        _autoClickerThread.Join();
     }
 
     private static void AutoClickerThread()
     {
         var clickCount = 0;
 
-        while (true)
+        while (_isAutoClickerRunning == true)
         {
-            if (clickCount >= repeatAmount && repeatAmount != 0) {
+            if (clickCount >= repeatAmount && repeatAmount != 0)
+            {
                 StopAutoClicker();
                 break;
             }

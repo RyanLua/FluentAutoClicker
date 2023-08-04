@@ -140,7 +140,11 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
             Command="{Binding StartClickerCommand}"
-            IsChecked="{Binding IsAutoclickerRunning, Mode=OneWay}" />
+            IsChecked="{Binding IsAutoclickerRunning, Mode=OneWay}">
+            <ToggleButton.KeyboardAccelerators>
+                <KeyboardAccelerator Key="F6" Invoked="KeyboardAccelerator_Invoked" />
+            </ToggleButton.KeyboardAccelerators>
+        </ToggleButton>
 
         <ContentDialog
             x:Name="MyContentDialog"
