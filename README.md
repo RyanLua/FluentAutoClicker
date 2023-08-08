@@ -1,4 +1,4 @@
-<img align=right src="assets/FluentAutoClicker.png" />
+<img align=right src="assets/FluentAutoClicker.png" width="200px" />
 
 # Fluent Auto Clicker
 
