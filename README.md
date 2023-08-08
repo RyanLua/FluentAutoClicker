@@ -10,5 +10,8 @@ Fluent Auto Clicker is one of the fastest auto clickers, with 1ms between clicks
 
 ## Screenshots
 
-<img src="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/eee955ac-4429-4262-ba84-48bf99c121d1">
-<img src="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/ea30b709-fe74-4cec-b513-7aebf25d4270">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/eee955ac-4429-4262-ba84-48bf99c121d1">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/ea30b709-fe74-4cec-b513-7aebf25d4270">
+  <img src="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/ea30b709-fe74-4cec-b513-7aebf25d4270">
+</picture>
