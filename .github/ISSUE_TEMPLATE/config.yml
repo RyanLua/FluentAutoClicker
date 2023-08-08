@@ -3,3 +3,6 @@ contact_links:
   - name: Get Community Support
     url: https://github.com/RyanLua/FluentAutoClicker/discussions
     about: Get support/help from the GitHub Discussions community.
+  - name: Get in touch with us
+    url: mailto:support@ryanluu.dev
+    about: Send us an email at support@ryanluu.dev.
