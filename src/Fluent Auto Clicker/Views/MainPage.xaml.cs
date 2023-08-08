@@ -79,6 +79,7 @@ public sealed partial class MainPage : Page
 
     private void StartClicker_Checked(object sender, RoutedEventArgs e)
     {
+        Thread.Sleep( 1000 );
         AutoClickerHelper.StartAutoClicker();
         SetClicker_Interval();
         SetClicker_Repeat();
