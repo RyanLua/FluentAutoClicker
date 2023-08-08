@@ -2,7 +2,9 @@
 
 # Fluent Auto Clicker
 
-> **Warning** Fluent Auto Clicker is under active development and breaking bugs may occur.
+> **Warning**
+>
+> Fluent Auto Clicker is under active development and breaking bugs may occur.
 
 Fluent Auto Clicker is a beautifully designed Windows 10 & 11 auto clicker. Following the latest Fluent Design, it feels just right in Windows. We offer a streamlined experience tailored to you with localization in your language and automatic dark and light themes.
 
