@@ -60,8 +60,12 @@
                         <CheckBox
                             x:Uid="Settings_Window_AlwaysOnTop"
                             Content="Always on top"
-                            IsChecked="True" />
-                        <CheckBox x:Uid="Settings_Window_HideWhenMinimized" Content="Hide when minimized" />
+                            IsChecked="True"
+                            IsEnabled="False" />
+                        <CheckBox
+                            x:Uid="Settings_Window_HideWhenMinimized"
+                            Content="Hide when minimized"
+                            IsEnabled="False" />
                     </StackPanel>
                 </StackPanel>
 
