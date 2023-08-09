@@ -109,4 +109,27 @@ public sealed partial class MainPage : Page
             Debug.WriteLine($"Auto Clicker Running: {AutoClickerHelper.IsAutoClickerRunning}");
         }
     }
+
+    private async void HotkeyButton_Click(object sender, RoutedEventArgs e)
+    {
+        ContentDialog dialog = new ContentDialog();
+
+        // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+        dialog.XamlRoot = this.XamlRoot;
+        dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+        dialog.Title = "Set hotkey";
+        dialog.PrimaryButtonText = "Set";
+        dialog.CloseButtonText = "Cancel";
+        dialog.DefaultButton = ContentDialogButton.Primary;
+        dialog.Content = new StackPanel
+        {
+            Children =
+        {
+            new TextBlock { Text = "This is a content dialog." }
+            // You can add any additional content here
+        }
+        };
+
+        var result = await dialog.ShowAsync();
+    }
 }

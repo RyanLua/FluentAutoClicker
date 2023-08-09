@@ -96,9 +96,12 @@
                 <ComboBoxItem x:Uid="Main_ButtonType_Right" />
             </ComboBox>
 
+            <!-- Hotkey -->
             <StackPanel Margin="{StaticResource XSmallTopMargin}">
                 <TextBlock x:Uid="Main_Hotkey" />
                 <Button
+                    Name="HotkeyButton"
+                    Click="HotkeyButton_Click"
                     Margin="{StaticResource XSmallTopMargin}"
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Left"
@@ -145,16 +148,5 @@
                 <KeyboardAccelerator Key="F6" Invoked="KeyboardAccelerator_Invoked" />
             </ToggleButton.KeyboardAccelerators>
         </ToggleButton>
-
-        <ContentDialog
-            x:Name="MyContentDialog"
-            Title="My Dialog"
-            CloseButtonText="Cancel"
-            PrimaryButtonText="OK">
-            <StackPanel>
-                <TextBlock Text="This is a content dialog." />
-                <!--  Add any additional content here  -->
-            </StackPanel>
-        </ContentDialog>
     </Grid>
 </Page>
