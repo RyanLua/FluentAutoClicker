@@ -10,6 +10,20 @@ Fluent Auto Clicker is a beautifully designed Windows 10 & 11 auto clicker. Foll
 
 Fluent Auto Clicker is one of the fastest auto clickers, with 1ms between clicks. Optimized for clicking for the fastest speeds possible with mouse events.
 
+## Features
+
+### Ultra-fast clicking
+
+1ms between clicks
+
+### High performance
+
+Under 100MB of memory and responsive UI
+
+### Beautiful fluent design
+
+Automatic dark and light themes made in the latest Fluent Design
+
 ## Screenshots
 
 <picture>
