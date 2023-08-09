@@ -249,4 +249,19 @@
   <data name="Main_Hotkey.Text" xml:space="preserve">
     <value>Hotkey</value>
   </data>
+  <data name="Main_ButtonType_Tooltip.Text" xml:space="preserve">
+    <value>Select what button to auto click</value>
+  </data>
+  <data name="Main_Hotkey_Tooltip.Text" xml:space="preserve">
+    <value>Select what button should start the auto clicker</value>
+  </data>
+  <data name="Main_Interval_Tooltip.Text" xml:space="preserve">
+    <value>Select how long between each auto click</value>
+  </data>
+  <data name="Main_RepeatType_Tooltip.Text" xml:space="preserve">
+    <value>Select how many clicks before stopping</value>
+  </data>
+  <data name="Main_StartClicker_Tooltip.Text" xml:space="preserve">
+    <value>Start the auto clicker</value>
+  </data>
 </root>

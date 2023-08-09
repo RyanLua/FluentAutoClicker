@@ -79,6 +79,9 @@
                     SpinButtonPlacementMode="Hidden"
                     Value="100" />
             </Grid>
+            <ToolTipService.ToolTip>
+                <TextBlock x:Uid="Main_Interval_Tooltip"/>
+            </ToolTipService.ToolTip>
         </StackPanel>
         <StackPanel
             Grid.Row="1"
@@ -94,18 +97,24 @@
                 <ComboBoxItem x:Uid="Main_ButtonType_Left" />
                 <ComboBoxItem x:Uid="Main_ButtonType_Middle" />
                 <ComboBoxItem x:Uid="Main_ButtonType_Right" />
+                <ToolTipService.ToolTip>
+                    <TextBlock x:Uid="Main_ButtonType_Tooltip"/>
+                </ToolTipService.ToolTip>
             </ComboBox>
 
-            <!-- Hotkey -->
+            <!--  Hotkey  -->
             <StackPanel Margin="{StaticResource XSmallTopMargin}">
                 <TextBlock x:Uid="Main_Hotkey" />
                 <Button
                     Name="HotkeyButton"
-                    Click="HotkeyButton_Click"
                     Margin="{StaticResource XSmallTopMargin}"
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Left"
+                    Click="HotkeyButton_Click"
                     Content="F6" />
+                <ToolTipService.ToolTip>
+                    <TextBlock x:Uid="Main_Hotkey_Tooltip"/>
+                </ToolTipService.ToolTip>
             </StackPanel>
         </StackPanel>
 
@@ -128,8 +137,12 @@
                 SmallChange="1"
                 SpinButtonPlacementMode="Compact"
                 ValueChanged="RepeatTypeNumberBox_ValueChanged"
-                Value="100" />
+                Value="100" 
+                />
             <RadioButton x:Uid="Main_RepeatType_InfiniteClicks" GroupName="RepeatType" />
+            <ToolTipService.ToolTip>
+                <TextBlock x:Uid="Main_RepeatType_Tooltip"/>
+            </ToolTipService.ToolTip>
         </RadioButtons>
 
         <!--  Start Button  -->
@@ -147,6 +160,9 @@
             <ToggleButton.KeyboardAccelerators>
                 <KeyboardAccelerator Key="F6" Invoked="KeyboardAccelerator_Invoked" />
             </ToggleButton.KeyboardAccelerators>
+            <ToolTipService.ToolTip>
+                <TextBlock x:Uid="Main_StartClicker_Tooltip" />
+            </ToolTipService.ToolTip>
         </ToggleButton>
     </Grid>
 </Page>
