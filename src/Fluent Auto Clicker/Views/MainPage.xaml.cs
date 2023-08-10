@@ -21,9 +21,9 @@ public sealed partial class MainPage : Page
         var comboBox = (ComboBox)sender;
         var mouseButtonIndex = comboBox.SelectedIndex;
 
-        AutoClickerHelper.MouseButton = mouseButtonIndex;
+        AutoClickerHelper.mouseButton = mouseButtonIndex;
 
-        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.MouseButton}");
+        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.mouseButton}");
     }
 
     private void SetClicker_Interval()
@@ -35,9 +35,9 @@ public sealed partial class MainPage : Page
 
         var totalTimeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
 
-        AutoClickerHelper.RepeatInterval = totalTimeInMilliseconds;
+        AutoClickerHelper.clickInterval = totalTimeInMilliseconds;
 
-        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.RepeatInterval}");
+        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.clickInterval}");
     }
 
     private void IntervalNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
@@ -66,19 +66,20 @@ public sealed partial class MainPage : Page
 
         if (repeatTypeIndex == 0)
         {
-            AutoClickerHelper.RepeatCount = repeatCount;
+            AutoClickerHelper.repeatAmount = repeatCount;
         }
         else
         {
-            AutoClickerHelper.RepeatCount = 0;
+            AutoClickerHelper.repeatAmount = 0;
         }
 
-        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.RepeatCount}");
+        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.repeatAmount}");
     }
 
 
     private void StartClicker_Checked(object sender, RoutedEventArgs e)
     {
+        Thread.Sleep( 1000 );
         AutoClickerHelper.StartAutoClicker();
         SetClicker_Interval();
         SetClicker_Repeat();
@@ -88,8 +89,47 @@ public sealed partial class MainPage : Page
 
     private void StartClicker_Unchecked(object sender, RoutedEventArgs e)
     {
-        //AutoClickerHelper.StopAutoClicker();
+        AutoClickerHelper.StopAutoClicker();
         Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
     }
 
+    private void KeyboardAccelerator_Invoked(Microsoft.UI.Xaml.Input.KeyboardAccelerator sender, Microsoft.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
+    {
+        if (AutoClickerHelper.IsAutoClickerRunning)
+        {
+            AutoClickerHelper.StopAutoClicker();
+            Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
+        }
+        else
+        {
+            AutoClickerHelper.StartAutoClicker();
+            SetClicker_Interval();
+            SetClicker_Repeat();
+
+            Debug.WriteLine($"Auto Clicker Running: {AutoClickerHelper.IsAutoClickerRunning}");
+        }
+    }
+
+    private async void HotkeyButton_Click(object sender, RoutedEventArgs e)
+    {
+        ContentDialog dialog = new ContentDialog();
+
+        // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+        dialog.XamlRoot = this.XamlRoot;
+        dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
+        dialog.Title = "Set hotkey";
+        dialog.PrimaryButtonText = "Set";
+        dialog.CloseButtonText = "Cancel";
+        dialog.DefaultButton = ContentDialogButton.Primary;
+        dialog.Content = new StackPanel
+        {
+            Children =
+        {
+            new TextBlock { Text = "This is a content dialog." }
+            // You can add any additional content here
+        }
+        };
+
+        var result = await dialog.ShowAsync();
+    }
 }

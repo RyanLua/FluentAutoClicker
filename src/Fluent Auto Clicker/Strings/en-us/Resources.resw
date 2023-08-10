@@ -124,7 +124,7 @@
     <value>An beautifully designed open-source auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Auto Clicker</value>
+    <value>Auto clicker</value>
   </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
     <value>Personalization</value>
@@ -165,22 +165,22 @@
 &lt;/toast&gt;</value>
   </data>
   <data name="Main_Interval.Text" xml:space="preserve">
-    <value>Click interval:</value>
+    <value>Click interval</value>
     <comment>Asks the user for how long between each click.</comment>
   </data>
   <data name="SettingsPage_GitHubRepositoryLink.Content" xml:space="preserve">
     <value>Source code</value>
   </data>
   <data name="Main_ButtonType.Header" xml:space="preserve">
-    <value>Mouse button:</value>
+    <value>Mouse button</value>
     <comment>Asks the user for whether to click using left, middle, and right mouse buttons.</comment>
   </data>
   <data name="Main_ClickType.Header" xml:space="preserve">
-    <value>Click type:</value>
+    <value>Click type</value>
     <comment>Asks the user for whether to click once or twice.</comment>
   </data>
   <data name="Main_RepeatType.Header" xml:space="preserve">
-    <value>Click repeat:</value>
+    <value>Click repeat</value>
     <comment>Asks the user for how long they want the autoclickers to repeat for.</comment>
   </data>
   <data name="SettingsPage_GitHubIssueLink.Content" xml:space="preserve">
@@ -247,6 +247,21 @@
     <value>Window behavior</value>
   </data>
   <data name="Main_Hotkey.Text" xml:space="preserve">
-    <value>Hotkey:</value>
+    <value>Hotkey</value>
+  </data>
+  <data name="Main_ButtonType_Tooltip.Text" xml:space="preserve">
+    <value>Select what button to auto click</value>
+  </data>
+  <data name="Main_Hotkey_Tooltip.Text" xml:space="preserve">
+    <value>Select what button should start the auto clicker</value>
+  </data>
+  <data name="Main_Interval_Tooltip.Text" xml:space="preserve">
+    <value>Select how long between each auto click</value>
+  </data>
+  <data name="Main_RepeatType_Tooltip.Text" xml:space="preserve">
+    <value>Select how many clicks before stopping</value>
+  </data>
+  <data name="Main_StartClicker_Tooltip.Text" xml:space="preserve">
+    <value>Start the auto clicker</value>
   </data>
 </root>
