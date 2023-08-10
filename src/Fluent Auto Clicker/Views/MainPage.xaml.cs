@@ -118,17 +118,11 @@ public sealed partial class MainPage : Page
         dialog.XamlRoot = this.XamlRoot;
         dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
         dialog.Title = "Set hotkey";
-        dialog.PrimaryButtonText = "Set";
+        dialog.PrimaryButtonText = "Save";
+        dialog.SecondaryButtonText = "Reset";
         dialog.CloseButtonText = "Cancel";
         dialog.DefaultButton = ContentDialogButton.Primary;
-        dialog.Content = new StackPanel
-        {
-            Children =
-        {
-            new TextBlock { Text = "This is a content dialog." }
-            // You can add any additional content here
-        }
-        };
+        dialog.Content = "Press any key to bind it as a hotkey.";
 
         var result = await dialog.ShowAsync();
     }
