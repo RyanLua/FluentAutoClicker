@@ -14,7 +14,7 @@ Fluent Auto Clicker is one of the fastest auto clickers, with 1ms between clicks
 
 ### Ultra-fast clicking
 
-1ms between clicks
+5ms between clicks or 200 clicks per second on it's fastest settings, 5x faster than other competition.
 
 ### High performance
 
