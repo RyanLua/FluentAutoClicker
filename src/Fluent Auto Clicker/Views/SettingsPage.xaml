@@ -57,15 +57,8 @@
                     <TextBlock x:Uid="Settings_Window" />
 
                     <StackPanel Margin="{StaticResource XSmallTopMargin}">
-                        <CheckBox
-                            x:Uid="Settings_Window_AlwaysOnTop"
-                            Content="Always on top"
-                            IsChecked="True"
-                            IsEnabled="False" />
-                        <CheckBox
-                            x:Uid="Settings_Window_HideWhenMinimized"
-                            Content="Hide when minimized"
-                            IsEnabled="False" />
+                        <CheckBox x:Uid="Settings_Window_AlwaysOnTop" Content="Always on top" IsChecked="{x:Null}" />
+                        <CheckBox x:Uid="Settings_Window_HideWhenMinimized" Content="Hide when minimized" />
                     </StackPanel>
                 </StackPanel>
 
