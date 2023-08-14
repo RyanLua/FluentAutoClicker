@@ -80,7 +80,7 @@
                     Value="100" />
             </Grid>
             <ToolTipService.ToolTip>
-                <TextBlock x:Uid="Main_Interval_Tooltip"/>
+                <TextBlock x:Uid="Main_Interval_Tooltip" />
             </ToolTipService.ToolTip>
         </StackPanel>
         <StackPanel
@@ -98,7 +98,7 @@
                 <ComboBoxItem x:Uid="Main_ButtonType_Middle" />
                 <ComboBoxItem x:Uid="Main_ButtonType_Right" />
                 <ToolTipService.ToolTip>
-                    <TextBlock x:Uid="Main_ButtonType_Tooltip"/>
+                    <TextBlock x:Uid="Main_ButtonType_Tooltip" />
                 </ToolTipService.ToolTip>
             </ComboBox>
 
@@ -113,7 +113,7 @@
                     Click="HotkeyButton_Click"
                     Content="F6" />
                 <ToolTipService.ToolTip>
-                    <TextBlock x:Uid="Main_Hotkey_Tooltip"/>
+                    <TextBlock x:Uid="Main_Hotkey_Tooltip" />
                 </ToolTipService.ToolTip>
             </StackPanel>
         </StackPanel>
@@ -137,11 +137,10 @@
                 SmallChange="1"
                 SpinButtonPlacementMode="Compact"
                 ValueChanged="RepeatTypeNumberBox_ValueChanged"
-                Value="100" 
-                />
+                Value="100" />
             <RadioButton x:Uid="Main_RepeatType_InfiniteClicks" GroupName="RepeatType" />
             <ToolTipService.ToolTip>
-                <TextBlock x:Uid="Main_RepeatType_Tooltip"/>
+                <TextBlock x:Uid="Main_RepeatType_Tooltip" />
             </ToolTipService.ToolTip>
         </RadioButtons>
 
