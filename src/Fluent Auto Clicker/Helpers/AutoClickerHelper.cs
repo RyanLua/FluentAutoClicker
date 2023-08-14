@@ -13,11 +13,11 @@ public static class AutoClickerHelper
     private struct INPUT
     {
         public int type;
-        public MOUSEINPUT mi;
+        public INPUT_MOUSE mi;
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    private struct MOUSEINPUT
+    private struct INPUT_MOUSE
     {
         public int dx;
         public int dy;
@@ -27,13 +27,16 @@ public static class AutoClickerHelper
         public IntPtr dwExtraInfo;
     }
 
-    private const int INPUT_MOUSE = 0;
-    private const int MOUSEEVENTF_LEFTDOWN = 0x0002;
-    private const int MOUSEEVENTF_LEFTUP = 0x0004;
-    private const int MOUSEEVENTF_MIDDLEDOWN = 0x0020;
-    private const int MOUSEEVENTF_MIDDLEUP = 0x0040;
-    private const int MOUSEEVENTF_RIGHTDOWN = 0x0008;
-    private const int MOUSEEVENTF_RIGHTUP = 0x0010;
+    [Flags]
+    internal enum MOUSEEVENTF : uint
+    {
+        LEFTDOWN = 0x0002,
+        LEFTUP = 0x0004,
+        RIGHTDOWN = 0x0008,
+        RIGHTUP = 0x0010,
+        MIDDLEDOWN = 0x0020,
+        MIDDLEUP = 0x0040,
+    }
 
     private static bool _isAutoClickerRunning;
     private static Thread? _autoClickerThread;
@@ -71,18 +74,18 @@ public static class AutoClickerHelper
 
             if (mouseButton == 0)
             {
-                MouseEvent(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-                MouseEvent(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                MouseEvent((uint)MOUSEEVENTF.LEFTDOWN, 0, 0, 0, 0);
+                MouseEvent((uint)MOUSEEVENTF.LEFTUP, 0, 0, 0, 0);
             }
             else if (mouseButton == 1)
             {
-                MouseEvent(MOUSEEVENTF_MIDDLEDOWN, 0, 0, 0, 0);
-                MouseEvent(MOUSEEVENTF_MIDDLEUP, 0, 0, 0, 0);
+                MouseEvent((uint)MOUSEEVENTF.MIDDLEDOWN, 0, 0, 0, 0);
+                MouseEvent((uint)MOUSEEVENTF.MIDDLEUP, 0, 0, 0, 0);
             }
             else if (mouseButton == 2)
             {
-                MouseEvent(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
-                MouseEvent(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+                MouseEvent((uint)MOUSEEVENTF.RIGHTDOWN, 0, 0, 0, 0);
+                MouseEvent((uint)MOUSEEVENTF.RIGHTUP, 0, 0, 0, 0);
             }
 
             if (repeatAmount > 0)
@@ -107,8 +110,8 @@ public static class AutoClickerHelper
     {
         return new INPUT
         {
-            type = INPUT_MOUSE,
-            mi = new MOUSEINPUT
+            type = 0, // INPUT_MOUSE
+            mi = new INPUT_MOUSE
             {
                 dwFlags = flags,
                 time = 0,
