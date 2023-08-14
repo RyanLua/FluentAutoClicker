@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Timers;
 
 namespace Fluent_Auto_Clicker.Helpers;
 
@@ -74,18 +75,18 @@ public static class AutoClickerHelper
 
             if (mouseButton == 0)
             {
-                MouseEvent((uint)MOUSEEVENTF.LEFTDOWN, 0, 0, 0, 0);
-                MouseEvent((uint)MOUSEEVENTF.LEFTUP, 0, 0, 0, 0);
+                MouseEvent(0, 0, (uint)MOUSEEVENTF.LEFTDOWN, 0, 0, IntPtr.Zero);
+                MouseEvent(0, 0, (uint)MOUSEEVENTF.LEFTUP, 0, 0, IntPtr.Zero);
             }
             else if (mouseButton == 1)
             {
-                MouseEvent((uint)MOUSEEVENTF.MIDDLEDOWN, 0, 0, 0, 0);
-                MouseEvent((uint)MOUSEEVENTF.MIDDLEUP, 0, 0, 0, 0);
+                MouseEvent(0, 0, (uint)MOUSEEVENTF.MIDDLEDOWN, 0, 0, IntPtr.Zero);
+                MouseEvent(0, 0, (uint)MOUSEEVENTF.MIDDLEUP, 0, 0, IntPtr.Zero);
             }
             else if (mouseButton == 2)
             {
-                MouseEvent((uint)MOUSEEVENTF.RIGHTDOWN, 0, 0, 0, 0);
-                MouseEvent((uint)MOUSEEVENTF.RIGHTUP, 0, 0, 0, 0);
+                MouseEvent(0, 0, (uint)MOUSEEVENTF.RIGHTDOWN, 0, 0, IntPtr.Zero);
+                MouseEvent(0, 0, (uint)MOUSEEVENTF.RIGHTUP, 0, 0, IntPtr.Zero);
             }
 
             if (repeatAmount > 0)
@@ -97,25 +98,28 @@ public static class AutoClickerHelper
         }
     }
 
-    private static void MouseEvent(uint dwFlags, uint dx, uint dy, uint dwData, int dwExtraInfo)
+    private static void MouseEvent(int dx, int dy, uint dwFlags, uint dwData, uint time, nint dwExtraInfo)
     {
         INPUT[] inputs = new INPUT[2];
-        inputs[0] = CreateMouseEvent(dwFlags);
-        inputs[1] = CreateMouseEvent(dwFlags);
+        inputs[0] = MOUSEINPUT(dx, dy, dwData, dwFlags, time, dwExtraInfo);
+        inputs[1] = MOUSEINPUT(dx, dy, dwData, dwFlags, time, dwExtraInfo);
 
         SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
     }
 
-    private static INPUT CreateMouseEvent(uint flags)
+    private static INPUT MOUSEINPUT(int DX, int DY, uint MOUSEDATA, uint DWFLAGS, uint TIME, nint DWEXTRAINFO)
     {
         return new INPUT
         {
             type = 0, // INPUT_MOUSE
             mi = new INPUT_MOUSE
             {
-                dwFlags = flags,
-                time = 0,
-                dwExtraInfo = IntPtr.Zero
+                dx = DX,
+                dy = DY,
+                mouseData = MOUSEDATA,
+                dwFlags = DWFLAGS,
+                time = TIME,
+                dwExtraInfo = DWEXTRAINFO
             }
         };
     }
