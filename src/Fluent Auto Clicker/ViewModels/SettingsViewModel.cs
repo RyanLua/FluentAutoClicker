@@ -16,8 +16,16 @@ namespace Fluent_Auto_Clicker.ViewModels;
 public class SettingsViewModel : ObservableRecipient
 {
     private readonly IThemeSelectorService _themeSelectorService;
+    private readonly IAlwaysOnTopService _alwaysOnTopService;
     private ElementTheme _elementTheme;
     private string _versionDescription;
+    private bool _alwaysOnTop;
+
+    public bool AlwaysOnTop
+    {
+        get => _alwaysOnTop;
+        set => SetProperty(ref _alwaysOnTop, value);
+    }
 
     public ElementTheme ElementTheme
     {
@@ -36,9 +44,17 @@ public class SettingsViewModel : ObservableRecipient
         get;
     }
 
-    public SettingsViewModel(IThemeSelectorService themeSelectorService)
+    public ICommand SwitchAlwaysOnTopCommand
+    {
+
+        get;
+    }
+
+    public SettingsViewModel(IThemeSelectorService themeSelectorService, IAlwaysOnTopService alwaysOnTopService)
     {
         _themeSelectorService = themeSelectorService;
+        _alwaysOnTopService = alwaysOnTopService;
+        _alwaysOnTop = _alwaysOnTopService.AlwaysOnTop;
         _elementTheme = _themeSelectorService.Theme;
         _versionDescription = GetVersionDescription();
 
@@ -50,6 +66,11 @@ public class SettingsViewModel : ObservableRecipient
                     ElementTheme = param;
                     await _themeSelectorService.SetThemeAsync(param);
                 }
+            });
+        SwitchAlwaysOnTopCommand = new RelayCommand<bool>(
+            (param) =>
+            {
+                AlwaysOnTop = param;
             });
     }
 
