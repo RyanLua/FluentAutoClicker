@@ -61,7 +61,7 @@
                             Command="{x:Bind ViewModel.SwitchAlwaysOnTopCommand}"
                             x:Uid="Settings_Window_AlwaysOnTop"
                             IsChecked="{x:Bind ViewModel.AlwaysOnTop, Mode=OneWay}" />
-                        <CheckBox x:Uid="Settings_Window_HideWhenMinimized" Content="Hide when minimized" />
+                        <!--<CheckBox x:Uid="Settings_Window_HideWhenMinimized" Content="Hide when minimized" />-->
                     </StackPanel>
                 </StackPanel>
 
