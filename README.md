@@ -2,23 +2,25 @@
 
 # Fluent Auto Clicker
 
-Fluent Auto Clicker is a beautifully designed Windows 10 & 11 auto clicker. Following the latest Fluent Design, it feels just right in Windows. We offer a streamlined experience tailored to you with localization in your language and automatic dark and light themes.
+Fluent Auto Clicker is a beautifully designed Windows 10 & 11 auto clicker. Following the latest Fluent Design, it feels just right in Windows.
 
-Fluent Auto Clicker is one of the fastest auto clickers, with 1ms between clicks. Optimized for clicking for the fastest speeds possible with mouse events.
+Fluent Auto Clicker is one of the fastest auto clickers, with 1ms between clicks. Optimized for clicking for the fastest speeds possible with mouse events. It's even faster than the most OP auto clickers.
+
+Perfect for games like Roblox, Minecraft, Cookie Clicker, or any task that needs clicking.
 
 ## Features
 
-### Ultra-fast clicking
+### Ultra-fast Clicking
 
 5ms between clicks or 200 clicks per second on it's fastest settings, 5x faster than other competition.
 
-### High performance
+### High Performance
 
 Under 100MB of memory and responsive UI
 
-### Beautiful fluent design
+### Fluent Design Light & Dark Theme
 
-Automatic dark and light themes made in the latest Fluent Design
+Automatic dark and light themes made with the latest Fluent Design guidelines.
 
 ## Screenshots
 
