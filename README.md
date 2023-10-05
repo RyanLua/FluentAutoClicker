@@ -16,11 +16,15 @@ Perfect for games like Roblox, Minecraft, Cookie Clicker, or any task that needs
 
 ### High Performance
 
-Under 100MB of memory and responsive UI
+Under 100MB of memory and responsive UI. This auto clicker is extremely lightweight and requires nothing else to be installed manually.
 
 ### Fluent Design Light & Dark Theme
 
 Automatic dark and light themes made with the latest Fluent Design guidelines.
+
+### Safe & Secure
+
+With it's open-source nature, Fluent Auto Clicker, everyone can see they're running on their computer or even compile it themselves. Other auto clickers are often closed-source so no one knows what's truly in the code, not for us.
 
 ## Screenshots
 
