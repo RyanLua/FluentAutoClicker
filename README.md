@@ -1,30 +1,30 @@
-<img align=right src="assets/FluentAutoClicker.png" width="200px" />
+<div align="right"><img src="assets/FluentAutoClicker.png" width="200px" /></div>
 
 # Fluent Auto Clicker
 
-Fluent Auto Clicker is a beautifully designed Windows 10 & 11 auto clicker. Following the latest Fluent Design, it feels just right in Windows.
+Fluent Auto Clicker is a beautifully designed auto clicker compatible with Windows 10 and 11. It follows the latest Fluent Design guidelines, seamlessly blending into the Windows environment.
 
-Fluent Auto Clicker is one of the fastest auto clickers, with 1ms between clicks. Optimized for clicking for the fastest speeds possible with mouse events. It's even faster than the most OP auto clickers.
+This auto clicker stands out as one of the fastest, with a mere 1ms interval between clicks. It's optimized for maximum clicking speed using mouse events, surpassing even the most overpowered auto clickers on the market.
 
-Perfect for games like Roblox, Minecraft, Cookie Clicker, or any task that needs clicking.
+Whether you're playing games like Roblox, Minecraft, Cookie Clicker, or tackling any task that requires precise clicking, Fluent Auto Clicker has you covered.
 
 ## Features
 
-### Ultra-fast Clicking
+### Lightning-Fast Clicking
 
-5ms between clicks or 200 clicks per second on it's fastest settings, 5x faster than other competition.
+Experience 1ms intervals between clicks, allowing for a remarkable up to 1000 clicks per second.
 
 ### High Performance
 
-Under 100MB of memory and responsive UI. This auto clicker is extremely lightweight and requires nothing else to be installed manually.
+With a memory footprint of under 100MB and a responsive user interface, this Fluent Auto Clicker is exceptionally lightweight. No need to worry about it lagging down your computer.
 
 ### Fluent Design Light & Dark Theme
 
-Automatic dark and light themes made with the latest Fluent Design guidelines.
+Enjoy automatic dark and light themes crafted with the latest Fluent Design guidelines.
 
 ### Safe & Secure
 
-With it's open-source nature, Fluent Auto Clicker, everyone can see they're running on their computer or even compile it themselves. Other auto clickers are often closed-source so no one knows what's truly in the code, not for us.
+Fluent Auto Clicker is open-source, giving users full transparency about what's running on their computer. You can even compile it yourself. Other auto clickers are often closed-source, meaning users can't even see the code they're running.
 
 ## Screenshots
 
