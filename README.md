@@ -10,6 +10,15 @@ Whether you're playing games like Roblox, Minecraft, Cookie Clicker, or tackling
 
 ## Features
 
+|  | Fluent Auto Clicker | Others<sup>1</sup> |
+| --: | --- | --- |
+| Fast Clicking | :ballot_box_with_check: | :ballot_box_with_check: |
+| Custom Hotkeys | :ballot_box_with_check: | :ballot_box_with_check: |
+| Low memory footprint | :ballot_box_with_check: | :ballot_box_with_check: |
+| Fluent Design | :ballot_box_with_check: | :black_square_button: |
+| Light & Dark Theme | :ballot_box_with_check: | :black_square_button: |
+| Open-source | :ballot_box_with_check: | :black_square_button: |
+
 ### Lightning-Fast Clicking
 
 Experience 1ms intervals between clicks, allowing for up to 1000 clicks per second.
@@ -33,3 +42,5 @@ Fluent Auto Clicker is open-source, giving users full transparency about what's 
   <source media="(prefers-color-scheme: light)" srcset="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/ea30b709-fe74-4cec-b513-7aebf25d4270">
   <img src="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/ea30b709-fe74-4cec-b513-7aebf25d4270">
 </picture>
+
+###### <sup>1</sup> From top 5 most downloaded auto clickers from Microsoft Store October 2023
