@@ -2,7 +2,6 @@
 
 # Fluent Auto Clicker
 
-![GitHub top language](https://img.shields.io/github/languages/top/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)
