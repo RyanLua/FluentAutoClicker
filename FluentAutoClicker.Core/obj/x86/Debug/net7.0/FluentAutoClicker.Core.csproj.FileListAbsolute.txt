@@ -1,0 +1,12 @@
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\bin\x86\Debug\net7.0\FluentAutoClicker.Core.deps.json
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\bin\x86\Debug\net7.0\FluentAutoClicker.Core.dll
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\bin\x86\Debug\net7.0\FluentAutoClicker.Core.pdb
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\FluentAutoClicker.Core.csproj.AssemblyReference.cache
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\FluentAutoClicker.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\FluentAutoClicker.Core.AssemblyInfoInputs.cache
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\FluentAutoClicker.Core.AssemblyInfo.cs
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\FluentAutoClicker.Core.csproj.CoreCompileInputs.cache
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\FluentAutoClicker.Core.dll
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\refint\FluentAutoClicker.Core.dll
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\FluentAutoClicker.Core.pdb
+C:\Users\ryanl\source\repos\FluentAutoClicker\FluentAutoClicker.Core\obj\x86\Debug\net7.0\ref\FluentAutoClicker.Core.dll

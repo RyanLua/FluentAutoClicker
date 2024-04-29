@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "oNoz2guObrSkGUgN5NqYN1r+KdFuR2FjhxPatvF9fbmp/zLqci2Io/w5DC9tCh6Y0oiAu+CTcKWBstsdwFfYjQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ryanl\\source\\repos\\FluentAutoClicker\\FluentAutoClicker.Core\\FluentAutoClicker.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ryanl\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

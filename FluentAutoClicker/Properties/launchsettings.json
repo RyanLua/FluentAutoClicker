@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "FluentAutoClicker (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "FluentAutoClicker (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
