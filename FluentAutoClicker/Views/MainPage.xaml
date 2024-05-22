@@ -7,6 +7,153 @@
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Autoclicker intervals  -->
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="{StaticResource XSmallTopMargin}">
+            <TextBlock x:Uid="Main_Interval" />
+            <Grid Margin="{StaticResource XSmallTopMargin}" ColumnSpacing="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <NumberBox
+                    x:Name="Interval_Hours"
+                    x:Uid="Main_Interval_Hours"
+                    Grid.Column="0"
+                    AcceptsExpression="True"
+                    Maximum="48"
+                    PlaceholderText="24"
+                    SpinButtonPlacementMode="Hidden"
+                    Value="0" />
+                <NumberBox
+                    x:Name="Interval_Minutes"
+                    x:Uid="Main_Interval_Minutes"
+                    Grid.Column="1"
+                    AcceptsExpression="True"
+                    LargeChange="10"
+                    Maximum="60"
+                    PlaceholderText="60"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Hidden"
+                    Value="0" />
+                <NumberBox
+                    x:Name="Interval_Seconds"
+                    x:Uid="Main_Interval_Seconds"
+                    Grid.Column="2"
+                    AcceptsExpression="True"
+                    LargeChange="5"
+                    Maximum="60"
+                    PlaceholderText="60"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Hidden"
+                    Value="0" />
+                <NumberBox
+                    x:Name="Interval_Milliseconds"
+                    x:Uid="Main_Interval_Milliseconds"
+                    Grid.Column="3"
+                    AcceptsExpression="True"
+                    LargeChange="25"
+                    Maximum="1000"
+                    PlaceholderText="1000"
+                    SmallChange="5"
+                    SpinButtonPlacementMode="Hidden"
+                    Value="100" />
+            </Grid>
+            <ToolTipService.ToolTip>
+                <TextBlock x:Uid="Main_Interval_Tooltip" />
+            </ToolTipService.ToolTip>
+        </StackPanel>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="{StaticResource MediumTopMargin}">
+            <!--  Mouse button to click  -->
+            <ComboBox
+                x:Name="ButtonType"
+                x:Uid="Main_ButtonType"
+                SelectedIndex="0"
+                SelectionChanged="ButtonType_SelectionChanged">
+                <ComboBoxItem x:Uid="Main_ButtonType_Left" />
+                <ComboBoxItem x:Uid="Main_ButtonType_Middle" />
+                <ComboBoxItem x:Uid="Main_ButtonType_Right" />
+                <ToolTipService.ToolTip>
+                    <TextBlock x:Uid="Main_ButtonType_Tooltip" />
+                </ToolTipService.ToolTip>
+            </ComboBox>
+
+            <!--  Hotkey  -->
+            <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                <TextBlock x:Uid="Main_Hotkey" />
+                <Button
+                    Name="HotkeyButton"
+                    Margin="{StaticResource XSmallTopMargin}"
+                    Click="HotkeyButton_Click"
+                    Content="F6" />
+                <ToolTipService.ToolTip>
+                    <TextBlock x:Uid="Main_Hotkey_Tooltip" />
+                </ToolTipService.ToolTip>
+            </StackPanel>
+        </StackPanel>
+
+        <!--  Repeat type  -->
+        <RadioButtons
+            x:Name="RepeatTypeRadioButtons"
+            x:Uid="Main_RepeatType"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="{StaticResource MediumTopMargin}"
+            SelectedIndex="1"
+            SelectionChanged="RepeatTypeRadioButtons_SelectionChanged">
+            <NumberBox
+                x:Name="RepeatType_Clicks"
+                Margin="0,-4,0,0"
+                AcceptsExpression="True"
+                LargeChange="10"
+                Minimum="1"
+                PlaceholderText="100"
+                SmallChange="1"
+                SpinButtonPlacementMode="Compact"
+                ValueChanged="RepeatTypeNumberBox_ValueChanged"
+                Value="100" />
+            <RadioButton x:Uid="Main_RepeatType_InfiniteClicks" GroupName="RepeatType" />
+            <ToolTipService.ToolTip>
+                <TextBlock x:Uid="Main_RepeatType_Tooltip" />
+            </ToolTipService.ToolTip>
+        </RadioButtons>
+
+        <!--  Start Button  -->
+        <ToggleButton
+            x:Name="StartClicker"
+            x:Uid="Main_StartClicker"
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="{StaticResource MediumBottomMargin}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Command="{Binding StartClickerCommand}"
+            IsChecked="{Binding IsAutoclickerRunning, Mode=OneWay}">
+            <ToggleButton.KeyboardAccelerators>
+                <KeyboardAccelerator Key="F6" Invoked="KeyboardAccelerator_Invoked" />
+            </ToggleButton.KeyboardAccelerators>
+            <ToolTipService.ToolTip>
+                <TextBlock x:Uid="Main_StartClicker_Tooltip" />
+            </ToolTipService.ToolTip>
+        </ToggleButton>
     </Grid>
 </Page>

@@ -53,7 +53,7 @@ public sealed partial class ShellPage : Page
     {
         AppTitleBar.Margin = new Thickness()
         {
-            Left = sender.CompactPaneLength * (sender.DisplayMode == NavigationViewDisplayMode.Minimal ? 2 : 1),
+            Left = sender.CompactPaneLength,
             Top = AppTitleBar.Margin.Top,
             Right = AppTitleBar.Margin.Right,
             Bottom = AppTitleBar.Margin.Bottom
