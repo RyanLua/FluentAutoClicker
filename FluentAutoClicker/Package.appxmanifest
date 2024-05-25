@@ -12,13 +12,13 @@
 
   <Identity
     Name="f7f8ccef-b89e-4d7d-aeb0-46224b3ef962"
-    Publisher="CN=ryanl"
-    Version="1.0.0.0" />
+    Publisher="CN=Ryan Luu"
+    Version="0.0.1.0" />
     
   <mp:PhoneIdentity PhoneProductId="f7f8ccef-b89e-4d7d-aeb0-46224b3ef962" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
     
   <Properties>
-    <DisplayName>FluentAutoClicker</DisplayName>
+    <DisplayName>Fluent Auto Clicker</DisplayName>
     <PublisherDisplayName>Ryan Luu</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
