@@ -228,7 +228,7 @@
     <value>Select how many clicks before stopping</value>
   </data>
   <data name="Main_StartClicker.Content" xml:space="preserve">
-    <value>Start Auto Clicker</value>
+    <value>Start</value>
   </data>
   <data name="Main_StartClicker_Tooltip.Text" xml:space="preserve">
     <value>Start the auto clicker</value>
