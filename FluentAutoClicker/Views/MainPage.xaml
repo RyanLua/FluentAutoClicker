@@ -37,7 +37,7 @@
                     Grid.Column="0"
                     AcceptsExpression="True"
                     Maximum="48"
-                    PlaceholderText="24"
+                    PlaceholderText="0-24"
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
@@ -47,7 +47,7 @@
                     AcceptsExpression="True"
                     LargeChange="10"
                     Maximum="60"
-                    PlaceholderText="60"
+                    PlaceholderText="0-60"
                     SmallChange="1"
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
@@ -58,7 +58,7 @@
                     AcceptsExpression="True"
                     LargeChange="5"
                     Maximum="60"
-                    PlaceholderText="60"
+                    PlaceholderText="0-60"
                     SmallChange="1"
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
@@ -69,7 +69,7 @@
                     AcceptsExpression="True"
                     LargeChange="25"
                     Maximum="1000"
-                    PlaceholderText="1000"
+                    PlaceholderText="0-1000"
                     SmallChange="5"
                     SpinButtonPlacementMode="Hidden"
                     Value="100" />
