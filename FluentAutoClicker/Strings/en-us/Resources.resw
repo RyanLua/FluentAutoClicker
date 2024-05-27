@@ -145,13 +145,10 @@
     <value>About this application</value>
   </data>
   <data name="Settings_AboutDescription.Text" xml:space="preserve">
-    <value>TODO: Replace with your app description.</value>
+    <value>An beautifully designed open-source auto clicker for Windows 10 &amp; 11.</value>
   </data>
-  <data name="SettingsPage_PrivacyTermsLink.Content" xml:space="preserve">
-    <value>Privacy Statement</value>
-  </data>
-  <data name="SettingsPage_PrivacyTermsLink.NavigateUri" xml:space="preserve">
-    <value>https://YourPrivacyUrlGoesHere/</value>
+  <data name="SettingsPage_GitHubRepositoryLink.Content" xml:space="preserve">
+    <value>GitHub repository</value>
   </data>
   <data name="AppNotificationSamplePayload" xml:space="preserve">
     <value>&lt;toast launch="action=ToastClick"&gt;
@@ -232,5 +229,32 @@
   </data>
   <data name="Main_StartClicker_Tooltip.Text" xml:space="preserve">
     <value>Start the auto clicker</value>
+  </data>
+  <data name="SettingsPage_GitHubRepositoryLink.NavigateUri" xml:space="preserve">
+    <value>https://github.com/RyanLua/FluentAutoClicker</value>
+  </data>
+  <data name="SettingsPage_LicenseLink.Content" xml:space="preserve">
+    <value>Software license</value>
+  </data>
+  <data name="SettingsPage_LicenseLink.NavigateUri" xml:space="preserve">
+    <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/LICENSE.txt</value>
+  </data>
+  <data name="SettingsPage_DiscordLink.Content" xml:space="preserve">
+    <value>Discord server</value>
+  </data>
+  <data name="SettingsPage_DiscordLink.NavigateUri" xml:space="preserve">
+    <value>https://discord.gg/x7FJ4Kpd85</value>
+  </data>
+  <data name="SettingsPage_EmailLink.Content" xml:space="preserve">
+    <value>Email support</value>
+  </data>
+  <data name="SettingsPage_EmailLink.NavigateUri" xml:space="preserve">
+    <value>mailto:support@ryanluu.dev</value>
+  </data>
+  <data name="SettingsPage_TwitterLink.Content" xml:space="preserve">
+    <value>X (formerly Twitter)</value>
+  </data>
+  <data name="SettingsPage_TwitterLink.NavigateUri" xml:space="preserve">
+    <value>https://x.com/RaenLua</value>
   </data>
 </root>
