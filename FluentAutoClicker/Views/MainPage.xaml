@@ -23,6 +23,11 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             Margin="{StaticResource XSmallTopMargin}">
+            <InfoBar
+                IsOpen="True"
+                Severity="Warning"
+                Margin="{StaticResource SmallTopBottomMargin}"
+                Message="This version is a pre-release and bugs may occur." />
             <TextBlock x:Uid="Main_Interval" />
             <Grid Margin="{StaticResource XSmallTopMargin}" ColumnSpacing="4">
                 <Grid.ColumnDefinitions>
@@ -141,7 +146,7 @@
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            Margin="{StaticResource MediumBottomMargin}"
+            Margin="{StaticResource MediumTopBottomMargin}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom">
             <ToggleButton.IsChecked>
