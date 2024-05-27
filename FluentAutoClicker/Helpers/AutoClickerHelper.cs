@@ -1,24 +1,21 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Timers;
+﻿using System.Runtime.InteropServices;
 
 namespace FluentAutoClicker.Helpers;
 
 public static class AutoClickerHelper
 {
     [DllImport("user32.dll", SetLastError = true)]
-    private static extern uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
+    private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
 
     [StructLayout(LayoutKind.Sequential)]
-    private struct INPUT
+    private struct Input
     {
         public int type;
-        public INPUT_MOUSE mi;
+        public InputMouse mi;
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    private struct INPUT_MOUSE
+    private struct InputMouse
     {
         public int dx;
         public int dy;
@@ -29,22 +26,22 @@ public static class AutoClickerHelper
     }
 
     [Flags]
-    internal enum MOUSEEVENTF : uint
+    private enum MouseEventF : uint
     {
-        LEFTDOWN = 0x0002,
-        LEFTUP = 0x0004,
-        RIGHTDOWN = 0x0008,
-        RIGHTUP = 0x0010,
-        MIDDLEDOWN = 0x0020,
-        MIDDLEUP = 0x0040,
+        LeftDown = 0x0002,
+        LeftUp = 0x0004,
+        RightDown = 0x0008,
+        RightUp = 0x0010,
+        MiddleDown = 0x0020,
+        MiddleUp = 0x0040,
     }
 
     private static bool _isAutoClickerRunning;
     private static Thread? _autoClickerThread;
 
-    public static int clickInterval = 1000; // Milliseconds
-    public static int repeatAmount = 0; // How many clicks
-    public static int mouseButton = 0; // 0 = Left, 1 = Middle, 2 = Right
+    public static int ClickInterval = 1000; // Milliseconds
+    public static int RepeatAmount = 0; // How many clicks
+    public static int MouseButton = 0; // 0 = Left, 1 = Middle, 2 = Right
 
     public static bool IsAutoClickerRunning => _isAutoClickerRunning;
 
@@ -67,59 +64,59 @@ public static class AutoClickerHelper
 
         while (_isAutoClickerRunning)
         {
-            if (clickCount >= repeatAmount && repeatAmount != 0)
+            if (clickCount >= RepeatAmount && RepeatAmount != 0)
             {
                 StopAutoClicker();
                 break;
             }
 
-            if (mouseButton == 0)
+            switch (MouseButton)
             {
-                MouseEvent(0, 0, (uint)MOUSEEVENTF.LEFTDOWN, 0, 0, IntPtr.Zero);
-                MouseEvent(0, 0, (uint)MOUSEEVENTF.LEFTUP, 0, 0, IntPtr.Zero);
-            }
-            else if (mouseButton == 1)
-            {
-                MouseEvent(0, 0, (uint)MOUSEEVENTF.MIDDLEDOWN, 0, 0, IntPtr.Zero);
-                MouseEvent(0, 0, (uint)MOUSEEVENTF.MIDDLEUP, 0, 0, IntPtr.Zero);
-            }
-            else if (mouseButton == 2)
-            {
-                MouseEvent(0, 0, (uint)MOUSEEVENTF.RIGHTDOWN, 0, 0, IntPtr.Zero);
-                MouseEvent(0, 0, (uint)MOUSEEVENTF.RIGHTUP, 0, 0, IntPtr.Zero);
+                case 0:
+                    MouseEvent(0, 0, (uint)MouseEventF.LeftDown, 0, 0, IntPtr.Zero);
+                    MouseEvent(0, 0, (uint)MouseEventF.LeftUp, 0, 0, IntPtr.Zero);
+                    break;
+                case 1:
+                    MouseEvent(0, 0, (uint)MouseEventF.MiddleDown, 0, 0, IntPtr.Zero);
+                    MouseEvent(0, 0, (uint)MouseEventF.MiddleUp, 0, 0, IntPtr.Zero);
+                    break;
+                case 2:
+                    MouseEvent(0, 0, (uint)MouseEventF.RightDown, 0, 0, IntPtr.Zero);
+                    MouseEvent(0, 0, (uint)MouseEventF.RightUp, 0, 0, IntPtr.Zero);
+                    break;
             }
 
-            if (repeatAmount > 0)
+            if (RepeatAmount > 0)
             {
                 clickCount++;
             }
 
-            await Task.Delay(clickInterval);
+            await Task.Delay(ClickInterval);
         }
     }
 
     private static void MouseEvent(int dx, int dy, uint dwFlags, uint dwData, uint time, nint dwExtraInfo)
     {
-        INPUT[] inputs = new INPUT[2];
-        inputs[0] = MOUSEINPUT(dx, dy, dwData, dwFlags, time, dwExtraInfo);
-        inputs[1] = MOUSEINPUT(dx, dy, dwData, dwFlags, time, dwExtraInfo);
+        var inputs = new Input[2];
+        inputs[0] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
+        inputs[1] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
 
-        SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
+        SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
     }
 
-    private static INPUT MOUSEINPUT(int DX, int DY, uint MOUSEDATA, uint DWFLAGS, uint TIME, nint DWEXTRAINFO)
+    private static Input MouseInput(int dx, int dy, uint mouseData, uint dwFlags, uint time, nint dwExtraInfo)
     {
-        return new INPUT
+        return new Input
         {
-            type = 0, // INPUT_MOUSE
-            mi = new INPUT_MOUSE
+            type = 0,
+            mi = new InputMouse
             {
-                dx = DX,
-                dy = DY,
-                mouseData = MOUSEDATA,
-                dwFlags = DWFLAGS,
-                time = TIME,
-                dwExtraInfo = DWEXTRAINFO
+                dx = dx,
+                dy = dy,
+                mouseData = mouseData,
+                dwFlags = dwFlags,
+                time = time,
+                dwExtraInfo = dwExtraInfo
             }
         };
     }
