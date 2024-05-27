@@ -21,23 +21,23 @@ public sealed partial class MainPage : Page
         var comboBox = (ComboBox)sender;
         var mouseButtonIndex = comboBox.SelectedIndex;
 
-        AutoClickerHelper.mouseButton = mouseButtonIndex;
+        AutoClickerHelper.MouseButton = mouseButtonIndex;
 
-        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.mouseButton}");
+        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.MouseButton}");
     }
 
     private void SetClicker_Interval()
     {
-        var hours = Convert.ToInt32(Interval_Hours.Value);
-        var minutes = Convert.ToInt32(Interval_Minutes.Value);
-        var seconds = Convert.ToInt32(Interval_Seconds.Value);
-        var milliseconds = Convert.ToInt32(Interval_Milliseconds.Value);
+        var hours = Convert.ToInt32(IntervalHours.Value);
+        var minutes = Convert.ToInt32(IntervalMinutes.Value);
+        var seconds = Convert.ToInt32(IntervalSeconds.Value);
+        var milliseconds = Convert.ToInt32(IntervalMilliseconds.Value);
 
         var totalTimeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
 
-        AutoClickerHelper.clickInterval = totalTimeInMilliseconds;
+        AutoClickerHelper.ClickInterval = totalTimeInMilliseconds;
 
-        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.clickInterval}");
+        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.ClickInterval}");
     }
 
     private void IntervalNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
@@ -53,7 +53,7 @@ public sealed partial class MainPage : Page
     private void RepeatTypeNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
     {
         SetClicker_Repeat();
-        if (RepeatType_Clicks.Value != 100)
+        if (RepeatTypeClicks.Value != 100)
         {
             RepeatTypeRadioButtons.SelectedIndex = 0;
         }
@@ -61,19 +61,19 @@ public sealed partial class MainPage : Page
 
     private void SetClicker_Repeat()
     {
-        var repeatCount = Convert.ToInt32(RepeatType_Clicks.Value);
+        var repeatCount = Convert.ToInt32(RepeatTypeClicks.Value);
         var repeatTypeIndex = RepeatTypeRadioButtons.SelectedIndex;
 
         if (repeatTypeIndex == 0)
         {
-            AutoClickerHelper.repeatAmount = repeatCount;
+            AutoClickerHelper.RepeatAmount = repeatCount;
         }
         else
         {
-            AutoClickerHelper.repeatAmount = 0;
+            AutoClickerHelper.RepeatAmount = 0;
         }
 
-        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.repeatAmount}");
+        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.RepeatAmount}");
     }
 
 
@@ -126,4 +126,6 @@ public sealed partial class MainPage : Page
 
         var result = await dialog.ShowAsync();
     }
+
+    
 }

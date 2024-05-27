@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="ContentArea">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -17,7 +17,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!--  Autoclicker intervals  -->
+        <!--  Auto Clicker intervals  -->
         <StackPanel
             Grid.Row="0"
             Grid.Column="0"
@@ -32,7 +32,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <NumberBox
-                    x:Name="Interval_Hours"
+                    x:Name="IntervalHours"
                     x:Uid="Main_Interval_Hours"
                     Grid.Column="0"
                     AcceptsExpression="True"
@@ -41,7 +41,7 @@
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
-                    x:Name="Interval_Minutes"
+                    x:Name="IntervalMinutes"
                     x:Uid="Main_Interval_Minutes"
                     Grid.Column="1"
                     AcceptsExpression="True"
@@ -52,7 +52,7 @@
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
-                    x:Name="Interval_Seconds"
+                    x:Name="IntervalSeconds"
                     x:Uid="Main_Interval_Seconds"
                     Grid.Column="2"
                     AcceptsExpression="True"
@@ -63,7 +63,7 @@
                     SpinButtonPlacementMode="Hidden"
                     Value="0" />
                 <NumberBox
-                    x:Name="Interval_Milliseconds"
+                    x:Name="IntervalMilliseconds"
                     x:Uid="Main_Interval_Milliseconds"
                     Grid.Column="3"
                     AcceptsExpression="True"
@@ -84,7 +84,6 @@
             Margin="{StaticResource MediumTopMargin}">
             <!--  Mouse button to click  -->
             <ComboBox
-                x:Name="ButtonType"
                 x:Uid="Main_ButtonType"
                 SelectedIndex="0"
                 SelectionChanged="ButtonType_SelectionChanged">
@@ -100,7 +99,6 @@
             <StackPanel Margin="{StaticResource XSmallTopMargin}">
                 <TextBlock x:Uid="Main_Hotkey" />
                 <Button
-                    Name="HotkeyButton"
                     Margin="{StaticResource XSmallTopMargin}"
                     Click="HotkeyButton_Click"
                     Content="F6" />
@@ -120,7 +118,7 @@
             SelectedIndex="1"
             SelectionChanged="RepeatTypeRadioButtons_SelectionChanged">
             <NumberBox
-                x:Name="RepeatType_Clicks"
+                x:Name="RepeatTypeClicks"
                 Margin="0,-4,0,0"
                 AcceptsExpression="True"
                 LargeChange="10"
@@ -145,9 +143,13 @@
             Grid.ColumnSpan="2"
             Margin="{StaticResource MediumBottomMargin}"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Bottom"
-            Command="{Binding StartClickerCommand}"
-            IsChecked="{Binding IsAutoclickerRunning, Mode=OneWay}">
+            VerticalAlignment="Bottom">
+            <ToggleButton.IsChecked>
+                <Binding Path="IsAutoClickerRunning" Mode="OneWay" />
+            </ToggleButton.IsChecked>
+            <ToggleButton.Command>
+                <Binding Path="StartClickerCommand" />
+            </ToggleButton.Command>
             <ToggleButton.KeyboardAccelerators>
                 <KeyboardAccelerator Key="F6" Invoked="KeyboardAccelerator_Invoked" />
             </ToggleButton.KeyboardAccelerators>
