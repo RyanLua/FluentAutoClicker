@@ -1,11 +1,15 @@
-<img align=right src="assets/FluentAutoClicker.png" width="200px" />
+<p align="center">
+  <img alt="Fluent Auto Clicker" align=center src="assets/FluentAutoClicker.png" width="200px" />
+  <h1 align="center">Fluent Auto Clicker</h1>
+</p>
 
-# Fluent Auto Clicker
+<div align="center">
 
-![GitHub repo size](https://img.shields.io/github/repo-size/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)
-[![Discord](https://img.shields.io/discord/1162303282002272359?label=discord&color=0078d7&style=for-the-badge)](https://discord.gg/hYU4rvT7DK)
+  [![GitHub Repo stars](https://img.shields.io/github/stars/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)](https://github.com/RyanLua/FluentAutoClicker/stargazers)
+  [![GitHub](https://img.shields.io/github/license/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)](https://github.com/RyanLua/FluentAutoClicker/blob/main/LICENSE.txt)
+  [![Discord](https://img.shields.io/discord/1162303282002272359?label=discord&color=0078d7&style=for-the-badge)](https://discord.gg/hYU4rvT7DK)
+
+</div>
 
 Fluent Auto Clicker is a beautifully designed auto clicker for Windows 10 and 11. Following the latest Fluent Design guidelines and seamlessly blending into Windows.
 

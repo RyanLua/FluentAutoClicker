@@ -17,9 +17,9 @@ jobs:
 
     # TODO: Update environment variables.
     env:
-      Solution_Name: Fluent Auto Clicker.sln
-      Project_Name: Fluent Auto Clicker
-      Test_Project_Name: Fluent Auto Clicker.Tests.MSTest
+      Solution_Name: FluentAutoClicker.sln
+      Project_Name: FluentAutoClicker
+      Test_Project_Name: FluentAutoClicker.Tests.MSTest
 
     steps:
     - name: Checkout
