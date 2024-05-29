@@ -35,6 +35,7 @@ public static class AutoClickerHelper
         MiddleDown = 0x0020,
         MiddleUp = 0x0040,
     }
+    public static event Action? AutoClickerStopped;
 
     private static bool _isAutoClickerRunning;
     private static Thread? _autoClickerThread;
@@ -67,6 +68,7 @@ public static class AutoClickerHelper
             if (clickCount >= RepeatAmount && RepeatAmount != 0)
             {
                 StopAutoClicker();
+                AutoClickerStopped?.Invoke();
                 break;
             }
 

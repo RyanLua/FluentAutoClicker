@@ -14,6 +14,7 @@ public sealed partial class MainPage : Page
         InitializeComponent();
         StartClicker.Checked += StartClicker_Checked;
         StartClicker.Unchecked += StartClicker_Unchecked;
+        AutoClickerHelper.AutoClickerStopped += AutoClickerHelper_AutoClickerStopped;
     }
 
     private void ButtonType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -127,5 +128,11 @@ public sealed partial class MainPage : Page
         var result = await dialog.ShowAsync();
     }
 
-    
+    private void AutoClickerHelper_AutoClickerStopped()
+    {
+        _ = DispatcherQueue.TryEnqueue(() =>
+        {
+            StartClicker.IsChecked = false;
+        });
+    }
 }
