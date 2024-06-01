@@ -35,6 +35,12 @@ public sealed partial class MainPage : Page
 
         var totalTimeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
 
+        if (totalTimeInMilliseconds == 0)
+        {
+            totalTimeInMilliseconds = 1;
+            IntervalMilliseconds.Value = 1;
+        }
+
         AutoClickerHelper.ClickInterval = totalTimeInMilliseconds;
 
         Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.ClickInterval}");
