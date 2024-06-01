@@ -28,10 +28,33 @@ public sealed partial class MainPage : Page
 
     private void SetClicker_Interval()
     {
-        var hours = Convert.ToInt32(IntervalHours.Value);
-        var minutes = Convert.ToInt32(IntervalMinutes.Value);
-        var seconds = Convert.ToInt32(IntervalSeconds.Value);
-        var milliseconds = Convert.ToInt32(IntervalMilliseconds.Value);
+        int hours;
+        if (!Int32.TryParse(IntervalHours.Value.ToString(), out hours))
+        {
+            hours = 0;
+            IntervalHours.Value = hours;
+        }
+
+        int minutes;
+        if (!Int32.TryParse(IntervalMinutes.Value.ToString(), out minutes))
+        {
+            minutes = 0;
+            IntervalMinutes.Value = minutes;
+        }
+
+        int seconds;
+        if (!Int32.TryParse(IntervalSeconds.Value.ToString(), out seconds))
+        {
+            seconds = 0;
+            IntervalSeconds.Value = seconds;
+        }
+
+        int milliseconds;
+        if (!Int32.TryParse(IntervalMilliseconds.Value.ToString(), out milliseconds))
+        {
+            milliseconds = 100;
+            IntervalMilliseconds.Value = milliseconds;
+        }
 
         var totalTimeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
 
