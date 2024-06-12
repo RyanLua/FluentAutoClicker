@@ -1,16 +1,21 @@
-﻿using System.Diagnostics;
-using FluentAutoClicker.Helpers;
+﻿using FluentAutoClicker.Helpers;
+using FluentAutoClicker.ViewModels;
+
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Windows.Globalization.NumberFormatting;
 
 namespace FluentAutoClicker.Views;
 
 public sealed partial class MainPage : Page
 {
+    public MainViewModel ViewModel
+    {
+        get;
+    }
+
     public MainPage()
     {
+        ViewModel = App.GetService<MainViewModel>();
         InitializeComponent();
         StartClicker.Checked += StartClicker_Checked;
         StartClicker.Unchecked += StartClicker_Unchecked;
@@ -22,8 +27,6 @@ public sealed partial class MainPage : Page
         var mouseButtonIndex = comboBox.SelectedIndex;
 
         AutoClickerHelper.MouseButton = mouseButtonIndex;
-
-        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.MouseButton}");
     }
 
     private void SetClicker_Interval()
@@ -65,8 +68,6 @@ public sealed partial class MainPage : Page
         }
 
         AutoClickerHelper.ClickInterval = totalTimeInMilliseconds;
-
-        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.ClickInterval}");
     }
 
     private void IntervalNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
@@ -101,8 +102,6 @@ public sealed partial class MainPage : Page
         {
             AutoClickerHelper.RepeatAmount = 0;
         }
-
-        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.RepeatAmount}");
     }
 
 
@@ -112,14 +111,11 @@ public sealed partial class MainPage : Page
         AutoClickerHelper.StartAutoClicker();
         SetClicker_Interval();
         SetClicker_Repeat();
-
-        Debug.WriteLine($"Auto Clicker Running: {AutoClickerHelper.IsAutoClickerRunning}");
     }
 
     private void StartClicker_Unchecked(object sender, RoutedEventArgs e)
     {
         AutoClickerHelper.StopAutoClicker();
-        Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
     }
 
     private void KeyboardAccelerator_Invoked(Microsoft.UI.Xaml.Input.KeyboardAccelerator sender, Microsoft.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
@@ -127,15 +123,12 @@ public sealed partial class MainPage : Page
         if (AutoClickerHelper.IsAutoClickerRunning)
         {
             AutoClickerHelper.StopAutoClicker();
-            Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
         }
         else
         {
             AutoClickerHelper.StartAutoClicker();
             SetClicker_Interval();
             SetClicker_Repeat();
-
-            Debug.WriteLine($"Auto Clicker Running: {AutoClickerHelper.IsAutoClickerRunning}");
         }
     }
 
@@ -155,6 +148,4 @@ public sealed partial class MainPage : Page
 
         var result = await dialog.ShowAsync();
     }
-
-    
 }
