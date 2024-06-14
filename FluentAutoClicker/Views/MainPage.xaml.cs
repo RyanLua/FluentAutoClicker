@@ -3,6 +3,8 @@ using FluentAutoClicker.ViewModels;
 
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Input;
 
 namespace FluentAutoClicker.Views;
 
@@ -19,6 +21,7 @@ public sealed partial class MainPage : Page
         InitializeComponent();
         StartClicker.Checked += StartClicker_Checked;
         StartClicker.Unchecked += StartClicker_Unchecked;
+        AutoClickerHelper.AutoClickerStopped += AutoClickerHelper_AutoClickerStopped;
     }
 
     private void ButtonType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -70,15 +73,10 @@ public sealed partial class MainPage : Page
         AutoClickerHelper.ClickInterval = totalTimeInMilliseconds;
     }
 
-    private void IntervalNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
-    {
+    private void IntervalNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args) =>
         SetClicker_Interval();
-    }
 
-    private void RepeatTypeRadioButtons_SelectionChanged(object sender, RoutedEventArgs e)
-    {
-        SetClicker_Repeat();
-    }
+    private void RepeatTypeRadioButtons_SelectionChanged(object sender, RoutedEventArgs e) => SetClicker_Repeat();
 
     private void RepeatTypeNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
     {
@@ -104,21 +102,32 @@ public sealed partial class MainPage : Page
         }
     }
 
-
-    private void StartClicker_Checked(object sender, RoutedEventArgs e)
+    private async void StartClicker_Checked(object sender, RoutedEventArgs e)
     {
-        Thread.Sleep(1000);
+        var toggleButton = (ToggleButton)sender;
+        toggleButton.IsEnabled = false; // Uncheck the button
+
+        for (var i = 3; i > 0; i--)
+        {
+            toggleButton.Content = i.ToString();
+            await Task.Delay(1000);
+        }
+
+        toggleButton.IsEnabled = true;
+        toggleButton.Content = "Stop";
         AutoClickerHelper.StartAutoClicker();
         SetClicker_Interval();
         SetClicker_Repeat();
     }
 
-    private void StartClicker_Unchecked(object sender, RoutedEventArgs e)
+    private static void StartClicker_Unchecked(object sender, RoutedEventArgs e)
     {
+        var toggleButton = (ToggleButton)sender;
+        toggleButton.Content = "Start";
         AutoClickerHelper.StopAutoClicker();
     }
 
-    private void KeyboardAccelerator_Invoked(Microsoft.UI.Xaml.Input.KeyboardAccelerator sender, Microsoft.UI.Xaml.Input.KeyboardAcceleratorInvokedEventArgs args)
+    private void KeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
     {
         if (AutoClickerHelper.IsAutoClickerRunning)
         {
@@ -134,18 +143,25 @@ public sealed partial class MainPage : Page
 
     private async void HotkeyButton_Click(object sender, RoutedEventArgs e)
     {
-        ContentDialog dialog = new ContentDialog();
-
-        // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-        dialog.XamlRoot = this.XamlRoot;
-        dialog.Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style;
-        dialog.Title = "Set hotkey";
-        dialog.PrimaryButtonText = "Save";
-        dialog.SecondaryButtonText = "Reset";
-        dialog.CloseButtonText = "Cancel";
-        dialog.DefaultButton = ContentDialogButton.Primary;
-        dialog.Content = "Press any key to bind it as a hotkey.";
+        var dialog = new ContentDialog
+        {
+            // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+            XamlRoot = XamlRoot,
+            Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+            Title = "Set hotkey",
+            PrimaryButtonText = "Save",
+            SecondaryButtonText = "Reset",
+            CloseButtonText = "Cancel",
+            DefaultButton = ContentDialogButton.Primary,
+            Content = "Press any key to bind it as a hotkey."
+        };
 
         var result = await dialog.ShowAsync();
     }
+
+    private void AutoClickerHelper_AutoClickerStopped() =>
+        _ = DispatcherQueue.TryEnqueue(() =>
+        {
+            StartClicker.IsChecked = false;
+        });
 }
