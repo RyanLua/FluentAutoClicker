@@ -1,5 +1,6 @@
-﻿using System.Diagnostics;
-using FluentAutoClicker.Helpers;
+﻿using FluentAutoClicker.Helpers;
+using FluentAutoClicker.ViewModels;
+
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -9,8 +10,14 @@ namespace FluentAutoClicker.Views;
 
 public sealed partial class MainPage : Page
 {
+    public MainViewModel ViewModel
+    {
+        get;
+    }
+
     public MainPage()
     {
+        ViewModel = App.GetService<MainViewModel>();
         InitializeComponent();
         StartClicker.Checked += StartClicker_Checked;
         StartClicker.Unchecked += StartClicker_Unchecked;
@@ -23,22 +30,47 @@ public sealed partial class MainPage : Page
         var mouseButtonIndex = comboBox.SelectedIndex;
 
         AutoClickerHelper.MouseButton = mouseButtonIndex;
-
-        Debug.WriteLine($"Mouse Button: {AutoClickerHelper.MouseButton}");
     }
 
     private void SetClicker_Interval()
     {
-        var hours = Convert.ToInt32(IntervalHours.Value);
-        var minutes = Convert.ToInt32(IntervalMinutes.Value);
-        var seconds = Convert.ToInt32(IntervalSeconds.Value);
-        var milliseconds = Convert.ToInt32(IntervalMilliseconds.Value);
+        int hours;
+        if (!Int32.TryParse(IntervalHours.Value.ToString(), out hours))
+        {
+            hours = 0;
+            IntervalHours.Value = hours;
+        }
+
+        int minutes;
+        if (!Int32.TryParse(IntervalMinutes.Value.ToString(), out minutes))
+        {
+            minutes = 0;
+            IntervalMinutes.Value = minutes;
+        }
+
+        int seconds;
+        if (!Int32.TryParse(IntervalSeconds.Value.ToString(), out seconds))
+        {
+            seconds = 0;
+            IntervalSeconds.Value = seconds;
+        }
+
+        int milliseconds;
+        if (!Int32.TryParse(IntervalMilliseconds.Value.ToString(), out milliseconds))
+        {
+            milliseconds = 100;
+            IntervalMilliseconds.Value = milliseconds;
+        }
 
         var totalTimeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
 
-        AutoClickerHelper.ClickInterval = totalTimeInMilliseconds;
+        if (totalTimeInMilliseconds == 0)
+        {
+            totalTimeInMilliseconds = 1;
+            IntervalMilliseconds.Value = 1;
+        }
 
-        Debug.WriteLine($"Interval Time (Milliseconds): {AutoClickerHelper.ClickInterval}");
+        AutoClickerHelper.ClickInterval = totalTimeInMilliseconds;
     }
 
     private void IntervalNumberBox_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args) =>
@@ -68,8 +100,6 @@ public sealed partial class MainPage : Page
         {
             AutoClickerHelper.RepeatAmount = 0;
         }
-
-        Debug.WriteLine($"Repeat Count: {AutoClickerHelper.RepeatAmount}");
     }
 
     private async void StartClicker_Checked(object sender, RoutedEventArgs e)
@@ -88,8 +118,6 @@ public sealed partial class MainPage : Page
         AutoClickerHelper.StartAutoClicker();
         SetClicker_Interval();
         SetClicker_Repeat();
-
-        Debug.WriteLine($"Auto Clicker Running: {AutoClickerHelper.IsAutoClickerRunning}");
     }
 
     private static void StartClicker_Unchecked(object sender, RoutedEventArgs e)
@@ -97,7 +125,6 @@ public sealed partial class MainPage : Page
         var toggleButton = (ToggleButton)sender;
         toggleButton.Content = "Start";
         AutoClickerHelper.StopAutoClicker();
-        Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
     }
 
     private void KeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
@@ -105,15 +132,12 @@ public sealed partial class MainPage : Page
         if (AutoClickerHelper.IsAutoClickerRunning)
         {
             AutoClickerHelper.StopAutoClicker();
-            Debug.WriteLine($"Auto Clicker Stopped: {AutoClickerHelper.IsAutoClickerRunning}");
         }
         else
         {
             AutoClickerHelper.StartAutoClicker();
             SetClicker_Interval();
             SetClicker_Repeat();
-
-            Debug.WriteLine($"Auto Clicker Running: {AutoClickerHelper.IsAutoClickerRunning}");
         }
     }
 
