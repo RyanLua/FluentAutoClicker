@@ -11,6 +11,11 @@
 
 </div>
 
+> [!NOTE]
+> Fluent Auto Clicker is still in development and there is no stable release of it yet.
+> 
+> If you want to use it, you will need to compile it yourself using [Visual Studio](https://visualstudio.microsoft.com/).
+
 Fluent Auto Clicker is a beautifully designed auto clicker for Windows 10 and 11. Following the latest Fluent Design guidelines and seamlessly blending into Windows.
 
 We stand out as one of the fastest auto clickers, with a 1ms interval between clicks. Specially optimized for maximum clicking speed, clicking faster than even the most op auto clickers.
