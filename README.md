@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Fluent Auto Clicker" align=center src="assets/Logo.png" height="128px" />
+  <img alt="Fluent Auto Clicker" align=center src="assets/Logo.svg" height="128px" />
   <h1 align="center">Fluent Auto Clicker</h1>
 </p>
 
