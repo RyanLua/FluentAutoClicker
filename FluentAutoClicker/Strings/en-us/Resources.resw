@@ -138,6 +138,9 @@
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
     <value>Mouse button</value>
   </data>
+  <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Which mouse button to automatically click</value>
+  </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
     <value>Hours</value>
   </data>
@@ -153,16 +156,28 @@
   <data name="RadioButtonsClickRepeat.Header" xml:space="preserve">
     <value>Click repeat</value>
   </data>
+  <data name="RadioButtonsClickRepeat.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Stop clicking after a specified amount or until manually stopped</value>
+  </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
     <value>Until stopped</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
     <value>Click interval</value>
   </data>
+  <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
+    <value>How long between clicks</value>
+  </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
     <value>Hotkey</value>
   </data>
+  <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Which button to start the auto clicker</value>
+  </data>
   <data name="ToggleButtonStart.Content" xml:space="preserve">
     <value>Start</value>
+  </data>
+  <data name="ToggleButtonStart.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Start the auto clicker</value>
   </data>
 </root>
