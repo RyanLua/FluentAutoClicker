@@ -38,7 +38,7 @@ namespace FluentAutoClicker
             // register CTRL + B as a global hotkey
             var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
             var id = 1; // some arbitrary hotkey identifier
-            if (!RegisterHotKey(hwnd, id, MOD.MOD_CONTROL, VirtualKey.F6))
+            if (!RegisterHotKey(hwnd, id, MOD.MOD_NOREPEAT, VirtualKey.F6))
                 throw new Win32Exception(Marshal.GetLastWin32Error());
 
             Unloaded += (s, e) => UnregisterHotKey(hwnd, id); // unregister hotkey on window close
