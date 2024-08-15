@@ -1,53 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Package
-        xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-        xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-        xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-        xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-        IgnorableNamespaces="uap rescap">
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
 
-    <Identity
-            Name="ab2eaed9-3e9e-4d54-9f00-04a6852114c3"
-            Publisher="CN=ryanl"
-            Version="1.0.0.0"/>
+  <Identity
+    Name="c8834b5e-5154-437f-b765-e88d593041ac"
+    Publisher="CN=ryanl"
+    Version="1.0.0.0" />
 
-    <mp:PhoneIdentity PhoneProductId="ab2eaed9-3e9e-4d54-9f00-04a6852114c3"
-                      PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="c8834b5e-5154-437f-b765-e88d593041ac" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
-    <Properties>
+  <Properties>
         <DisplayName>ms-resource:AppDisplayName</DisplayName>
-        <PublisherDisplayName>ryanl</PublisherDisplayName>
-        <Logo>Assets\StoreLogo.png</Logo>
-    </Properties>
+    <PublisherDisplayName>ryanl</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
 
-    <Dependencies>
-        <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0"/>
-        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0"/>
-    </Dependencies>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
 
-    <Resources>
-        <Resource Language="x-generate"/>
-    </Resources>
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
 
-    <Applications>
-        <Application Id="App"
-                     Executable="$targetnametoken$.exe"
-                     EntryPoint="$targetentrypoint$">
-            <uap:VisualElements
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="$targetentrypoint$">
+      <uap:VisualElements
                     DisplayName="ms-resource:AppDisplayName"
                     Description="ms-resource:AppDescription"
-                    BackgroundColor="transparent"
-                    Square150x150Logo="Assets\Square150x150Logo.png"
-                    Square44x44Logo="Assets\Square44x44Logo.png">
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
                 <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png"
                                  Square310x310Logo="Assets\LargeTile.png"/>
                 <uap:SplashScreen Image="Assets\SplashScreen.png"/>
-            </uap:VisualElements>
-        </Application>
-    </Applications>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
 
-    <Capabilities>
-        <rescap:Capability Name="runFullTrust"/>
-    </Capabilities>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
 </Package>
