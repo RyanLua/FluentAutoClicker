@@ -30,8 +30,11 @@ namespace FluentAutoClicker
                 if (e.Message == WM_HOTKEY)
                 {
                     // click on the button using UI Automation
-                    var pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
-                    pattern.Toggle();
+                    if (StartToggleButton.IsEnabled == true)
+                    {
+                        var pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
+                        pattern.Toggle();
+                    }
                 }
             };
 
