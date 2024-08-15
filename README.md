@@ -23,9 +23,9 @@ We stand out as one of the fastest auto clickers, with a 1ms interval between cl
 Whether you're playing games like Roblox, Minecraft, Cookie Clicker, or tackling any task that requires precise clicking, Fluent Auto Clicker has you covered.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/eee955ac-4429-4262-ba84-48bf99c121d1">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/ea30b709-fe74-4cec-b513-7aebf25d4270">
-  <img src="https://github.com/RyanLua/FluentAutoClicker/assets/80087248/ea30b709-fe74-4cec-b513-7aebf25d4270">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/ScreenshotDark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/ScreenshotLight.png">
+  <img src="assets/ScreenshotLight.png">
 </picture>
 
 ## Features
