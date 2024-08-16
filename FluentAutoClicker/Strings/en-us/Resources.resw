@@ -121,10 +121,10 @@
     <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker</value>
+    <value>Fluent Auto Clicker (Preview)</value>
   </data>
   <data name="AppDisplaySubtitle" xml:space="preserve">
-    <value>Preview</value>
+    <value>v0.0.1.0</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
     <value>Left</value>
