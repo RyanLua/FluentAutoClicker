@@ -24,7 +24,7 @@
             Grid.ColumnSpan="2"
             HorizontalAlignment="Stretch"
             Spacing="{StaticResource StackPanelRowSpacing}">
-            <TextBlock x:Uid="TextBlockClickInterval" />
+            <TextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
             <Grid ColumnSpacing="{StaticResource RadioButtonsColumnSpacing}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -86,8 +86,8 @@
                 <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
                 <ComboBoxItem x:Uid="ComboBoxItemRight" />
             </ComboBox>
-            <TextBlock x:Uid="TextBlockHotkey" />
-            <Button Click="HotkeyButton_OnClick" Content="F6" />
+            <TextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
+            <Button x:Name="HotkeyButton" Click="HotkeyButton_OnClick" Content="F6" />
         </StackPanel>
         <RadioButtons
             x:Name="ClickRepeatType"
