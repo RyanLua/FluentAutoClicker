@@ -5,7 +5,8 @@
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  IgnorableNamespaces="uap rescap">
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+  IgnorableNamespaces="uap rescap uap5">
 
   <Identity
     Name="c8834b5e-5154-437f-b765-e88d593041ac"
@@ -43,7 +44,9 @@
           Wide310x150Logo="Assets\Wide310x150Logo.png" 
           Square71x71Logo="Assets\SmallTile.png"
           Square310x310Logo="Assets\LargeTile.png"/>
-        <uap:SplashScreen Image="Assets\SplashScreen.png"/>
+        <uap:SplashScreen 
+          uap5:Optional="false"
+          Image="Assets\SplashScreen.png"/>
       </uap:VisualElements>
     </Application>
   </Applications>
