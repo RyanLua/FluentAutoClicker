@@ -15,22 +15,28 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <WindowsSdkPackageVersion>10.0.19041.35-preview</WindowsSdkPackageVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Settings.XamlStyler" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Settings.XamlStyler" />
+  </ItemGroup>
 
   <ItemGroup>
-        <Content Include="Assets\SplashScreen.scale-200.png"/>
-        <Content Include="Assets\LockScreenLogo.scale-200.png"/>
-        <Content Include="Assets\Square150x150Logo.scale-200.png"/>
-        <Content Include="Assets\Square44x44Logo.scale-200.png"/>
-        <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png"/>
-        <Content Include="Assets\Wide310x150Logo.scale-200.png"/>
+        <Content Include="Assets\SplashScreen.scale-200.png" />
+        <Content Include="Assets\LockScreenLogo.scale-200.png" />
+        <Content Include="Assets\Square150x150Logo.scale-200.png" />
+        <Content Include="Assets\Square44x44Logo.scale-200.png" />
+        <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+        <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
 
   <ItemGroup>
-        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1"/>
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240701003-experimental2"/>
-        <PackageReference Include="WinUIEx" Version="2.3.4"/>
-        <Manifest Include="$(ApplicationManifest)"/>
+        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
+        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240701003-experimental2" />
+        <PackageReference Include="WinUIEx" Version="2.3.4" />
+        <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
   <!--
