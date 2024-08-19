@@ -53,7 +53,6 @@ namespace FluentAutoClicker
         NumberBoxMilliseconds.IsEnabled = isEnabled;
         MouseButtonTypeComboBox.IsEnabled = isEnabled;
         ClickRepeatType.IsEnabled = isEnabled;
-        ClickRepeatAmount.IsEnabled = isEnabled;
         //HotkeyButton.IsEnabled = isEnabled; 
 
         // Gray out text if disabled
