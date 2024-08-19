@@ -1,25 +1,49 @@
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
-
 using System;
-using System.Globalization;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
+using Windows.System;
+using System.Globalization;
+using System.Threading.Tasks;
+using Microsoft.UI.Xaml.Automation.Peers;
 
-namespace FluentAutoClicker;
-
-/// <summary>
-///     An empty page that can be used on its own or navigated to within a Frame.
-/// </summary>
-public sealed partial class MainPage
+namespace FluentAutoClicker
 {
-    public MainPage()
+    public sealed partial class MainPage : Page
     {
-        InitializeComponent();
-    }
+        public MainPage()
+        {
+            InitializeComponent();
+            Loaded += MainPage_Loaded;
+        }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            var hook = new WindowMessageHook(App.Window);
+            Unloaded += (s, e) => hook.Dispose(); // unhook on close
+            hook.Message += (s, e) =>
+            {
+                const int WM_HOTKEY = 0x312;
+                if (e.Message == WM_HOTKEY)
+                {
+                    // click on the button using UI Automation
+                    var pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
+                    pattern.Toggle();
+                }
+            };
+
+            // register CTRL + B as a global hotkey
+            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
+            var id = 1; // some arbitrary hotkey identifier
+            if (!RegisterHotKey(hwnd, id, MOD.MOD_NOREPEAT, VirtualKey.F6))
+                throw new Win32Exception(Marshal.GetLastWin32Error());
+
+            Unloaded += (s, e) => UnregisterHotKey(hwnd, id); // unregister hotkey on window close
+        }
 
     private void SetControlsEnabled(bool isEnabled)
     {
@@ -147,5 +171,24 @@ public sealed partial class MainPage
         StartToggleButton.Content = "Start";
         AutoClicker.StopAutoClicker();
         SetControlsEnabled(true);
+    }
+
+
+        // interop code for Windows API hotkey functions
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool RegisterHotKey(nint hWnd, int id, MOD fsModifiers, VirtualKey vk);
+
+        [DllImport("user32", SetLastError = true)]
+        private static extern bool UnregisterHotKey(nint hWnd, int id);
+
+        [Flags]
+        private enum MOD
+        {
+            MOD_ALT = 0x1,
+            MOD_CONTROL = 0x2,
+            MOD_SHIFT = 0x4,
+            MOD_WIN = 0x8,
+            MOD_NOREPEAT = 0x4000,
+        }
     }
 }

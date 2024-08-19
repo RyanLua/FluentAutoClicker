@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <Page
     x:Class="FluentAutoClicker.MainPage"
@@ -76,26 +76,33 @@
                     Value="100" />
             </Grid>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0" Spacing="{StaticResource StackPanelRowSpacing}">
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Spacing="{StaticResource StackPanelRowSpacing}">
             <ComboBox
                 x:Name="MouseButtonTypeComboBox"
                 x:Uid="ComboBoxMouseButton"
-                SelectionChanged="MouseButtonType_OnSelectionChanged"
-                SelectedIndex="0">
+                SelectedIndex="0"
+                SelectionChanged="MouseButtonType_OnSelectionChanged">
                 <ComboBoxItem x:Uid="ComboBoxItemLeft" />
                 <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
                 <ComboBoxItem x:Uid="ComboBoxItemRight" />
             </ComboBox>
             <TextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
-            <Button x:Name="HotkeyButton" Click="HotkeyButton_OnClick" Content="F6" />
+            <Button
+                x:Name="HotkeyButton"
+                Click="HotkeyButton_OnClick"
+                Content="F6"
+                IsEnabled="False" />
         </StackPanel>
         <RadioButtons
             x:Name="ClickRepeatType"
             x:Uid="RadioButtonsClickRepeat"
             Grid.Row="1"
             Grid.Column="1"
-            SelectionChanged="ClickRepeatType_OnSelectionChanged"
-            SelectedIndex="1">
+            SelectedIndex="1"
+            SelectionChanged="ClickRepeatType_OnSelectionChanged">
             <NumberBox
                 x:Name="ClickRepeatAmount"
                 AcceptsExpression="True"
@@ -116,8 +123,8 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
             Checked="StartToggleButton_OnChecked"
-            Unchecked="StartToggleButton_OnUnchecked"
-            VerticalAlignment="Bottom" />
+            Unchecked="StartToggleButton_OnUnchecked" />
     </Grid>
 </Page>
