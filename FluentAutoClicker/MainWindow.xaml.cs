@@ -20,6 +20,5 @@ public sealed partial class MainWindow
         AppWindow.SetIcon("Assets/WindowIcon.ico");
 
         AppTitleBar.Title = "AppDisplayName".GetLocalized();
-        AppTitleBar.Subtitle = "AppDisplaySubtitle".GetLocalized();
     }
 }
