@@ -16,6 +16,7 @@
     <WindowsSdkPackageVersion>10.0.19041.35-preview</WindowsSdkPackageVersion>
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
     <AssemblyName>Fluent Auto Clicker</AssemblyName>
+    <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
