@@ -17,7 +17,6 @@
     <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
     <AssemblyName>Fluent Auto Clicker</AssemblyName>
     <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
-    <Copyright>Ryan Luu</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +26,6 @@
         <Content Include="Assets\Square44x44Logo.scale-200.png" />
         <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
         <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
 
   <ItemGroup>
