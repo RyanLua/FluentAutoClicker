@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 using Windows.System;
 using System.Globalization;
 using System.Threading.Tasks;
@@ -43,6 +44,29 @@ namespace FluentAutoClicker
 
             Unloaded += (s, e) => UnregisterHotKey(hwnd, id); // unregister hotkey on window close
         }
+
+    private void SetControlsEnabled(bool isEnabled)
+    {
+        NumberBoxHours.IsEnabled = isEnabled;
+        NumberBoxMinutes.IsEnabled = isEnabled;
+        NumberBoxSeconds.IsEnabled = isEnabled;
+        NumberBoxMilliseconds.IsEnabled = isEnabled;
+        MouseButtonTypeComboBox.IsEnabled = isEnabled;
+        ClickRepeatType.IsEnabled = isEnabled;
+        //HotkeyButton.IsEnabled = isEnabled; 
+
+        // Gray out text if disabled
+        if (!isEnabled)
+        {
+            ClickIntervalTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseMediumLowBrush"] as Brush;
+            HotkeyTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseMediumLowBrush"] as Brush;
+        }
+        else
+        {
+            ClickIntervalTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseHighBrush"] as Brush;
+            HotkeyTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseHighBrush"] as Brush;
+        }
+    }
 
     private void SetClicker_Interval()
     {
@@ -121,6 +145,7 @@ namespace FluentAutoClicker
     private async void StartToggleButton_OnChecked(object sender, RoutedEventArgs e)
     {
         StartToggleButton.IsEnabled = false;
+        SetControlsEnabled(false);
 
         // 3-second countdown
         for (var i = 3; i > 0; i--)
@@ -144,6 +169,7 @@ namespace FluentAutoClicker
     {
         StartToggleButton.Content = "Start";
         AutoClicker.StopAutoClicker();
+        SetControlsEnabled(true);
     }
 
 
