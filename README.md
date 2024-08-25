@@ -7,7 +7,7 @@
 
   [![GitHub Repo stars](https://img.shields.io/github/stars/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)](https://github.com/RyanLua/FluentAutoClicker/stargazers)
   [![GitHub](https://img.shields.io/github/license/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)](https://github.com/RyanLua/FluentAutoClicker?tab=readme-ov-file#AGPL-3.0-1-ov-file)
-  [![Discord](https://img.shields.io/discord/1162303282002272359?label=discord&color=0078d7&style=for-the-badge)](https://discord.gg/hYU4rvT7DK)
+  [![Discord](https://img.shields.io/discord/1162303282002272359?label=discord&color=0078d7&style=for-the-badge)](https://discord.gg/32AMskrpFf)
 
 </div>
 
