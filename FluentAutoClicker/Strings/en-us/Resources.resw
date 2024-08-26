@@ -142,16 +142,16 @@
     <value>Which mouse button to automatically click</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>Hours</value>
+    <value>h</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>Milliseconds</value>
+    <value>ms</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>Minutes</value>
+    <value>m</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>Seconds</value>
+    <value>s</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
     <value>Click repeat</value>
@@ -179,5 +179,17 @@
   </data>
   <data name="ToggleButtonStart.ToolTipService.ToolTip" xml:space="preserve">
     <value>Start the auto clicker</value>
+  </data>
+  <data name="NumberBoxHours.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="NumberBoxMinutes.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="NumberBoxSeconds.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Seconds</value>
+  </data>
+  <data name="NumberBoxMilliseconds.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Milliseconds</value>
   </data>
 </root>
