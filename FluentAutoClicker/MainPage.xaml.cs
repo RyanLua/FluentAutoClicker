@@ -54,6 +54,11 @@ namespace FluentAutoClicker
             ClickRepeatCheckBox.IsEnabled = isEnabled;
             //HotkeyButton.IsEnabled = isEnabled; 
 
+            if (ClickOffsetCheckBox.IsChecked == true)
+            {
+                ClickOffsetAmount.IsEnabled = isEnabled;
+            }
+
             if (ClickRepeatCheckBox.IsChecked == true)
             {
                 ClickRepeatAmount.IsEnabled = isEnabled;
@@ -191,6 +196,21 @@ namespace FluentAutoClicker
             MOD_SHIFT = 0x4,
             MOD_WIN = 0x8,
             MOD_NOREPEAT = 0x4000,
+        }
+
+        private void ClickOffsetAmount_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
+        {
+
+        }
+
+        private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickOffsetCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
