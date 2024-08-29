@@ -105,6 +105,7 @@
                     Unchecked="ClickRepeatCheckBox_Unchecked" />
                 <NumberBox
                     x:Name="ClickRepeatAmount"
+                    HorizontalAlignment="Left"
                     AcceptsExpression="True"
                     IsEnabled="False"
                     LargeChange="10"
