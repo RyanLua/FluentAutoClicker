@@ -100,8 +100,8 @@
             <StackPanel Orientation="Vertical">
                 <CheckBox
                     x:Name="ClickRepeatCheckBox"
+                    x:Uid="ClickRepeatCheckBox"
                     Checked="ClickRepeatCheckBox_Checked"
-                    Content="Click repeat"
                     Unchecked="ClickRepeatCheckBox_Unchecked" />
                 <NumberBox
                     x:Name="ClickRepeatAmount"
