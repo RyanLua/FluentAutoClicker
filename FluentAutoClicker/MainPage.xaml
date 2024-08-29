@@ -96,25 +96,27 @@
                 Content="F6"
                 IsEnabled="False" />
         </StackPanel>
-        <RadioButtons
-            x:Name="ClickRepeatType"
-            x:Uid="RadioButtonsClickRepeat"
-            Grid.Row="1"
-            Grid.Column="1"
-            SelectedIndex="1"
-            SelectionChanged="ClickRepeatType_OnSelectionChanged">
-            <NumberBox
-                x:Name="ClickRepeatAmount"
-                AcceptsExpression="True"
-                LargeChange="10"
-                Minimum="1"
-                PlaceholderText="100"
-                SmallChange="1"
-                SpinButtonPlacementMode="Compact"
-                ValueChanged="ClickRepeatAmount_OnValueChanged"
-                Value="100" />
-            <RadioButton x:Uid="RadioButtonUntilStopped" />
-        </RadioButtons>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <CheckBox
+                    x:Name="ClickRepeatCheckBox"
+                    x:Uid="ClickRepeatCheckBox"
+                    Checked="ClickRepeatCheckBox_Checked"
+                    Unchecked="ClickRepeatCheckBox_Unchecked" />
+                <NumberBox
+                    x:Name="ClickRepeatAmount"
+                    HorizontalAlignment="Left"
+                    AcceptsExpression="True"
+                    IsEnabled="False"
+                    LargeChange="10"
+                    Minimum="1"
+                    PlaceholderText="100"
+                    SmallChange="1"
+                    SpinButtonPlacementMode="Compact"
+                    ValueChanged="ClickRepeatAmount_OnValueChanged"
+                    Value="100" />
+            </StackPanel>
+        </StackPanel>
 
         <ToggleButton
             x:Name="StartToggleButton"

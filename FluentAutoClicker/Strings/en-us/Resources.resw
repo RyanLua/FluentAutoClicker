@@ -153,10 +153,10 @@
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
     <value>Seconds</value>
   </data>
-  <data name="RadioButtonsClickRepeat.Header" xml:space="preserve">
+  <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
     <value>Click repeat</value>
   </data>
-  <data name="RadioButtonsClickRepeat.ToolTipService.ToolTip" xml:space="preserve">
+  <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
     <value>Stop clicking after a specified amount or until manually stopped</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
