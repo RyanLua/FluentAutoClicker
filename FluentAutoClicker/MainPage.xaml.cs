@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
@@ -58,10 +57,6 @@ namespace FluentAutoClicker
             if (ClickRepeatCheckBox.IsChecked == true)
             {
                 ClickRepeatAmount.IsEnabled = isEnabled;
-            }
-            else
-            {
-                ClickRepeatAmount.IsEnabled = false;
             }
 
             // Gray out text if disabled
@@ -137,21 +132,6 @@ namespace FluentAutoClicker
             await dialog.ShowAsync();
         }
 
-
-        /*private void ClickRepeatType_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (ClickRepeatType.SelectedIndex == 0)
-            {
-                ClickRepeatAmount.IsEnabled = true;
-                AutoClicker.RepeatAmount = (int)ClickRepeatAmount.Value;
-            }
-            else
-            {
-                ClickRepeatAmount.IsEnabled = false;
-                AutoClicker.RepeatAmount = 0;
-            }
-        }*/
-
         private async void StartToggleButton_OnChecked(object sender, RoutedEventArgs e)
         {
             StartToggleButton.IsEnabled = false;
@@ -182,6 +162,19 @@ namespace FluentAutoClicker
             SetControlsEnabled(true);
         }
 
+        private void ClickRepeatCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ClickRepeatAmount.IsEnabled = false;
+            AutoClicker.RepeatAmount = 0;
+            SetClicker_Interval();
+        }
+
+        private void ClickRepeatCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ClickRepeatAmount.IsEnabled = true;
+            AutoClicker.RepeatAmount = (int)ClickRepeatAmount.Value;
+            SetClicker_Interval();
+        }
 
         // interop code for Windows API hotkey functions
         [DllImport("user32", SetLastError = true)]
@@ -198,20 +191,6 @@ namespace FluentAutoClicker
             MOD_SHIFT = 0x4,
             MOD_WIN = 0x8,
             MOD_NOREPEAT = 0x4000,
-        }
-
-        private void ClickRepeatCheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            ClickRepeatAmount.IsEnabled = false;
-            AutoClicker.RepeatAmount = 0;
-            SetClicker_Interval();
-        }
-
-        private void ClickRepeatCheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            ClickRepeatAmount.IsEnabled = true;
-            AutoClicker.RepeatAmount = (int)ClickRepeatAmount.Value;
-            SetClicker_Interval();
         }
     }
 }
