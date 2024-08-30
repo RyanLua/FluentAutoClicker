@@ -124,6 +124,7 @@
                     Unchecked="ClickOffsetCheckBox_Unchecked" />
                 <NumberBox
                     x:Name="ClickOffsetAmount"
+                    ValueChanged="ClickOffsetAmount_ValueChanged"
                     HorizontalAlignment="Left"
                     AcceptsExpression="True"
                     IsEnabled="False"

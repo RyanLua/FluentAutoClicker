@@ -52,6 +52,7 @@ namespace FluentAutoClicker
             NumberBoxMilliseconds.IsEnabled = isEnabled;
             MouseButtonTypeComboBox.IsEnabled = isEnabled;
             ClickRepeatCheckBox.IsEnabled = isEnabled;
+            ClickOffsetCheckBox.IsEnabled = isEnabled;
             //HotkeyButton.IsEnabled = isEnabled; 
 
             if (ClickOffsetCheckBox.IsChecked == true)
@@ -200,17 +201,19 @@ namespace FluentAutoClicker
 
         private void ClickOffsetAmount_ValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
         {
-
+            AutoClicker.ClickOffset = (int)ClickOffsetAmount.Value;
         }
 
         private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-
+            ClickOffsetAmount.IsEnabled = false;
+            AutoClicker.ClickOffset = 0;
         }
 
         private void ClickOffsetCheckBox_Checked(object sender, RoutedEventArgs e)
         {
-
+            ClickOffsetAmount.IsEnabled = true;
+            AutoClicker.ClickOffset = (int)ClickOffsetAmount.Value;
         }
     }
 }

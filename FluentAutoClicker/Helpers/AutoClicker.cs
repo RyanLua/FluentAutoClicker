@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ public static class AutoClicker
     public static int ClickInterval = 1000; // Milliseconds
     public static int RepeatAmount = 0; // How many clicks
     public static int MouseButton = 0; // 0 = Left, 1 = Middle, 2 = Right
+    public static int ClickOffset = 0; // Milliseconds
     public static bool IsAutoClickerRunning { get; private set; }
 
     [DllImport("user32.dll", SetLastError = true)]
@@ -63,7 +65,9 @@ public static class AutoClicker
             }
 
             if (RepeatAmount > 0) clickCount++;
-            await Task.Delay(ClickInterval);
+            int RandomClickOffset = new Random().Next(ClickOffset);
+            Debug.WriteLine($"Clicking in {ClickInterval + RandomClickOffset}ms");
+            await Task.Delay(ClickInterval + RandomClickOffset);
         }
     }
 
