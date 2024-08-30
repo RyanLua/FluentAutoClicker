@@ -39,6 +39,7 @@
                     HorizontalAlignment="Stretch"
                     AcceptsExpression="True"
                     Maximum="48"
+                    Minimum="0"
                     PlaceholderText="0-24"
                     Value="0" />
                 <NumberBox
@@ -49,6 +50,7 @@
                     AcceptsExpression="True"
                     LargeChange="10"
                     Maximum="60"
+                    Minimum="0"
                     PlaceholderText="0-60"
                     SmallChange="1"
                     Value="0" />
@@ -60,6 +62,7 @@
                     AcceptsExpression="True"
                     LargeChange="5"
                     Maximum="60"
+                    Minimum="0"
                     PlaceholderText="0-60"
                     SmallChange="1"
                     Value="0" />
@@ -71,6 +74,7 @@
                     AcceptsExpression="True"
                     LargeChange="25"
                     Maximum="1000"
+                    Minimum="0"
                     PlaceholderText="0-1000"
                     SmallChange="5"
                     Value="100" />
@@ -106,7 +110,6 @@
                 <NumberBox
                     x:Name="ClickRepeatAmount"
                     HorizontalAlignment="Left"
-                    AcceptsExpression="True"
                     IsEnabled="False"
                     LargeChange="10"
                     Minimum="1"
@@ -124,15 +127,16 @@
                     Unchecked="ClickOffsetCheckBox_Unchecked" />
                 <NumberBox
                     x:Name="ClickOffsetAmount"
-                    ValueChanged="ClickOffsetAmount_ValueChanged"
                     HorizontalAlignment="Left"
                     AcceptsExpression="True"
                     IsEnabled="False"
                     LargeChange="25"
                     Maximum="1000"
+                    Minimum="1"
                     PlaceholderText="0-1000"
                     SmallChange="5"
                     SpinButtonPlacementMode="Compact"
+                    ValueChanged="ClickOffsetAmount_ValueChanged"
                     Value="10" />
             </StackPanel>
         </StackPanel>
