@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace FluentAutoClicker.Helpers;
 
+/// <summary>
+/// Helper for creating threads to synthesize mouse input.
+/// </summary>
 public static class AutoClicker
 {
     private static Thread _autoClickerThread;
