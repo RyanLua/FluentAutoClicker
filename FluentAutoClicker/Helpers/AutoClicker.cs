@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -66,7 +65,6 @@ public static class AutoClicker
 
             if (RepeatAmount > 0) clickCount++;
             int RandomClickOffset = new Random().Next(ClickOffset);
-            Debug.WriteLine($"Clicking in {ClickInterval + RandomClickOffset}ms");
             await Task.Delay(ClickInterval + RandomClickOffset);
         }
     }
