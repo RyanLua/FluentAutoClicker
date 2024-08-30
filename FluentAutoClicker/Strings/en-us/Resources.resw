@@ -123,9 +123,6 @@
   <data name="AppDisplayName" xml:space="preserve">
     <value>Fluent Auto Clicker (Preview)</value>
   </data>
-  <data name="AppDisplaySubtitle" xml:space="preserve">
-    <value>v0.0.1.0</value>
-  </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
     <value>Left</value>
   </data>
