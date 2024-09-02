@@ -87,8 +87,7 @@
             <ComboBox
                 x:Name="MouseButtonTypeComboBox"
                 x:Uid="ComboBoxMouseButton"
-                SelectedIndex="0"
-                SelectionChanged="MouseButtonType_OnSelectionChanged">
+                SelectedIndex="0">
                 <ComboBoxItem x:Uid="ComboBoxItemLeft" />
                 <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
                 <ComboBoxItem x:Uid="ComboBoxItemRight" />
@@ -96,7 +95,6 @@
             <TextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
             <Button
                 x:Name="HotkeyButton"
-                Click="HotkeyButton_OnClick"
                 Content="F6"
                 IsEnabled="False" />
         </StackPanel>
@@ -116,7 +114,6 @@
                     PlaceholderText="100"
                     SmallChange="1"
                     SpinButtonPlacementMode="Compact"
-                    ValueChanged="ClickRepeatAmount_OnValueChanged"
                     Value="100" />
             </StackPanel>
             <StackPanel Orientation="Vertical">
@@ -136,7 +133,6 @@
                     PlaceholderText="0-1000"
                     SmallChange="5"
                     SpinButtonPlacementMode="Compact"
-                    ValueChanged="ClickOffsetAmount_ValueChanged"
                     Value="10" />
             </StackPanel>
         </StackPanel>

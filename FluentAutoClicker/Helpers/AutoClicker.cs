@@ -10,22 +10,16 @@ namespace FluentAutoClicker.Helpers;
 /// </summary>
 public static class AutoClicker
 {
-    private static Thread _autoClickerThread;
-    public static int ClickInterval = 1000; // Milliseconds
-    public static int RepeatAmount = 0; // How many clicks
-    public static int MouseButton = 0; // 0 = Left, 1 = Middle, 2 = Right
-    public static int ClickOffset = 0; // Milliseconds
-    public static bool IsAutoClickerRunning { get; private set; }
-
     [DllImport("user32.dll", SetLastError = true)]
     private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
 
-    public static event Action AutoClickerStopped;
+    private static Thread _autoClickerThread;
+    private static bool IsAutoClickerRunning;
 
-    public static void StartAutoClicker()
+    public static void StartAutoClicker(int ClickInterval, int RepeatAmount, int MouseButton, int ClickOffset)
     {
         IsAutoClickerRunning = true;
-        _autoClickerThread = new Thread(AutoClickerThread);
+        _autoClickerThread = new Thread(() => AutoClickerThread(ClickInterval, RepeatAmount, MouseButton, ClickOffset));
         _autoClickerThread.Start();
     }
 
@@ -35,15 +29,15 @@ public static class AutoClicker
         _autoClickerThread?.Join();
     }
 
-    private static async void AutoClickerThread()
+    private static async void AutoClickerThread(int ClickInterval, int RepeatAmount, int MouseButton, int ClickOffset)
     {
         var clickCount = 0;
+        var random = new Random();
         while (IsAutoClickerRunning)
         {
             if (clickCount >= RepeatAmount && RepeatAmount != 0)
             {
                 StopAutoClicker();
-                OnAutoClickerStopped();
                 break;
             }
 
@@ -64,8 +58,9 @@ public static class AutoClicker
             }
 
             if (RepeatAmount > 0) clickCount++;
-            int RandomClickOffset = new Random().Next(ClickOffset);
-            await Task.Delay(ClickInterval + RandomClickOffset);
+
+            int randomClickOffset = random.Next(0, ClickOffset);
+            await Task.Delay(ClickInterval + randomClickOffset);
         }
     }
 
@@ -121,10 +116,5 @@ public static class AutoClicker
         RightUp = 0x0010,
         MiddleDown = 0x0020,
         MiddleUp = 0x0040
-    }
-
-    private static void OnAutoClickerStopped()
-    {
-        AutoClickerStopped?.Invoke();
     }
 }
