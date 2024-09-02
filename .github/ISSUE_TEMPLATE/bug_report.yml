@@ -45,9 +45,3 @@ body:
       label: Actual behavior
       description: What actually happened instead? If you have a screenshot or video, attach them.
       placeholder: When I do this, it instead does that
-  - type: textarea
-    id: other-details
-    attributes:
-      label: Other details
-      description: Is there anything else we should know or have?
-      placeholder: The bug can only be reproduced this percent of the time
