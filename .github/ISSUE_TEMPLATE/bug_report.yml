@@ -1,30 +1,30 @@
 name: Report a bug
-description: File a bug report.
-title: "Bug: "
+description: Something is not working correctly.
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this issue!
+      value: Thanks for taking the time to fill out this bug report! Your issue will be public, so **do not include any personal information**.
+  - type: input
+    id: version
+    attributes:
+      label: Fluent Auto Clicker version
+      description: Version in app settings. System Settings > Apps > Installed apps > Fluent Auto Clicker
+      placeholder: "1.0.0.0"
+  - type: input
+    id: windows-build
+    attributes:
+      label: Windows build number
+      description: Window OS build. System Settings > System > About > Windows specifictions
+      placeholder: "22631.4112"
   - type: textarea
     id: description
     attributes:
       label: Description
       description: A clear and concise description of what the bug is.
-      placeholder: Describe the bug
-  - type: textarea
-    id: expected-behavior
-    attributes:
-      label: What was expected?
-      description: What did you expect to happen?
-      placeholder: Tell us what you expected to see!
-  - type: textarea
-    id: actual-behavior
-    attributes:
-      label: What actually happened?
-      description: What happened instead?
-      placeholder: Tell us what actually happened!
+      placeholder: Write a brief sentence about the bug
+    validations:
+      required: true
   - type: textarea
     id: repro-steps
     attributes:
@@ -36,26 +36,14 @@ body:
         3. Scroll down to '...'
         4. See error
   - type: textarea
-    id: logs
+    id: expected-behavior
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output.
-      placeholder: |
-        Add any relevant log output here. This includes any errors or warnings.
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: When I do this, that is supposed to happen
   - type: textarea
-    id: other-details
+    id: actual-behavior
     attributes:
-      label: Other details
-      description: |
-        Anything else you would like to add?
-        (screenshots, links, videos, etc.)
-      placeholder: |
-        Any other details you would like to add? You can attach files here, this includes screenshots, videos, etc.
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: This project has a Code of Conduct that all participants are expected to understand and follow.
-      options:
-        - label: I have read and agree to the project's [Code of Conduct](https://github.com/RyanLua/FluentAutoClicker?tab=coc-ov-file)
-          required: true
+      label: Actual behavior
+      description: What actually happened instead? If you have a screenshot or video, attach them.
+      placeholder: When I do this, it instead does that

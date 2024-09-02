@@ -1,41 +1,19 @@
 name: Suggest an enhancement/feature
 description: Suggest an idea for this project.
-title: "Enhancement: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this issue!
+      value: Thanks for taking the time to fill out this feature request! Your issue will be public, so **do not include any personal information**.
   - type: textarea
-    id: problem-related
-    attributes:
-      label: Is your feature request related to a problem?
-      description: If so, please provide a clear and concise description of what the problem is.
-      placeholder: What is the problem?
+    attributes: 
+      label: Description
+      description: A clear and concise description of your proposed feature.
+      placeholder: Write a brief sentence about your idea
+    validations:
+      required: true
   - type: textarea
-    id: solution
     attributes:
-      label: Describe the solution you'd like
-      description: A clear and concise description of what you want to happen.
-      placeholder: What do you want to happen?
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Describe alternatives you've considered
-      description: A clear and concise description of any alternative solutions or features you've considered.
-      placeholder: What have you considered?
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional context
-      description: Add any other context or screenshots about the feature request here.
-      placeholder: Anything else? You can attach files here, this includes screenshots, videos, etc.
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: This project has a Code of Conduct that all participants are expected to understand and follow.
-      options:
-        - label: I have read and agree to the project's [Code of Conduct](https://github.com/RyanLua/FluentAutoClicker?tab=coc-ov-file)
-          required: true
+      label: Supporting information
+      description: Having additional evidence, data, tweets, blog posts, research, ... anything is extremely helpful.
+      placeholder: Add any supporting information that you think would be helpful
