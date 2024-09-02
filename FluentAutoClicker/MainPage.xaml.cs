@@ -52,7 +52,13 @@ namespace FluentAutoClicker
             NumberBoxMilliseconds.IsEnabled = isEnabled;
             MouseButtonTypeComboBox.IsEnabled = isEnabled;
             ClickRepeatCheckBox.IsEnabled = isEnabled;
+            ClickOffsetCheckBox.IsEnabled = isEnabled;
             //HotkeyButton.IsEnabled = isEnabled; 
+
+            if (ClickOffsetCheckBox.IsChecked == true)
+            {
+                ClickOffsetAmount.IsEnabled = isEnabled;
+            }
 
             if (ClickRepeatCheckBox.IsChecked == true)
             {
@@ -72,7 +78,7 @@ namespace FluentAutoClicker
             }
         }
 
-        private void SetClicker_Interval()
+        private int GetIntervalMilliseconds()
         {
             if (!Int32.TryParse(NumberBoxHours.Value.ToString(CultureInfo.InvariantCulture), out var hours))
             {
@@ -106,30 +112,7 @@ namespace FluentAutoClicker
                 NumberBoxMilliseconds.Value = 1;
             }
 
-            AutoClicker.ClickInterval = totalTimeInMilliseconds;
-        }
-
-        private void MouseButtonType_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            AutoClicker.MouseButton = MouseButtonTypeComboBox.SelectedIndex;
-        }
-
-        private async void HotkeyButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            var dialog = new ContentDialog
-            {
-                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-                XamlRoot = XamlRoot,
-                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                Title = "Set hotkey",
-                PrimaryButtonText = "Save",
-                SecondaryButtonText = "Reset",
-                CloseButtonText = "Cancel",
-                DefaultButton = ContentDialogButton.Primary,
-                Content = "Press any key to bind it as a hotkey."
-            };
-
-            await dialog.ShowAsync();
+            return totalTimeInMilliseconds;
         }
 
         private async void StartToggleButton_OnChecked(object sender, RoutedEventArgs e)
@@ -146,13 +129,29 @@ namespace FluentAutoClicker
 
             StartToggleButton.IsEnabled = true;
             StartToggleButton.Content = "Stop";
-            AutoClicker.StartAutoClicker();
-            SetClicker_Interval();
-        }
 
-        private void ClickRepeatAmount_OnValueChanged(NumberBox sender, NumberBoxValueChangedEventArgs args)
-        {
-            AutoClicker.RepeatAmount = (int)ClickRepeatAmount.Value;
+            int clickInterval = GetIntervalMilliseconds();
+            int repeatAmount = 0;
+            if (ClickRepeatCheckBox.IsEnabled == true)
+            {
+                repeatAmount = Convert.ToInt32(ClickRepeatAmount.Value);
+            }
+            else
+            {
+                repeatAmount = 0;
+            }
+            int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
+            int clickOffset = 0;
+            if (ClickOffsetCheckBox.IsChecked == true)
+            {
+                clickOffset = Convert.ToInt32(ClickOffsetAmount.Value);
+            }
+            else
+            {
+                clickOffset = 0;
+            }
+
+            AutoClicker.StartAutoClicker(clickInterval, repeatAmount, mouseButton, clickOffset);
         }
 
         private void StartToggleButton_OnUnchecked(object sender, RoutedEventArgs e)
@@ -165,15 +164,11 @@ namespace FluentAutoClicker
         private void ClickRepeatCheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             ClickRepeatAmount.IsEnabled = false;
-            AutoClicker.RepeatAmount = 0;
-            SetClicker_Interval();
         }
 
         private void ClickRepeatCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             ClickRepeatAmount.IsEnabled = true;
-            AutoClicker.RepeatAmount = (int)ClickRepeatAmount.Value;
-            SetClicker_Interval();
         }
 
         // interop code for Windows API hotkey functions
@@ -191,6 +186,15 @@ namespace FluentAutoClicker
             MOD_SHIFT = 0x4,
             MOD_WIN = 0x8,
             MOD_NOREPEAT = 0x4000,
+        }
+        private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ClickOffsetAmount.IsEnabled = false;
+        }
+
+        private void ClickOffsetCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ClickOffsetAmount.IsEnabled = true;
         }
     }
 }

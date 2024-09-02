@@ -139,22 +139,16 @@
     <value>Which mouse button to automatically click</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>Hours</value>
+    <value>hours</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>Milliseconds</value>
+    <value>milliseconds</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>Minutes</value>
+    <value>minutes</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>Seconds</value>
-  </data>
-  <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Click repeat</value>
-  </data>
-  <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop clicking after a specified amount or until manually stopped</value>
+    <value>seconds</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
     <value>Until stopped</value>
@@ -176,5 +170,20 @@
   </data>
   <data name="ToggleButtonStart.ToolTipService.ToolTip" xml:space="preserve">
     <value>Start the auto clicker</value>
+  </data>
+  <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
+    <value>Click repeat</value>
+  </data>
+  <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Stop clicking after a certain amount or until stopped</value>
+  </data>
+  <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
+    <value>Random offset</value>
+  </data>
+  <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Random interval offset between clicks</value>
+  </data>
+  <data name="ClickOffsetAmount" xml:space="preserve">
+    <value>Description</value>
   </data>
 </root>
