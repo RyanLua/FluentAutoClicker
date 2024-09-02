@@ -10,13 +10,13 @@ body:
     attributes:
       label: Fluent Auto Clicker version
       description: Version in app settings. System Settings > Apps > Installed apps > Fluent Auto Clicker
-      placeholder: 1.0.0.0
+      placeholder: "1.0.0.0"
   - type: input
     id: windows-build
     attributes:
       label: Windows build number
       description: Window OS build. System Settings > System > About > Windows specifictions
-      placeholder: 22631.4112
+      placeholder: "22631.4112"
   - type: textarea
     id: description
     attributes:
