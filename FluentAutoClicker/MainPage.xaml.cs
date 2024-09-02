@@ -141,7 +141,15 @@ namespace FluentAutoClicker
                 repeatAmount = 0;
             }
             int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
-            int clickOffset = Convert.ToInt32(ClickOffsetAmount.Value);
+            int clickOffset = 0;
+            if (ClickOffsetCheckBox.IsChecked == true)
+            {
+                clickOffset = Convert.ToInt32(ClickOffsetAmount.Value);
+            }
+            else
+            {
+                clickOffset = 0;
+            }
 
             AutoClicker.StartAutoClicker(clickInterval, repeatAmount, mouseButton, clickOffset);
         }
