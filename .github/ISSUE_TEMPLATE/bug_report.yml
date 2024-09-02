@@ -23,6 +23,8 @@ body:
       label: Description
       description: A clear and concise description of what the bug is.
       placeholder: Write a brief sentence about the bug
+    validations:
+      required: true
   - type: textarea
     id: repro-steps
     attributes:
