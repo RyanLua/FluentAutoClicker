@@ -33,6 +33,6 @@
         </TitleBar>
 
         <!--  App content  -->
-        <local:MainPage Grid.Row="1" Margin="{StaticResource ContentMargin}" />
+        <local:SettingsPage Grid.Row="1" Margin="{StaticResource ContentMargin}" />
     </Grid>
 </windowex:WindowEx>

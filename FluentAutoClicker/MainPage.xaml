@@ -152,7 +152,10 @@
                 Checked="StartToggleButton_OnChecked"
                 Unchecked="StartToggleButton_OnUnchecked" />
 
-            <Button PointerEntered="SettingsButton_PointerEntered" PointerExited="SettingsButton_PointerExited">
+            <Button
+                Click="SettingsButton_Click"
+                PointerEntered="SettingsButton_PointerEntered"
+                PointerExited="SettingsButton_PointerExited">
                 <AnimatedIcon x:Name="SearchAnimatedIcon" Height="20">
                     <AnimatedIcon.Source>
                         <animatedvisuals:AnimatedSettingsVisualSource />

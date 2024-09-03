@@ -18,6 +18,9 @@
     <AssemblyName>Fluent Auto Clicker</AssemblyName>
     <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="SettingsPage.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
         <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -29,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+        <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.0.240109" />
         <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
         <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240701003-experimental2" />
         <PackageReference Include="WinUIEx" Version="2.3.4" />
@@ -42,6 +46,11 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!--

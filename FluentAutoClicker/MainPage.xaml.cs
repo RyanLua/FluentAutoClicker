@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Windows.Devices.Enumeration;
 using Windows.System;
 
 namespace FluentAutoClicker
@@ -206,6 +207,11 @@ namespace FluentAutoClicker
         private void SettingsButton_PointerExited(object sender, PointerRoutedEventArgs e)
         {
             AnimatedIcon.SetState(this.SearchAnimatedIcon, "Normal");
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SettingsPage));
         }
     }
 }
