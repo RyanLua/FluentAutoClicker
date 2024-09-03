@@ -2,6 +2,7 @@ using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using System;
 using System.ComponentModel;
@@ -195,6 +196,16 @@ namespace FluentAutoClicker
         private void ClickOffsetCheckBox_Checked(object sender, RoutedEventArgs e)
         {
             ClickOffsetAmount.IsEnabled = true;
+        }
+
+        private void SettingsButton_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            AnimatedIcon.SetState(this.SearchAnimatedIcon, "PointerOver");
+        }
+
+        private void SettingsButton_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            AnimatedIcon.SetState(this.SearchAnimatedIcon, "Normal");
         }
     }
 }

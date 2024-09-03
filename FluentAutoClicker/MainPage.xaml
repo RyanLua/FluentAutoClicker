@@ -4,6 +4,7 @@
     x:Class="FluentAutoClicker.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -17,6 +18,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <StackPanel
             Grid.Row="0"
@@ -137,15 +139,29 @@
             </StackPanel>
         </StackPanel>
 
-        <ToggleButton
-            x:Name="StartToggleButton"
-            x:Uid="ToggleButtonStart"
+        <StackPanel
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
-            HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
-            Checked="StartToggleButton_OnChecked"
-            Unchecked="StartToggleButton_OnUnchecked" />
+            Orientation="Horizontal"
+            Spacing="{StaticResource StackPanelRowSpacing}">
+            <ToggleButton
+                x:Name="StartToggleButton"
+                x:Uid="ToggleButtonStart"
+                Checked="StartToggleButton_OnChecked"
+                Unchecked="StartToggleButton_OnUnchecked" />
+
+            <Button PointerEntered="SettingsButton_PointerEntered" PointerExited="SettingsButton_PointerExited">
+                <AnimatedIcon x:Name="SearchAnimatedIcon" Height="20">
+                    <AnimatedIcon.Source>
+                        <animatedvisuals:AnimatedSettingsVisualSource />
+                    </AnimatedIcon.Source>
+                    <AnimatedIcon.FallbackIconSource>
+                        <SymbolIconSource Symbol="Find" />
+                    </AnimatedIcon.FallbackIconSource>
+                </AnimatedIcon>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>
