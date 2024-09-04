@@ -39,6 +39,7 @@
                     <win:EntranceThemeTransition FromVerticalOffset="50" />
                     <win:RepositionThemeTransition IsStaggeringEnabled="False" />
                 </win:StackPanel.ChildrenTransitions>
+
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Appearance" />
                 <controls:SettingsCard
                     Description="Select which app theme to display"
@@ -50,6 +51,30 @@
                         <ComboBoxItem>Dark</ComboBoxItem>
                     </ComboBox>
                 </controls:SettingsCard>
+
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Behavior" />
+                <controls:SettingsCard
+                    Description="Hotkey for toggling the auto clicker on and off"
+                    Header="Toggle hotkey"
+                    HeaderIcon="{ui:FontIcon Glyph=&#xE92E;}" />
+
+                <controls:SettingsExpander
+                    Description="Specify default window behavior"
+                    Header="Window management"
+                    HeaderIcon="{ui:FontIcon Glyph=&#xE91B;}">
+
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox Content="Always on top" IsChecked="True" />
+                        </controls:SettingsCard>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox Content="Minimize on use" />
+                        </controls:SettingsCard>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox Content="Hide when minimized" />
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
 
                 <!--  Example 'About' section  -->
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
@@ -71,7 +96,10 @@
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
-                <HyperlinkButton Margin="0,8,0,0" Content="Send feedback" />
+                <HyperlinkButton
+                    Margin="0,8,0,0"
+                    Content="Send feedback"
+                    NavigateUri="https://github.com/RyanLua/FluentAutoClicker/issues/new/choose" />
             </StackPanel>
         </Grid>
     </ScrollViewer>
