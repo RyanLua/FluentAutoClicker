@@ -48,6 +48,18 @@
                         <ComboBoxItem>Dark</ComboBoxItem>
                     </ComboBox>
                 </controls:SettingsCard>
+                <controls:SettingsCard
+                    Description="Select system backdrop material for the window background"
+                    Header="Backdrop material"
+                    HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
+                    <ComboBox SelectedIndex="0">
+                        <ComboBoxItem>Mica</ComboBoxItem>
+                        <ComboBoxItem>Mica Alt</ComboBoxItem>
+                        <ComboBoxItem>Acrylic Base</ComboBoxItem>
+                        <ComboBoxItem>Acrylic Thin</ComboBoxItem>
+                        <ComboBoxItem>None</ComboBoxItem>
+                    </ComboBox>
+                </controls:SettingsCard>
 
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Behavior" />
                 <controls:SettingsCard
