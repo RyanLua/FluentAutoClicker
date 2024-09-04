@@ -26,13 +26,19 @@
             <RowDefinition Height="*" />
             <!--  App content  -->
         </Grid.RowDefinitions>
-        <TitleBar x:Name="AppTitleBar" Margin="0,0,-138,0">
+        <TitleBar
+            x:Name="AppTitleBar"
+            Margin="0,0,-138,0"
+            BackRequested="AppTitleBar_BackRequested">
             <!--<TitleBar.IconSource>
                 <ImageIconSource ImageSource="ms-appx:///Assets/WindowIcon.ico" />
             </TitleBar.IconSource>-->
         </TitleBar>
 
         <!--  App content  -->
-        <local:SettingsPage Grid.Row="1" Margin="{StaticResource ContentMargin}" />
+        <Frame
+            x:Name="MainFrame"
+            Grid.Row="1"
+            Margin="{StaticResource ContentMargin}" />
     </Grid>
 </windowex:WindowEx>
