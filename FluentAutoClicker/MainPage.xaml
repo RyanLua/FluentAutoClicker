@@ -139,20 +139,26 @@
             </StackPanel>
         </StackPanel>
 
-        <StackPanel
+        <Grid
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2"
             VerticalAlignment="Bottom"
-            Orientation="Horizontal"
-            Spacing="{StaticResource StackPanelRowSpacing}">
+            ColumnSpacing="{StaticResource StackPanelRowSpacing}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
             <ToggleButton
                 x:Name="StartToggleButton"
                 x:Uid="ToggleButtonStart"
+                Grid.Column="0"
+                HorizontalAlignment="Stretch"
                 Checked="StartToggleButton_OnChecked"
                 Unchecked="StartToggleButton_OnUnchecked" />
 
             <Button
+                Grid.Column="1"
                 Click="SettingsButton_Click"
                 PointerEntered="SettingsButton_PointerEntered"
                 PointerExited="SettingsButton_PointerExited">
@@ -165,6 +171,6 @@
                     </AnimatedIcon.FallbackIconSource>
                 </AnimatedIcon>
             </Button>
-        </StackPanel>
+        </Grid>
     </Grid>
 </Page>
