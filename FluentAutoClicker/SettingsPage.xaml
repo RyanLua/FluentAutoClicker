@@ -29,16 +29,13 @@
     </Page.Resources>
 
     <ScrollViewer>
-        <Grid>
+        <Grid Margin="{StaticResource ContentMargin}">
             <StackPanel
                 MaxWidth="1000"
                 HorizontalAlignment="Stretch"
                 Spacing="{StaticResource SettingsCardSpacing}">
 
-                <win:StackPanel.ChildrenTransitions>
-                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                </win:StackPanel.ChildrenTransitions>
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="Settings" />
 
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Appearance" />
                 <controls:SettingsCard

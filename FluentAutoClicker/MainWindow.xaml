@@ -36,9 +36,6 @@
         </TitleBar>
 
         <!--  App content  -->
-        <Frame
-            x:Name="MainFrame"
-            Grid.Row="1"
-            Margin="{StaticResource ContentMargin}" />
+        <Frame x:Name="MainFrame" Grid.Row="1" />
     </Grid>
 </windowex:WindowEx>
