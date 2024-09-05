@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "components": [
+    "Microsoft.VisualStudio.Component.CoreEditor",
+    "Microsoft.VisualStudio.Workload.CoreEditor",
+    "Microsoft.VisualStudio.Component.Roslyn.Compiler",
+    "Microsoft.VisualStudio.Component.Roslyn.LanguageServices",
+    "Microsoft.VisualStudio.Component.NuGet",
+    "Microsoft.VisualStudio.Component.SQL.CLR",
+    "Microsoft.NetCore.Component.Runtime.8.0",
+    "Microsoft.NetCore.Component.SDK",
+    "Microsoft.VisualStudio.Component.AppInsights.Tools",
+    "Microsoft.VisualStudio.Component.DiagnosticTools",
+    "Microsoft.NetCore.Component.Runtime.6.0",
+    "Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs",
+    "Microsoft.ComponentGroup.Blend",
+    "Microsoft.Component.NetFX.Native",
+    "Microsoft.VisualStudio.Component.Graphics",
+    "Microsoft.VisualStudio.ComponentGroup.WindowsAppDevelopment.Prerequisites",
+    "Microsoft.VisualStudio.ComponentGroup.UWP.NetCoreAndStandard",
+    "Microsoft.VisualStudio.Workload.Universal"
+  ],
+  "extensions": [
+    "https://marketplace.visualstudio.com/items?itemName=TeamXavalon.XAMLStyler2022"
+  ]
+}
