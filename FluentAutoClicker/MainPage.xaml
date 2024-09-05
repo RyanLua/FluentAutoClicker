@@ -39,6 +39,7 @@
                     HorizontalAlignment="Stretch"
                     AcceptsExpression="True"
                     Maximum="48"
+                    Minimum="0"
                     PlaceholderText="0-24"
                     Value="0" />
                 <NumberBox
@@ -49,6 +50,7 @@
                     AcceptsExpression="True"
                     LargeChange="10"
                     Maximum="60"
+                    Minimum="0"
                     PlaceholderText="0-60"
                     SmallChange="1"
                     Value="0" />
@@ -60,6 +62,7 @@
                     AcceptsExpression="True"
                     LargeChange="5"
                     Maximum="60"
+                    Minimum="0"
                     PlaceholderText="0-60"
                     SmallChange="1"
                     Value="0" />
@@ -71,6 +74,7 @@
                     AcceptsExpression="True"
                     LargeChange="25"
                     Maximum="1000"
+                    Minimum="0"
                     PlaceholderText="0-1000"
                     SmallChange="5"
                     Value="100" />
@@ -83,8 +87,7 @@
             <ComboBox
                 x:Name="MouseButtonTypeComboBox"
                 x:Uid="ComboBoxMouseButton"
-                SelectedIndex="0"
-                SelectionChanged="MouseButtonType_OnSelectionChanged">
+                SelectedIndex="0">
                 <ComboBoxItem x:Uid="ComboBoxItemLeft" />
                 <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
                 <ComboBoxItem x:Uid="ComboBoxItemRight" />
@@ -92,7 +95,6 @@
             <TextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
             <Button
                 x:Name="HotkeyButton"
-                Click="HotkeyButton_OnClick"
                 Content="F6"
                 IsEnabled="False" />
         </StackPanel>
@@ -106,15 +108,32 @@
                 <NumberBox
                     x:Name="ClickRepeatAmount"
                     HorizontalAlignment="Left"
-                    AcceptsExpression="True"
                     IsEnabled="False"
                     LargeChange="10"
                     Minimum="1"
                     PlaceholderText="100"
                     SmallChange="1"
                     SpinButtonPlacementMode="Compact"
-                    ValueChanged="ClickRepeatAmount_OnValueChanged"
                     Value="100" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <CheckBox
+                    x:Name="ClickOffsetCheckBox"
+                    x:Uid="ClickOffsetCheckBox"
+                    Checked="ClickOffsetCheckBox_Checked"
+                    Unchecked="ClickOffsetCheckBox_Unchecked" />
+                <NumberBox
+                    x:Name="ClickOffsetAmount"
+                    HorizontalAlignment="Left"
+                    AcceptsExpression="True"
+                    IsEnabled="False"
+                    LargeChange="25"
+                    Maximum="1000"
+                    Minimum="1"
+                    PlaceholderText="0-1000"
+                    SmallChange="5"
+                    SpinButtonPlacementMode="Compact"
+                    Value="10" />
             </StackPanel>
         </StackPanel>
 
