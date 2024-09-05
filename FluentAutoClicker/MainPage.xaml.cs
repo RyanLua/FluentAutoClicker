@@ -55,6 +55,7 @@ namespace FluentAutoClicker
             MouseButtonTypeComboBox.IsEnabled = isEnabled;
             ClickRepeatCheckBox.IsEnabled = isEnabled;
             ClickOffsetCheckBox.IsEnabled = isEnabled;
+            SettingsButton.IsEnabled = isEnabled;
             //HotkeyButton.IsEnabled = isEnabled; 
 
             if (ClickOffsetCheckBox.IsChecked == true)
