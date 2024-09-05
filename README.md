@@ -14,11 +14,11 @@
 > [!NOTE]
 > Fluent Auto Clicker is still in development and there is no stable release of it yet. If you want to use it, you will need to compile it yourself using [Visual Studio](https://visualstudio.microsoft.com/).
 >
-> If you want to support us, consider [staring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) or [becoming a patron](https://www.patreon.com/RyanLuu).
+> If you want to support us, consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) or [becoming a patron](https://www.patreon.com/RyanLuu).
 
 Fluent Auto Clicker is a beautifully designed auto clicker for Windows 10 and 11. Following the latest Fluent Design guidelines and seamlessly blending into Windows.
 
-We stand out as one of the fastest auto clickers, with a 1ms interval between clicks. Specially optimized for maximum clicking speed, clicking faster than even the most op auto clickers.
+We stand out as one of the fastest auto clickers, with a 1ms interval between clicks. Specially optimized for maximum clicking speed, clicking faster than even the most overpowered auto clickers.
 
 Whether you're playing games like Roblox, Minecraft, Cookie Clicker, or tackling any task that requires precise clicking, Fluent Auto Clicker has you covered.
 
@@ -61,6 +61,6 @@ We welcome contributions from everyone. Before contributing, read the [contribut
 
 First-time contributor? Make your first contribution to this repository by tackling one a ["good first issue."](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
-More experienced? Consider checking out a ["help wanted issue"](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
+More experienced? Consider checking out a ["help wanted issue."](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
 
-###### <sup>1</sup> From top 5 most downloaded auto clickers from Microsoft Store October 2023
+###### <sup>1</sup> From the top 5 most downloaded auto clickers from Microsoft Store October 2023
