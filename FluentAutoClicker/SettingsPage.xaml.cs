@@ -12,6 +12,7 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Windows.ApplicationModel;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,6 +27,22 @@ namespace FluentAutoClicker
         public SettingsPage()
         {
             this.InitializeComponent();
+            AppAboutSettingsExpander.Header = AppName;
+            AppVersionTextBlock.Text = AppVersion;
+        }
+
+        public static string AppName
+        {
+            get { return Package.Current.Id.Name; }
+        }
+
+        public static string AppVersion
+        {
+            get
+            {
+                PackageVersion version = Package.Current.Id.Version;
+                return $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
+            }
         }
     }
 }
