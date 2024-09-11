@@ -57,7 +57,7 @@ Fluent Auto Clicker is open-source, giving users full transparency about what's 
 
 ## Contributing
 
-We welcome contributions from everyone. Before contributing, read the [contribution guidelines](https://github.com/RyanLua/FluentAutoClicker/blob/7d628732578d62b91334eea39a2669083d17b842/.github/CONTRIBUTING.md).
+We welcome contributions from everyone. Before contributing, read the [contribution guidelines](https://github.com/RyanLua/FluentAutoClicker/blob/main/.github/CONTRIBUTING.md).
 
 First-time contributor? Make your first contribution to this repository by tackling one a ["good first issue."](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
