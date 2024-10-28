@@ -63,4 +63,12 @@ First-time contributor? Make your first contribution to this repository by tackl
 
 More experienced? Consider checking out a ["help wanted issue."](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
 
+## License
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License along with this program. A copy of the GNU Affero General Public License is available in the [`COPYING`](COPYING) file in the root of this repository. If not, see <https://www.gnu.org/licenses/>.
+
 ###### <sup>1</sup> From the top 5 most downloaded auto clickers from Microsoft Store October 2023
