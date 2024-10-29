@@ -1,7 +1,6 @@
 ---
 name: Enhancement/Feature pull request
 about: Enhancement/Feature pull request template.
-title: "Enhancement: "
 labels: ["enhancement"]
 assignees: ''
 

@@ -1,7 +1,6 @@
 ---
 name: Bug fix pull request
 about: Bug fix pull request template.
-title: "Fix: "
 labels: ["bug"]
 assignees: ''
 
