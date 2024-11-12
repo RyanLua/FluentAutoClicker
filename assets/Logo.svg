@@ -1,21 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="280" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="280">
   <path fill="url(#a)" d="M0 60C0 27 27 0 60 0h60c33 0 60 27 60 60v130a90 90 0 1 1-180 0V60Z"/>
-  <g filter="url(#b)">
-    <path fill="url(#c)" d="M95 46V0H85v46c-6 2-10 7-10 14v30c0 7 4 12 10 14v16a5 5 0 0 0 10 0v-16c6-2 10-7 10-14V60c0-7-4-12-10-14Z"/>
-  </g>
+  <path fill="url(#b)" d="M95 46V0H85v46c-6 2-10 7-10 14v30c0 7 4 12 10 14v16a5 5 0 0 0 10 0v-16c6-2 10-7 10-14V60c0-7-4-12-10-14Z"/>
   <defs>
     <linearGradient id="a" x1="135" x2="-31" y1="261" y2="76" gradientUnits="userSpaceOnUse">
       <stop stop-color="#1493DF"/>
       <stop offset="1" stop-color="#50E6FF"/>
     </linearGradient>
-    <linearGradient id="c" x1="97" x2="44" y1="116" y2="94" gradientUnits="userSpaceOnUse">
+    <linearGradient id="b" x1="97" x2="44" y1="116" y2="94" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0C59A4"/>
       <stop offset="1" stop-color="#0078D4"/>
     </linearGradient>
-    <filter id="b" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="10"/>
-      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-      <feBlend in="SourceGraphic"/>
-    </filter>
   </defs>
 </svg>
