@@ -45,11 +45,7 @@
             <RowDefinition Height="*" />
             <!--  App content  -->
         </Grid.RowDefinitions>
-        <TitleBar x:Name="AppTitleBar" Margin="0,0,-138,0">
-            <!--<TitleBar.IconSource>
-                <ImageIconSource ImageSource="ms-appx:///Assets/WindowIcon.ico" />
-            </TitleBar.IconSource>-->
-        </TitleBar>
+        <windowex:TitleBar x:Name="AppTitleBar" />
 
         <!--  App content  -->
         <local:MainPage Grid.Row="1" Margin="{StaticResource ContentMargin}" />
