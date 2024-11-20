@@ -29,6 +29,8 @@
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <Authors>Ryan Luu</Authors>
+    <Copyright>Copyright (C) 2024 Ryan Luu</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
