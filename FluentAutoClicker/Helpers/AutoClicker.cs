@@ -88,7 +88,7 @@ public static class AutoClicker
         var inputs = new Input[2];
         inputs[0] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
         inputs[1] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
-        SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
+        SendInput((uint)inputs.Length, inputs, Marshal.SizeOf<Input>());
     }
 
     private static Input MouseInput(int dx, int dy, uint mouseData, uint dwFlags, uint time, nint dwExtraInfo)
