@@ -25,33 +25,24 @@
     <RootNamespace>FluentAutoClicker</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>x86;x64;ARM64</Platforms>
-    <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &gt;= 8">win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-    <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
-    <NoWarn>8305</NoWarn>
-    <MSBuildWarningsAsMessages>WMC1501</MSBuildWarningsAsMessages>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
-    <WindowsSdkPackageVersion>10.0.19041.57</WindowsSdkPackageVersion>
-    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
-    <AssemblyName>Fluent Auto Clicker</AssemblyName>
-    <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-        <Content Include="Assets\SplashScreen.scale-200.png" />
-        <Content Include="Assets\LockScreenLogo.scale-200.png" />
-        <Content Include="Assets\Square150x150Logo.scale-200.png" />
-        <Content Include="Assets\Square44x44Logo.scale-200.png" />
-        <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-        <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <!--<Content Include="Assets\StoreLogo.png" />-->
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
 
   <ItemGroup>
-        <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
-        <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
-        <PackageReference Include="WinUIEx" Version="2.5.0" />
-        <Manifest Include="$(ApplicationManifest)" />
+    <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
   <!--
@@ -62,6 +53,11 @@
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
+    <PackageReference Include="WinUIEx" Version="2.5.0" />
+  </ItemGroup>
 
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
@@ -70,5 +66,13 @@
   -->
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+  </PropertyGroup>
+
+  <!-- Publish Properties -->
+  <PropertyGroup>
+    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
+    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+    <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
+    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
   </PropertyGroup>
 </Project>
