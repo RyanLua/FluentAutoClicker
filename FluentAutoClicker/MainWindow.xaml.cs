@@ -33,11 +33,9 @@ public sealed partial class MainWindow
     {
         InitializeComponent();
 
-        Title = "AppDisplayName".GetLocalized();
         ExtendsContentIntoTitleBar = true;
-        SetTitleBar(AppTitleBar);
+        Title = "AppDisplayName".GetLocalized();
         AppWindow.SetIcon("Assets/WindowIcon.ico");
-
         AppTitleBar.Title = "AppDisplayName".GetLocalized();
     }
 }
