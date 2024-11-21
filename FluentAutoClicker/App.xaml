@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-    Copyright (C) 2024  Ryan Luu
+<!--Copyright (C) 2024  Ryan Luu
 
     This file is part of Fluent Auto Clicker.
 
@@ -16,8 +15,7 @@
     GNU Affero General Public License for more details.
 
     You should have received a copy of the GNU Affero General Public License
-    along with Fluent Auto Clicker.  If not, see <https://www.gnu.org/licenses/>.
--->
+    along with Fluent Auto Clicker.  If not, see <https://www.gnu.org/licenses/>.-->
 
 <Application
     x:Class="FluentAutoClicker.App"
