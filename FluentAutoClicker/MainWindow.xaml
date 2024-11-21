@@ -27,7 +27,7 @@
     xmlns:windowex="using:WinUIEx"
     Width="400"
     Height="340"
-    MinWidth="340"
+    MinWidth="360"
     MinHeight="340"
     IsAlwaysOnTop="True"
     mc:Ignorable="d">
