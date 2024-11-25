@@ -35,9 +35,6 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
     <PackageReference Include="WinUIEx" Version="2.5.0" />
   </ItemGroup>
-  <PropertyGroup Label="Globals">
-    <WebView2EnableCsWinRTProjection>False</WebView2EnableCsWinRTProjection>
-  </PropertyGroup>
 
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
@@ -48,32 +45,45 @@
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
 
-  <!-- Publish Properties -->
-  <PropertyGroup>
-    <PublishAot Condition="'$(Configuration)' == 'Debug'">False</PublishAot>
-    <PublishAot Condition="'$(Configuration)' != 'Debug'">True</PublishAot>
-    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
-    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
-    <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
-    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
+  <!-- Disable CsWinRTProjection to stop native AOT warnings -->
+  <PropertyGroup Label="Globals">
+    <WebView2EnableCsWinRTProjection>False</WebView2EnableCsWinRTProjection>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <!-- Turn off XAML's generated Program code use our single-instanced app code (Program.cs) -->
+  <PropertyGroup>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
   </PropertyGroup>
+
+  <!-- Publish Properties -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <PublishAot>False</PublishAot>
+    <PublishReadyToRun>False</PublishReadyToRun>
+    <PublishTrimmed>False</PublishTrimmed>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PublishAot>False</PublishAot>
+    <PublishReadyToRun>False</PublishReadyToRun>
+    <PublishTrimmed>False</PublishTrimmed>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
-    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <PublishAot>False</PublishAot>
+    <PublishReadyToRun>False</PublishReadyToRun>
+    <PublishTrimmed>False</PublishTrimmed>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PublishAot>False</PublishAot>
+    <PublishReadyToRun>True</PublishReadyToRun>
+    <PublishTrimmed>True</PublishTrimmed>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PublishAot>True</PublishAot>
+    <PublishReadyToRun>True</PublishReadyToRun>
+    <PublishTrimmed>True</PublishTrimmed>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
-    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <PublishAot>True</PublishAot>
+    <PublishReadyToRun>True</PublishReadyToRun>
+    <PublishTrimmed>True</PublishTrimmed>
   </PropertyGroup>
 </Project>
