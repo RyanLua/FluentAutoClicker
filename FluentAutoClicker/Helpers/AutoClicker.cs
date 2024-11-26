@@ -33,16 +33,28 @@ public static class AutoClicker
     private static Thread _autoClickerThread;
     private static bool IsAutoClickerRunning;
 
-    public static void StartAutoClicker(int ClickInterval, int RepeatAmount, int MouseButton, int ClickOffset)
+    /// <summary>
+    /// Starts the auto clicker thread.
+    /// </summary>
+    /// <param name="millisecondsDelay">The number of milliseconds to wait before clicks.</param>
+    /// <param name="clickAmount">The number of clicks before stopping the auto clicker thread.</param>
+    /// <param name="mouseButtonType">The mouse button used to click.</param>
+    /// <param name="clickDelayOffset"></param>
+    public static void StartAutoClicker(int millisecondsDelay, int clickAmount, int mouseButtonType, int clickDelayOffset)
     {
+        // TODO: Evaluate whether a thread is necessary for this.
         IsAutoClickerRunning = true;
-        _autoClickerThread = new Thread(() => AutoClickerThread(ClickInterval, RepeatAmount, MouseButton, ClickOffset));
+        _autoClickerThread = new Thread(() => AutoClickerThread(millisecondsDelay, clickAmount, mouseButtonType, clickDelayOffset));
         _autoClickerThread.Start();
     }
 
+    /// <summary>
+    /// Stops the auto clicker thread.
+    /// </summary>
     public static void StopAutoClicker()
     {
         IsAutoClickerRunning = false;
+        // HACK: Incorrectly stops the thread, but it works for now.
         _autoClickerThread?.Join();
     }
 
@@ -58,6 +70,7 @@ public static class AutoClicker
                 break;
             }
 
+            // TODO: Move this to a enum instead of a number
             switch (MouseButton)
             {
                 case 0:
