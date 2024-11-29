@@ -29,6 +29,9 @@ using Windows.System;
 
 namespace FluentAutoClicker
 {
+    /// <summary>
+    /// The main page containing all controls displayed on the main window.
+    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
