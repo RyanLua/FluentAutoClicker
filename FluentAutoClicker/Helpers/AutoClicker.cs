@@ -39,7 +39,7 @@ public static class AutoClicker
     /// <param name="millisecondsDelay">The number of milliseconds to wait before clicks.</param>
     /// <param name="clickAmount">The number of clicks before stopping the auto clicker thread.</param>
     /// <param name="mouseButtonType">The mouse button used to click.</param>
-    /// <param name="clickDelayOffset"></param>
+    /// <param name="clickDelayOffset">The amount of time in milliseconds to add randomly to the millisecond delay between clicks.</param>
     public static void StartAutoClicker(int millisecondsDelay, int clickAmount, int mouseButtonType, int clickDelayOffset)
     {
         // TODO: Evaluate whether a thread is necessary for this.
