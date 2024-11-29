@@ -23,7 +23,7 @@ using FluentAutoClicker.Helpers;
 namespace FluentAutoClicker;
 
 /// <summary>
-///     An empty window that can be used on its own or navigated to within a Frame.
+///     An window that displays a page's contents.
 /// </summary>
 public sealed partial class MainWindow
 {
