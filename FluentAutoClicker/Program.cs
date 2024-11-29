@@ -26,6 +26,9 @@ using System.Threading.Tasks;
 
 namespace FluentAutoClicker
 {
+    /// <summary>
+    /// Customized <c>Program.cs</c> file to implement <see href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance">single-instancing in a WinUI app with C#.</see> Single-instanced apps only allow one instance of the app running at a time.
+    /// </summary>
     public class Program
     {
         [STAThread]
