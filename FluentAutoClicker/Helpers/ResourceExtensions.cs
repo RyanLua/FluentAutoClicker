@@ -17,23 +17,22 @@
 
 using Microsoft.Windows.ApplicationModel.Resources;
 
-namespace FluentAutoClicker.Helpers
-{
-    /// <summary>
-    /// Helper for getting localized strings from resources.
-    /// </summary>
-    public static class ResourceExtensions
-    {
-        private static readonly ResourceLoader ResourceLoader = new();
+namespace FluentAutoClicker.Helpers;
 
-        /// <summary>
-        /// Gets the localized string for the resource key.
-        /// </summary>
-        /// <param name="resourceKey">The resource key for the returned localized string.</param>
-        /// <returns>The localized string for the specified resource key.</returns>
-        public static string GetLocalized(this string resourceKey)
-        {
-            return ResourceLoader.GetString(resourceKey);
-        }
+/// <summary>
+/// Helper for getting localized strings from resources.
+/// </summary>
+public static class ResourceExtensions
+{
+    private static readonly ResourceLoader ResourceLoader = new();
+
+    /// <summary>
+    /// Gets the localized string for the resource key.
+    /// </summary>
+    /// <param name="resourceKey">The resource key for the returned localized string.</param>
+    /// <returns>The localized string for the specified resource key.</returns>
+    public static string GetLocalized(this string resourceKey)
+    {
+        return ResourceLoader.GetString(resourceKey);
     }
 }
