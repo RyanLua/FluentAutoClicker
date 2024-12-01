@@ -32,7 +32,7 @@ namespace FluentAutoClicker
     public class Program
     {
         [STAThread]
-        static int Main(string[] args)
+        private static int Main(string[] args)
         {
             WinRT.ComWrappersSupport.InitializeComWrappers();
             bool isRedirect = DecideRedirection();
@@ -41,7 +41,7 @@ namespace FluentAutoClicker
             {
                 Application.Start((p) =>
                 {
-                    var context = new DispatcherQueueSynchronizationContext(
+                    DispatcherQueueSynchronizationContext context = new(
                         DispatcherQueue.GetForCurrentThread());
                     SynchronizationContext.SetSynchronizationContext(context);
                     _ = new App();
@@ -85,7 +85,7 @@ namespace FluentAutoClicker
             IntPtr[] pHandles, out uint dwIndex);
 
         [DllImport("user32.dll")]
-        static extern bool SetForegroundWindow(IntPtr hWnd);
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
 
         private static IntPtr redirectEventHandle = IntPtr.Zero;
 
@@ -95,10 +95,10 @@ namespace FluentAutoClicker
                                                 AppInstance keyInstance)
         {
             redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
-            Task.Run(() =>
+            _ = Task.Run(() =>
             {
                 keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
-                SetEvent(redirectEventHandle);
+                _ = SetEvent(redirectEventHandle);
             });
 
             uint CWMO_DEFAULT = 0;
@@ -109,12 +109,12 @@ namespace FluentAutoClicker
 
             // Bring the window to the foreground
             Process process = Process.GetProcessById((int)keyInstance.ProcessId);
-            SetForegroundWindow(process.MainWindowHandle);
+            _ = SetForegroundWindow(process.MainWindowHandle);
         }
 
         private static void OnActivated(object sender, AppActivationArguments args)
         {
-            ExtendedActivationKind kind = args.Kind;
+            _ = args.Kind;
         }
     }
 }

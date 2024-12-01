@@ -20,23 +20,24 @@ using FluentAutoClicker.Helpers;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace FluentAutoClicker;
-
-/// <summary>
-///     An window that displays a page's contents.
-/// </summary>
-public sealed partial class MainWindow
+namespace FluentAutoClicker
 {
-    public MainWindow()
+    /// <summary>
+    ///     An window that displays a page's contents.
+    /// </summary>
+    public sealed partial class MainWindow
     {
-        InitializeComponent();
+        public MainWindow()
+        {
+            InitializeComponent();
 
-        // Set up window
-        Title = "AppDisplayName".GetLocalized();
-        AppWindow.SetIcon("Assets/WindowIcon.ico");
+            // Set up window
+            Title = "AppDisplayName".GetLocalized();
+            AppWindow.SetIcon("Assets/WindowIcon.ico");
 
-        // Set up window title bar
-        ExtendsContentIntoTitleBar = true;
-        AppTitleBar.Title = "AppDisplayName".GetLocalized();
+            // Set up window title bar
+            ExtendsContentIntoTitleBar = true;
+            AppTitleBar.Title = "AppDisplayName".GetLocalized();
+        }
     }
 }

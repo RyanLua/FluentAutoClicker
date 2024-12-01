@@ -42,7 +42,7 @@ namespace FluentAutoClicker
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            var hook = new WindowMessageHook(App.Window);
+            WindowMessageHook hook = new(App.Window);
             Unloaded += (s, e) => hook.Dispose(); // unhook on close
             hook.Message += (s, e) =>
             {
@@ -50,16 +50,18 @@ namespace FluentAutoClicker
                 if (e.Message == WM_HOTKEY)
                 {
                     // click on the button using UI Automation
-                    var pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
+                    ToggleButtonAutomationPeer pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
                     pattern.Toggle();
                 }
             };
 
             // register CTRL + B as a global hotkey
-            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
-            var id = 1; // some arbitrary hotkey identifier
+            nint hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
+            int id = 1; // some arbitrary hotkey identifier
             if (!RegisterHotKey(hwnd, id, MOD.MOD_NOREPEAT, VirtualKey.F6))
+            {
                 throw new Win32Exception(Marshal.GetLastWin32Error());
+            }
 
             Unloaded += (s, e) => UnregisterHotKey(hwnd, id); // unregister hotkey on window close
         }
@@ -100,31 +102,31 @@ namespace FluentAutoClicker
 
         private int GetIntervalMilliseconds()
         {
-            if (!Int32.TryParse(NumberBoxHours.Value.ToString(CultureInfo.InvariantCulture), out var hours))
+            if (!int.TryParse(NumberBoxHours.Value.ToString(CultureInfo.InvariantCulture), out int hours))
             {
                 hours = 0;
                 NumberBoxHours.Value = hours;
             }
 
-            if (!Int32.TryParse(NumberBoxMinutes.Value.ToString(CultureInfo.InvariantCulture), out var minutes))
+            if (!int.TryParse(NumberBoxMinutes.Value.ToString(CultureInfo.InvariantCulture), out int minutes))
             {
                 minutes = 0;
                 NumberBoxMinutes.Value = minutes;
             }
 
-            if (!Int32.TryParse(NumberBoxSeconds.Value.ToString(CultureInfo.InvariantCulture), out var seconds))
+            if (!int.TryParse(NumberBoxSeconds.Value.ToString(CultureInfo.InvariantCulture), out int seconds))
             {
                 seconds = 0;
                 NumberBoxSeconds.Value = seconds;
             }
 
-            if (!Int32.TryParse(NumberBoxMilliseconds.Value.ToString(CultureInfo.InvariantCulture), out var milliseconds))
+            if (!int.TryParse(NumberBoxMilliseconds.Value.ToString(CultureInfo.InvariantCulture), out int milliseconds))
             {
                 milliseconds = 100;
                 NumberBoxMilliseconds.Value = milliseconds;
             }
 
-            var totalTimeInMilliseconds = ((hours * 60 + minutes) * 60 + seconds) * 1000 + milliseconds;
+            int totalTimeInMilliseconds = (((((hours * 60) + minutes) * 60) + seconds) * 1000) + milliseconds;
 
             if (totalTimeInMilliseconds == 0)
             {
@@ -141,7 +143,7 @@ namespace FluentAutoClicker
             SetControlsEnabled(false);
 
             // 3-second countdown
-            for (var i = 3; i > 0; i--)
+            for (int i = 3; i > 0; i--)
             {
                 StartToggleButton.Content = i.ToString();
                 await Task.Delay(1000);
@@ -151,26 +153,9 @@ namespace FluentAutoClicker
             StartToggleButton.Content = "Stop";
 
             int clickInterval = GetIntervalMilliseconds();
-            int repeatAmount = 0;
-            if (ClickRepeatCheckBox.IsEnabled == true)
-            {
-                repeatAmount = Convert.ToInt32(ClickRepeatAmount.Value);
-            }
-            else
-            {
-                repeatAmount = 0;
-            }
+            int repeatAmount = ClickRepeatCheckBox.IsEnabled == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
             int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
-            int clickOffset = 0;
-            if (ClickOffsetCheckBox.IsChecked == true)
-            {
-                clickOffset = Convert.ToInt32(ClickOffsetAmount.Value);
-            }
-            else
-            {
-                clickOffset = 0;
-            }
-
+            int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
             AutoClicker.StartAutoClicker(clickInterval, repeatAmount, mouseButton, clickOffset);
         }
 
