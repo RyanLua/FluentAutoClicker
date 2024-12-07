@@ -11,10 +11,10 @@
 
 </div>
 
-> [!NOTE]
-> Fluent Auto Clicker is still in development and there is no stable release of it yet. If you want to use it, you will need to compile it yourself using [Visual Studio](https://visualstudio.microsoft.com/).
+> [!a]
+> Fluent Auto Clicker is still in development and there is no stable release of it yet
 >
-> If you want to support us, consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) or [becoming a patron](https://www.patreon.com/RyanLuu).
+> Consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) to support it's development
 
 Fluent Auto Clicker is a beautifully designed auto clicker for Windows 10 and 11. Following the latest Fluent Design guidelines and seamlessly blending into Windows.
 
