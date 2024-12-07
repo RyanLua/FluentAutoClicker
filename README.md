@@ -11,7 +11,7 @@
 
 </div>
 
-> [!a]
+> [!NOTE]
 > Fluent Auto Clicker is still in development and there is no stable release of it yet
 >
 > Consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) to support it's development
