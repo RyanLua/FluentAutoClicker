@@ -13,6 +13,8 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Authors>Ryan Luu</Authors>
     <Copyright>Copyright (C) 2024 Ryan Luu</Copyright>
+    <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
+    <AssemblyTitle>Fluent Auto Clicker</AssemblyTitle>
   </PropertyGroup>
 
   <ItemGroup>
