@@ -87,7 +87,7 @@ public sealed partial class MainPage : Page
             ClickRepeatAmount.IsEnabled = isEnabled;
         }
 
-        // Gray out text if disabled
+        // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
         if (!isEnabled)
         {
             ClickIntervalTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseMediumLowBrush"] as Brush;
