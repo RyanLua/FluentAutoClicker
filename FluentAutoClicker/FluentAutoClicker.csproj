@@ -10,6 +10,7 @@
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
     <Authors>Ryan Luu</Authors>
     <Copyright>Copyright (C) 2024 Ryan Luu</Copyright>
   </PropertyGroup>
@@ -48,11 +49,6 @@
   <!-- Disable CsWinRTProjection to stop native AOT warnings -->
   <PropertyGroup Label="Globals">
     <WebView2EnableCsWinRTProjection>False</WebView2EnableCsWinRTProjection>
-  </PropertyGroup>
-
-  <!-- Turn off XAML's generated Program code use our single-instanced app code (Program.cs) -->
-  <PropertyGroup>
-    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
   </PropertyGroup>
 
   <!-- Publish Properties -->
