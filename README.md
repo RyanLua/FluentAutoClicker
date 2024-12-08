@@ -3,18 +3,8 @@
   <h1 align="center">Fluent Auto Clicker</h1>
 </p>
 
-<div align="center">
-
-  [![GitHub Repo stars](https://img.shields.io/github/stars/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)](https://github.com/RyanLua/FluentAutoClicker/stargazers)
-  [![GitHub](https://img.shields.io/github/license/RyanLua/FluentAutoClicker?color=0078d7&style=for-the-badge)](https://github.com/RyanLua/FluentAutoClicker?tab=readme-ov-file#AGPL-3.0-1-ov-file)
-  [![Discord](https://img.shields.io/discord/1162303282002272359?label=discord&color=0078d7&style=for-the-badge)](https://discord.gg/32AMskrpFf)
-
-</div>
-
 > [!NOTE]
-> Fluent Auto Clicker is still in development and there is no stable release of it yet
->
-> Consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) to support it's development
+> Fluent Auto Clicker is still in development and there is no stable release of it yet. Consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) to support it's development
 
 Fluent Auto Clicker is a beautifully designed auto clicker for Windows 10 and 11. Following the latest Fluent Design guidelines and seamlessly blending into Windows.
 
