@@ -60,8 +60,8 @@ public static class AutoClicker
 
     private static async void AutoClickerThread(int ClickInterval, int RepeatAmount, int MouseButton, int ClickOffset)
     {
-        var clickCount = 0;
-        var random = new Random();
+        int clickCount = 0;
+        Random random = new();
         while (IsAutoClickerRunning)
         {
             if (clickCount >= RepeatAmount && RepeatAmount != 0)
@@ -87,7 +87,10 @@ public static class AutoClicker
                     break;
             }
 
-            if (RepeatAmount > 0) clickCount++;
+            if (RepeatAmount > 0)
+            {
+                clickCount++;
+            }
 
             int randomClickOffset = random.Next(0, ClickOffset);
             await Task.Delay(ClickInterval + randomClickOffset);
@@ -96,10 +99,10 @@ public static class AutoClicker
 
     private static void MouseEvent(int dx, int dy, uint dwFlags, uint dwData, uint time, nint dwExtraInfo)
     {
-        var inputs = new Input[2];
+        Input[] inputs = new Input[2];
         inputs[0] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
         inputs[1] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
-        SendInput((uint)inputs.Length, inputs, Marshal.SizeOf<Input>());
+        _ = SendInput((uint)inputs.Length, inputs, Marshal.SizeOf<Input>());
     }
 
     private static Input MouseInput(int dx, int dy, uint mouseData, uint dwFlags, uint time, nint dwExtraInfo)

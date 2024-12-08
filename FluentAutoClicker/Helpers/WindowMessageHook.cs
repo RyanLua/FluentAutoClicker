@@ -39,28 +39,44 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
     public WindowMessageHook(nint hWnd)
     {
         if (hWnd == 0)
+        {
             throw new ArgumentException(null, nameof(hWnd));
+        }
 
         _hWnd = hWnd;
-        _hooks.AddOrUpdate(hWnd, this, (k, o) =>
+        _ = _hooks.AddOrUpdate(hWnd, this, (k, o) =>
         {
-            if (Equals(o)) return o;
+            if (Equals(o))
+            {
+                return o;
+            }
+
             o.Dispose();
             return this;
         });
         if (!SetWindowSubclass(hWnd, _proc, 0, 0))
+        {
             throw new Win32Exception(Marshal.GetLastWin32Error());
+        }
     }
 
-    protected virtual void OnMessage(object sender, MessageEventArgs e) => Message?.Invoke(sender, e);
+    protected virtual void OnMessage(object sender, MessageEventArgs e)
+    {
+        Message?.Invoke(sender, e);
+    }
+
     protected virtual void Dispose(bool disposing)
     {
-        if (!disposing) return;
-        var hWnd = Interlocked.Exchange(ref _hWnd, IntPtr.Zero);
+        if (!disposing)
+        {
+            return;
+        }
+
+        nint hWnd = Interlocked.Exchange(ref _hWnd, IntPtr.Zero);
         if (hWnd != IntPtr.Zero)
         {
-            RemoveWindowSubclass(hWnd, _proc, 0);
-            _hooks.Remove(hWnd, out _);
+            _ = RemoveWindowSubclass(hWnd, _proc, 0);
+            _ = _hooks.Remove(hWnd, out _);
         }
     }
 
@@ -84,20 +100,37 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
 
     private static nint SubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData)
     {
-        if (_hooks.TryGetValue(hWnd, out var hook))
+        if (_hooks.TryGetValue(hWnd, out WindowMessageHook hook))
         {
-            var e = new MessageEventArgs(hWnd, uMsg, wParam, lParam);
+            MessageEventArgs e = new(hWnd, uMsg, wParam, lParam);
             hook.OnMessage(hook, e);
             if (e.Result.HasValue)
+            {
                 return e.Result.Value;
+            }
         }
         return DefSubclassProc(hWnd, uMsg, wParam, lParam);
     }
 
-    public override int GetHashCode() => _hWnd.GetHashCode();
-    public override string ToString() => _hWnd.ToString();
-    public override bool Equals(object obj) => Equals(obj as WindowMessageHook);
-    public virtual bool Equals(WindowMessageHook other) => other != null && _hWnd.Equals(other._hWnd);
+    public override int GetHashCode()
+    {
+        return _hWnd.GetHashCode();
+    }
+
+    public override string ToString()
+    {
+        return _hWnd.ToString();
+    }
+
+    public override bool Equals(object obj)
+    {
+        return Equals(obj as WindowMessageHook);
+    }
+
+    public virtual bool Equals(WindowMessageHook other)
+    {
+        return other != null && _hWnd.Equals(other._hWnd);
+    }
 }
 
 public class MessageEventArgs : EventArgs
