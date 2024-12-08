@@ -43,27 +43,29 @@ public sealed partial class MainPage : Page
     private void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
         WindowMessageHook hook = new(App.Window);
-        Unloaded += (s, e) => hook.Dispose(); // unhook on close
+        Unloaded += (s, e) => hook.Dispose();
+
         hook.Message += (s, e) =>
         {
             const int WM_HOTKEY = 0x312;
             if (e.Message == WM_HOTKEY)
             {
-                // click on the button using UI Automation
+                // Toggle the StartToggleButton when the hotkey is pressed
                 ToggleButtonAutomationPeer pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
                 pattern.Toggle();
             }
         };
 
-        // register CTRL + B as a global hotkey
         nint hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
-        int id = 1; // some arbitrary hotkey identifier
+        int id = 1;
+
+        // Register the F6 key
         if (!RegisterHotKey(hwnd, id, MOD.MOD_NOREPEAT, VirtualKey.F6))
         {
             throw new Win32Exception(Marshal.GetLastWin32Error());
         }
 
-        Unloaded += (s, e) => UnregisterHotKey(hwnd, id); // unregister hotkey on window close
+        Unloaded += (s, e) => UnregisterHotKey(hwnd, id);
     }
 
     private void SetControlsEnabled(bool isEnabled)
@@ -75,56 +77,32 @@ public sealed partial class MainPage : Page
         MouseButtonTypeComboBox.IsEnabled = isEnabled;
         ClickRepeatCheckBox.IsEnabled = isEnabled;
         ClickOffsetCheckBox.IsEnabled = isEnabled;
-        //HotkeyButton.IsEnabled = isEnabled; 
 
-        if (ClickOffsetCheckBox.IsChecked == true)
-        {
-            ClickOffsetAmount.IsEnabled = isEnabled;
-        }
-
-        if (ClickRepeatCheckBox.IsChecked == true)
-        {
-            ClickRepeatAmount.IsEnabled = isEnabled;
-        }
+        ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true && isEnabled;
+        ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true && isEnabled;
 
         // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
-        if (!isEnabled)
+        var brushKey = isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
+        ClickIntervalTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
+        HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
+    }
+
+    private int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
+    {
+        if (!int.TryParse(numberBox.Value.ToString(CultureInfo.InvariantCulture), out int value))
         {
-            ClickIntervalTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseMediumLowBrush"] as Brush;
-            HotkeyTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseMediumLowBrush"] as Brush;
+            value = defaultValue;
+            numberBox.Value = value;
         }
-        else
-        {
-            ClickIntervalTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseHighBrush"] as Brush;
-            HotkeyTextBlock.Foreground = Application.Current.Resources["SystemControlForegroundBaseHighBrush"] as Brush;
-        }
+        return value;
     }
 
     private int GetIntervalMilliseconds()
     {
-        if (!int.TryParse(NumberBoxHours.Value.ToString(CultureInfo.InvariantCulture), out int hours))
-        {
-            hours = 0;
-            NumberBoxHours.Value = hours;
-        }
-
-        if (!int.TryParse(NumberBoxMinutes.Value.ToString(CultureInfo.InvariantCulture), out int minutes))
-        {
-            minutes = 0;
-            NumberBoxMinutes.Value = minutes;
-        }
-
-        if (!int.TryParse(NumberBoxSeconds.Value.ToString(CultureInfo.InvariantCulture), out int seconds))
-        {
-            seconds = 0;
-            NumberBoxSeconds.Value = seconds;
-        }
-
-        if (!int.TryParse(NumberBoxMilliseconds.Value.ToString(CultureInfo.InvariantCulture), out int milliseconds))
-        {
-            milliseconds = 100;
-            NumberBoxMilliseconds.Value = milliseconds;
-        }
+        int hours = GetNumberBoxValue(NumberBoxHours, 0);
+        int minutes = GetNumberBoxValue(NumberBoxMinutes, 0);
+        int seconds = GetNumberBoxValue(NumberBoxSeconds, 0);
+        int milliseconds = GetNumberBoxValue(NumberBoxMilliseconds, 100);
 
         int totalTimeInMilliseconds = (((((hours * 60) + minutes) * 60) + seconds) * 1000) + milliseconds;
 
