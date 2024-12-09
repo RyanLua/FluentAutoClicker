@@ -47,8 +47,8 @@ public sealed partial class MainPage : Page
 
         hook.Message += (s, e) =>
         {
-            const int WM_HOTKEY = 0x312;
-            if (e.Message == WM_HOTKEY)
+            const int wmHotkey = 0x312;
+            if (e.Message == wmHotkey)
             {
                 // Toggle the StartToggleButton when the hotkey is pressed
                 ToggleButtonAutomationPeer pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
@@ -60,7 +60,7 @@ public sealed partial class MainPage : Page
         int id = 1;
 
         // Register the F6 key
-        if (!RegisterHotKey(hwnd, id, MOD.MOD_NOREPEAT, VirtualKey.F6))
+        if (!RegisterHotKey(hwnd, id, Mod.ModNoRepeat, VirtualKey.F6))
         {
             throw new Win32Exception(Marshal.GetLastWin32Error());
         }
@@ -82,7 +82,7 @@ public sealed partial class MainPage : Page
         ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true && isEnabled;
 
         // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
-        var brushKey = isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
+        string brushKey = isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
         ClickIntervalTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
         HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
     }
@@ -156,19 +156,19 @@ public sealed partial class MainPage : Page
 
     // interop code for Windows API hotkey functions
     [DllImport("user32", SetLastError = true)]
-    private static extern bool RegisterHotKey(nint hWnd, int id, MOD fsModifiers, VirtualKey vk);
+    private static extern bool RegisterHotKey(nint hWnd, int id, Mod fsModifiers, VirtualKey vk);
 
     [DllImport("user32", SetLastError = true)]
     private static extern bool UnregisterHotKey(nint hWnd, int id);
 
     [Flags]
-    private enum MOD
+    private enum Mod
     {
-        MOD_ALT = 0x1,
-        MOD_CONTROL = 0x2,
-        MOD_SHIFT = 0x4,
-        MOD_WIN = 0x8,
-        MOD_NOREPEAT = 0x4000,
+        ModAlt = 0x1,
+        ModControl = 0x2,
+        ModShift = 0x4,
+        ModWin = 0x8,
+        ModNoRepeat = 0x4000,
     }
     private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
     {

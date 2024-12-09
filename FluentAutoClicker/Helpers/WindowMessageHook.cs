@@ -27,10 +27,10 @@ namespace FluentAutoClicker.Helpers;
 
 public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
 {
-    private delegate nint SUBCLASSPROC(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData);
+    private delegate nint Subclassproc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData);
 
-    private static readonly ConcurrentDictionary<nint, WindowMessageHook> _hooks = new();
-    private static readonly SUBCLASSPROC _proc = SubclassProc;
+    private static readonly ConcurrentDictionary<nint, WindowMessageHook> Hooks = new();
+    private static readonly Subclassproc Proc = SubclassProc;
 
     public event EventHandler<MessageEventArgs> Message;
     private nint _hWnd;
@@ -44,7 +44,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
         }
 
         _hWnd = hWnd;
-        _ = _hooks.AddOrUpdate(hWnd, this, (k, o) =>
+        _ = Hooks.AddOrUpdate(hWnd, this, (k, o) =>
         {
             if (Equals(o))
             {
@@ -54,7 +54,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
             o.Dispose();
             return this;
         });
-        if (!SetWindowSubclass(hWnd, _proc, 0, 0))
+        if (!SetWindowSubclass(hWnd, Proc, 0, 0))
         {
             throw new Win32Exception(Marshal.GetLastWin32Error());
         }
@@ -75,8 +75,8 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
         nint hWnd = Interlocked.Exchange(ref _hWnd, IntPtr.Zero);
         if (hWnd != IntPtr.Zero)
         {
-            _ = RemoveWindowSubclass(hWnd, _proc, 0);
-            _ = _hooks.Remove(hWnd, out _);
+            _ = RemoveWindowSubclass(hWnd, Proc, 0);
+            _ = Hooks.Remove(hWnd, out _);
         }
     }
 
@@ -84,13 +84,13 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
     public void Dispose() { Dispose(disposing: true); GC.SuppressFinalize(this); }
 
     [DllImport("comctl32", SetLastError = true)]
-    private static extern bool SetWindowSubclass(nint hWnd, SUBCLASSPROC pfnSubclass, uint uIdSubclass, uint dwRefData);
+    private static extern bool SetWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass, uint dwRefData);
 
     [DllImport("comctl32", SetLastError = true)]
     private static extern nint DefSubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam);
 
     [DllImport("comctl32", SetLastError = true)]
-    private static extern bool RemoveWindowSubclass(nint hWnd, SUBCLASSPROC pfnSubclass, uint uIdSubclass);
+    private static extern bool RemoveWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass);
 
     private static nint GetHandle(Window window)
     {
@@ -100,7 +100,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
 
     private static nint SubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData)
     {
-        if (_hooks.TryGetValue(hWnd, out WindowMessageHook hook))
+        if (Hooks.TryGetValue(hWnd, out WindowMessageHook hook))
         {
             MessageEventArgs e = new(hWnd, uMsg, wParam, lParam);
             hook.OnMessage(hook, e);

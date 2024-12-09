@@ -87,25 +87,25 @@ public class Program
     [DllImport("user32.dll")]
     private static extern bool SetForegroundWindow(IntPtr hWnd);
 
-    private static IntPtr redirectEventHandle = IntPtr.Zero;
+    private static IntPtr _redirectEventHandle = IntPtr.Zero;
 
     // Do the redirection on another thread, and use a non-blocking
     // wait method to wait for the redirection to complete.
     public static void RedirectActivationTo(AppActivationArguments args,
                                             AppInstance keyInstance)
     {
-        redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
+        _redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
         _ = Task.Run(() =>
         {
             keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
-            _ = SetEvent(redirectEventHandle);
+            _ = SetEvent(_redirectEventHandle);
         });
 
-        uint CWMO_DEFAULT = 0;
-        uint INFINITE = 0xFFFFFFFF;
+        uint cwmoDefault = 0;
+        uint infinite = 0xFFFFFFFF;
         _ = CoWaitForMultipleObjects(
-           CWMO_DEFAULT, INFINITE, 1,
-           [redirectEventHandle], out uint handleIndex);
+           cwmoDefault, infinite, 1,
+           [_redirectEventHandle], out uint handleIndex);
 
         // Bring the window to the foreground
         Process process = Process.GetProcessById((int)keyInstance.ProcessId);
