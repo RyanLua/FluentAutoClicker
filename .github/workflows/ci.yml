@@ -1,7 +1,7 @@
 # This workflow will build, sign, and package a WinUI 3 MSIX desktop application
 # built on .NET.
 
-name: WinUI 3 MSIX app
+name: Continuous Integration
 
 on:
   push:
@@ -72,4 +72,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: MSIX Package
-        path: ${{ github.workspace }}\\Packages
+        path: ${{ github.workspace }}\Packages
