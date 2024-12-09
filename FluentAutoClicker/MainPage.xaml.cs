@@ -82,7 +82,7 @@ public sealed partial class MainPage : Page
         ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true && isEnabled;
 
         // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
-        var brushKey = isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
+        string brushKey = isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
         ClickIntervalTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
         HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
     }
