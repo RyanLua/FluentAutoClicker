@@ -17,8 +17,8 @@ jobs:
         platform: [x64, x86, ARM64]
 
     env:
-      SOLUTION_NAME: FluentAutoClicker.sln
-      NAME: FluentAutoClicker
+      Solution_Name: FluentAutoClicker.sln
+      Dir_Name: FluentAutoClicker
 
     steps:
     - name: Checkout repository
@@ -35,7 +35,7 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     - name: Restore the application
-      run: msbuild $env:SOLUTION_NAME /t:Restore /p:Configuration=$env:Configuration
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
@@ -46,7 +46,7 @@ jobs:
         [IO.File]::WriteAllBytes("$certificatePath", $pfx_cert_byte)
 
     - name: Create the app package
-      run: msbuild $env:SOLUTION_NAME /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:AppxPackageDir="$env:Appx_Package_Dir" /p:GenerateAppxPackageOnBuild=true
+      run: msbuild $env:Solution_Name /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:AppxPackageDir="$env:Appx_Package_Dir" /p:GenerateAppxPackageOnBuild=true
       env:
         Appx_Bundle: Never
         Appx_Package_Build_Mode: SideloadOnly
@@ -61,5 +61,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: MSIX Package (${{ matrix.configuration }}, ${{ matrix.platform }})
-        path: ${{ github.workspace }}\$env:NAME\Packages\**
+        path: ${{ github.workspace }}\$env:Dir_Name\Packages\**
         compression-level: 0
