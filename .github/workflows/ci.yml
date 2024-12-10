@@ -24,9 +24,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        sparse-checkout: |
-          $SOLUTION_NAME
-          $NAME
+        fetch-depth: 0
 
     - name: Install .NET Core
       uses: actions/setup-dotnet@v4
