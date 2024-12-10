@@ -1,5 +1,8 @@
-name: 'Dependency Review'
-on: [pull_request]
+name: Dependency Review
+
+on:
+  pull_request:
+    types: [opened]
 
 permissions:
   contents: read
@@ -7,12 +10,14 @@ permissions:
 
 jobs:
   dependency-review:
+    name: Review
     runs-on: ubuntu-latest
+
     steps:
-      - name: 'Checkout Repository'
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v4
+
+      - name: Run dependency review
+        uses: actions/actions/dependency-review-action@v4
         with:
-            allow-licenses: MIT, Apache-2.0, Unlicense, BSL-1.0
             comment-summary-in-pr: always
