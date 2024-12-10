@@ -72,5 +72,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: MSIX Package (${{ matrix.platform }})
-        path: ${{ github.workspace }}\*\Packages\**\*
+        path: ${{ github.workspace }}\FluentAutoClicker\Packages\**
         compression-level: 9
