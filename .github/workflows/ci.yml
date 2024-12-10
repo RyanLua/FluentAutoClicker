@@ -61,5 +61,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: MSIX Package (${{ matrix.configuration }}, ${{ matrix.platform }})
-        path: ${{ github.workspace }}\$env:Dir_Name\Packages\**
+        path: ${{ github.workspace }}\${{ env.Dir_Name }}\Packages\**
         compression-level: 0
