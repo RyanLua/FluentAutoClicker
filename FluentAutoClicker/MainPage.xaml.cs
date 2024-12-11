@@ -19,11 +19,13 @@ using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using Windows.System;
+using Windows.UI.ApplicationSettings;
 
 namespace FluentAutoClicker;
 
@@ -176,5 +178,10 @@ public sealed partial class MainPage : Page
     private void ClickOffsetCheckBox_Checked(object sender, RoutedEventArgs e)
     {
         ClickOffsetAmount.IsEnabled = true;
+    }
+
+    private void SettingsButton_Click(object sender, RoutedEventArgs e)
+    {
+        //Frame.Navigate(typeof(SettingsPage));
     }
 }
