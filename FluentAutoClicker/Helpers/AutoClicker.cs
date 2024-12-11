@@ -28,7 +28,7 @@ public static class AutoClicker
     private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
 
     private static Thread _autoClickerThread;
-    private static bool IsAutoClickerRunning;
+    private static bool _isAutoClickerRunning;
 
     /// <summary>
     /// Starts the auto clicker thread.
@@ -40,7 +40,7 @@ public static class AutoClicker
     public static void StartAutoClicker(int millisecondsDelay, int clickAmount, int mouseButtonType, int clickDelayOffset)
     {
         // TODO: Evaluate whether a thread is necessary for this.
-        IsAutoClickerRunning = true;
+        _isAutoClickerRunning = true;
         _autoClickerThread = new Thread(() => AutoClickerThread(millisecondsDelay, clickAmount, mouseButtonType, clickDelayOffset));
         _autoClickerThread.Start();
     }
@@ -50,25 +50,25 @@ public static class AutoClicker
     /// </summary>
     public static void StopAutoClicker()
     {
-        IsAutoClickerRunning = false;
+        _isAutoClickerRunning = false;
         // HACK: Incorrectly stops the thread, but it works for now.
         _autoClickerThread?.Join();
     }
 
-    private static async void AutoClickerThread(int ClickInterval, int RepeatAmount, int MouseButton, int ClickOffset)
+    private static async void AutoClickerThread(int clickInterval, int repeatAmount, int mouseButton, int clickOffset)
     {
         int clickCount = 0;
         Random random = new();
-        while (IsAutoClickerRunning)
+        while (_isAutoClickerRunning)
         {
-            if (clickCount >= RepeatAmount && RepeatAmount != 0)
+            if (clickCount >= repeatAmount && repeatAmount != 0)
             {
                 StopAutoClicker();
                 break;
             }
 
             // TODO: Move this to a enum instead of a number
-            switch (MouseButton)
+            switch (mouseButton)
             {
                 case 0:
                     MouseEvent(0, 0, (uint)MouseEventF.LeftDown, 0, 0, IntPtr.Zero);
@@ -84,13 +84,13 @@ public static class AutoClicker
                     break;
             }
 
-            if (RepeatAmount > 0)
+            if (repeatAmount > 0)
             {
                 clickCount++;
             }
 
-            int randomClickOffset = random.Next(0, ClickOffset);
-            await Task.Delay(ClickInterval + randomClickOffset);
+            int randomClickOffset = random.Next(0, clickOffset);
+            await Task.Delay(clickInterval + randomClickOffset);
         }
     }
 
