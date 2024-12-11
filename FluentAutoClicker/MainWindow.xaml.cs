@@ -42,7 +42,7 @@ public sealed partial class MainWindow
         AppTitleBar.Title = "AppDisplayName".GetLocalized();
 
         // Set up frame
-        Frame.Navigate(typeof(MainPage));
+        _ = Frame.Navigate(typeof(MainPage));
         Frame.Navigated += OnNavigated;
 
         // Set up back button
