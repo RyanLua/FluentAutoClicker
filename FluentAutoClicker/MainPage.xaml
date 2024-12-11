@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-<!--
-    Copyright (C) 2024  Ryan Luu
-
-    This file is part of Fluent Auto Clicker.
-
-    Fluent Auto Clicker is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published
-    by the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    Fluent Auto Clicker is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with Fluent Auto Clicker.  If not, see <https://www.gnu.org/licenses/>.
--->
-
 <Page
     x:Class="FluentAutoClicker.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -31,18 +11,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <StackPanel
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Stretch"
-            Spacing="{StaticResource StackPanelRowSpacing}">
+
+        <!--  Click Interval  -->
+        <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelRowSpacing}">
             <TextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
             <Grid ColumnSpacing="{StaticResource RadioButtonsColumnSpacing}">
                 <Grid.ColumnDefinitions>
@@ -54,7 +32,6 @@
                 <NumberBox
                     x:Name="NumberBoxHours"
                     x:Uid="NumberBoxHours"
-                    Grid.Column="0"
                     HorizontalAlignment="Stretch"
                     AcceptsExpression="True"
                     Maximum="48"
@@ -99,68 +76,72 @@
                     Value="100" />
             </Grid>
         </StackPanel>
-        <StackPanel
+
+        <!--  Mouse Button  -->
+        <ComboBox
+            x:Name="MouseButtonTypeComboBox"
+            x:Uid="ComboBoxMouseButton"
             Grid.Row="1"
-            Grid.Column="0"
-            Spacing="{StaticResource StackPanelRowSpacing}">
-            <ComboBox
-                x:Name="MouseButtonTypeComboBox"
-                x:Uid="ComboBoxMouseButton"
-                SelectedIndex="0">
-                <ComboBoxItem x:Uid="ComboBoxItemLeft" />
-                <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
-                <ComboBoxItem x:Uid="ComboBoxItemRight" />
-            </ComboBox>
+            SelectedIndex="0">
+            <ComboBoxItem x:Uid="ComboBoxItemLeft" />
+            <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
+            <ComboBoxItem x:Uid="ComboBoxItemRight" />
+        </ComboBox>
+
+        <!--  Hotkey  -->
+        <StackPanel Grid.Row="2" Spacing="{StaticResource StackPanelRowSpacing}">
             <TextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
             <Button
                 x:Name="HotkeyButton"
                 Content="F6"
                 IsEnabled="False" />
         </StackPanel>
+
+        <!--  Click Repeat  -->
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <StackPanel Orientation="Vertical">
-                <CheckBox
-                    x:Name="ClickRepeatCheckBox"
-                    x:Uid="ClickRepeatCheckBox"
-                    Checked="ClickRepeatCheckBox_Checked"
-                    Unchecked="ClickRepeatCheckBox_Unchecked" />
-                <NumberBox
-                    x:Name="ClickRepeatAmount"
-                    HorizontalAlignment="Left"
-                    IsEnabled="False"
-                    LargeChange="10"
-                    Minimum="1"
-                    PlaceholderText="100"
-                    SmallChange="1"
-                    SpinButtonPlacementMode="Compact"
-                    Value="100" />
-            </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <CheckBox
-                    x:Name="ClickOffsetCheckBox"
-                    x:Uid="ClickOffsetCheckBox"
-                    Checked="ClickOffsetCheckBox_Checked"
-                    Unchecked="ClickOffsetCheckBox_Unchecked" />
-                <NumberBox
-                    x:Name="ClickOffsetAmount"
-                    HorizontalAlignment="Left"
-                    AcceptsExpression="True"
-                    IsEnabled="False"
-                    LargeChange="25"
-                    Maximum="1000"
-                    Minimum="1"
-                    PlaceholderText="0-1000"
-                    SmallChange="5"
-                    SpinButtonPlacementMode="Compact"
-                    Value="10" />
-            </StackPanel>
+            <CheckBox
+                x:Name="ClickRepeatCheckBox"
+                x:Uid="ClickRepeatCheckBox"
+                Checked="ClickRepeatCheckBox_Checked"
+                Unchecked="ClickRepeatCheckBox_Unchecked" />
+            <NumberBox
+                x:Name="ClickRepeatAmount"
+                HorizontalAlignment="Left"
+                IsEnabled="False"
+                LargeChange="10"
+                Minimum="1"
+                PlaceholderText="100"
+                SmallChange="1"
+                SpinButtonPlacementMode="Compact"
+                Value="100" />
         </StackPanel>
 
+        <!--  Click Offset  -->
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <CheckBox
+                x:Name="ClickOffsetCheckBox"
+                x:Uid="ClickOffsetCheckBox"
+                Checked="ClickOffsetCheckBox_Checked"
+                Unchecked="ClickOffsetCheckBox_Unchecked" />
+            <NumberBox
+                x:Name="ClickOffsetAmount"
+                HorizontalAlignment="Left"
+                AcceptsExpression="True"
+                IsEnabled="False"
+                LargeChange="25"
+                Maximum="1000"
+                Minimum="1"
+                PlaceholderText="0-1000"
+                SmallChange="5"
+                SpinButtonPlacementMode="Compact"
+                Value="10" />
+        </StackPanel>
+
+        <!--  Start Auto Clicker  -->
         <ToggleButton
             x:Name="StartToggleButton"
             x:Uid="ToggleButtonStart"
-            Grid.Row="2"
-            Grid.Column="0"
+            Grid.Row="3"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"

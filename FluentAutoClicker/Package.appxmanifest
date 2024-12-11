@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="c8834b5e-5154-437f-b765-e88d593041ac"
-    Publisher="CN=ryanl"
-    Version="0.0.0.0" />
+    Name="RyanLuu.FluentAutoClicker"
+    Publisher="CN=Ryan Luu, O=Ryan Luu, C=US"
+    Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="c8834b5e-5154-437f-b765-e88d593041ac" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-        <DisplayName>ms-resource:AppDisplayName</DisplayName>
-    <PublisherDisplayName>ryanl</PublisherDisplayName>
+    <DisplayName>ms-resource:AppDisplayName</DisplayName>
+    <PublisherDisplayName>Ryan Luu</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
