@@ -9,6 +9,13 @@
     NavigationCacheMode="Enabled"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <x:Double x:Key="NumberBoxColumnSpacing">4</x:Double>
+        <x:Double x:Key="ButtonColumnSpacing">8</x:Double>
+        <x:Double x:Key="GridRowSpacing">8</x:Double>
+        <x:Double x:Key="StackPanelSpacing">8</x:Double>
+    </Page.Resources>
+
     <Grid Margin="{StaticResource ContentMargin}" RowSpacing="{StaticResource GridRowSpacing}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -22,9 +29,9 @@
         </Grid.ColumnDefinitions>
 
         <!--  Click Interval  -->
-        <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelRowSpacing}">
+        <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelSpacing}">
             <TextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
-            <Grid ColumnSpacing="{StaticResource RadioButtonsColumnSpacing}">
+            <Grid ColumnSpacing="{StaticResource NumberBoxColumnSpacing}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -95,7 +102,7 @@
         <StackPanel
             Grid.Row="2"
             Grid.Column="0"
-            Spacing="{StaticResource StackPanelRowSpacing}">
+            Spacing="{StaticResource StackPanelSpacing}">
             <TextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
             <Button
                 x:Name="HotkeyButton"
@@ -148,7 +155,7 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             VerticalAlignment="Bottom"
-            ColumnSpacing="{StaticResource StackPanelRowSpacing}">
+            ColumnSpacing="{StaticResource ButtonColumnSpacing}">
 
             <!--  Start Auto Clicker  -->
             <Grid.ColumnDefinitions>
