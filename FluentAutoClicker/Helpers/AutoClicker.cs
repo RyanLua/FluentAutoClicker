@@ -15,10 +15,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Runtime.InteropServices;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace FluentAutoClicker.Helpers;
 

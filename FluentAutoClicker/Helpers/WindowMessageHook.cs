@@ -16,12 +16,9 @@
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
 using Microsoft.UI.Xaml;
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace FluentAutoClicker.Helpers;
 
