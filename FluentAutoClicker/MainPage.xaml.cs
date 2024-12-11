@@ -182,6 +182,6 @@ public sealed partial class MainPage : Page
 
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
-        //Frame.Navigate(typeof(SettingsPage));
+        Frame.Navigate(typeof(SettingsPage));
     }
 }
