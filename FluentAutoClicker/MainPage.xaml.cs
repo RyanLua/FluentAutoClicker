@@ -24,11 +24,12 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using Windows.System;
+using WinRT.Interop;
 
 namespace FluentAutoClicker;
 
 /// <summary>
-/// The main page containing all controls displayed on the main window.
+///     The main page containing all controls displayed on the main window.
 /// </summary>
 public sealed partial class MainPage : Page
 {
@@ -49,12 +50,13 @@ public sealed partial class MainPage : Page
             if (e.Message == wmHotkey)
             {
                 // Toggle the StartToggleButton when the hotkey is pressed
-                ToggleButtonAutomationPeer pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer.FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
+                ToggleButtonAutomationPeer pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer
+                    .FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
                 pattern.Toggle();
             }
         };
 
-        nint hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
+        nint hwnd = WindowNative.GetWindowHandle(App.Window);
         int id = 1;
 
         // Register the F6 key
@@ -80,7 +82,8 @@ public sealed partial class MainPage : Page
         ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true && isEnabled;
 
         // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
-        string brushKey = isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
+        string brushKey =
+            isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
         ClickIntervalTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
         HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
     }
@@ -92,6 +95,7 @@ public sealed partial class MainPage : Page
             value = defaultValue;
             numberBox.Value = value;
         }
+
         return value;
     }
 
@@ -129,7 +133,7 @@ public sealed partial class MainPage : Page
         StartToggleButton.Content = "Stop";
 
         int clickInterval = GetIntervalMilliseconds();
-        int repeatAmount = ClickRepeatCheckBox.IsEnabled == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
+        int repeatAmount = ClickRepeatCheckBox.IsEnabled ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
         int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
         AutoClicker.StartAutoClicker(clickInterval, repeatAmount, mouseButton, clickOffset);
@@ -159,15 +163,6 @@ public sealed partial class MainPage : Page
     [DllImport("user32", SetLastError = true)]
     private static extern bool UnregisterHotKey(nint hWnd, int id);
 
-    [Flags]
-    private enum Mod
-    {
-        ModAlt = 0x1,
-        ModControl = 0x2,
-        ModShift = 0x4,
-        ModWin = 0x8,
-        ModNoRepeat = 0x4000,
-    }
     private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
     {
         ClickOffsetAmount.IsEnabled = false;
@@ -181,5 +176,15 @@ public sealed partial class MainPage : Page
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
         _ = Frame.Navigate(typeof(SettingsPage));
+    }
+
+    [Flags]
+    private enum Mod
+    {
+        ModAlt = 0x1,
+        ModControl = 0x2,
+        ModShift = 0x4,
+        ModWin = 0x8,
+        ModNoRepeat = 0x4000
     }
 }

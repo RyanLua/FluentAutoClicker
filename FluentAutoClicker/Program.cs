@@ -20,23 +20,32 @@ using Microsoft.UI.Xaml;
 using Microsoft.Windows.AppLifecycle;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using WinRT;
 
 namespace FluentAutoClicker;
 
 /// <summary>
-/// Customized <c>Program.cs</c> file to implement <see href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance">single-instancing in a WinUI app with C#.</see> Single-instanced apps only allow one instance of the app running at a time.
+///     Customized <c>Program.cs</c> file to implement
+///     <see
+///         href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance">
+///         single-instancing
+///         in a WinUI app with C#.
+///     </see>
+///     Single-instanced apps only allow one instance of the app running at a time.
 /// </summary>
 public class Program
 {
+    private static IntPtr _redirectEventHandle = IntPtr.Zero;
+
     [STAThread]
     private static int Main(string[] args)
     {
-        WinRT.ComWrappersSupport.InitializeComWrappers();
+        ComWrappersSupport.InitializeComWrappers();
         bool isRedirect = DecideRedirection();
 
         if (!isRedirect)
         {
-            Application.Start((p) =>
+            Application.Start(p =>
             {
                 DispatcherQueueSynchronizationContext context = new(
                     DispatcherQueue.GetForCurrentThread());
@@ -84,12 +93,10 @@ public class Program
     [DllImport("user32.dll")]
     private static extern bool SetForegroundWindow(IntPtr hWnd);
 
-    private static IntPtr _redirectEventHandle = IntPtr.Zero;
-
     // Do the redirection on another thread, and use a non-blocking
     // wait method to wait for the redirection to complete.
     public static void RedirectActivationTo(AppActivationArguments args,
-                                            AppInstance keyInstance)
+        AppInstance keyInstance)
     {
         _redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
         _ = Task.Run(() =>
@@ -101,8 +108,8 @@ public class Program
         uint cwmoDefault = 0;
         uint infinite = 0xFFFFFFFF;
         _ = CoWaitForMultipleObjects(
-           cwmoDefault, infinite, 1,
-           [_redirectEventHandle], out uint handleIndex);
+            cwmoDefault, infinite, 1,
+            [_redirectEventHandle], out uint handleIndex);
 
         // Bring the window to the foreground
         Process process = Process.GetProcessById((int)keyInstance.ProcessId);

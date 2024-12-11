@@ -19,20 +19,18 @@ using Microsoft.UI.Xaml;
 using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using WinRT.Interop;
 
 namespace FluentAutoClicker.Helpers;
 
 public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
 {
-    private delegate nint Subclassproc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData);
-
     private static readonly ConcurrentDictionary<nint, WindowMessageHook> Hooks = new();
     private static readonly Subclassproc Proc = SubclassProc;
-
-    public event EventHandler<MessageEventArgs> Message;
     private nint _hWnd;
 
     public WindowMessageHook(Window window) : this(GetHandle(window)) { }
+
     public WindowMessageHook(nint hWnd)
     {
         if (hWnd == 0)
@@ -57,6 +55,19 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
         }
     }
 
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    public virtual bool Equals(WindowMessageHook other)
+    {
+        return other != null && _hWnd.Equals(other._hWnd);
+    }
+
+    public event EventHandler<MessageEventArgs> Message;
+
     protected virtual void OnMessage(object sender, MessageEventArgs e)
     {
         Message?.Invoke(sender, e);
@@ -77,8 +88,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
         }
     }
 
-    ~WindowMessageHook() { Dispose(disposing: false); }
-    public void Dispose() { Dispose(disposing: true); GC.SuppressFinalize(this); }
+    ~WindowMessageHook() { Dispose(false); }
 
     [DllImport("comctl32", SetLastError = true)]
     private static extern bool SetWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass, uint dwRefData);
@@ -92,7 +102,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
     private static nint GetHandle(Window window)
     {
         ArgumentNullException.ThrowIfNull(window);
-        return WinRT.Interop.WindowNative.GetWindowHandle(window);
+        return WindowNative.GetWindowHandle(window);
     }
 
     private static nint SubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData)
@@ -106,6 +116,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
                 return e.Result.Value;
             }
         }
+
         return DefSubclassProc(hWnd, uMsg, wParam, lParam);
     }
 
@@ -124,10 +135,8 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
         return Equals(obj as WindowMessageHook);
     }
 
-    public virtual bool Equals(WindowMessageHook other)
-    {
-        return other != null && _hWnd.Equals(other._hWnd);
-    }
+    private delegate nint Subclassproc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass,
+        uint dwRefData);
 }
 
 public class MessageEventArgs : EventArgs

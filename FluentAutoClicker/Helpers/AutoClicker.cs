@@ -20,33 +20,38 @@ using System.Runtime.InteropServices;
 namespace FluentAutoClicker.Helpers;
 
 /// <summary>
-/// Helper for creating threads to synthesize mouse input.
+///     Helper for creating threads to synthesize mouse input.
 /// </summary>
 public static class AutoClicker
 {
-    [DllImport("user32.dll", SetLastError = true)]
-    private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
-
     private static Thread _autoClickerThread;
     private static bool _isAutoClickerRunning;
 
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
+
     /// <summary>
-    /// Starts the auto clicker thread.
+    ///     Starts the auto clicker thread.
     /// </summary>
     /// <param name="millisecondsDelay">The number of milliseconds to wait before clicks.</param>
     /// <param name="clickAmount">The number of clicks before stopping the auto clicker thread.</param>
     /// <param name="mouseButtonType">The mouse button used to click.</param>
-    /// <param name="clickDelayOffset">The amount of time in milliseconds to add randomly to the millisecond delay between clicks.</param>
-    public static void StartAutoClicker(int millisecondsDelay, int clickAmount, int mouseButtonType, int clickDelayOffset)
+    /// <param name="clickDelayOffset">
+    ///     The amount of time in milliseconds to add randomly to the millisecond delay between
+    ///     clicks.
+    /// </param>
+    public static void StartAutoClicker(int millisecondsDelay, int clickAmount, int mouseButtonType,
+        int clickDelayOffset)
     {
         // TODO: Evaluate whether a thread is necessary for this.
         _isAutoClickerRunning = true;
-        _autoClickerThread = new Thread(() => AutoClickerThread(millisecondsDelay, clickAmount, mouseButtonType, clickDelayOffset));
+        _autoClickerThread = new Thread(() =>
+            AutoClickerThread(millisecondsDelay, clickAmount, mouseButtonType, clickDelayOffset));
         _autoClickerThread.Start();
     }
 
     /// <summary>
-    /// Stops the auto clicker thread.
+    ///     Stops the auto clicker thread.
     /// </summary>
     public static void StopAutoClicker()
     {
