@@ -15,7 +15,9 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
+using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml.Controls;
+using Windows.ApplicationModel;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -23,12 +25,25 @@ using Microsoft.UI.Xaml.Controls;
 namespace FluentAutoClicker;
 
 /// <summary>
-/// An empty page that can be used on its own or navigated to within a Frame.
+///     An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
 public sealed partial class SettingsPage : Page
 {
     public SettingsPage()
     {
         InitializeComponent();
+        AppAboutSettingsExpander.Header = AppName;
+        AppVersionTextBlock.Text = AppVersion;
+    }
+
+    public static string AppName => "AppDisplayName".GetLocalized();
+
+    public static string AppVersion
+    {
+        get
+        {
+            PackageVersion version = Package.Current.Id.Version;
+            return $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
+        }
     }
 }
