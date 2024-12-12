@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <Page
     x:Class="FluentAutoClicker.SettingsPage"
@@ -16,9 +16,19 @@
 
         <!--  Spacing between cards  -->
         <x:Double x:Key="SettingsCardSpacing">4</x:Double>
+        <Thickness x:Key="HyperlinkButtonNegativeMargin">-12,0,0,0</Thickness>
+        <Thickness x:Key="XSmallTopBottomMargin">0,8,0,8</Thickness>
 
         <!--  Style (inc. the correct spacing) of a section header  -->
-
+        <Style
+            x:Key="SettingsSectionHeaderTextBlockStyle"
+            BasedOn="{StaticResource BodyTextBlockStyle}"
+            TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="Margin" Value="1,30,0,6" />
+            </Style.Setters>
+        </Style>
     </Page.Resources>
 
     <ScrollViewer>
@@ -27,8 +37,14 @@
                 MaxWidth="1000"
                 HorizontalAlignment="Stretch"
                 Spacing="{StaticResource SettingsCardSpacing}">
+                <win:StackPanel.ChildrenTransitions>
+                    <win:EntranceThemeTransition FromVerticalOffset="50" />
+                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
+                </win:StackPanel.ChildrenTransitions>
 
-                <TextBlock>Appearance</TextBlock>
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="Settings" />
+
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Appearance" />
 
                 <controls:SettingsCard Description="Select which app theme to display" Header="App theme">
                     <controls:SettingsCard.HeaderIcon>
@@ -42,11 +58,10 @@
                     </ComboBox>
                 </controls:SettingsCard>
 
-                <controls:SettingsCard Description="Select system backdrop material for the window background"
-                                       Header="Backdrop material">
-                    <controls:SettingsCard.HeaderIcon>
-                        <FontIcon Glyph="&#xEF1F;" />
-                    </controls:SettingsCard.HeaderIcon>
+                <controls:SettingsCard
+                    Description="Select system backdrop material for the window background"
+                    Header="Backdrop material"
+                    HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
 
                     <ComboBox SelectedIndex="0">
                         <ComboBoxItem>Mica</ComboBoxItem>
@@ -57,7 +72,7 @@
                     </ComboBox>
                 </controls:SettingsCard>
 
-                <TextBlock Text="Behavior" />
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Behavior" />
 
                 <controls:SettingsCard
                     Description="Hotkey for toggling the auto clicker on and off"
@@ -83,30 +98,51 @@
                 </controls:SettingsExpander>
 
                 <!--  Example 'About' section  -->
-                <TextBlock Text="About" />
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
 
                 <controls:SettingsExpander
                     x:Name="AppAboutSettingsExpander"
-                    Description="© 2024. All rights reserved."
-                    HeaderIcon="{ui:BitmapIcon Source=ms-appx:///Assets/StoreLogo.scale-200.png}">
+                    Description="Copyright © 2024  Ryan Luu"
+                    HeaderIcon="{ui:BitmapIcon Source=ms-appx:///Assets/WindowIcon.ico}">
                     <TextBlock
                         x:Name="AppVersionTextBlock"
                         win:IsTextSelectionEnabled="True"
                         Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                     <controls:SettingsExpander.Items>
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
-                            <StackPanel Margin="-12,0,0,0" Orientation="Vertical">
-                                <HyperlinkButton Content="GitHub"
-                                                 NavigateUri="https://github.com/RyanLua/FluentAutoClicker" />
-                                <HyperlinkButton Content="Discord" NavigateUri="https://discord.gg/32AMskrpFf" />
+                            <StackPanel Orientation="Vertical">
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="Privacy policy"
+                                    NavigateUri="https://fluentautoclicker.com/policy" />
+                            </StackPanel>
+                        </controls:SettingsCard>
+                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Margin="{StaticResource XSmallTopBottomMargin}" Text="Related links" />
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="Website"
+                                    NavigateUri="https://fluentautoclicker.com" />
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="Source code"
+                                    NavigateUri="https://fluentautoclicker.com/github" />
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="Discord server"
+                                    NavigateUri="https://fluentautoclicker.com/discord" />
                             </StackPanel>
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
+
                 <HyperlinkButton
-                    Margin="0,8,0,0"
+                    Margin="{StaticResource XSmallTopBottomMargin}"
                     Content="Send feedback"
-                    NavigateUri="https://github.com/RyanLua/FluentAutoClicker/issues/new/choose" />
+                    NavigateUri="mailto:feedback@fluentautoclicker.com" />
+
+                <TextBlock TextWrapping="WrapWholeWords"><Span xml:space="preserve">To learn how you can contribute to Fluent Auto Clicker, check out the project on <Hyperlink NavigateUri="https://github.com/RyanLua/FluentAutoClicker">GitHub</Hyperlink>.</Span></TextBlock>
 
             </StackPanel>
         </Grid>
