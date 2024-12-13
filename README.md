@@ -28,9 +28,9 @@
 
 We welcome contributions from everyone. Before contributing, read the [contribution guidelines](https://github.com/RyanLua/FluentAutoClicker/blob/main/.github/CONTRIBUTING.md).
 
-First-time contributor? Make your first contribution to this repository by tackling one a ["good first issue."](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+Don't know where you start? Make your first contribution by tackling one a [good first issue](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
 
-More experienced? Consider checking out a ["help wanted issue."](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
+If you are more experienced, consider checking out a [help wanted issue](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
 
 ## 🪪 License
 
