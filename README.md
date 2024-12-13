@@ -3,8 +3,8 @@
   <h1 align="center">Fluent Auto Clicker</h1>
 </p>
 
-> [!NOTE]
-> Fluent Auto Clicker is still in development and there is no stable release of it yet. Consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) to support it's development
+> [!IMPORTANT]
+> This app is still in development and no public release is available. Consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) to show your support.
 
 Fluent Auto Clicker is a beautifully designed auto clicker for Windows 10 and 11. Following the latest Fluent Design guidelines and seamlessly blending into Windows.
 
