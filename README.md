@@ -1,16 +1,12 @@
 <p align="center">
-  <img alt="Fluent Auto Clicker" align=center src="assets/Logo.png" height="128px" />
+  <img alt="Fluent Auto Clicker" align=center src="assets/Logo.svg" height="128px" />
   <h1 align="center">Fluent Auto Clicker</h1>
 </p>
 
 > [!IMPORTANT]
 > This app is still in development and no public release is available. Consider [starring the repository](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars) to show your support.
 
-Fluent Auto Clicker is a beautifully designed auto clicker for Windows 10 and 11. Following the latest [Fluent Design](https://en.wikipedia.org/wiki/Fluent_Design_System) guidelines and seamlessly blending into Windows.
-
-We stand out as one of the fastest auto clickers, with a 1ms interval between clicks. Specially optimized for maximum clicking speed, clicking faster than even the most overpowered auto clickers.
-
-Whether you're playing games like Roblox, Minecraft, Cookie Clicker, or tackling any task that requires precise clicking, Fluent Auto Clicker has you covered.
+**Fluent Auto Clicker** is a beautifully designed auto clicker for Windows 10 and 11, made with the [Fluent Design Guidelines](https://learn.microsoft.com/en-us/windows/apps/design/basics/).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/ScreenshotDark.png">
@@ -18,7 +14,7 @@ Whether you're playing games like Roblox, Minecraft, Cookie Clicker, or tackling
   <img src="assets/ScreenshotLight.png">
 </picture>
 
-## 🌟 Features
+## 🚀 Features
 
 * ⚡ **Lightning-Fast Clicking**: 1ms intervals between clicks, allowing for up to 1000 clicks per second.
 
@@ -27,11 +23,6 @@ Whether you're playing games like Roblox, Minecraft, Cookie Clicker, or tackling
 * 🛡️ **Secure by Design**: Build for safety and security by using [MSIX AppContainer](https://learn.microsoft.com/en-us/windows/msix/msix-container) for app isolation and virtualization.
 
 * 🔓 **Open Source**: Fully open-source, allowing you to view to the source code for maximum transparency.
-
-## 💻 Device Requirements
-
-* 🪟 **Minimum OS Version**: Windows 10, version 1809 (build 17763) or later
-* 🔨 **Architecture**: x32, x64, or ARM64
 
 ## 👏 Contributing
 
