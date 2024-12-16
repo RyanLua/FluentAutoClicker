@@ -26,7 +26,7 @@
 
 ## 👏 Contributing
 
-We welcome contributions from everyone. Before contributing, read the [contribution guidelines](https://github.com/RyanLua/FluentAutoClicker/blob/main/.github/CONTRIBUTING.md).
+We welcome contributions from everyone. Before contributing, read the [contribution guidelines](.github/CONTRIBUTING.md).
 
 Don't know where you start? Make your first contribution by tackling one a [good first issue](https://github.com/RyanLua/FluentAutoClicker/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
 
@@ -38,4 +38,4 @@ Fluent Auto Clicker is free software: you can redistribute it and/or modify it u
 
 Fluent Auto Clicker is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
-You should have received a copy of the GNU Affero General Public License along with this program. A copy of the GNU Affero General Public License is available in the [`COPYING`](https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md) file in the root of this repository. If not, see <https://www.gnu.org/licenses/>.
+You should have received a copy of the GNU Affero General Public License along with this program. A copy of the GNU Affero General Public License is available in the [`COPYING`](COPYING.md) file in the root of this repository. If not, see <https://www.gnu.org/licenses/>.

@@ -10,14 +10,14 @@ Learn how to configure your environment to develop this project. This assumes yo
 
 ### Using Dev Home or WinGet
 
-You can use the [`configuration.dsc.yaml` configuration file](.configurations/configuration.dsc.yaml) to configure your environment. This can be applied by either:
+You can use the [`configuration.dsc.yaml` configuration file](../.configurations/configuration.dsc.yaml) to configure your environment. This can be applied by either:
 
 * Dev Home's machine configuration tool
 * WinGet configuration. If you have WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases), run `winget configure .configurations/configuration.dsc.yaml` in an elevated shell from the project root so relative paths resolve correctly
 
 ### Using Visual Studio
 
-If you already have Visual Studio installed and have developer mode enabled, you may import the [`.vsconfig` installation configuration file](.vsconfig).
+If you already have Visual Studio installed and have developer mode enabled, you may import the [`.vsconfig` installation configuration file](../.vsconfig).
 
 1. Open the Visual Studio Installer and close Visual Studio.
 1. On either the **Installed** tab or the **Available** tab, select **More** > **Import configuration** on the Visual Studio product card.
@@ -51,4 +51,4 @@ For more information, learn how to [build and clean projects and solutions in Vi
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the [GNU Affero General Public License v3.0](https://github.com/RyanLua/FluentAutoClicker?tab=AGPL-3.0-1-ov-file).
+By contributing, you agree that your contributions will be licensed under the [GNU Affero General Public License v3.0](https://github.com/RyanLua/FluentAutoClicker?tab=AGPL-3.0-1-ov-file#readme).
