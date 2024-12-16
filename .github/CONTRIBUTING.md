@@ -30,6 +30,17 @@ Additionally, Visual Studio will automatically detect any missing components in 
 
 For more ways to install, learn how to [import or export installation configurations](https://learn.microsoft.com/en-us/visualstudio/install/import-export-installation-configurations?view=vs-2022).
 
+## Building the project
+
+You can build the project with Visual Studio. Before building the project, ensure [your environment is configured correctly](#configure-your-environment).
+
+1. In **Solution Explorer**, choose or open the solution.
+1. On the menu bar, choose **Build** > **Build Solution**, or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>.
+
+To debug the project, press <kbd>F5</kbd> or choose **Debug** > **Start Debugging**.
+
+For more information, learn how to [build and clean projects and solutions in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/import-export-installation-configurations?view=vs-2022).
+
 ## Rules
 
 * **Follow the pattern of what you already see in the code.**
