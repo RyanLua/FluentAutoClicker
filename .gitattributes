@@ -63,6 +63,7 @@
 #*.RTF   diff=astextplain
 
 ###############################################################################
-# Override `.XamlStyler` to use JSON highlighting and classification.
+# Override files to use proper highlighting.
 ###############################################################################
+*.vsconfig linguist-language=JSON
 *.XamlStyler linguist-language=JSON
