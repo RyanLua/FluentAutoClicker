@@ -58,7 +58,11 @@ For more information, learn how to [build and clean projects and solutions in Vi
 
 ## Helpful resources
 
+Resources to help you contribute to this project and learn more about Windows app development:
 
+* [Start developing Windows apps](https://learn.microsoft.com/en-us/windows/apps/get-started/start-here)
+* [Create your first WinUI 3 (Windows App SDK) project](https://learn.microsoft.com/en-us/windows/apps/winui/winui3/create-your-first-winui3-app)
+* [Build a Hello World app using C# and WinUI 3 / Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/how-tos/hello-world-winui3)
 
 ## Rules
 
