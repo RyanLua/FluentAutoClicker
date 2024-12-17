@@ -4,6 +4,21 @@ We welcome contributions from the community. If you would like to contribute, pl
 
 If this is your first time contributing, [learn how to contribute to a project through forking](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
 
+## Create a new issue
+
+General support should be a [discussion](https://github.com/RyanLua/FluentAutoClicker/discussions) and not a issue. If you have a question, please ask it in the discussion.
+
+### How to report a bug
+
+> [!CAUTION]
+> **If you find a security vulnerability, do NOT open an issue.** [Create a security advisory](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/creating-a-repository-security-advisory#creating-a-security-advisory) instead. For more information, see [our security policy](https://github.com/RyanLua/FluentAutoClicker?tab=security-ov-file#readme).
+
+To report a bug, [create a new bug report issue](https://github.com/RyanLua/FluentAutoClicker/issues/new?template=bug_report.yml).
+
+### How to suggest a feature or enhancement
+
+To suggest a feature or enhancement, [create a new feature request issue](https://github.com/RyanLua/FluentAutoClicker/issues/new?template=feature_request.yml).
+
 ## Configure your environment
 
 Learn how to configure your environment to develop this project. This assumes you meet the [system requirements for Windows app development](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/system-requirements).
@@ -40,6 +55,10 @@ You can build the project with Visual Studio. Before building the project, ensur
 To debug the project, press <kbd>F5</kbd> or choose **Debug** > **Start Debugging**.
 
 For more information, learn how to [build and clean projects and solutions in Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/import-export-installation-configurations?view=vs-2022).
+
+## Helpful resources
+
+
 
 ## Rules
 
