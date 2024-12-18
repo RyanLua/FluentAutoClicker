@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <WindowsSdkPackageVersion>10.0.19041.54</WindowsSdkPackageVersion>
     <RootNamespace>FluentAutoClicker</RootNamespace>
@@ -56,34 +56,12 @@
   </PropertyGroup>
 
   <!-- Publish Properties -->
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <PublishAot>False</PublishAot>
-    <PublishReadyToRun>False</PublishReadyToRun>
-    <PublishTrimmed>False</PublishTrimmed>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <PublishAot>False</PublishAot>
-    <PublishReadyToRun>False</PublishReadyToRun>
-    <PublishTrimmed>False</PublishTrimmed>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|arm64'">
-    <PublishAot>False</PublishAot>
-    <PublishReadyToRun>False</PublishReadyToRun>
-    <PublishTrimmed>False</PublishTrimmed>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <PublishAot>False</PublishAot>
-    <PublishReadyToRun>True</PublishReadyToRun>
-    <PublishTrimmed>True</PublishTrimmed>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <PublishAot>True</PublishAot>
-    <PublishReadyToRun>True</PublishReadyToRun>
-    <PublishTrimmed>True</PublishTrimmed>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|arm64'">
-    <PublishAot>True</PublishAot>
-    <PublishReadyToRun>True</PublishReadyToRun>
-    <PublishTrimmed>True</PublishTrimmed>
+  <PropertyGroup>
+    <PublishAot Condition="'$(Configuration)' == 'Debug'">False</PublishAot>
+    <PublishAot Condition="'$(Configuration)' != 'Debug'">True</PublishAot>
+    <PublishReadyToRun Condition="'$(Configuration)' == 'Debug'">False</PublishReadyToRun>
+    <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
+    <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
+    <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
   </PropertyGroup>
 </Project>
