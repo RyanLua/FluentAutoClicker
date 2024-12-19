@@ -29,7 +29,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
     private static readonly ConcurrentDictionary<nint, WindowMessageHook> Hooks = new();
     private static readonly Subclassproc Proc = SubclassProc;
 
-    public event EventHandler<MessageEventArgs> Message;
+    public event EventHandler<MessageEventArgs>? Message;
     private nint _hWnd;
 
     public WindowMessageHook(Window window) : this(GetHandle(window)) { }
@@ -97,7 +97,7 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
 
     private static nint SubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData)
     {
-        if (Hooks.TryGetValue(hWnd, out WindowMessageHook hook))
+        if (Hooks.TryGetValue(hWnd, out WindowMessageHook? hook))
         {
             MessageEventArgs e = new(hWnd, uMsg, wParam, lParam);
             hook.OnMessage(hook, e);
@@ -114,17 +114,17 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
         return _hWnd.GetHashCode();
     }
 
-    public override string ToString()
+    public override string? ToString()
     {
         return _hWnd.ToString();
     }
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         return Equals(obj as WindowMessageHook);
     }
 
-    public virtual bool Equals(WindowMessageHook other)
+    public virtual bool Equals(WindowMessageHook? other)
     {
         return other != null && _hWnd.Equals(other._hWnd);
     }

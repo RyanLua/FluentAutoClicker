@@ -27,6 +27,8 @@ namespace FluentAutoClicker;
 /// </summary>
 public partial class App : Application
 {
+    public static Window Window { get; private set; } = null!;
+
     /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -45,6 +47,4 @@ public partial class App : Application
         Window = new MainWindow();
         Window.Activate();
     }
-
-    public static Window Window { get; private set; }
 }

@@ -53,7 +53,7 @@ public class Program
         bool isRedirect = false;
         AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
         ExtendedActivationKind kind = args.Kind;
-        AppInstance keyInstance = AppInstance.FindOrRegisterForKey("MySingleInstanceApp");
+        AppInstance keyInstance = AppInstance.FindOrRegisterForKey("FluentAutoClickerApp");
 
         if (keyInstance.IsCurrent)
         {
@@ -71,7 +71,7 @@ public class Program
     [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
     private static extern IntPtr CreateEvent(
         IntPtr lpEventAttributes, bool bManualReset,
-        bool bInitialState, string lpName);
+        bool bInitialState, string? lpName);
 
     [DllImport("kernel32.dll")]
     private static extern bool SetEvent(IntPtr hEvent);
@@ -109,7 +109,7 @@ public class Program
         _ = SetForegroundWindow(process.MainWindowHandle);
     }
 
-    private static void OnActivated(object sender, AppActivationArguments args)
+    private static void OnActivated(object? sender, AppActivationArguments args)
     {
         _ = args.Kind;
     }
