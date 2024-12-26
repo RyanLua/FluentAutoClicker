@@ -80,13 +80,13 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
     ~WindowMessageHook() { Dispose(disposing: false); }
     public void Dispose() { Dispose(disposing: true); GC.SuppressFinalize(this); }
 
-    [DllImport("comctl32", SetLastError = true)]
+    [DllImport("comctl32.dll", SetLastError = true)]
     private static extern bool SetWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass, uint dwRefData);
 
-    [DllImport("comctl32", SetLastError = true)]
+    [DllImport("comctl32.dll", SetLastError = true)]
     private static extern nint DefSubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam);
 
-    [DllImport("comctl32", SetLastError = true)]
+    [DllImport("comctl32.dll", SetLastError = true)]
     private static extern bool RemoveWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass);
 
     private static nint GetHandle(Window window)
