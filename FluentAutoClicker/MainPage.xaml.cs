@@ -40,7 +40,10 @@ public sealed partial class MainPage : Page
 
     private void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
-        WindowMessageHook hook = new(App.Window);
+        MainWindow window = App.MainWindow;
+        nint hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+
+        WindowMessageHook hook = new(window);
         Unloaded += (s, e) => hook.Dispose();
 
         hook.Message += (s, e) =>
@@ -54,16 +57,15 @@ public sealed partial class MainPage : Page
             }
         };
 
-        nint hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
         int id = 1;
 
         // Register the F6 key
-        if (!RegisterHotKey(hwnd, id, Mod.ModNoRepeat, VirtualKey.F6))
+        if (!RegisterHotKey(hWnd, id, Mod.ModNoRepeat, VirtualKey.F6))
         {
             throw new Win32Exception(Marshal.GetLastWin32Error());
         }
 
-        Unloaded += (s, e) => UnregisterHotKey(hwnd, id);
+        Unloaded += (s, e) => UnregisterHotKey(hWnd, id);
     }
 
     private void SetControlsEnabled(bool isEnabled)

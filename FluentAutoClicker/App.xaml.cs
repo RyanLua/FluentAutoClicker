@@ -27,7 +27,7 @@ namespace FluentAutoClicker;
 /// </summary>
 public partial class App : Application
 {
-    public static Window Window { get; private set; } = null!;
+    public static MainWindow MainWindow = new();
 
     /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
@@ -44,7 +44,6 @@ public partial class App : Application
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
     {
-        Window = new MainWindow();
-        Window.Activate();
+        MainWindow.Activate();
     }
 }
