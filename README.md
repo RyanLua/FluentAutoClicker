@@ -34,7 +34,7 @@ If you are more experienced, consider checking out a [help wanted issue](https:/
 
 ## 🪪 License
 
-﻿Copyright (C) 2024 Ryan Luu
+Copyright (C) 2025 Ryan Luu
 
 Fluent Auto Clicker is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
