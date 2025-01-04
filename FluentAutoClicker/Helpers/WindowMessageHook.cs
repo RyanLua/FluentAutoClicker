@@ -22,7 +22,7 @@ using System.Runtime.InteropServices;
 
 namespace FluentAutoClicker.Helpers;
 
-public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
+public partial class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
 {
     private delegate nint Subclassproc(nint hWnd, uint uMsg, nint wParam, nint lParam, nint uIdSubclass, uint dwRefData);
 
@@ -80,14 +80,16 @@ public class WindowMessageHook : IEquatable<WindowMessageHook>, IDisposable
     ~WindowMessageHook() { Dispose(disposing: false); }
     public void Dispose() { Dispose(disposing: true); GC.SuppressFinalize(this); }
 
-    [DllImport("comctl32.dll", SetLastError = true)]
-    private static extern bool SetWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass, uint dwRefData);
+    [LibraryImport("comctl32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static partial bool SetWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass, uint dwRefData);
 
-    [DllImport("comctl32.dll", SetLastError = true)]
-    private static extern nint DefSubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam);
+    [LibraryImport("comctl32.dll", SetLastError = true)]
+    private static partial nint DefSubclassProc(nint hWnd, uint uMsg, nint wParam, nint lParam);
 
-    [DllImport("comctl32.dll", SetLastError = true)]
-    private static extern bool RemoveWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass);
+    [LibraryImport("comctl32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static partial bool RemoveWindowSubclass(nint hWnd, Subclassproc pfnSubclass, uint uIdSubclass);
 
     private static nint GetHandle(Window window)
     {

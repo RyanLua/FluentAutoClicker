@@ -26,7 +26,7 @@ namespace FluentAutoClicker;
 /// <summary>
 /// Customized <c>Program.cs</c> file to implement <see href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance">single-instancing in a WinUI app with C#.</see> Single-instanced apps only allow one instance of the app running at a time.
 /// </summary>
-public class Program
+public partial class Program
 {
     [STAThread]
     private static int Main(string[] args)
@@ -68,21 +68,23 @@ public class Program
         return isRedirect;
     }
 
-    [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-    private static extern IntPtr CreateEvent(
-        IntPtr lpEventAttributes, bool bManualReset,
-        bool bInitialState, string? lpName);
+    [LibraryImport("kernel32.dll", EntryPoint = "CreateEventW", StringMarshalling = StringMarshalling.Utf16)]
+    private static partial IntPtr CreateEvent(
+        IntPtr lpEventAttributes, [MarshalAs(UnmanagedType.Bool)] bool bManualReset,
+        [MarshalAs(UnmanagedType.Bool)] bool bInitialState, string? lpName);
 
-    [DllImport("kernel32.dll")]
-    private static extern bool SetEvent(IntPtr hEvent);
+    [LibraryImport("kernel32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static partial bool SetEvent(IntPtr hEvent);
 
-    [DllImport("ole32.dll")]
-    private static extern uint CoWaitForMultipleObjects(
+    [LibraryImport("ole32.dll")]
+    private static partial uint CoWaitForMultipleObjects(
         uint dwFlags, uint dwMilliseconds, ulong nHandles,
         IntPtr[] pHandles, out uint dwIndex);
 
-    [DllImport("user32.dll")]
-    private static extern bool SetForegroundWindow(IntPtr hWnd);
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static partial bool SetForegroundWindow(IntPtr hWnd);
 
     private static IntPtr _redirectEventHandle = IntPtr.Zero;
 

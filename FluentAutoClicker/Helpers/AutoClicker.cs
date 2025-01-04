@@ -22,10 +22,10 @@ namespace FluentAutoClicker.Helpers;
 /// <summary>
 /// Helper for creating threads to synthesize mouse input.
 /// </summary>
-public static class AutoClicker
+public static partial class AutoClicker
 {
-    [DllImport("user32.dll", SetLastError = true)]
-    private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
+    [LibraryImport("user32.dll", SetLastError = true)]
+    private static partial uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
 
     private static Thread? _autoClickerThread;
     private static bool _isAutoClickerRunning;
