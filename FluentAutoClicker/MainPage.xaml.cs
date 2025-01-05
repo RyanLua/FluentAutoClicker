@@ -60,7 +60,7 @@ public sealed partial class MainPage : Page
         int id = 1;
 
         // Register the F6 key
-        if (!RegisterHotKey(hWnd, id, Mod.ModNoRepeat, VirtualKey.F6))
+        if (!RegisterHotKey(hWnd, id, VirtualKeyModifiers.None, VirtualKey.F6))
         {
             throw new Win32Exception(Marshal.GetLastWin32Error());
         }
@@ -157,21 +157,12 @@ public sealed partial class MainPage : Page
     // interop code for Windows API hotkey functions
     [LibraryImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool RegisterHotKey(nint hWnd, int id, Mod fsModifiers, VirtualKey vk);
+    private static partial bool RegisterHotKey(nint hWnd, int id, VirtualKeyModifiers fsModifiers, VirtualKey vk);
 
     [LibraryImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool UnregisterHotKey(nint hWnd, int id);
 
-    [Flags]
-    private enum Mod
-    {
-        ModAlt = 0x1,
-        ModControl = 0x2,
-        ModShift = 0x4,
-        ModWin = 0x8,
-        ModNoRepeat = 0x4000,
-    }
     private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
     {
         ClickOffsetAmount.IsEnabled = false;
