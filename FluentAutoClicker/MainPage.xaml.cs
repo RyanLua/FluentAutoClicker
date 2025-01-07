@@ -39,7 +39,8 @@ public sealed partial class MainPage : Page
         Loaded += MainPage_Loaded;
     }
 
-    private WNDPROC wndProc = null!;
+    private WNDPROC origHotKeyProc;
+    private WNDPROC hotKeyProcD;
 
     private LRESULT HotKeyProc(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
     {
@@ -53,7 +54,7 @@ public sealed partial class MainPage : Page
             }
         }
 
-        return PInvoke.CallWindowProc(wndProc, hWnd, Msg, wParam, lParam);
+        return PInvoke.CallWindowProc(origHotKeyProc, hWnd, Msg, wParam, lParam);
     }
 
     private void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -67,10 +68,10 @@ public sealed partial class MainPage : Page
         _ = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
 
         // Add hotkey function pointer to window procedure
-        WNDPROC hotKeyDelegate = HotKeyProc;
-        nint hotKeyProcPtr = Marshal.GetFunctionPointerForDelegate(hotKeyDelegate);
+        hotKeyProcD = HotKeyProc;
+        nint hotKeyProcPtr = Marshal.GetFunctionPointerForDelegate(hotKeyProcD);
         nint wndPtr = PInvoke.SetWindowLongPtr(hWnd, WINDOW_LONG_PTR_INDEX.GWL_WNDPROC, hotKeyProcPtr);
-        wndProc = Marshal.GetDelegateForFunctionPointer<WNDPROC>(wndPtr);
+        origHotKeyProc = Marshal.GetDelegateForFunctionPointer<WNDPROC>(wndPtr);
     }
 
     private void SetControlsEnabled(bool isEnabled)
