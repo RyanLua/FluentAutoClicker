@@ -62,7 +62,7 @@ public static class AutoClicker
 
         while (_isAutoClickerRunning)
         {
-            // Stop if we click more than repeat amount.
+            // Stop if we click more than repeat amount
             if (clickCount >= repeatAmount && repeatAmount != 0)
             {
                 Stop();
