@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Ryan Luu
+// Copyright (C) 2025 Ryan Luu
 //
 // This file is part of Fluent Auto Clicker.
 //

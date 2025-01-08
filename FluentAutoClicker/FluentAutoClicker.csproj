@@ -16,7 +16,7 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
     <Authors>Ryan Luu</Authors>
-    <Copyright>Copyright (C) 2024 Ryan Luu</Copyright>
+    <Copyright>Copyright (C) 2025 Ryan Luu</Copyright>
     <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
     <AssemblyTitle>Fluent Auto Clicker</AssemblyTitle>
   </PropertyGroup>
