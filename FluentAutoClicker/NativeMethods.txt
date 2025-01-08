@@ -2,3 +2,4 @@ RegisterHotKey
 UnregisterHotKey
 SetWindowLongPtr
 CallWindowProc
+SendInput

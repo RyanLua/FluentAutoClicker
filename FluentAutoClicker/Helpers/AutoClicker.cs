@@ -16,17 +16,16 @@
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
 using System.Runtime.InteropServices;
+using Windows.Win32;
+using Windows.Win32.UI.Input.KeyboardAndMouse;
 
 namespace FluentAutoClicker.Helpers;
 
 /// <summary>
 /// Helper for creating threads to synthesize mouse input.
 /// </summary>
-public static partial class AutoClicker
+public static class AutoClicker
 {
-    [LibraryImport("user32.dll", SetLastError = true)]
-    private static partial uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
-
     private static Thread? _autoClickerThread;
     private static bool _isAutoClickerRunning;
 
@@ -37,114 +36,87 @@ public static partial class AutoClicker
     /// <param name="clickAmount">The number of clicks before stopping the auto clicker thread.</param>
     /// <param name="mouseButtonType">The mouse button used to click.</param>
     /// <param name="clickDelayOffset">The amount of time in milliseconds to add randomly to the millisecond delay between clicks.</param>
-    public static void StartAutoClicker(int millisecondsDelay, int clickAmount, int mouseButtonType, int clickDelayOffset)
+    public static void Start(int millisecondsDelay = 100, int clickAmount = 0,
+        int mouseButtonType = 0, int clickDelayOffset = 0)
     {
-        // TODO: Evaluate whether a thread is necessary for this.
+        // TODO: Move the parameters to another function to be able to change parameters while the thread is running.
         _isAutoClickerRunning = true;
-        _autoClickerThread = new Thread(() => AutoClickerThread(millisecondsDelay, clickAmount, mouseButtonType, clickDelayOffset));
+        _autoClickerThread = new Thread(() =>
+            AutoClickerThread(millisecondsDelay, clickAmount, mouseButtonType, clickDelayOffset));
         _autoClickerThread.Start();
     }
 
     /// <summary>
     /// Stops the auto clicker thread.
     /// </summary>
-    public static void StopAutoClicker()
+    public static void Stop()
     {
         _isAutoClickerRunning = false;
-        // HACK: Incorrectly stops the thread, but it works for now.
         _autoClickerThread?.Join();
     }
 
-    private static async void AutoClickerThread(int clickInterval, int repeatAmount, int mouseButton, int clickOffset)
+    private static async void AutoClickerThread(int clickInterval, int repeatAmount, int mouseButton,
+        int clickOffset)
     {
         int clickCount = 0;
-        Random random = new();
+
         while (_isAutoClickerRunning)
         {
+            // Stop if we click more than repeat amount.
             if (clickCount >= repeatAmount && repeatAmount != 0)
             {
-                StopAutoClicker();
+                Stop();
                 break;
             }
 
-            // TODO: Move this to a enum instead of a number
-            switch (mouseButton)
-            {
-                case 0:
-                    MouseEvent(0, 0, (uint)MouseEventF.LeftDown, 0, 0, IntPtr.Zero);
-                    MouseEvent(0, 0, (uint)MouseEventF.LeftUp, 0, 0, IntPtr.Zero);
-                    break;
-                case 1:
-                    MouseEvent(0, 0, (uint)MouseEventF.MiddleDown, 0, 0, IntPtr.Zero);
-                    MouseEvent(0, 0, (uint)MouseEventF.MiddleUp, 0, 0, IntPtr.Zero);
-                    break;
-                case 2:
-                    MouseEvent(0, 0, (uint)MouseEventF.RightDown, 0, 0, IntPtr.Zero);
-                    MouseEvent(0, 0, (uint)MouseEventF.RightUp, 0, 0, IntPtr.Zero);
-                    break;
-            }
+            // Click mouse and increment click count
+            ClickMouse(mouseButton);
+            clickCount++;
 
-            if (repeatAmount > 0)
-            {
-                clickCount++;
-            }
-
-            int randomClickOffset = random.Next(0, clickOffset);
+            // Delay before next click
+            int randomClickOffset = new Random().Next(0, clickOffset);
             await Task.Delay(clickInterval + randomClickOffset);
         }
     }
 
-    private static void MouseEvent(int dx, int dy, uint dwFlags, uint dwData, uint time, nint dwExtraInfo)
+    /// <summary>
+    /// Clicks the mouse button.
+    /// </summary>
+    /// <param name="button">The mouse button to click.</param>
+    private static void ClickMouse(int button)
     {
-        Input[] inputs = new Input[2];
-        inputs[0] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
-        inputs[1] = MouseInput(dx, dy, dwData, dwFlags, time, dwExtraInfo);
-        _ = SendInput((uint)inputs.Length, inputs, Marshal.SizeOf<Input>());
-    }
-
-    private static Input MouseInput(int dx, int dy, uint mouseData, uint dwFlags, uint time, nint dwExtraInfo)
-    {
-        return new Input
+        if (button == 0) // Left mouse button
         {
-            type = 0,
-            mi = new InputMouse
+            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_LEFTDOWN);
+            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_LEFTUP);
+        }
+        else if (button == 1) // Middle mouse button
+        {
+            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_MIDDLEDOWN);
+            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_MIDDLEUP);
+        }
+        else if (button == 2) // Right mouse button
+        {
+            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_RIGHTDOWN);
+            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_RIGHTUP);
+        }
+    }
+
+    /// <summary>
+    /// Sends a mouse input event.
+    /// </summary>
+    /// <param name="dwFlags">The mouse event flags that specify the type of mouse event.</param>
+    private static void SendMouseInput(MOUSE_EVENT_FLAGS dwFlags)
+    {
+        INPUT[] inputs =
+        [
+            new()
             {
-                dx = dx,
-                dy = dy,
-                mouseData = mouseData,
-                dwFlags = dwFlags,
-                time = time,
-                dwExtraInfo = dwExtraInfo
+                type = INPUT_TYPE.INPUT_MOUSE,
+                Anonymous = new INPUT._Anonymous_e__Union { mi = new MOUSEINPUT { dwFlags = dwFlags } }
             }
-        };
-    }
+        ];
 
-    [StructLayout(LayoutKind.Sequential)]
-    private struct Input
-    {
-        public int type;
-        public InputMouse mi;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    private struct InputMouse
-    {
-        public int dx;
-        public int dy;
-        public uint mouseData;
-        public uint dwFlags;
-        public uint time;
-        public IntPtr dwExtraInfo;
-    }
-
-    [Flags]
-    private enum MouseEventF : uint
-    {
-        LeftDown = 0x0002,
-        LeftUp = 0x0004,
-        RightDown = 0x0008,
-        RightUp = 0x0010,
-        MiddleDown = 0x0020,
-        MiddleUp = 0x0040
+        _ = PInvoke.SendInput(inputs, Marshal.SizeOf<INPUT>());
     }
 }

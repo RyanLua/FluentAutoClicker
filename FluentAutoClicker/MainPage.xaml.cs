@@ -88,7 +88,8 @@ public sealed partial class MainPage : Page
         ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true && isEnabled;
 
         // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
-        string brushKey = isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
+        string brushKey =
+            isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
         ClickIntervalTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
         HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
     }
@@ -100,6 +101,7 @@ public sealed partial class MainPage : Page
             value = defaultValue;
             numberBox.Value = value;
         }
+
         return value;
     }
 
@@ -140,13 +142,13 @@ public sealed partial class MainPage : Page
         int repeatAmount = ClickRepeatCheckBox.IsEnabled == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
         int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
-        AutoClicker.StartAutoClicker(clickInterval, repeatAmount, mouseButton, clickOffset);
+        AutoClicker.Start(clickInterval, repeatAmount, mouseButton, clickOffset);
     }
 
     private void StartToggleButton_OnUnchecked(object sender, RoutedEventArgs e)
     {
         StartToggleButton.Content = "Start";
-        AutoClicker.StopAutoClicker();
+        AutoClicker.Stop();
         SetControlsEnabled(true);
     }
 
