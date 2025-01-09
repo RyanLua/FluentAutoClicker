@@ -102,8 +102,7 @@
             <CheckBox
                 x:Name="ClickRepeatCheckBox"
                 x:Uid="ClickRepeatCheckBox"
-                Checked="ClickRepeatCheckBox_Checked"
-                Unchecked="ClickRepeatCheckBox_Unchecked" />
+                Click="CheckBox_Click" />
             <NumberBox
                 x:Name="ClickRepeatAmount"
                 HorizontalAlignment="Left"
@@ -121,8 +120,7 @@
             <CheckBox
                 x:Name="ClickOffsetCheckBox"
                 x:Uid="ClickOffsetCheckBox"
-                Checked="ClickOffsetCheckBox_Checked"
-                Unchecked="ClickOffsetCheckBox_Unchecked" />
+                Click="CheckBox_Click" />
             <NumberBox
                 x:Name="ClickOffsetAmount"
                 HorizontalAlignment="Left"
