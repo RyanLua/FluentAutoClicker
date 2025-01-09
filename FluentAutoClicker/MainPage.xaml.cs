@@ -57,6 +57,21 @@ public sealed partial class MainPage : Page
         return PInvoke.CallWindowProc(origHotKeyProc, hWnd, Msg, wParam, lParam);
     }
 
+    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongW", SetLastError = true)]
+    private static partial int SetWindowLong_x86(nint hWnd, int nIndex, int dwNewLong);
+
+    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongPtrW", SetLastError = true)]
+    private static partial nint SetWindowLongPtr_x64(nint hWnd, int nIndex, nint dwNewLong);
+
+    // CsWin32 doesn't allow specifying the calling convention between x86 and x64
+    private static nint SetWindowLongPtr(HWND hWnd, int nIndex, nint dwNewLong)
+    {
+        nint hWndInt = hWnd.Value;
+        return IntPtr.Size == 4
+            ? SetWindowLong_x86(hWndInt, nIndex, (int)dwNewLong)
+            : SetWindowLongPtr_x64(hWndInt, nIndex, dwNewLong);
+    }
+
     private void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
         // Get window handle
@@ -68,9 +83,10 @@ public sealed partial class MainPage : Page
         _ = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
 
         // Add hotkey function pointer to window procedure
+        int GWL_WNDPROC = -4;
         hotKeyProcD = HotKeyProc;
-        nint hotKeyProcPtr = Marshal.GetFunctionPointerForDelegate(hotKeyProcD);
-        nint wndPtr = PInvoke.SetWindowLongPtr(hWnd, WINDOW_LONG_PTR_INDEX.GWL_WNDPROC, hotKeyProcPtr);
+        IntPtr hotKeyProcPtr = Marshal.GetFunctionPointerForDelegate(hotKeyProcD);
+        IntPtr wndPtr = SetWindowLongPtr(hWnd, GWL_WNDPROC, hotKeyProcPtr);
         origHotKeyProc = Marshal.GetDelegateForFunctionPointer<WNDPROC>(wndPtr);
     }
 
