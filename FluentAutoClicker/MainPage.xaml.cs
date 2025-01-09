@@ -110,7 +110,7 @@ public sealed partial class MainPage : Page
         HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
     }
 
-    private int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
+    private static int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
     {
         if (!int.TryParse(numberBox.Value.ToString(CultureInfo.InvariantCulture), out int value))
         {
@@ -168,23 +168,15 @@ public sealed partial class MainPage : Page
         SetControlsEnabled(true);
     }
 
-    private void ClickRepeatCheckBox_Unchecked(object sender, RoutedEventArgs e)
+    private void CheckBox_Click(object sender, RoutedEventArgs e)
     {
-        ClickRepeatAmount.IsEnabled = false;
-    }
-
-    private void ClickRepeatCheckBox_Checked(object sender, RoutedEventArgs e)
-    {
-        ClickRepeatAmount.IsEnabled = true;
-    }
-
-    private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
-    {
-        ClickOffsetAmount.IsEnabled = false;
-    }
-
-    private void ClickOffsetCheckBox_Checked(object sender, RoutedEventArgs e)
-    {
-        ClickOffsetAmount.IsEnabled = true;
+        if (sender.Equals(ClickRepeatCheckBox))
+        {
+            ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true;
+        }
+        else if (sender.Equals(ClickOffsetCheckBox))
+        {
+            ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
+        }
     }
 }
