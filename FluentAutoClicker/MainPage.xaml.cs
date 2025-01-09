@@ -39,8 +39,8 @@ public sealed partial class MainPage : Page
         Loaded += MainPage_Loaded;
     }
 
-    private WNDPROC origHotKeyProc;
-    private WNDPROC hotKeyProcD;
+    private WNDPROC? origHotKeyProc;
+    private WNDPROC? hotKeyProcD;
 
     private LRESULT HotKeyProc(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
     {

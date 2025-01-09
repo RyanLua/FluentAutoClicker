@@ -29,7 +29,7 @@ namespace FluentAutoClicker;
 public partial class Program
 {
     [STAThread]
-    private static int Main(string[] args)
+    private static int Main()
     {
         WinRT.ComWrappersSupport.InitializeComWrappers();
         bool isRedirect = DecideRedirection();
@@ -80,7 +80,7 @@ public partial class Program
     [LibraryImport("ole32.dll")]
     private static partial uint CoWaitForMultipleObjects(
         uint dwFlags, uint dwMilliseconds, ulong nHandles,
-        IntPtr[] pHandles, out uint dwIndex);
+        [In, Out] IntPtr[] pHandles, out uint dwIndex);
 
     [LibraryImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]

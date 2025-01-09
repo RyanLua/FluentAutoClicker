@@ -27,7 +27,7 @@ namespace FluentAutoClicker;
 /// </summary>
 public partial class App : Application
 {
-    public static MainWindow MainWindow = new();
+    public static readonly MainWindow MainWindow = new();
 
     /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
