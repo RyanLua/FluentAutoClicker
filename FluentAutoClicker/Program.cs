@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2024 Ryan Luu
+﻿// Copyright (C) 2025 Ryan Luu
 //
 // This file is part of Fluent Auto Clicker.
 //
@@ -33,12 +33,12 @@ namespace FluentAutoClicker;
 ///     </see>
 ///     Single-instanced apps only allow one instance of the app running at a time.
 /// </summary>
-public class Program
+public partial class Program
 {
     private static IntPtr _redirectEventHandle = IntPtr.Zero;
 
     [STAThread]
-    private static int Main(string[] args)
+    private static int Main()
     {
         ComWrappersSupport.InitializeComWrappers();
         bool isRedirect = DecideRedirection();
@@ -62,7 +62,7 @@ public class Program
         bool isRedirect = false;
         AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
         ExtendedActivationKind kind = args.Kind;
-        AppInstance keyInstance = AppInstance.FindOrRegisterForKey("MySingleInstanceApp");
+        AppInstance keyInstance = AppInstance.FindOrRegisterForKey("FluentAutoClickerApp");
 
         if (keyInstance.IsCurrent)
         {
@@ -77,21 +77,23 @@ public class Program
         return isRedirect;
     }
 
-    [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-    private static extern IntPtr CreateEvent(
-        IntPtr lpEventAttributes, bool bManualReset,
-        bool bInitialState, string lpName);
+    [LibraryImport("kernel32.dll", EntryPoint = "CreateEventW", StringMarshalling = StringMarshalling.Utf16)]
+    private static partial IntPtr CreateEvent(
+        IntPtr lpEventAttributes, [MarshalAs(UnmanagedType.Bool)] bool bManualReset,
+        [MarshalAs(UnmanagedType.Bool)] bool bInitialState, string? lpName);
 
-    [DllImport("kernel32.dll")]
-    private static extern bool SetEvent(IntPtr hEvent);
+    [LibraryImport("kernel32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static partial bool SetEvent(IntPtr hEvent);
 
-    [DllImport("ole32.dll")]
-    private static extern uint CoWaitForMultipleObjects(
+    [LibraryImport("ole32.dll")]
+    private static partial uint CoWaitForMultipleObjects(
         uint dwFlags, uint dwMilliseconds, ulong nHandles,
-        IntPtr[] pHandles, out uint dwIndex);
+        [In, Out] IntPtr[] pHandles, out uint dwIndex);
 
-    [DllImport("user32.dll")]
-    private static extern bool SetForegroundWindow(IntPtr hWnd);
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static partial bool SetForegroundWindow(IntPtr hWnd);
 
     // Do the redirection on another thread, and use a non-blocking
     // wait method to wait for the redirection to complete.
@@ -116,7 +118,7 @@ public class Program
         _ = SetForegroundWindow(process.MainWindowHandle);
     }
 
-    private static void OnActivated(object sender, AppActivationArguments args)
+    private static void OnActivated(object? sender, AppActivationArguments args)
     {
         _ = args.Kind;
     }

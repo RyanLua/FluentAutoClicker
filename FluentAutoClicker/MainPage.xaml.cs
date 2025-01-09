@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Ryan Luu
+// Copyright (C) 2025 Ryan Luu
 //
 // This file is part of Fluent Auto Clicker.
 //
@@ -17,14 +17,16 @@
 
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
-using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using Windows.System;
 using WinRT.Interop;
+using Windows.Win32;
+using Windows.Win32.Foundation;
+using Windows.Win32.UI.Input.KeyboardAndMouse;
+using Windows.Win32.UI.WindowsAndMessaging;
 
 namespace FluentAutoClicker;
 
@@ -39,33 +41,55 @@ public sealed partial class MainPage : Page
         Loaded += MainPage_Loaded;
     }
 
-    private void MainPage_Loaded(object sender, RoutedEventArgs e)
+    private WNDPROC? origHotKeyProc;
+    private WNDPROC? hotKeyProcD;
+
+    private LRESULT HotKeyProc(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
     {
-        WindowMessageHook hook = new(App.Window);
-        Unloaded += (s, e) => hook.Dispose();
+        uint WM_HOTKEY = 0x0312; // HotKey Window Message
 
-        hook.Message += (s, e) =>
+        if (Msg == WM_HOTKEY)
         {
-            const int wmHotkey = 0x312;
-            if (e.Message == wmHotkey)
+            if (StartToggleButton.IsEnabled)
             {
-                // Toggle the StartToggleButton when the hotkey is pressed
-                ToggleButtonAutomationPeer pattern = (ToggleButtonAutomationPeer)FrameworkElementAutomationPeer
-                    .FromElement(StartToggleButton).GetPattern(PatternInterface.Toggle);
-                pattern.Toggle();
+                StartToggleButton.IsChecked = !StartToggleButton.IsChecked;
             }
-        };
-
-        nint hwnd = WindowNative.GetWindowHandle(App.Window);
-        int id = 1;
-
-        // Register the F6 key
-        if (!RegisterHotKey(hwnd, id, Mod.ModNoRepeat, VirtualKey.F6))
-        {
-            throw new Win32Exception(Marshal.GetLastWin32Error());
         }
 
-        Unloaded += (s, e) => UnregisterHotKey(hwnd, id);
+        return PInvoke.CallWindowProc(origHotKeyProc, hWnd, Msg, wParam, lParam);
+    }
+
+    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongW", SetLastError = true)]
+    private static partial int SetWindowLong_x86(nint hWnd, int nIndex, int dwNewLong);
+
+    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongPtrW", SetLastError = true)]
+    private static partial nint SetWindowLongPtr_x64(nint hWnd, int nIndex, nint dwNewLong);
+
+    // CsWin32 doesn't allow specifying the calling convention between x86 and x64
+    private static nint SetWindowLongPtr(HWND hWnd, int nIndex, nint dwNewLong)
+    {
+        nint hWndInt = hWnd.Value;
+        return IntPtr.Size == 4
+            ? SetWindowLong_x86(hWndInt, nIndex, (int)dwNewLong)
+            : SetWindowLongPtr_x64(hWndInt, nIndex, dwNewLong);
+    }
+
+    private void MainPage_Loaded(object sender, RoutedEventArgs e)
+    {
+        // Get window handle
+        MainWindow window = App.MainWindow;
+        HWND hWnd = new(WinRT.Interop.WindowNative.GetWindowHandle(window));
+
+        // Register hotkey
+        int id = 0x0000;
+        _ = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
+
+        // Add hotkey function pointer to window procedure
+        int GWL_WNDPROC = -4;
+        hotKeyProcD = HotKeyProc;
+        IntPtr hotKeyProcPtr = Marshal.GetFunctionPointerForDelegate(hotKeyProcD);
+        IntPtr wndPtr = SetWindowLongPtr(hWnd, GWL_WNDPROC, hotKeyProcPtr);
+        origHotKeyProc = Marshal.GetDelegateForFunctionPointer<WNDPROC>(wndPtr);
     }
 
     private void SetControlsEnabled(bool isEnabled)
@@ -88,7 +112,7 @@ public sealed partial class MainPage : Page
         HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
     }
 
-    private int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
+    private static int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
     {
         if (!int.TryParse(numberBox.Value.ToString(CultureInfo.InvariantCulture), out int value))
         {
@@ -136,55 +160,25 @@ public sealed partial class MainPage : Page
         int repeatAmount = ClickRepeatCheckBox.IsEnabled ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
         int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
-        AutoClicker.StartAutoClicker(clickInterval, repeatAmount, mouseButton, clickOffset);
+        AutoClicker.Start(clickInterval, repeatAmount, mouseButton, clickOffset);
     }
 
     private void StartToggleButton_OnUnchecked(object sender, RoutedEventArgs e)
     {
         StartToggleButton.Content = "Start";
-        AutoClicker.StopAutoClicker();
+        AutoClicker.Stop();
         SetControlsEnabled(true);
     }
 
-    private void ClickRepeatCheckBox_Unchecked(object sender, RoutedEventArgs e)
+    private void CheckBox_Click(object sender, RoutedEventArgs e)
     {
-        ClickRepeatAmount.IsEnabled = false;
-    }
-
-    private void ClickRepeatCheckBox_Checked(object sender, RoutedEventArgs e)
-    {
-        ClickRepeatAmount.IsEnabled = true;
-    }
-
-    // interop code for Windows API hotkey functions
-    [DllImport("user32", SetLastError = true)]
-    private static extern bool RegisterHotKey(nint hWnd, int id, Mod fsModifiers, VirtualKey vk);
-
-    [DllImport("user32", SetLastError = true)]
-    private static extern bool UnregisterHotKey(nint hWnd, int id);
-
-    private void ClickOffsetCheckBox_Unchecked(object sender, RoutedEventArgs e)
-    {
-        ClickOffsetAmount.IsEnabled = false;
-    }
-
-    private void ClickOffsetCheckBox_Checked(object sender, RoutedEventArgs e)
-    {
-        ClickOffsetAmount.IsEnabled = true;
-    }
-
-    private void SettingsButton_Click(object sender, RoutedEventArgs e)
-    {
-        _ = Frame.Navigate(typeof(SettingsPage));
-    }
-
-    [Flags]
-    private enum Mod
-    {
-        ModAlt = 0x1,
-        ModControl = 0x2,
-        ModShift = 0x4,
-        ModWin = 0x8,
-        ModNoRepeat = 0x4000
+        if (sender.Equals(ClickRepeatCheckBox))
+        {
+            ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true;
+        }
+        else if (sender.Equals(ClickOffsetCheckBox))
+        {
+            ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
+        }
     }
 }

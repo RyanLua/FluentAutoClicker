@@ -61,3 +61,9 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# Override files to use proper highlighting.
+###############################################################################
+*.vsconfig linguist-language=JSON
+*.XamlStyler linguist-language=JSON

@@ -1,4 +1,4 @@
-﻿// Copyright (C) 2024 Ryan Luu
+﻿// Copyright (C) 2025 Ryan Luu
 //
 // This file is part of Fluent Auto Clicker.
 //
@@ -27,6 +27,8 @@ namespace FluentAutoClicker;
 /// </summary>
 public partial class App : Application
 {
+    public static readonly MainWindow MainWindow = new();
+
     /// <summary>
     ///     Initializes the singleton application object.  This is the first line of authored code
     ///     executed, and as such is the logical equivalent of main() or WinMain().
@@ -44,7 +46,6 @@ public partial class App : Application
     /// <param name="args">Details about the launch request and process.</param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        Window = new MainWindow();
-        Window.Activate();
+        MainWindow.Activate();
     }
 }

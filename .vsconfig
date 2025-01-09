@@ -5,5 +5,7 @@
     "Microsoft.VisualStudio.Workload.CoreEditor",
     "Microsoft.VisualStudio.Workload.Universal"
   ],
-  "extensions": []
+  "extensions": [
+    "https://marketplace.visualstudio.com/items?itemName=TeamXavalon.XAMLStyler2022"
+  ]
 }

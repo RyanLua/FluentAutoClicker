@@ -1,0 +1,4 @@
+RegisterHotKey
+UnregisterHotKey
+CallWindowProc
+SendInput
