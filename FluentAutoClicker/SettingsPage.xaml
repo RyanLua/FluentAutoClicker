@@ -142,7 +142,9 @@
                     Content="Send feedback"
                     NavigateUri="mailto:feedback@fluentautoclicker.com" />
 
-                <TextBlock TextWrapping="WrapWholeWords"><Span xml:space="preserve">To learn how you can contribute to Fluent Auto Clicker, check out the project on <Hyperlink NavigateUri="https://github.com/RyanLua/FluentAutoClicker">GitHub</Hyperlink>.</Span></TextBlock>
+                <TextBlock TextWrapping="WrapWholeWords">
+                    <Span xml:space="preserve">To learn how you can contribute to Fluent Auto Clicker, check out the project on <Hyperlink NavigateUri="https://github.com/RyanLua/FluentAutoClicker">GitHub</Hyperlink>.</Span>
+                </TextBlock>
 
             </StackPanel>
         </Grid>

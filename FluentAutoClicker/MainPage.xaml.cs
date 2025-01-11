@@ -21,28 +21,28 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using Windows.System;
-using WinRT.Interop;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
 using Windows.Win32.UI.WindowsAndMessaging;
+using WinRT.Interop;
 
 namespace FluentAutoClicker;
 
 /// <summary>
-///     The main page containing all controls displayed on the main window.
+/// The main page containing all controls displayed on the main window.
 /// </summary>
 public sealed partial class MainPage : Page
 {
+    private WNDPROC? hotKeyProcD;
+
+    private WNDPROC? origHotKeyProc;
+
     public MainPage()
     {
         InitializeComponent();
         Loaded += MainPage_Loaded;
     }
-
-    private WNDPROC? origHotKeyProc;
-    private WNDPROC? hotKeyProcD;
 
     private LRESULT HotKeyProc(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
     {
@@ -78,7 +78,7 @@ public sealed partial class MainPage : Page
     {
         // Get window handle
         MainWindow window = App.MainWindow;
-        HWND hWnd = new(WinRT.Interop.WindowNative.GetWindowHandle(window));
+        HWND hWnd = new(WindowNative.GetWindowHandle(window));
 
         // Register hotkey
         int id = 0x0000;

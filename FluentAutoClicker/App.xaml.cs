@@ -38,8 +38,6 @@ public partial class App : Application
         InitializeComponent();
     }
 
-    public static Window Window { get; private set; }
-
     /// <summary>
     /// Invoked when the application is launched.
     /// </summary>
