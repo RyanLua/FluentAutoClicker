@@ -25,7 +25,7 @@ using WinUIEx;
 namespace FluentAutoClicker;
 
 /// <summary>
-///     An window that displays a page's contents.
+/// An window that displays a page's contents.
 /// </summary>
 public sealed partial class MainWindow
 {
