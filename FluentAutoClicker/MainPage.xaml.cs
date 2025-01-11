@@ -181,4 +181,9 @@ public sealed partial class MainPage : Page
             ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
         }
     }
+
+    private void SettingsButton_Click(object sender, RoutedEventArgs e)
+    {
+        _ = Frame.Navigate(typeof(SettingsPage));
+    }
 }
