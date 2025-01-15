@@ -58,9 +58,7 @@ public sealed partial class MainPage : Page
         monitor.WindowMessageReceived += OnWindowMessageReceived;
 
         // Register hotkey
-        int id = 0x0000;
-
-        bool success = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
+        bool success = PInvoke.RegisterHotKey(hWnd, 0x0000, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
         if (success)
         {
             IsHotKeyRegistered = true;
