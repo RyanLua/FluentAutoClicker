@@ -20,12 +20,11 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using System.Globalization;
-using System.Runtime.InteropServices;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
-using Windows.Win32.UI.WindowsAndMessaging;
 using WinRT.Interop;
+using WinUIEx.Messaging;
 
 namespace FluentAutoClicker;
 
@@ -34,9 +33,6 @@ namespace FluentAutoClicker;
 /// </summary>
 public sealed partial class MainPage : Page
 {
-    private WNDPROC? hotKeyProcD;
-    private WNDPROC? origHotKeyProc;
-
     public MainPage()
     {
         InitializeComponent();
@@ -44,36 +40,6 @@ public sealed partial class MainPage : Page
     }
 
     private bool IsHotKeyRegistered { get; set; }
-
-    private LRESULT HotKeyProc(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
-    {
-        uint WM_HOTKEY = 0x0312; // HotKey Window Message
-
-        if (Msg == WM_HOTKEY)
-        {
-            if (StartToggleButton.IsEnabled)
-            {
-                StartToggleButton.IsChecked = !StartToggleButton.IsChecked;
-            }
-        }
-
-        return PInvoke.CallWindowProc(origHotKeyProc, hWnd, Msg, wParam, lParam);
-    }
-
-    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongW", SetLastError = true)]
-    private static partial int SetWindowLong_x86(nint hWnd, int nIndex, int dwNewLong);
-
-    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongPtrW", SetLastError = true)]
-    private static partial nint SetWindowLongPtr_x64(nint hWnd, int nIndex, nint dwNewLong);
-
-    // CsWin32 doesn't allow specifying the calling convention between x86 and x64
-    private static nint SetWindowLongPtr(HWND hWnd, int nIndex, nint dwNewLong)
-    {
-        nint hWndInt = hWnd.Value;
-        return IntPtr.Size == 4
-            ? SetWindowLong_x86(hWndInt, nIndex, (int)dwNewLong)
-            : SetWindowLongPtr_x64(hWndInt, nIndex, dwNewLong);
-    }
 
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
@@ -87,10 +53,14 @@ public sealed partial class MainPage : Page
         MainWindow window = App.MainWindow;
         HWND hWnd = new(WindowNative.GetWindowHandle(window));
 
+        // Set up window message monitor
+        WindowMessageMonitor monitor = new(window);
+        monitor.WindowMessageReceived += OnWindowMessageReceived;
+
         // Register hotkey
         int id = 0x0000;
-        bool success = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
 
+        bool success = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
         if (success)
         {
             IsHotKeyRegistered = true;
@@ -101,23 +71,26 @@ public sealed partial class MainPage : Page
             {
                 // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
                 XamlRoot = XamlRoot,
-                //Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
                 Title = "Failed to register hotkey",
-                Content = "Register the hotkey failed, please modify the hotkey setting.",
+                Content = "Please modify the hotkey setting.",
                 CloseButtonText = "OK",
                 DefaultButton = ContentDialogButton.Primary
             };
 
-            ContentDialogResult result = await dialog.ShowAsync();
-            return;
+            await dialog.ShowAsync();
         }
+    }
 
-        // Add hotkey function pointer to window procedure
-        int GWL_WNDPROC = -4;
-        hotKeyProcD = HotKeyProc;
-        IntPtr hotKeyProcPtr = Marshal.GetFunctionPointerForDelegate(hotKeyProcD);
-        IntPtr wndPtr = SetWindowLongPtr(hWnd, GWL_WNDPROC, hotKeyProcPtr);
-        origHotKeyProc = Marshal.GetDelegateForFunctionPointer<WNDPROC>(wndPtr);
+    private void OnWindowMessageReceived(object? sender, WindowMessageEventArgs e)
+    {
+        if (e.Message.MessageId == 0x0312) // WM_HOTKEY event
+        {
+            if (StartToggleButton.IsEnabled)
+            {
+                StartToggleButton.IsChecked = !StartToggleButton.IsChecked;
+            }
+        }
     }
 
     private void SetControlsEnabled(bool isEnabled)
