@@ -35,7 +35,6 @@ namespace FluentAutoClicker;
 public sealed partial class MainPage : Page
 {
     private WNDPROC? hotKeyProcD;
-
     private WNDPROC? origHotKeyProc;
 
     public MainPage()
@@ -43,6 +42,8 @@ public sealed partial class MainPage : Page
         InitializeComponent();
         Loaded += MainPage_Loaded;
     }
+
+    private bool IsHotKeyRegistered { get; set; }
 
     private LRESULT HotKeyProc(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
     {
@@ -74,15 +75,42 @@ public sealed partial class MainPage : Page
             : SetWindowLongPtr_x64(hWndInt, nIndex, dwNewLong);
     }
 
-    private void MainPage_Loaded(object sender, RoutedEventArgs e)
+    private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
+        // Prevent registering multiple hotkeys
+        if (IsHotKeyRegistered)
+        {
+            return;
+        }
+
         // Get window handle
         MainWindow window = App.MainWindow;
         HWND hWnd = new(WindowNative.GetWindowHandle(window));
 
         // Register hotkey
         int id = 0x0000;
-        _ = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
+        bool success = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
+
+        if (success)
+        {
+            IsHotKeyRegistered = true;
+        }
+        else
+        {
+            ContentDialog dialog = new()
+            {
+                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                XamlRoot = XamlRoot,
+                //Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Title = "Failed to register hotkey",
+                Content = "Register the hotkey failed, please modify the hotkey setting.",
+                CloseButtonText = "OK",
+                DefaultButton = ContentDialogButton.Primary
+            };
+
+            ContentDialogResult result = await dialog.ShowAsync();
+            return;
+        }
 
         // Add hotkey function pointer to window procedure
         int GWL_WNDPROC = -4;
