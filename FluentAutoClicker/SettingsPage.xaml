@@ -6,6 +6,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:FluentAutoClicker"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="using:CommunityToolkit.WinUI"
     xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -51,7 +52,7 @@
                         <FontIcon Glyph="&#xE790;" />
                     </controls:SettingsCard.HeaderIcon>
 
-                    <ComboBox SelectedIndex="0">
+                    <ComboBox SelectedIndex="{x:Bind local:SettingsPage.ThemeSelectedIndex, Mode=TwoWay}">
                         <ComboBoxItem>Use system setting</ComboBoxItem>
                         <ComboBoxItem>Light</ComboBoxItem>
                         <ComboBoxItem>Dark</ComboBoxItem>

@@ -16,8 +16,10 @@
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
 using FluentAutoClicker.Helpers;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Windows.ApplicationModel;
+using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -45,5 +47,23 @@ public sealed partial class SettingsPage : Page
             PackageVersion version = Package.Current.Id.Version;
             return $"{version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
         }
+    }
+
+    private static WindowEx MainWindow => App.MainWindow;
+
+    private static int ThemeSelectedIndex
+    {
+        get => ((FrameworkElement)MainWindow.Content).RequestedTheme switch
+        {
+            ElementTheme.Light => 1,
+            ElementTheme.Dark => 2,
+            _ => 0
+        };
+        set => ((FrameworkElement)MainWindow.Content).RequestedTheme = value switch
+        {
+            1 => ElementTheme.Light,
+            2 => ElementTheme.Dark,
+            _ => ElementTheme.Default
+        };
     }
 }
