@@ -64,12 +64,12 @@
                     Header="Backdrop material"
                     HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
 
-                    <ComboBox SelectedIndex="0">
+                    <ComboBox
+                        x:Name="BackdropSelector"
+                        SelectedIndex="0"
+                        SelectionChanged="Backdrop_SelectionChanged">
                         <ComboBoxItem>Mica</ComboBoxItem>
-                        <ComboBoxItem>Mica Alt</ComboBoxItem>
-                        <ComboBoxItem>Acrylic Base</ComboBoxItem>
-                        <ComboBoxItem>Acrylic Thin</ComboBoxItem>
-                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Acrylic</ComboBoxItem>
                     </ComboBox>
                 </controls:SettingsCard>
 

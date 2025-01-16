@@ -16,8 +16,10 @@
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
 using FluentAutoClicker.Helpers;
+using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 using Windows.ApplicationModel;
 using WinUIEx;
 
@@ -31,11 +33,22 @@ namespace FluentAutoClicker;
 /// </summary>
 public sealed partial class SettingsPage : Page
 {
+    internal static MicaBackdrop MicaBackdrop = new();
+    private static DesktopAcrylicBackdrop AcrylicBackdrop = new();
+    private bool isInitialized;
+
     public SettingsPage()
     {
         InitializeComponent();
         AppAboutSettingsExpander.Header = AppName;
         AppVersionTextBlock.Text = AppVersion;
+
+        isInitialized = true;
+        BackdropSelector.SelectedIndex = MainWindow.SystemBackdrop switch
+        {
+            DesktopAcrylicBackdrop => 1,
+            _ => 0
+        };
     }
 
     public static string AppName => "AppDisplayName".GetLocalized();
@@ -65,5 +78,19 @@ public sealed partial class SettingsPage : Page
             2 => ElementTheme.Dark,
             _ => ElementTheme.Default
         };
+    }
+
+    private void Backdrop_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (!isInitialized)
+        {
+            return;
+        }
+
+        switch (((ComboBox)sender).SelectedIndex)
+        {
+            case 1: MainWindow.SystemBackdrop = AcrylicBackdrop; break;
+            default: MainWindow.SystemBackdrop = MicaBackdrop; break;
+        }
     }
 }
