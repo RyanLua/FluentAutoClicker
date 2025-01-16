@@ -31,10 +31,11 @@ namespace FluentAutoClicker;
 /// <summary>
 /// An empty page that can be used on its own or navigated to within a Frame.
 /// </summary>
-public sealed partial class SettingsPage : Page
+public sealed partial class SettingsPage
 {
     // Pin the backdrops to prevent them being set when already set
     private static readonly MicaBackdrop MicaBackdrop = new();
+    private static readonly MicaBackdrop MicaAltBackdrop = new() { Kind = MicaKind.BaseAlt };
     private static readonly DesktopAcrylicBackdrop AcrylicBackdrop = new();
 
     private readonly bool _isInitialized;
@@ -45,12 +46,14 @@ public sealed partial class SettingsPage : Page
         AppAboutSettingsExpander.Header = AppName;
         AppVersionTextBlock.Text = AppVersion;
 
-        _isInitialized = true;
         BackdropSelector.SelectedIndex = MainWindow.SystemBackdrop switch
         {
-            DesktopAcrylicBackdrop => 1,
+            MicaBackdrop { Kind: MicaKind.BaseAlt } => 1,
+            DesktopAcrylicBackdrop => 2,
             _ => 0
         };
+
+        _isInitialized = true;
     }
 
     public static string AppName => "AppDisplayName".GetLocalized();
@@ -91,7 +94,8 @@ public sealed partial class SettingsPage : Page
 
         switch (((ComboBox)sender).SelectedIndex)
         {
-            case 1: MainWindow.SystemBackdrop = AcrylicBackdrop; break;
+            case 1: MainWindow.SystemBackdrop = MicaAltBackdrop; break;
+            case 2: MainWindow.SystemBackdrop = AcrylicBackdrop; break;
             default: MainWindow.SystemBackdrop = MicaBackdrop; break;
         }
     }

@@ -69,6 +69,7 @@
                         SelectedIndex="0"
                         SelectionChanged="Backdrop_SelectionChanged">
                         <ComboBoxItem>Mica</ComboBoxItem>
+                        <ComboBoxItem>Mica Alt</ComboBoxItem>
                         <ComboBoxItem>Acrylic</ComboBoxItem>
                     </ComboBox>
                 </controls:SettingsCard>
