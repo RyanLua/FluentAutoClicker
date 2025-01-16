@@ -33,9 +33,11 @@ namespace FluentAutoClicker;
 /// </summary>
 public sealed partial class SettingsPage : Page
 {
-    internal static MicaBackdrop MicaBackdrop = new();
-    private static DesktopAcrylicBackdrop AcrylicBackdrop = new();
-    private bool isInitialized;
+    // Pin the backdrops to prevent them being set when already set
+    private static readonly MicaBackdrop MicaBackdrop = new();
+    private static readonly DesktopAcrylicBackdrop AcrylicBackdrop = new();
+
+    private readonly bool _isInitialized;
 
     public SettingsPage()
     {
@@ -43,7 +45,7 @@ public sealed partial class SettingsPage : Page
         AppAboutSettingsExpander.Header = AppName;
         AppVersionTextBlock.Text = AppVersion;
 
-        isInitialized = true;
+        _isInitialized = true;
         BackdropSelector.SelectedIndex = MainWindow.SystemBackdrop switch
         {
             DesktopAcrylicBackdrop => 1,
@@ -82,7 +84,7 @@ public sealed partial class SettingsPage : Page
 
     private void Backdrop_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (!isInitialized)
+        if (!_isInitialized)
         {
             return;
         }
