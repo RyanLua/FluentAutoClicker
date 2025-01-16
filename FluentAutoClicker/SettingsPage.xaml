@@ -76,10 +76,10 @@
 
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Behavior" />
 
-                <controls:SettingsCard
+                <!--<controls:SettingsCard
                     Description="Hotkey for toggling the auto clicker on and off"
                     Header="Toggle hotkey"
-                    HeaderIcon="{ui:FontIcon Glyph=&#xE92E;}" />
+                    HeaderIcon="{ui:FontIcon Glyph=&#xE92E;}" />-->
 
                 <controls:SettingsExpander
                     Description="Specify default window behavior"
