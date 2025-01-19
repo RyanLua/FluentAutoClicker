@@ -67,3 +67,4 @@
 ###############################################################################
 *.vsconfig linguist-language=JSON
 *.XamlStyler linguist-language=JSON
+*.slnx linguist-language=XML
