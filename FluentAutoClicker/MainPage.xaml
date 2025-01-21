@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 
 <Page
     x:Class="FluentAutoClicker.MainPage"
@@ -7,6 +7,7 @@
     xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI"
     NavigationCacheMode="Enabled"
     mc:Ignorable="d">
 
@@ -105,10 +106,7 @@
             Grid.Column="0"
             Spacing="{StaticResource StackPanelSpacing}">
             <TextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
-            <Button
-                x:Name="HotkeyButton"
-                Content="F6"
-                IsEnabled="False" />
+            <Button Content="F6" IsEnabled="False" />
         </StackPanel>
 
         <!--  Click Repeat  -->
@@ -169,17 +167,11 @@
                 Unchecked="StartToggleButton_OnUnchecked" />
 
             <!--  Open Settings  -->
-            <Button
-                x:Name="SettingsButton"
-                Grid.Column="1"
-                Click="SettingsButton_Click">
-                <AnimatedIcon Height="20">
+            <Button Grid.Column="1" Click="SettingsButton_Click">
+                <AnimatedIcon Height="20" FallbackIconSource="{ui:FontIconSource Glyph=&#xE713;}">
                     <AnimatedIcon.Source>
                         <animatedvisuals:AnimatedSettingsVisualSource />
                     </AnimatedIcon.Source>
-                    <AnimatedIcon.FallbackIconSource>
-                        <FontIconSource Glyph="&#xE713;" />
-                    </AnimatedIcon.FallbackIconSource>
                 </AnimatedIcon>
             </Button>
         </Grid>
