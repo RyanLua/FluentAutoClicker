@@ -38,10 +38,6 @@
                 MaxWidth="1000"
                 HorizontalAlignment="Stretch"
                 Spacing="{StaticResource SettingsCardSpacing}">
-                <win:StackPanel.ChildrenTransitions>
-                    <win:EntranceThemeTransition FromVerticalOffset="50" />
-                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
-                </win:StackPanel.ChildrenTransitions>
 
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="Settings" />
 
@@ -60,7 +56,7 @@
                 </controls:SettingsCard>
 
                 <controls:SettingsCard
-                    Description="Select system backdrop material for the window background"
+                    Description="Select which system backdrop material to use for the window background"
                     Header="Backdrop material"
                     HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
 
@@ -76,30 +72,13 @@
 
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Behavior" />
 
-                <!--<controls:SettingsCard
-                    Description="Hotkey for toggling the auto clicker on and off"
-                    Header="Toggle hotkey"
-                    HeaderIcon="{ui:FontIcon Glyph=&#xE92E;}" />-->
+                <controls:SettingsCard
+                    Description="Always show the app's window on top of other open windows"
+                    Header="Always on top"
+                    HeaderIcon="{ui:FontIcon Glyph=&#xE7C4;}">
+                    <ToggleSwitch />
+                </controls:SettingsCard>
 
-                <controls:SettingsExpander
-                    Description="Specify default window behavior"
-                    Header="Window management"
-                    HeaderIcon="{ui:FontIcon Glyph=&#xE91B;}">
-
-                    <controls:SettingsExpander.Items>
-                        <controls:SettingsCard ContentAlignment="Left">
-                            <CheckBox Content="Always on top" IsChecked="True" />
-                        </controls:SettingsCard>
-                        <controls:SettingsCard ContentAlignment="Left">
-                            <CheckBox Content="Minimize on use" />
-                        </controls:SettingsCard>
-                        <controls:SettingsCard ContentAlignment="Left">
-                            <CheckBox Content="Hide when minimized" />
-                        </controls:SettingsCard>
-                    </controls:SettingsExpander.Items>
-                </controls:SettingsExpander>
-
-                <!--  Example 'About' section  -->
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
 
                 <controls:SettingsExpander
