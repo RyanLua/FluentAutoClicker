@@ -168,7 +168,7 @@
 
             <!--  Open Settings  -->
             <Button Grid.Column="1" Click="SettingsButton_Click">
-                <AnimatedIcon Height="20" FallbackIconSource="{ui:FontIconSource Glyph=&#xE713;}">
+                <AnimatedIcon Height="18" FallbackIconSource="{ui:FontIconSource Glyph=&#xE713;}">
                     <AnimatedIcon.Source>
                         <animatedvisuals:AnimatedSettingsVisualSource />
                     </AnimatedIcon.Source>
