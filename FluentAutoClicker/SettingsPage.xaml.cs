@@ -67,9 +67,9 @@ public sealed partial class SettingsPage
         }
     }
 
-    private static WindowEx MainWindow => App.MainWindow;
+    private WindowEx MainWindow => App.MainWindow;
 
-    private static int ThemeSelectedIndex
+    private int ThemeSelectedIndex
     {
         get => ((FrameworkElement)MainWindow.Content).RequestedTheme switch
         {

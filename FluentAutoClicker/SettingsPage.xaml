@@ -48,7 +48,7 @@
                         <FontIcon Glyph="&#xE790;" />
                     </controls:SettingsCard.HeaderIcon>
 
-                    <ComboBox SelectedIndex="{x:Bind local:SettingsPage.ThemeSelectedIndex, Mode=TwoWay}">
+                    <ComboBox SelectedIndex="{x:Bind ThemeSelectedIndex, Mode=TwoWay}">
                         <ComboBoxItem>Use system setting</ComboBoxItem>
                         <ComboBoxItem>Light</ComboBoxItem>
                         <ComboBoxItem>Dark</ComboBoxItem>
@@ -76,7 +76,7 @@
                     Description="Always show the app's window on top of other open windows"
                     Header="Always on top"
                     HeaderIcon="{ui:FontIcon Glyph=&#xE7C4;}">
-                    <ToggleSwitch />
+                    <ToggleSwitch IsOn="{x:Bind MainWindow.IsAlwaysOnTop, Mode=TwoWay}" />
                 </controls:SettingsCard>
 
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
