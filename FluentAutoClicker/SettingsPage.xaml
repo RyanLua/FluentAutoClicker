@@ -27,7 +27,7 @@
             TargetType="TextBlock">
             <Style.Setters>
                 <Setter Property="FontWeight" Value="SemiBold" />
-                <Setter Property="Margin" Value="1,30,0,6" />
+                <Setter Property="Margin" Value="1,20,0,6" />
             </Style.Setters>
         </Style>
     </Page.Resources>
