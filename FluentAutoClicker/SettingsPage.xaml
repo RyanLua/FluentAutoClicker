@@ -94,7 +94,7 @@
                     <controls:SettingsExpander.Items>
 
                         <!--  Privacy Policy  -->
-                        <controls:SettingsCard HorizontalContentAlignment="Left">
+                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
                             <HyperlinkButton
                                 Margin="{StaticResource HyperlinkButtonNegativeMargin}"
                                 Content="Privacy policy"
@@ -102,7 +102,8 @@
                         </controls:SettingsCard>
 
                         <!--  Related links  -->
-                        <controls:SettingsCard HorizontalContentAlignment="Left">
+                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
+
                             <StackPanel>
                                 <TextBlock Margin="{StaticResource XSmallTopBottomMargin}" Text="Related links" />
 
