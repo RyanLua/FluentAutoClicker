@@ -31,7 +31,7 @@ namespace FluentAutoClicker;
 /// <summary>
 /// The main page containing all controls displayed on the main window.
 /// </summary>
-public sealed partial class MainPage : Page
+public sealed partial class MainPage
 {
     public MainPage()
     {
@@ -76,7 +76,7 @@ public sealed partial class MainPage : Page
                 DefaultButton = ContentDialogButton.Primary
             };
 
-            await dialog.ShowAsync();
+            _ = await dialog.ShowAsync();
         }
     }
 

@@ -35,7 +35,7 @@ public static class AutoClicker
     /// <param name="millisecondsDelay">The number of milliseconds to wait before clicks.</param>
     /// <param name="clickAmount">The number of clicks before stopping the auto clicker thread.</param>
     /// <param name="mouseButtonType">The mouse button used to click.</param>
-    /// <param name="clickDelayOffset">The amount of time in milliseconds to add randomly to the millisecond delay between clicks.</param>
+    /// <param name="clickDelayOffset">Milliseconds to add randomly to delay between clicks.</param>
     public static void Start(int millisecondsDelay = 100, int clickAmount = 0,
         int mouseButtonType = 0, int clickDelayOffset = 0)
     {
@@ -85,20 +85,23 @@ public static class AutoClicker
     /// <param name="button">The mouse button to click.</param>
     private static void ClickMouse(int button)
     {
-        if (button == 0) // Left mouse button
+        switch (button)
         {
-            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_LEFTDOWN);
-            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_LEFTUP);
-        }
-        else if (button == 1) // Middle mouse button
-        {
-            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_MIDDLEDOWN);
-            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_MIDDLEUP);
-        }
-        else if (button == 2) // Right mouse button
-        {
-            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_RIGHTDOWN);
-            SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_RIGHTUP);
+            // Left mouse button
+            case 0:
+                SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_LEFTDOWN);
+                SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_LEFTUP);
+                break;
+            // Middle mouse button
+            case 1:
+                SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_MIDDLEDOWN);
+                SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_MIDDLEUP);
+                break;
+            // Right mouse button
+            case 2:
+                SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_RIGHTDOWN);
+                SendMouseInput(MOUSE_EVENT_FLAGS.MOUSEEVENTF_RIGHTUP);
+                break;
         }
     }
 

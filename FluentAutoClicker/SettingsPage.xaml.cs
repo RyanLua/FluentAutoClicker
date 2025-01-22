@@ -1,4 +1,4 @@
-// Copyright (C) 2024 Ryan Luu
+// Copyright (C) 2025 Ryan Luu
 //
 // This file is part of Fluent Auto Clicker.
 //
@@ -56,9 +56,9 @@ public sealed partial class SettingsPage
         _isInitialized = true;
     }
 
-    public static string AppName => "AppDisplayName".GetLocalized();
+    private static string AppName => "AppDisplayName".GetLocalized();
 
-    public static string AppVersion
+    private static string AppVersion
     {
         get
         {
@@ -67,7 +67,7 @@ public sealed partial class SettingsPage
         }
     }
 
-    private WindowEx MainWindow => App.MainWindow;
+    private static WindowEx MainWindow => App.MainWindow;
 
     private int ThemeSelectedIndex
     {
@@ -92,11 +92,17 @@ public sealed partial class SettingsPage
             return;
         }
 
-        switch (((ComboBox)sender).SelectedIndex)
+        MainWindow.SystemBackdrop = ((ComboBox)sender).SelectedIndex switch
         {
-            case 1: MainWindow.SystemBackdrop = MicaAltBackdrop; break;
-            case 2: MainWindow.SystemBackdrop = AcrylicBackdrop; break;
-            default: MainWindow.SystemBackdrop = MicaBackdrop; break;
-        }
+            1 => MicaAltBackdrop,
+            2 => AcrylicBackdrop,
+            _ => MicaBackdrop
+        };
+    }
+
+    private bool IsAlwaysOnTop
+    {
+        get => MainWindow.IsAlwaysOnTop;
+        set => MainWindow.IsAlwaysOnTop = value;
     }
 }

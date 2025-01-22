@@ -25,7 +25,12 @@ using WinRT;
 namespace FluentAutoClicker;
 
 /// <summary>
-/// Customized <c>Program.cs</c> file to implement <see href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance">single-instancing in a WinUI app with C#.</see> Single-instanced apps only allow one instance of the app running at a time.
+/// Customized <c>Program.cs</c> file to implement
+/// <see href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance">
+/// single-instancing
+/// in a WinUI app with C#.
+/// </see>
+/// Single-instanced apps only allow one instance of the app running at a time.
 /// </summary>
 public partial class Program
 {
@@ -55,7 +60,6 @@ public partial class Program
     {
         bool isRedirect = false;
         AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
-        ExtendedActivationKind kind = args.Kind;
         AppInstance keyInstance = AppInstance.FindOrRegisterForKey("FluentAutoClickerApp");
 
         if (keyInstance.IsCurrent)
@@ -91,7 +95,7 @@ public partial class Program
 
     // Do the redirection on another thread, and use a non-blocking
     // wait method to wait for the redirection to complete.
-    public static void RedirectActivationTo(AppActivationArguments args,
+    private static void RedirectActivationTo(AppActivationArguments args,
         AppInstance keyInstance)
     {
         _redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
@@ -101,11 +105,11 @@ public partial class Program
             _ = SetEvent(_redirectEventHandle);
         });
 
-        uint cwmoDefault = 0;
-        uint infinite = 0xFFFFFFFF;
+        const uint cwmoDefault = 0;
+        const uint infinite = 0xFFFFFFFF;
         _ = CoWaitForMultipleObjects(
             cwmoDefault, infinite, 1,
-            [_redirectEventHandle], out uint handleIndex);
+            [_redirectEventHandle], out uint _);
 
         // Bring the window to the foreground
         Process process = Process.GetProcessById((int)keyInstance.ProcessId);

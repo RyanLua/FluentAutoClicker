@@ -25,7 +25,7 @@ namespace FluentAutoClicker;
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
 /// </summary>
-public partial class App : Application
+public partial class App
 {
     public static readonly MainWindow MainWindow = new();
 
