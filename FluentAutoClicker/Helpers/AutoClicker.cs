@@ -82,10 +82,10 @@ public static class AutoClicker
     /// <summary>
     /// Clicks the mouse button.
     /// </summary>
-    /// <param name="button">The mouse button to click.</param>
-    private static void ClickMouse(int button)
+    /// <param name="mouseButton">The mouse button to click.</param>
+    private static void ClickMouse(int mouseButton)
     {
-        switch (button)
+        switch (mouseButton)
         {
             // Left mouse button
             case 0:
