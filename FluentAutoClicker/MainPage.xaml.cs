@@ -156,7 +156,7 @@ public sealed partial class MainPage
         StartToggleButton.Content = "Stop";
 
         int clickInterval = GetIntervalMilliseconds();
-        int repeatAmount = ClickRepeatCheckBox.IsEnabled ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
+        int repeatAmount = ClickRepeatCheckBox.IsChecked == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
         int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
         AutoClicker.Start(clickInterval, repeatAmount, mouseButton, clickOffset);
