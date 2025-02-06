@@ -186,4 +186,49 @@
   <data name="ClickOffsetAmount" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="SettingsCardAppTheme.Header" xml:space="preserve">
+    <value>App theme</value>
+  </data>
+  <data name="SettingsCardAppTheme.Description" xml:space="preserve">
+    <value>Select which app theme to display</value>
+  </data>
+  <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
+    <value>Use system setting</value>
+  </data>
+  <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
+    <value>Backdrop material</value>
+  </data>
+  <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
+    <value> which system backdrop material to use for the window background</value>
+  </data>
+  <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
+    <value>Mica</value>
+  </data>
+  <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
+    <value>Mica Alt</value>
+  </data>
+  <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
+    <value>Acrylic</value>
+  </data>
+  <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
+    <value>Always on top</value>
+  </data>
+  <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
+    <value>Always show the app's window on top of other open windows</value>
+  </data>
+  <data name="TextBlockBehavior.Text" xml:space="preserve">
+    <value>Behavior</value>
+  </data>
 </root>

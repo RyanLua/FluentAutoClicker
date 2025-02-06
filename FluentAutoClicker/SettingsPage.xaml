@@ -38,44 +38,32 @@
                 HorizontalAlignment="Stretch"
                 Spacing="{StaticResource SettingsCardSpacing}">
 
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="Settings" />
+                <TextBlock x:Uid="SettingsSubtitleTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" />
 
-                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Appearance" />
+                <TextBlock x:Uid="AppearanceSettingsSectionHeaderTextBlock" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
 
                 <!--  App theme  -->
-                <controls:SettingsCard
-                    Description="Select which app theme to display"
-                    Header="App theme"
-                    HeaderIcon="{ui:FontIcon Glyph=&#xE790;}">
-
+                <controls:SettingsCard x:Uid="SettingsCardAppTheme" HeaderIcon="{ui:FontIcon Glyph=&#xE790;}">
                     <ComboBox SelectedIndex="{x:Bind ThemeSelectedIndex, Mode=TwoWay}">
-                        <ComboBoxItem>Use system setting</ComboBoxItem>
-                        <ComboBoxItem>Light</ComboBoxItem>
-                        <ComboBoxItem>Dark</ComboBoxItem>
+                        <ComboBoxItem x:Uid="ComboBoxItemAppThemeSystem" />
+                        <ComboBoxItem x:Uid="ComboBoxItemAppThemeLight" />
+                        <ComboBoxItem x:Uid="ComboBoxItemAppThemeDark" />
                     </ComboBox>
                 </controls:SettingsCard>
 
                 <!--  Backdrop material  -->
-                <controls:SettingsCard
-                    Description="Select which system backdrop material to use for the window background"
-                    Header="Backdrop material"
-                    HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
-
+                <controls:SettingsCard x:Uid="SettingsCardBackdropMaterial" HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
                     <ComboBox x:Name="BackdropSelector" SelectionChanged="Backdrop_SelectionChanged">
-                        <ComboBoxItem>Mica</ComboBoxItem>
-                        <ComboBoxItem>Mica Alt</ComboBoxItem>
-                        <ComboBoxItem>Acrylic</ComboBoxItem>
+                        <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialMica" />
+                        <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialMicaAlt" />
+                        <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialAcrylic" />
                     </ComboBox>
                 </controls:SettingsCard>
 
-                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="Behavior" />
+                <TextBlock x:Uid="TextBlockBehavior" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
 
                 <!--  Always on top  -->
-                <controls:SettingsCard
-                    Description="Always show the app's window on top of other open windows"
-                    Header="Always on top"
-                    HeaderIcon="{ui:FontIcon Glyph=&#xE7C4;}">
-
+                <controls:SettingsCard x:Uid="SettingsCardAlwaysOnTop" HeaderIcon="{ui:FontIcon Glyph=&#xE7C4;}">
                     <ToggleSwitch IsOn="{x:Bind IsAlwaysOnTop, Mode=TwoWay}" />
                 </controls:SettingsCard>
 
