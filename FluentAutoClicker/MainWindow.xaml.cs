@@ -39,7 +39,6 @@ public sealed partial class MainWindow
 
         // Set up window title bar
         ExtendsContentIntoTitleBar = true;
-        AppTitleBar.Title = "AppDisplayName".GetLocalized();
 
         // Set up frame
         _ = Frame.Navigate(typeof(MainPage));

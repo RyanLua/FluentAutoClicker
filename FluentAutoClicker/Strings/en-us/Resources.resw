@@ -234,4 +234,10 @@
   <data name="AppPublisherDisplayName" xml:space="preserve">
     <value>Ryan Luu</value>
   </data>
+  <data name="AppTitleBar.Subtitle" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="AppTitleBar.Title" xml:space="preserve">
+    <value>Fluent Auto Clicker</value>
+  </data>
 </root>
