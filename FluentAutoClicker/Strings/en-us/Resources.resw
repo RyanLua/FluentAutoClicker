@@ -231,4 +231,7 @@
   <data name="TextBlockBehavior.Text" xml:space="preserve">
     <value>Behavior</value>
   </data>
+  <data name="AppPublisherDisplayName" xml:space="preserve">
+    <value>Ryan Luu</value>
+  </data>
 </root>
