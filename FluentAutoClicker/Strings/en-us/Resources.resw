@@ -211,7 +211,7 @@
     <value>Backdrop material</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value> which system backdrop material to use for the window background</value>
+    <value>System backdrop material for window background</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
     <value>Mica</value>
@@ -226,7 +226,7 @@
     <value>Always on top</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Always show the app's window on top of other open windows</value>
+    <value>Always show the app's window on top of others</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
     <value>Behavior</value>
@@ -239,5 +239,44 @@
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
     <value>Fluent Auto Clicker</value>
+  </data>
+  <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
+    <value>Privacy policy</value>
+  </data>
+  <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
+    <value>https://fluentautoclicker.com/policy</value>
+  </data>
+  <data name="HyperlinkButtonSource.Content" xml:space="preserve">
+    <value>Contribute</value>
+  </data>
+  <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
+    <value>https://fluentautoclicker.com</value>
+  </data>
+  <data name="HyperlinkButtonSource.NavigateUri" xml:space="preserve">
+    <value>https://fluentautoclicker.com/github</value>
+  </data>
+  <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
+    <value>Translate</value>
+  </data>
+  <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
+    <value>https://translate.fluentautoclicker.com</value>
+  </data>
+  <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
+    <value>https://fluentautoclicker.com/discord</value>
+  </data>
+  <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
+    <value>Send feedback</value>
+  </data>
+  <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
+    <value>License</value>
+  </data>
+  <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
+    <value>https://fluentautoclicker.com/license</value>
   </data>
 </root>

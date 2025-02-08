@@ -72,7 +72,7 @@
                 <!--  App version  -->
                 <controls:SettingsExpander
                     x:Name="AppAboutSettingsExpander"
-                    Description="Copyright © 2024  Ryan Luu"
+                    Description="Copyright © 2024 Ryan Luu"
                     HeaderIcon="{ui:BitmapIcon Source=ms-appx:///Assets/WindowIcon.ico}">
                     <TextBlock
                         x:Name="AppVersionTextBlock"
@@ -80,34 +80,22 @@
                         Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                     <controls:SettingsExpander.Items>
 
-                        <!--  Privacy Policy  -->
+                        <!--  Terms  -->
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
-                            <HyperlinkButton
-                                Margin="{StaticResource HyperlinkButtonNegativeMargin}"
-                                Content="Privacy policy"
-                                NavigateUri="https://fluentautoclicker.com/policy" />
+                            <StackPanel>
+                                <HyperlinkButton x:Uid="HyperlinkButtonPrivacyPolicy" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonLicense" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                            </StackPanel>
                         </controls:SettingsCard>
 
                         <!--  Related links  -->
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
-
                             <StackPanel>
                                 <TextBlock Margin="{StaticResource XSmallTopBottomMargin}" Text="Related links" />
-
-                                <HyperlinkButton
-                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
-                                    Content="Website"
-                                    NavigateUri="https://fluentautoclicker.com" />
-
-                                <HyperlinkButton
-                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
-                                    Content="Source code"
-                                    NavigateUri="https://fluentautoclicker.com/github" />
-
-                                <HyperlinkButton
-                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
-                                    Content="Discord server"
-                                    NavigateUri="https://fluentautoclicker.com/discord" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonWebsite" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonDiscord" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonTranslate" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonSource" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
                             </StackPanel>
                         </controls:SettingsCard>
 
@@ -116,15 +104,9 @@
 
                 <!--  Send feedback  -->
                 <HyperlinkButton
+                    x:Uid="HyperlinkButtonFeedback"
                     Margin="{StaticResource XSmallTopBottomMargin}"
-                    Content="Send feedback"
-                    NavigateUri="mailto:feedback@fluentautoclicker.com" />
-
-                <!--  Contribute  -->
-                <TextBlock TextWrapping="WrapWholeWords">
-                    <Span xml:space="preserve">To learn how you can contribute to Fluent Auto Clicker, check out the project on <Hyperlink NavigateUri="https://github.com/RyanLua/FluentAutoClicker">GitHub</Hyperlink>.</Span>
-                </TextBlock>
-
+                    Click="HyperlinkButtonFeedback_Click" />
             </StackPanel>
         </Grid>
     </ScrollViewer>

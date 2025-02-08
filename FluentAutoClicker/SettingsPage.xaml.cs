@@ -105,4 +105,8 @@ public sealed partial class SettingsPage
         get => MainWindow.IsAlwaysOnTop;
         set => MainWindow.IsAlwaysOnTop = value;
     }
+
+    private void HyperlinkButtonFeedback_Click(object sender, RoutedEventArgs e)
+    {
+    }
 }
