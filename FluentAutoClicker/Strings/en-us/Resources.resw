@@ -247,7 +247,7 @@
     <value>https://fluentautoclicker.com/policy</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Contribute</value>
+    <value>Source code</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
     <value>Website</value>
