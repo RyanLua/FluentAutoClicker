@@ -21,8 +21,6 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using System.Globalization;
 using System.Runtime.InteropServices;
-using Windows.Data.Xml.Dom;
-using Windows.UI.Notifications;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
