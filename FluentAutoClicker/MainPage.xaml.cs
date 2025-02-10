@@ -27,6 +27,7 @@ using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
 using Windows.Win32.UI.WindowsAndMessaging;
+using Microsoft.Windows.BadgeNotifications;
 
 namespace FluentAutoClicker;
 
@@ -91,8 +92,8 @@ public sealed partial class MainPage : Page
         IntPtr wndPtr = SetWindowLongPtr(hWnd, GWL_WNDPROC, hotKeyProcPtr);
         origHotKeyProc = Marshal.GetDelegateForFunctionPointer<WNDPROC>(wndPtr);
 
-        // Reset notification badge glyph
-        UpdateBadgeGlyph("paused");
+        // Set notification badge glyph
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
     }
 
     private void SetControlsEnabled(bool isEnabled)
@@ -144,36 +145,6 @@ public sealed partial class MainPage : Page
         return totalTimeInMilliseconds;
     }
 
-    /// <summary>
-    /// Updates the badge glyph for the application using the specified glyph value.
-    /// </summary>
-    /// <param name="badgeGlyphValue">The glyph value to set for the badge. This can be one of the predefined glyph values such as "activity", "alert", "available", etc.</param>
-    /// <remarks>
-    /// For more information on badge glyph values, see 
-    /// <see href="https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/badges#glyph-badges">Glyph badges</see>.
-    /// </remarks>
-    private static void UpdateBadgeGlyph(string badgeGlyphValue)
-    {
-        // Get the blank badge XML payload for a badge glyph
-        XmlDocument badgeXml =
-            BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeGlyph);
-
-        // Set the value of the badge in the XML to our glyph value
-        XmlElement? badgeElement =
-            badgeXml.SelectSingleNode("/badge") as XmlElement;
-        badgeElement?.SetAttribute("value", badgeGlyphValue);
-
-        // Create the badge notification
-        BadgeNotification badge = new(badgeXml);
-
-        // Create the badge updater for the application
-        BadgeUpdater badgeUpdater =
-            BadgeUpdateManager.CreateBadgeUpdaterForApplication();
-
-        // And update the badge
-        badgeUpdater.Update(badge);
-    }
-
     private async void StartToggleButton_OnChecked(object sender, RoutedEventArgs e)
     {
         StartToggleButton.IsEnabled = false;
@@ -189,7 +160,7 @@ public sealed partial class MainPage : Page
         StartToggleButton.IsEnabled = true;
         StartToggleButton.Content = "Stop";
 
-        UpdateBadgeGlyph("playing");
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
 
         int clickInterval = GetIntervalMilliseconds();
         int repeatAmount = ClickRepeatCheckBox.IsEnabled == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
@@ -202,7 +173,7 @@ public sealed partial class MainPage : Page
     {
         StartToggleButton.Content = "Start";
         AutoClicker.Stop();
-        UpdateBadgeGlyph("paused");
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
         SetControlsEnabled(true);
     }
 
