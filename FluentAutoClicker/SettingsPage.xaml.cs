@@ -69,7 +69,7 @@ public sealed partial class SettingsPage
 
     private static WindowEx MainWindow => App.MainWindow;
 
-    private int ThemeSelectedIndex
+    private static int ThemeSelectedIndex
     {
         get => ((FrameworkElement)MainWindow.Content).RequestedTheme switch
         {
@@ -100,13 +100,44 @@ public sealed partial class SettingsPage
         };
     }
 
-    private bool IsAlwaysOnTop
+    private static bool IsAlwaysOnTop
     {
         get => MainWindow.IsAlwaysOnTop;
         set => MainWindow.IsAlwaysOnTop = value;
     }
-
-    private void HyperlinkButtonFeedback_Click(object sender, RoutedEventArgs e)
+    private async void HyperlinkButtonFeedback_Click(object sender, RoutedEventArgs e)
     {
+        string recipientEmail = "feedback@fluentautoclicker.com";
+        string subject = "Fluent Auto Clicker Feedback" + AppVersion;
+        string messageBody = "Please enter your feedback here.";
+
+        await ComposeEmailAsync(recipientEmail, subject, messageBody);
+    }
+
+    private async Task ComposeEmailAsync(string recipientEmail, string subject, string messageBody)
+    {
+        try
+        {
+            // Construct the mailto URI
+            Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
+
+            // Launch the default email client
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+        catch (Exception ex)
+        {
+            ContentDialog dialog = new()
+            {
+                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                XamlRoot = XamlRoot,
+                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Title = "Failed launch email client",
+                Content = ex.Message,
+                CloseButtonText = "OK",
+                DefaultButton = ContentDialogButton.Primary
+            };
+
+            _ = await dialog.ShowAsync();
+        }
     }
 }
