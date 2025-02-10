@@ -108,8 +108,8 @@ public sealed partial class SettingsPage
     private async void HyperlinkButtonFeedback_Click(object sender, RoutedEventArgs e)
     {
         string recipientEmail = "feedback@fluentautoclicker.com";
-        string subject = "Fluent Auto Clicker Feedback" + AppVersion;
-        string messageBody = "Please enter your feedback here.";
+        string subject = "Fluent Auto Clicker Feedback";
+        string messageBody = "---------- Type your feedback above this line ---------\nOS version: " + Environment.OSVersion + "\nApp version: " + AppVersion;
 
         await ComposeEmailAsync(recipientEmail, subject, messageBody);
     }
