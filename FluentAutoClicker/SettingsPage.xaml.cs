@@ -69,7 +69,7 @@ public sealed partial class SettingsPage
 
     private static WindowEx MainWindow => App.MainWindow;
 
-    private static int ThemeSelectedIndex
+    private int ThemeSelectedIndex
     {
         get => ((FrameworkElement)MainWindow.Content).RequestedTheme switch
         {
@@ -100,7 +100,7 @@ public sealed partial class SettingsPage
         };
     }
 
-    private static bool IsAlwaysOnTop
+    private bool IsAlwaysOnTop
     {
         get => MainWindow.IsAlwaysOnTop;
         set => MainWindow.IsAlwaysOnTop = value;
