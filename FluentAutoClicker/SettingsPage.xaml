@@ -67,6 +67,21 @@
                     <ToggleSwitch IsOn="{x:Bind IsAlwaysOnTop, Mode=TwoWay}" />
                 </controls:SettingsCard>
 
+                <!--  Notification badge  -->
+                <controls:SettingsExpander
+                    Description="Show the status notification badge on the app's taskbar icon"
+                    Header="Notification badge"
+                    HeaderIcon="{ui:FontIcon Glyph=&#xEDAD;}">
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox Content="Show badge when clicking." />
+                        </controls:SettingsCard>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox Content="Show badge when paused." />
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
                 <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
 
                 <!--  App version  -->
