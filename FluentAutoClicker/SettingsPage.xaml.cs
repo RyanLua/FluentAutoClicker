@@ -31,10 +31,13 @@ using WinUIEx;
 namespace FluentAutoClicker;
 
 /// <summary>
-/// An empty page that can be used on its own or navigated to within a Frame.
+/// Represents the settings page of the Fluent Auto Clicker application.
 /// </summary>
 public sealed partial class SettingsPage
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SettingsPage"/> class.
+    /// </summary>
     public SettingsPage()
     {
         InitializeComponent();
@@ -42,8 +45,14 @@ public sealed partial class SettingsPage
         AppVersionTextBlock.Text = AppVersion;
     }
 
+    /// <summary>
+    /// Gets the localized application name.
+    /// </summary>
     private static string AppName => "AppDisplayName".GetLocalized();
 
+    /// <summary>
+    /// Gets the application version.
+    /// </summary>
     private static string AppVersion
     {
         get
@@ -53,8 +62,14 @@ public sealed partial class SettingsPage
         }
     }
 
+    /// <summary>
+    /// Gets the main application window.
+    /// </summary>
     private static WindowEx MainWindow => App.MainWindow;
 
+    /// <summary>
+    /// Gets or sets the selected theme index.
+    /// </summary>
     private int ThemeSelectedIndex
     {
         get => ((FrameworkElement)MainWindow.Content).RequestedTheme switch
@@ -71,6 +86,9 @@ public sealed partial class SettingsPage
         };
     }
 
+    /// <summary>
+    /// Gets or sets the selected backdrop index.
+    /// </summary>
     private int BackdropSelectedIndex
     {
         get => MainWindow.SystemBackdrop switch
@@ -87,12 +105,20 @@ public sealed partial class SettingsPage
         };
     }
 
+    /// <summary>
+    /// Gets or sets a value indicating whether the application window is always on top.
+    /// </summary>
     private bool IsAlwaysOnTop
     {
         get => MainWindow.IsAlwaysOnTop;
         set => MainWindow.IsAlwaysOnTop = value;
     }
 
+    /// <summary>
+    /// Handles the click event of the feedback hyperlink button.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private async void HyperlinkButtonFeedback_Click(object sender, RoutedEventArgs e)
     {
         string recipientEmail = "feedback@fluentautoclicker.com";
@@ -112,6 +138,12 @@ public sealed partial class SettingsPage
         await ComposeEmailAsync(recipientEmail, subject, messageBody);
     }
 
+    /// <summary>
+    /// Composes and launches an email with the specified recipient, subject, and message body.
+    /// </summary>
+    /// <param name="recipientEmail">The recipient email address.</param>
+    /// <param name="subject">The email subject.</param>
+    /// <param name="messageBody">The email message body.</param>
     private static async Task ComposeEmailAsync(string recipientEmail, string subject, string messageBody)
     {
         Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
