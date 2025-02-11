@@ -279,4 +279,16 @@
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://fluentautoclicker.com/license</value>
   </data>
+  <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
+    <value>Notification badge</value>
+  </data>
+  <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
+    <value>Show the status notification badge on the app's taskbar icon</value>
+  </data>
+  <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
+    <value>Show badge while clicking</value>
+  </data>
+  <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
+    <value>Show badge while paused</value>
+  </data>
 </root>
