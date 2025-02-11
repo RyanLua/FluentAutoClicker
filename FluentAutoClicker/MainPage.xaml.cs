@@ -25,6 +25,8 @@ using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
 using WinRT.Interop;
 using WinUIEx.Messaging;
+using Windows.Win32.UI.WindowsAndMessaging;
+using Microsoft.Windows.BadgeNotifications;
 
 namespace FluentAutoClicker;
 
@@ -155,6 +157,8 @@ public sealed partial class MainPage
         StartToggleButton.IsEnabled = true;
         StartToggleButton.Content = "Stop";
 
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
+
         int clickInterval = GetIntervalMilliseconds();
         int repeatAmount = ClickRepeatCheckBox.IsChecked == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
@@ -166,6 +170,7 @@ public sealed partial class MainPage
     {
         StartToggleButton.Content = "Start";
         AutoClicker.Stop();
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
         SetControlsEnabled(true);
     }
 
