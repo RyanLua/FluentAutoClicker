@@ -25,7 +25,6 @@ using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
 using WinRT.Interop;
 using WinUIEx.Messaging;
-using Windows.Win32.UI.WindowsAndMessaging;
 using Microsoft.Windows.BadgeNotifications;
 
 namespace FluentAutoClicker;
@@ -80,6 +79,9 @@ public sealed partial class MainPage
 
             _ = await dialog.ShowAsync();
         }
+
+        // Set badge notification
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
     }
 
     private void OnWindowMessageReceived(object? sender, WindowMessageEventArgs e)
