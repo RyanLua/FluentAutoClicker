@@ -20,7 +20,9 @@ using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
+using System.Runtime.InteropServices;
 using Windows.ApplicationModel;
+using Windows.System;
 using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -105,39 +107,30 @@ public sealed partial class SettingsPage
         get => MainWindow.IsAlwaysOnTop;
         set => MainWindow.IsAlwaysOnTop = value;
     }
+
     private async void HyperlinkButtonFeedback_Click(object sender, RoutedEventArgs e)
     {
         string recipientEmail = "feedback@fluentautoclicker.com";
-        string subject = "Fluent Auto Clicker Feedback";
-        string messageBody = "---------- Type your feedback above this line ---------\nOS version: " + Environment.OSVersion + "\nApp version: " + AppVersion;
+        string subject = $"{AppName} App Feedback";
+        string messageBody = $"""
+
+
+            ---------- Add your feedback above ----------
+
+            .NET installation: {RuntimeInformation.FrameworkDescription}
+            App version: {AppVersion}
+            App architecture: {RuntimeInformation.ProcessArchitecture}
+            OS version: {RuntimeInformation.OSDescription}
+            OS architecture: {RuntimeInformation.OSArchitecture}
+            """;
 
         await ComposeEmailAsync(recipientEmail, subject, messageBody);
     }
 
-    private async Task ComposeEmailAsync(string recipientEmail, string subject, string messageBody)
+    private static async Task ComposeEmailAsync(string recipientEmail, string subject, string messageBody)
     {
-        try
-        {
-            // Construct the mailto URI
-            Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
+        Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
 
-            // Launch the default email client
-            await Windows.System.Launcher.LaunchUriAsync(uri);
-        }
-        catch (Exception ex)
-        {
-            ContentDialog dialog = new()
-            {
-                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-                XamlRoot = XamlRoot,
-                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                Title = "Failed launch email client",
-                Content = ex.Message,
-                CloseButtonText = "OK",
-                DefaultButton = ContentDialogButton.Primary
-            };
-
-            _ = await dialog.ShowAsync();
-        }
+        await Launcher.LaunchUriAsync(uri);
     }
 }
