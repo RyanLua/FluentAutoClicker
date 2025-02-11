@@ -35,27 +35,11 @@ namespace FluentAutoClicker;
 /// </summary>
 public sealed partial class SettingsPage
 {
-    // Pin the backdrops to prevent them being set when already set
-    private static readonly MicaBackdrop MicaBackdrop = new();
-    private static readonly MicaBackdrop MicaAltBackdrop = new() { Kind = MicaKind.BaseAlt };
-    private static readonly DesktopAcrylicBackdrop AcrylicBackdrop = new();
-
-    private readonly bool _isInitialized;
-
     public SettingsPage()
     {
         InitializeComponent();
         AppAboutSettingsExpander.Header = AppName;
         AppVersionTextBlock.Text = AppVersion;
-
-        BackdropSelector.SelectedIndex = MainWindow.SystemBackdrop switch
-        {
-            MicaBackdrop { Kind: MicaKind.BaseAlt } => 1,
-            DesktopAcrylicBackdrop => 2,
-            _ => 0
-        };
-
-        _isInitialized = true;
     }
 
     private static string AppName => "AppDisplayName".GetLocalized();
@@ -87,18 +71,19 @@ public sealed partial class SettingsPage
         };
     }
 
-    private void Backdrop_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    private int BackdropSelectedIndex
     {
-        if (!_isInitialized)
+        get => MainWindow.SystemBackdrop switch
         {
-            return;
-        }
-
-        MainWindow.SystemBackdrop = ((ComboBox)sender).SelectedIndex switch
+            MicaBackdrop { Kind: MicaKind.BaseAlt } => 1,
+            DesktopAcrylicBackdrop => 2,
+            _ => 0
+        };
+        set => MainWindow.SystemBackdrop = value switch
         {
-            1 => MicaAltBackdrop,
-            2 => AcrylicBackdrop,
-            _ => MicaBackdrop
+            1 => new MicaBackdrop() { Kind = MicaKind.BaseAlt },
+            2 => new DesktopAcrylicBackdrop(),
+            _ => new MicaBackdrop()
         };
     }
 

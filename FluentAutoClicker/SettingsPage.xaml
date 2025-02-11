@@ -53,7 +53,7 @@
 
                 <!--  Backdrop material  -->
                 <controls:SettingsCard x:Uid="SettingsCardBackdropMaterial" HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
-                    <ComboBox x:Name="BackdropSelector" SelectionChanged="Backdrop_SelectionChanged">
+                    <ComboBox SelectedIndex="{x:Bind BackdropSelectedIndex, Mode=TwoWay}">
                         <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialMica" />
                         <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialMicaAlt" />
                         <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialAcrylic" />
