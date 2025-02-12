@@ -39,7 +39,6 @@ public sealed partial class MainWindow
 
         // Set up window title bar
         ExtendsContentIntoTitleBar = true;
-        SetTitleBar(AppTitleBar);
 
         // Set up frame
         _ = NavFrame.Navigate(typeof(MainPage));
