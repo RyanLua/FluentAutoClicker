@@ -244,7 +244,7 @@
     <value>Privacy policy</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
-    <value>https://fluentautoclicker.com/policy</value>
+    <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
     <value>Source code</value>
@@ -256,7 +256,7 @@
     <value>https://fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonSource.NavigateUri" xml:space="preserve">
-    <value>https://fluentautoclicker.com/github</value>
+    <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
     <value>Translate</value>
@@ -268,7 +268,7 @@
     <value>Discord</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
-    <value>https://fluentautoclicker.com/discord</value>
+    <value>https://discord.com/invite/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
     <value>Send feedback</value>
@@ -277,7 +277,7 @@
     <value>License</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
-    <value>https://fluentautoclicker.com/license</value>
+    <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
     <value>Notification badge</value>
