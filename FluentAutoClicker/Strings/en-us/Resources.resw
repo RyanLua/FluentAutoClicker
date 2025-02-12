@@ -268,7 +268,7 @@
     <value>Discord</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
-    <value>https://discord.com/invite/32AMskrpFf</value>
+    <value>https://fluentautoclicker.com/discord</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
     <value>Send feedback</value>
