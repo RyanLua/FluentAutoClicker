@@ -25,14 +25,14 @@
             <RowDefinition Height="*" />
             <!--  App Content  -->
         </Grid.RowDefinitions>
-        <TitleBar
+        <windowex:TitleBar
             x:Name="AppTitleBar"
             x:Uid="AppTitleBar"
             BackRequested="AppTitleBar_BackRequested">
-            <TitleBar.IconSource>
+            <windowex:TitleBar.IconSource>
                 <BitmapIconSource ShowAsMonochrome="False" UriSource="ms-appx:///Assets/WindowIcon.ico" />
-            </TitleBar.IconSource>
-        </TitleBar>
+            </windowex:TitleBar.IconSource>
+        </windowex:TitleBar>
 
         <!--  App content  -->
         <Frame

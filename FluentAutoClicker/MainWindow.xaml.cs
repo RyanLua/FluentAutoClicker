@@ -16,7 +16,6 @@
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
 using FluentAutoClicker.Helpers;
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -44,7 +43,7 @@ public sealed partial class MainWindow
         _ = NavFrame.Navigate(typeof(MainPage));
     }
 
-    private void AppTitleBar_BackRequested(TitleBar sender, object args)
+    private void AppTitleBar_BackRequested(WinUIEx.TitleBar sender, object args)
     {
         if (NavFrame.CanGoBack)
         {
