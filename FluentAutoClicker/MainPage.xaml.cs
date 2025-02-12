@@ -176,18 +176,6 @@ public sealed partial class MainPage
         SetControlsEnabled(true);
     }
 
-    private void CheckBox_Click(object sender, RoutedEventArgs e)
-    {
-        if (sender.Equals(ClickRepeatCheckBox))
-        {
-            ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true;
-        }
-        else if (sender.Equals(ClickOffsetCheckBox))
-        {
-            ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
-        }
-    }
-
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
         _ = Frame.Navigate(typeof(SettingsPage));
