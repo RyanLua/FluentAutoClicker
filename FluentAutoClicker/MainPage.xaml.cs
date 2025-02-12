@@ -18,7 +18,6 @@
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media;
 using System.Globalization;
 using Windows.Win32;
 using Windows.Win32.Foundation;
@@ -104,15 +103,8 @@ public sealed partial class MainPage
         MouseButtonTypeComboBox.IsEnabled = isEnabled;
         ClickRepeatCheckBox.IsEnabled = isEnabled;
         ClickOffsetCheckBox.IsEnabled = isEnabled;
-
-        ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true && isEnabled;
-        ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true && isEnabled;
-
-        // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
-        string brushKey =
-            isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
-        ClickIntervalTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
-        HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
+        ClickOffsetAmount.IsEnabled = isEnabled && ClickOffsetCheckBox.IsChecked == true;
+        ClickRepeatAmount.IsEnabled = isEnabled && ClickRepeatCheckBox.IsChecked == true;
     }
 
     private static int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
