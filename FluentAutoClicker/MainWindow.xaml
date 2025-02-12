@@ -21,15 +21,15 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <!--  WinUI TitleBar  -->
+            <!--  Title Bar  -->
             <RowDefinition Height="*" />
-            <!--  App content  -->
+            <!--  App Content  -->
         </Grid.RowDefinitions>
-        <windowex:TitleBar x:Name="AppTitleBar" x:Uid="AppTitleBar">
-            <windowex:TitleBar.IconSource>
+        <TitleBar x:Name="AppTitleBar" x:Uid="AppTitleBar">
+            <TitleBar.IconSource>
                 <BitmapIconSource ShowAsMonochrome="False" UriSource="ms-appx:///Assets/WindowIcon.ico" />
-            </windowex:TitleBar.IconSource>
-        </windowex:TitleBar>
+            </TitleBar.IconSource>
+        </TitleBar>
 
         <!--  App content  -->
         <Frame x:Name="Frame" Grid.Row="1" />

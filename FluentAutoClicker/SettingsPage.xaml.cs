@@ -18,7 +18,6 @@
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using System.Runtime.InteropServices;
 using Windows.ApplicationModel;
