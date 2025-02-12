@@ -25,13 +25,19 @@
             <RowDefinition Height="*" />
             <!--  App Content  -->
         </Grid.RowDefinitions>
-        <TitleBar x:Name="AppTitleBar" x:Uid="AppTitleBar">
+        <TitleBar
+            x:Name="AppTitleBar"
+            x:Uid="AppTitleBar"
+            BackRequested="AppTitleBar_BackRequested">
             <TitleBar.IconSource>
                 <BitmapIconSource ShowAsMonochrome="False" UriSource="ms-appx:///Assets/WindowIcon.ico" />
             </TitleBar.IconSource>
         </TitleBar>
 
         <!--  App content  -->
-        <Frame x:Name="Frame" Grid.Row="1" />
+        <Frame
+            x:Name="NavFrame"
+            Grid.Row="1"
+            Navigated="NavFrame_Navigated" />
     </Grid>
 </windowex:WindowEx>

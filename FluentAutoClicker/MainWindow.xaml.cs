@@ -42,23 +42,18 @@ public sealed partial class MainWindow
         SetTitleBar(AppTitleBar);
 
         // Set up frame
-        _ = Frame.Navigate(typeof(MainPage));
-        Frame.Navigated += OnNavigated;
-
-        // Set up back button
-        AppTitleBar.IsBackButtonVisible = false;
-        AppTitleBar.BackRequested += AppTitleBar_BackRequested;
+        _ = NavFrame.Navigate(typeof(MainPage));
     }
 
     private void AppTitleBar_BackRequested(TitleBar sender, object args)
     {
-        if (Frame.CanGoBack)
+        if (NavFrame.CanGoBack)
         {
-            Frame.GoBack();
+            NavFrame.GoBack();
         }
     }
 
-    private void OnNavigated(object sender, NavigationEventArgs e)
+    private void NavFrame_Navigated(object sender, NavigationEventArgs e)
     {
         AppTitleBar.IsBackButtonVisible = e.SourcePageType != typeof(MainPage);
     }
