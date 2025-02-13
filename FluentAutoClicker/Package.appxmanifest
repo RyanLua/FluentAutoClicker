@@ -16,7 +16,7 @@
 
   <Properties>
     <DisplayName>ms-resource:AppDisplayName</DisplayName>
-    <PublisherDisplayName>Ryan Luu</PublisherDisplayName>
+    <PublisherDisplayName>ms-resource:AppPublisherDisplayName</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
