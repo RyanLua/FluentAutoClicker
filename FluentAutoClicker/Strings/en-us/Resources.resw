@@ -165,6 +165,9 @@
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
     <value>Which button to start the auto clicker</value>
   </data>
+  <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
     <value>Start</value>
   </data>
