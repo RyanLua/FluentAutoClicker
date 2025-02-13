@@ -66,10 +66,10 @@
                 <controls:SettingsExpander x:Uid="SettingsExpanderNotificationBadge" HeaderIcon="{ui:FontIcon Glyph=&#xEDAD;}">
                     <controls:SettingsExpander.Items>
                         <controls:SettingsCard ContentAlignment="Left">
-                            <CheckBox x:Uid="CheckBoxNotificationBadgePlaying" />
+                            <CheckBox x:Uid="CheckBoxNotificationBadgePlaying" IsChecked="{x:Bind NotificationBadgePlaying, Mode=TwoWay}" />
                         </controls:SettingsCard>
                         <controls:SettingsCard ContentAlignment="Left">
-                            <CheckBox x:Uid="CheckBoxNotificationBadgePaused" />
+                            <CheckBox x:Uid="CheckBoxNotificationBadgePaused" IsChecked="{x:Bind NotificationBadgePaused, Mode=TwoWay}" />
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>

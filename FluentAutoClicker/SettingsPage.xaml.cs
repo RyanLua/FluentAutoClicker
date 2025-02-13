@@ -21,6 +21,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
 using System.Runtime.InteropServices;
 using Windows.ApplicationModel;
+using Windows.Storage;
 using Windows.System;
 using WinUIEx;
 
@@ -34,6 +35,29 @@ namespace FluentAutoClicker;
 /// </summary>
 public sealed partial class SettingsPage
 {
+    /// <summary>
+    /// Application settings container in the local app data store.
+    /// </summary>
+    private readonly ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+    /// <summary>
+    /// Gets or sets the if the playing notification badge is enabled.
+    /// </summary>
+    public bool NotificationBadgePlaying
+    {
+        get => (bool)localSettings.Values[nameof(NotificationBadgePlaying)];
+        set => localSettings.Values[nameof(NotificationBadgePlaying)] = value;
+    }
+
+    /// <summary>
+    /// Gets or sets the if the paused notification badge is enabled.
+    /// </summary>
+    public bool NotificationBadgePaused
+    {
+        get => (bool)localSettings.Values[nameof(NotificationBadgePaused)];
+        set => localSettings.Values[nameof(NotificationBadgePaused)] = value;
+    }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="SettingsPage"/> class.
     /// </summary>

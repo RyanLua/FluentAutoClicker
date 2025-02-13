@@ -46,6 +46,9 @@ public sealed partial class MainPage
 
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
+        // Set badge notification
+        SetNotificationBadge(BadgeNotificationGlyph.Paused);
+
         // Prevent registering multiple hotkeys
         if (IsHotKeyRegistered)
         {
@@ -81,9 +84,6 @@ public sealed partial class MainPage
 
             _ = await dialog.ShowAsync();
         }
-
-        // Set badge notification
-        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
     }
 
     private void OnWindowMessageReceived(object? sender, WindowMessageEventArgs e)
@@ -94,6 +94,24 @@ public sealed partial class MainPage
             {
                 ToggleButtonStart.IsChecked = !ToggleButtonStart.IsChecked;
             }
+        }
+    }
+
+    private static void SetNotificationBadge(BadgeNotificationGlyph glyph)
+    {
+        SettingsPage settingsPage = new();
+
+        if (glyph == BadgeNotificationGlyph.Paused && settingsPage.NotificationBadgePaused)
+        {
+            BadgeNotificationManager.Current.SetBadgeAsGlyph(glyph);
+        }
+        else if (glyph == BadgeNotificationGlyph.Playing && settingsPage.NotificationBadgePlaying)
+        {
+            BadgeNotificationManager.Current.SetBadgeAsGlyph(glyph);
+        }
+        else
+        {
+            BadgeNotificationManager.Current.ClearBadge();
         }
     }
 
@@ -145,7 +163,8 @@ public sealed partial class MainPage
         SetControlsEnabled(false);
         FontIconStart.Glyph = "\uEDB4";
         BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
-        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStop".GetLocalized());
+        SetNotificationBadge(BadgeNotificationGlyph.Playing);
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
 
         // Start auto clicker
         int clickInterval = GetIntervalMilliseconds();
@@ -160,7 +179,7 @@ public sealed partial class MainPage
         // Update controls
         SetControlsEnabled(true);
         FontIconStart.Glyph = "\uEE4A";
-        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
+        SetNotificationBadge(BadgeNotificationGlyph.Paused);
         ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
 
         // Stop auto clicker
