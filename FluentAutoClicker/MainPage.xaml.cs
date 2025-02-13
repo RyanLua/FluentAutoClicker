@@ -37,6 +37,9 @@ public sealed partial class MainPage
     {
         InitializeComponent();
         Loaded += MainPage_Loaded;
+
+        // Set tooltip
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
     }
 
     private bool IsHotKeyRegistered { get; set; }
@@ -87,9 +90,9 @@ public sealed partial class MainPage
     {
         if (e.Message.MessageId == 0x0312) // WM_HOTKEY event
         {
-            if (StartToggleButton.IsEnabled)
+            if (ToggleButtonStart.IsEnabled)
             {
-                StartToggleButton.IsChecked = !StartToggleButton.IsChecked;
+                ToggleButtonStart.IsChecked = !ToggleButtonStart.IsChecked;
             }
         }
     }
@@ -136,23 +139,15 @@ public sealed partial class MainPage
         return totalTimeInMilliseconds;
     }
 
-    private async void StartToggleButton_OnChecked(object sender, RoutedEventArgs e)
+    private void ToggleButtonStart_OnChecked(object sender, RoutedEventArgs e)
     {
-        StartToggleButton.IsEnabled = false;
+        // Update controls
         SetControlsEnabled(false);
-
-        // 3-second countdown
-        for (int i = 3; i > 0; i--)
-        {
-            StartToggleButton.Content = i.ToString();
-            await Task.Delay(1000);
-        }
-
-        StartToggleButton.IsEnabled = true;
-        StartToggleButton.Content = "Stop";
-
+        FontIconStart.Glyph = "\uEDB4";
         BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStop".GetLocalized());
 
+        // Start auto clicker
         int clickInterval = GetIntervalMilliseconds();
         int repeatAmount = ClickRepeatCheckBox.IsChecked == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
@@ -160,12 +155,16 @@ public sealed partial class MainPage
         AutoClicker.Start(clickInterval, repeatAmount, mouseButton, clickOffset);
     }
 
-    private void StartToggleButton_OnUnchecked(object sender, RoutedEventArgs e)
+    private void ToggleButtonStart_OnUnchecked(object sender, RoutedEventArgs e)
     {
-        StartToggleButton.Content = "Start";
-        AutoClicker.Stop();
-        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
+        // Update controls
         SetControlsEnabled(true);
+        FontIconStart.Glyph = "\uEE4A";
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
+
+        // Stop auto clicker
+        AutoClicker.Stop();
     }
 
     private void SettingsButton_Click(object sender, RoutedEventArgs e)

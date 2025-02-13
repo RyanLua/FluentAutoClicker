@@ -154,15 +154,21 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <ToggleButton
-                x:Name="StartToggleButton"
+                x:Name="ToggleButtonStart"
                 x:Uid="ToggleButtonStart"
+                Height="32"
                 HorizontalAlignment="Stretch"
-                Checked="StartToggleButton_OnChecked"
-                Unchecked="StartToggleButton_OnUnchecked" />
+                Checked="ToggleButtonStart_OnChecked"
+                Unchecked="ToggleButtonStart_OnUnchecked">
+                <FontIcon x:Name="FontIconStart" Glyph="&#xEE4A;" />
+            </ToggleButton>
 
             <!--  Open Settings  -->
-            <Button Grid.Column="1" Click="SettingsButton_Click">
-                <AnimatedIcon Height="18" FallbackIconSource="{ui:FontIconSource Glyph=&#xE713;}">
+            <Button
+                Grid.Column="1"
+                Height="32"
+                Click="SettingsButton_Click">
+                <AnimatedIcon FallbackIconSource="{ui:FontIconSource Glyph=&#xE713;}">
                     <AnimatedIcon.Source>
                         <animatedvisuals:AnimatedSettingsVisualSource />
                     </AnimatedIcon.Source>

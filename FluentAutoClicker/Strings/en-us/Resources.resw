@@ -165,11 +165,8 @@
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
     <value>Which button to start the auto clicker</value>
   </data>
-  <data name="ToggleButtonStart.Content" xml:space="preserve">
+  <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
     <value>Start</value>
-  </data>
-  <data name="ToggleButtonStart.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Start the auto clicker</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
     <value>Click repeat</value>
@@ -290,5 +287,8 @@
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
     <value>Show badge while paused</value>
+  </data>
+  <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
+    <value>Pause</value>
   </data>
 </root>
