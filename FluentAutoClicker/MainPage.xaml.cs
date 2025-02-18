@@ -164,7 +164,7 @@ public sealed partial class MainPage
         FontIconStart.Glyph = "\uEDB4";
         BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
         SetNotificationBadge(BadgeNotificationGlyph.Playing);
-        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStop".GetLocalized());
 
         // Start auto clicker
         int clickInterval = GetIntervalMilliseconds();
