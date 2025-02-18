@@ -64,7 +64,13 @@ public sealed partial class SettingsPage
     public SettingsPage()
     {
         InitializeComponent();
-        InitializeSettings();
+
+        // Initialize saved settings
+        ThemeSelectedIndex = ThemeSelectedIndex;
+        BackdropSelectedIndex = BackdropSelectedIndex;
+        IsAlwaysOnTop = IsAlwaysOnTop;
+
+        // Initialize app name and version
         AppAboutSettingsExpander.Header = AppName;
         AppVersionTextBlock.Text = AppVersion;
     }
@@ -188,20 +194,5 @@ public sealed partial class SettingsPage
         Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
 
         await Launcher.LaunchUriAsync(uri);
-    }
-
-    /// <summary>
-    /// Initializes the settings with saved values.
-    /// </summary>
-    private void InitializeSettings()
-    {
-        // Set saved color theme
-        ThemeSelectedIndex = ThemeSelectedIndex;
-
-        // Set saved backdrop material
-        BackdropSelectedIndex = BackdropSelectedIndex;
-
-        // Set saved always-on-top setting
-        IsAlwaysOnTop = IsAlwaysOnTop;
     }
 }

@@ -14,10 +14,6 @@
     IsAlwaysOnTop="True"
     mc:Ignorable="d">
 
-    <Window.SystemBackdrop>
-        <MicaBackdrop Kind="Base" />
-    </Window.SystemBackdrop>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
