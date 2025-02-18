@@ -64,6 +64,7 @@ public sealed partial class SettingsPage
     public SettingsPage()
     {
         InitializeComponent();
+        InitializeSettings();
         AppAboutSettingsExpander.Header = AppName;
         AppVersionTextBlock.Text = AppVersion;
     }
@@ -95,18 +96,17 @@ public sealed partial class SettingsPage
     /// </summary>
     private int ThemeSelectedIndex
     {
-        get => ((FrameworkElement)MainWindow.Content).RequestedTheme switch
+        get => (int)(localSettings.Values[nameof(ThemeSelectedIndex)] ?? 0);
+        set
         {
-            ElementTheme.Light => 1,
-            ElementTheme.Dark => 2,
-            _ => 0
-        };
-        set => ((FrameworkElement)MainWindow.Content).RequestedTheme = value switch
-        {
-            1 => ElementTheme.Light,
-            2 => ElementTheme.Dark,
-            _ => ElementTheme.Default
-        };
+            localSettings.Values[nameof(ThemeSelectedIndex)] = value;
+            ((FrameworkElement)MainWindow.Content).RequestedTheme = value switch
+            {
+                1 => ElementTheme.Light,
+                2 => ElementTheme.Dark,
+                _ => ElementTheme.Default
+            };
+        }
     }
 
     /// <summary>
@@ -114,18 +114,30 @@ public sealed partial class SettingsPage
     /// </summary>
     private int BackdropSelectedIndex
     {
-        get => MainWindow.SystemBackdrop switch
+        get => (int)(localSettings.Values[nameof(BackdropSelectedIndex)] ?? 0);
+        set
         {
-            MicaBackdrop { Kind: MicaKind.BaseAlt } => 1,
-            DesktopAcrylicBackdrop => 2,
-            _ => 0
-        };
-        set => MainWindow.SystemBackdrop = value switch
-        {
-            1 => new MicaBackdrop() { Kind = MicaKind.BaseAlt },
-            2 => new DesktopAcrylicBackdrop(),
-            _ => new MicaBackdrop()
-        };
+            localSettings.Values[nameof(BackdropSelectedIndex)] = value;
+
+            // HACK: Prevent changing the backdrop so it doesn't flash between pages
+            var currentBackdrop = MainWindow.SystemBackdrop;
+            var needsChange = value switch
+            {
+                1 => currentBackdrop is not MicaBackdrop { Kind: MicaKind.BaseAlt },
+                2 => currentBackdrop is not DesktopAcrylicBackdrop,
+                _ => currentBackdrop is not MicaBackdrop || (currentBackdrop is MicaBackdrop mica && mica.Kind != MicaKind.Base)
+            };
+
+            if (needsChange)
+            {
+                MainWindow.SystemBackdrop = value switch
+                {
+                    1 => new MicaBackdrop() { Kind = MicaKind.BaseAlt },
+                    2 => new DesktopAcrylicBackdrop(),
+                    _ => new MicaBackdrop()
+                };
+            }
+        }
     }
 
     /// <summary>
@@ -133,8 +145,12 @@ public sealed partial class SettingsPage
     /// </summary>
     private bool IsAlwaysOnTop
     {
-        get => MainWindow.IsAlwaysOnTop;
-        set => MainWindow.IsAlwaysOnTop = value;
+        get => (bool)(localSettings.Values[nameof(IsAlwaysOnTop)] ?? false);
+        set
+        {
+            localSettings.Values[nameof(IsAlwaysOnTop)] = value;
+            MainWindow.IsAlwaysOnTop = value;
+        }
     }
 
     /// <summary>
@@ -172,5 +188,20 @@ public sealed partial class SettingsPage
         Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
 
         await Launcher.LaunchUriAsync(uri);
+    }
+
+    /// <summary>
+    /// Initializes the settings with saved values.
+    /// </summary>
+    private void InitializeSettings()
+    {
+        // Set saved color theme
+        ThemeSelectedIndex = ThemeSelectedIndex;
+
+        // Set saved backdrop material
+        BackdropSelectedIndex = BackdropSelectedIndex;
+
+        // Set saved always-on-top setting
+        IsAlwaysOnTop = IsAlwaysOnTop;
     }
 }
