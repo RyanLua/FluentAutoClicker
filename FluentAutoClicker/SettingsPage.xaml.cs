@@ -151,7 +151,7 @@ public sealed partial class SettingsPage
     /// </summary>
     private bool IsAlwaysOnTop
     {
-        get => (bool)(localSettings.Values[nameof(IsAlwaysOnTop)] ?? false);
+        get => (bool)(localSettings.Values[nameof(IsAlwaysOnTop)] ?? true);
         set
         {
             localSettings.Values[nameof(IsAlwaysOnTop)] = value;
