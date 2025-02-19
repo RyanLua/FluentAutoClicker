@@ -117,11 +117,13 @@ public sealed partial class MainPage
 
     private void SetControlsEnabled(bool isEnabled)
     {
+        ClickIntervalTextBlock.IsEnabled = isEnabled;
         NumberBoxHours.IsEnabled = isEnabled;
         NumberBoxMinutes.IsEnabled = isEnabled;
         NumberBoxSeconds.IsEnabled = isEnabled;
         NumberBoxMilliseconds.IsEnabled = isEnabled;
         MouseButtonTypeComboBox.IsEnabled = isEnabled;
+        HotkeyTextBlock.IsEnabled = isEnabled;
         ClickRepeatCheckBox.IsEnabled = isEnabled;
         ClickOffsetCheckBox.IsEnabled = isEnabled;
         ClickOffsetAmount.IsEnabled = isEnabled && ClickOffsetCheckBox.IsChecked == true;
