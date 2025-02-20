@@ -112,11 +112,14 @@
 
         <!--  Click Repeat  -->
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <CheckBox x:Name="ClickRepeatCheckBox" x:Uid="ClickRepeatCheckBox" />
+            <CheckBox
+                x:Name="ClickRepeatCheckBox"
+                x:Uid="ClickRepeatCheckBox"
+                Click="CheckBox_Click" />
             <NumberBox
                 x:Name="ClickRepeatAmount"
                 HorizontalAlignment="Left"
-                IsEnabled="{Binding ElementName=ClickRepeatCheckBox, Path=IsChecked, Mode=OneWay}"
+                IsEnabled="False"
                 LargeChange="10"
                 Minimum="1"
                 PlaceholderText="100"
@@ -127,12 +130,15 @@
 
         <!--  Click Offset  -->
         <StackPanel Grid.Row="2" Grid.Column="1">
-            <CheckBox x:Name="ClickOffsetCheckBox" x:Uid="ClickOffsetCheckBox" />
+            <CheckBox
+                x:Name="ClickOffsetCheckBox"
+                x:Uid="ClickOffsetCheckBox"
+                Click="CheckBox_Click" />
             <NumberBox
                 x:Name="ClickOffsetAmount"
                 HorizontalAlignment="Left"
                 AcceptsExpression="True"
-                IsEnabled="{Binding ElementName=ClickOffsetCheckBox, Path=IsChecked, Mode=OneWay}"
+                IsEnabled="False"
                 LargeChange="25"
                 Maximum="1000"
                 Minimum="1"
