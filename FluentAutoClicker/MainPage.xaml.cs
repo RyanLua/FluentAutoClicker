@@ -33,6 +33,9 @@ namespace FluentAutoClicker;
 /// </summary>
 public sealed partial class MainPage
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainPage"/> class.
+    /// </summary>
     public MainPage()
     {
         InitializeComponent();
@@ -42,9 +45,21 @@ public sealed partial class MainPage
         ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
     }
 
+    /// <summary>
+    /// The settings page instance.
+    /// </summary>
     private static readonly SettingsPage settingsPage = new();
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the hotkey is registered.
+    /// </summary>
     private bool IsHotKeyRegistered { get; set; }
 
+    /// <summary>
+    /// Handles the Loaded event of the MainPage control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
         // Set badge notification
@@ -87,6 +102,11 @@ public sealed partial class MainPage
         }
     }
 
+    /// <summary>
+    /// Handles the WindowMessageReceived event of the WindowMessageMonitor control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private void OnWindowMessageReceived(object? sender, WindowMessageEventArgs e)
     {
         if (e.Message.MessageId == 0x0312) // WM_HOTKEY event
@@ -98,6 +118,10 @@ public sealed partial class MainPage
         }
     }
 
+    /// <summary>
+    /// Sets the notification badge.
+    /// </summary>
+    /// <param name="glyph">The badge notification glyph.</param>
     private static void SetNotificationBadge(BadgeNotificationGlyph glyph)
     {
         if (glyph == BadgeNotificationGlyph.Paused && settingsPage.NotificationBadgePaused)
@@ -114,6 +138,10 @@ public sealed partial class MainPage
         }
     }
 
+    /// <summary>
+    /// Sets the enabled state of the controls.
+    /// </summary>
+    /// <param name="isEnabled">if set to <c>true</c> the controls are enabled; otherwise, they are disabled.</param>
     private void SetControlsEnabled(bool isEnabled)
     {
         ClickIntervalTextBlock.IsEnabled = isEnabled;
@@ -129,6 +157,12 @@ public sealed partial class MainPage
         ClickRepeatAmount.IsEnabled = isEnabled && ClickRepeatCheckBox.IsChecked == true;
     }
 
+    /// <summary>
+    /// Gets the value of the specified NumberBox.
+    /// </summary>
+    /// <param name="numberBox">The NumberBox control.</param>
+    /// <param name="defaultValue">The default value.</param>
+    /// <returns>The value of the NumberBox.</returns>
     private static int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
     {
         if (!int.TryParse(numberBox.Value.ToString(CultureInfo.InvariantCulture), out int value))
@@ -140,6 +174,10 @@ public sealed partial class MainPage
         return value;
     }
 
+    /// <summary>
+    /// Gets the interval in milliseconds.
+    /// </summary>
+    /// <returns>The interval in milliseconds.</returns>
     private int GetIntervalMilliseconds()
     {
         int hours = GetNumberBoxValue(NumberBoxHours, 0);
@@ -158,6 +196,11 @@ public sealed partial class MainPage
         return totalTimeInMilliseconds;
     }
 
+    /// <summary>
+    /// Handles the Checked event of the ToggleButtonStart control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private async void ToggleButtonStart_OnChecked(object sender, RoutedEventArgs e)
     {
         // Update controls
@@ -178,6 +221,11 @@ public sealed partial class MainPage
         ToggleButtonStart.IsEnabled = true;
     }
 
+    /// <summary>
+    /// Handles the Unchecked event of the ToggleButtonStart control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private void ToggleButtonStart_OnUnchecked(object sender, RoutedEventArgs e)
     {
         // Update controls
@@ -190,6 +238,11 @@ public sealed partial class MainPage
         AutoClicker.Stop();
     }
 
+    /// <summary>
+    /// Handles the Click event of the CheckBox controls.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private void CheckBox_Click(object sender, RoutedEventArgs e)
     {
         if (sender.Equals(ClickRepeatCheckBox))
@@ -202,6 +255,11 @@ public sealed partial class MainPage
         }
     }
 
+    /// <summary>
+    /// Handles the Click event of the SettingsButton control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
         _ = Frame.Navigate(typeof(SettingsPage));
