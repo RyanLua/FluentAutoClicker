@@ -159,10 +159,12 @@ public sealed partial class MainPage
         return totalTimeInMilliseconds;
     }
 
-    private void ToggleButtonStart_OnChecked(object sender, RoutedEventArgs e)
+    private async void ToggleButtonStart_OnChecked(object sender, RoutedEventArgs e)
     {
         // Update controls
+        ToggleButtonStart.IsEnabled = false;
         SetControlsEnabled(false);
+        await Task.Delay(1000);
         FontIconStart.Glyph = "\uEDB4";
         BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
         SetNotificationBadge(BadgeNotificationGlyph.Playing);
@@ -174,6 +176,7 @@ public sealed partial class MainPage
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
         int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
         AutoClicker.Start(clickInterval, repeatAmount, mouseButton, clickOffset);
+        ToggleButtonStart.IsEnabled = true;
     }
 
     private void ToggleButtonStart_OnUnchecked(object sender, RoutedEventArgs e)
