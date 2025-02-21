@@ -34,7 +34,12 @@ namespace FluentAutoClicker;
 public sealed partial class MainPage
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="MainPage"/> class.
+    /// The settings page instance.
+    /// </summary>
+    private static readonly SettingsPage settingsPage = new();
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainPage" /> class.
     /// </summary>
     public MainPage()
     {
@@ -44,11 +49,6 @@ public sealed partial class MainPage
         // Set tooltip
         ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
     }
-
-    /// <summary>
-    /// The settings page instance.
-    /// </summary>
-    private static readonly SettingsPage settingsPage = new();
 
     /// <summary>
     /// Gets or sets a value indicating whether the hotkey is registered.

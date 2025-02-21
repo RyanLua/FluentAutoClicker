@@ -24,6 +24,7 @@ using Windows.ApplicationModel;
 using Windows.Storage;
 using Windows.System;
 using WinUIEx;
+using SystemBackdrop = Microsoft.UI.Xaml.Media.SystemBackdrop;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -41,6 +42,23 @@ public sealed partial class SettingsPage
     private readonly ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="SettingsPage" /> class.
+    /// </summary>
+    public SettingsPage()
+    {
+        InitializeComponent();
+
+        // Initialize saved settings
+        ThemeSelectedIndex = ThemeSelectedIndex;
+        BackdropSelectedIndex = BackdropSelectedIndex;
+        IsAlwaysOnTop = IsAlwaysOnTop;
+
+        // Initialize app name and version
+        AppAboutSettingsExpander.Header = AppName;
+        AppVersionTextBlock.Text = AppVersion;
+    }
+
+    /// <summary>
     /// Gets or sets the if the playing notification badge is enabled.
     /// </summary>
     public bool NotificationBadgePlaying
@@ -56,23 +74,6 @@ public sealed partial class SettingsPage
     {
         get => (bool)(localSettings.Values[nameof(NotificationBadgePaused)] ?? true);
         set => localSettings.Values[nameof(NotificationBadgePaused)] = value;
-    }
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="SettingsPage"/> class.
-    /// </summary>
-    public SettingsPage()
-    {
-        InitializeComponent();
-
-        // Initialize saved settings
-        ThemeSelectedIndex = ThemeSelectedIndex;
-        BackdropSelectedIndex = BackdropSelectedIndex;
-        IsAlwaysOnTop = IsAlwaysOnTop;
-
-        // Initialize app name and version
-        AppAboutSettingsExpander.Header = AppName;
-        AppVersionTextBlock.Text = AppVersion;
     }
 
     /// <summary>
@@ -126,19 +127,20 @@ public sealed partial class SettingsPage
             localSettings.Values[nameof(BackdropSelectedIndex)] = value;
 
             // HACK: Prevent changing the backdrop so it doesn't flash between pages
-            Microsoft.UI.Xaml.Media.SystemBackdrop currentBackdrop = MainWindow.SystemBackdrop;
+            SystemBackdrop currentBackdrop = MainWindow.SystemBackdrop;
             bool needsChange = value switch
             {
                 1 => currentBackdrop is not MicaBackdrop { Kind: MicaKind.BaseAlt },
                 2 => currentBackdrop is not DesktopAcrylicBackdrop,
-                _ => currentBackdrop is not MicaBackdrop || (currentBackdrop is MicaBackdrop mica && mica.Kind != MicaKind.Base)
+                _ => currentBackdrop is not MicaBackdrop ||
+                     (currentBackdrop is MicaBackdrop mica && mica.Kind != MicaKind.Base)
             };
 
             if (needsChange)
             {
                 MainWindow.SystemBackdrop = value switch
                 {
-                    1 => new MicaBackdrop() { Kind = MicaKind.BaseAlt },
+                    1 => new MicaBackdrop { Kind = MicaKind.BaseAlt },
                     2 => new DesktopAcrylicBackdrop(),
                     _ => new MicaBackdrop()
                 };
@@ -171,14 +173,14 @@ public sealed partial class SettingsPage
         string messageBody = $"""
 
 
-            ---------- Add your feedback above ----------
+                              ---------- Add your feedback above ----------
 
-            .NET installation: {RuntimeInformation.FrameworkDescription}
-            App version: {AppVersion}
-            App architecture: {RuntimeInformation.ProcessArchitecture}
-            OS version: {RuntimeInformation.OSDescription}
-            OS architecture: {RuntimeInformation.OSArchitecture}
-            """;
+                              .NET installation: {RuntimeInformation.FrameworkDescription}
+                              App version: {AppVersion}
+                              App architecture: {RuntimeInformation.ProcessArchitecture}
+                              OS version: {RuntimeInformation.OSDescription}
+                              OS architecture: {RuntimeInformation.OSArchitecture}
+                              """;
 
         await ComposeEmailAsync(recipientEmail, subject, messageBody);
     }
@@ -191,7 +193,8 @@ public sealed partial class SettingsPage
     /// <param name="messageBody">The email message body.</param>
     private static async Task ComposeEmailAsync(string recipientEmail, string subject, string messageBody)
     {
-        Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
+        Uri uri = new(
+            $"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
 
         _ = await Launcher.LaunchUriAsync(uri);
     }

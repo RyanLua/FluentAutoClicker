@@ -32,11 +32,30 @@ namespace FluentAutoClicker.Controls;
 public partial class IsEnabledTextBlock : Control
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="IsEnabledTextBlock"/> class.
+    /// Identifies the <see cref="Text" /> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+        "Text",
+        typeof(string),
+        typeof(IsEnabledTextBlock),
+        null);
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IsEnabledTextBlock" /> class.
     /// </summary>
     public IsEnabledTextBlock()
     {
         DefaultStyleKey = typeof(IsEnabledTextBlock);
+    }
+
+    /// <summary>
+    /// Gets or sets the text content of the control.
+    /// </summary>
+    [Localizable(true)]
+    public string Text
+    {
+        get => (string)GetValue(TextProperty);
+        set => SetValue(TextProperty, value);
     }
 
     /// <summary>
@@ -48,25 +67,6 @@ public partial class IsEnabledTextBlock : Control
         SetEnabledState();
         IsEnabledChanged += IsEnabledTextBlock_IsEnabledChanged;
         base.OnApplyTemplate();
-    }
-
-    /// <summary>
-    /// Identifies the <see cref="Text"/> dependency property.
-    /// </summary>
-    public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-       "Text",
-       typeof(string),
-       typeof(IsEnabledTextBlock),
-       null);
-
-    /// <summary>
-    /// Gets or sets the text content of the control.
-    /// </summary>
-    [Localizable(true)]
-    public string Text
-    {
-        get => (string)GetValue(TextProperty);
-        set => SetValue(TextProperty, value);
     }
 
     /// <summary>
