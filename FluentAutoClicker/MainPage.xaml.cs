@@ -18,98 +18,151 @@
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Media;
+using Microsoft.Windows.BadgeNotifications;
 using System.Globalization;
-using System.Runtime.InteropServices;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
-using Windows.Win32.UI.WindowsAndMessaging;
+using WinRT.Interop;
+using WinUIEx.Messaging;
 
 namespace FluentAutoClicker;
 
 /// <summary>
 /// The main page containing all controls displayed on the main window.
 /// </summary>
-public sealed partial class MainPage : Page
+public sealed partial class MainPage
 {
+    /// <summary>
+    /// The settings page instance.
+    /// </summary>
+    private static readonly SettingsPage settingsPage = new();
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainPage" /> class.
+    /// </summary>
     public MainPage()
     {
         InitializeComponent();
         Loaded += MainPage_Loaded;
+
+        // Set tooltip
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
     }
 
-    private WNDPROC? origHotKeyProc;
-    private WNDPROC? hotKeyProcD;
+    /// <summary>
+    /// Gets or sets a value indicating whether the hotkey is registered.
+    /// </summary>
+    private bool IsHotKeyRegistered { get; set; }
 
-    private LRESULT HotKeyProc(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
+    /// <summary>
+    /// Handles the Loaded event of the MainPage control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
+    private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
-        uint WM_HOTKEY = 0x0312; // HotKey Window Message
+        // Set badge notification
+        SetNotificationBadge(BadgeNotificationGlyph.Paused);
 
-        if (Msg == WM_HOTKEY)
+        // Prevent registering multiple hotkeys
+        if (IsHotKeyRegistered)
         {
-            if (StartToggleButton.IsEnabled)
-            {
-                StartToggleButton.IsChecked = !StartToggleButton.IsChecked;
-            }
+            return;
         }
 
-        return PInvoke.CallWindowProc(origHotKeyProc, hWnd, Msg, wParam, lParam);
-    }
-
-    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongW", SetLastError = true)]
-    private static partial int SetWindowLong_x86(nint hWnd, int nIndex, int dwNewLong);
-
-    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongPtrW", SetLastError = true)]
-    private static partial nint SetWindowLongPtr_x64(nint hWnd, int nIndex, nint dwNewLong);
-
-    // CsWin32 doesn't allow specifying the calling convention between x86 and x64
-    private static nint SetWindowLongPtr(HWND hWnd, int nIndex, nint dwNewLong)
-    {
-        nint hWndInt = hWnd.Value;
-        return IntPtr.Size == 4
-            ? SetWindowLong_x86(hWndInt, nIndex, (int)dwNewLong)
-            : SetWindowLongPtr_x64(hWndInt, nIndex, dwNewLong);
-    }
-
-    private void MainPage_Loaded(object sender, RoutedEventArgs e)
-    {
         // Get window handle
         MainWindow window = App.MainWindow;
-        HWND hWnd = new(WinRT.Interop.WindowNative.GetWindowHandle(window));
+        HWND hWnd = new(WindowNative.GetWindowHandle(window));
+
+        // Set up window message monitor
+        WindowMessageMonitor monitor = new(window);
+        monitor.WindowMessageReceived += OnWindowMessageReceived;
 
         // Register hotkey
-        int id = 0x0000;
-        _ = PInvoke.RegisterHotKey(hWnd, id, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
+        bool success = PInvoke.RegisterHotKey(hWnd, 0x0000, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
+        if (success)
+        {
+            IsHotKeyRegistered = true;
+        }
+        else
+        {
+            ContentDialog dialog = new()
+            {
+                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
+                XamlRoot = XamlRoot,
+                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
+                Title = "Failed to register hotkey",
+                Content = "Please modify the hotkey setting.",
+                CloseButtonText = "OK",
+                DefaultButton = ContentDialogButton.Primary
+            };
 
-        // Add hotkey function pointer to window procedure
-        int GWL_WNDPROC = -4;
-        hotKeyProcD = HotKeyProc;
-        IntPtr hotKeyProcPtr = Marshal.GetFunctionPointerForDelegate(hotKeyProcD);
-        IntPtr wndPtr = SetWindowLongPtr(hWnd, GWL_WNDPROC, hotKeyProcPtr);
-        origHotKeyProc = Marshal.GetDelegateForFunctionPointer<WNDPROC>(wndPtr);
+            _ = await dialog.ShowAsync();
+        }
     }
 
+    /// <summary>
+    /// Handles the WindowMessageReceived event of the WindowMessageMonitor control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
+    private void OnWindowMessageReceived(object? sender, WindowMessageEventArgs e)
+    {
+        if (e.Message.MessageId == 0x0312) // WM_HOTKEY event
+        {
+            if (ToggleButtonStart.IsEnabled)
+            {
+                ToggleButtonStart.IsChecked = !ToggleButtonStart.IsChecked;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Sets the notification badge.
+    /// </summary>
+    /// <param name="glyph">The badge notification glyph.</param>
+    private static void SetNotificationBadge(BadgeNotificationGlyph glyph)
+    {
+        if (glyph == BadgeNotificationGlyph.Paused && settingsPage.NotificationBadgePaused)
+        {
+            BadgeNotificationManager.Current.SetBadgeAsGlyph(glyph);
+        }
+        else if (glyph == BadgeNotificationGlyph.Playing && settingsPage.NotificationBadgePlaying)
+        {
+            BadgeNotificationManager.Current.SetBadgeAsGlyph(glyph);
+        }
+        else
+        {
+            BadgeNotificationManager.Current.ClearBadge();
+        }
+    }
+
+    /// <summary>
+    /// Sets the enabled state of the controls.
+    /// </summary>
+    /// <param name="isEnabled">if set to <c>true</c> the controls are enabled; otherwise, they are disabled.</param>
     private void SetControlsEnabled(bool isEnabled)
     {
+        ClickIntervalTextBlock.IsEnabled = isEnabled;
         NumberBoxHours.IsEnabled = isEnabled;
         NumberBoxMinutes.IsEnabled = isEnabled;
         NumberBoxSeconds.IsEnabled = isEnabled;
         NumberBoxMilliseconds.IsEnabled = isEnabled;
         MouseButtonTypeComboBox.IsEnabled = isEnabled;
+        HotkeyTextBlock.IsEnabled = isEnabled;
         ClickRepeatCheckBox.IsEnabled = isEnabled;
         ClickOffsetCheckBox.IsEnabled = isEnabled;
-
-        ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true && isEnabled;
-        ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true && isEnabled;
-
-        // TODO: Change this to use a custom control. See https://github.com/RyanLua/FluentAutoClicker/issues/42
-        string brushKey =
-            isEnabled ? "SystemControlForegroundBaseHighBrush" : "SystemControlForegroundBaseMediumLowBrush";
-        ClickIntervalTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
-        HotkeyTextBlock.Foreground = Application.Current.Resources[brushKey] as Brush;
+        ClickOffsetAmount.IsEnabled = isEnabled && ClickOffsetCheckBox.IsChecked == true;
+        ClickRepeatAmount.IsEnabled = isEnabled && ClickRepeatCheckBox.IsChecked == true;
     }
 
+    /// <summary>
+    /// Gets the value of the specified NumberBox.
+    /// </summary>
+    /// <param name="numberBox">The NumberBox control.</param>
+    /// <param name="defaultValue">The default value.</param>
+    /// <returns>The value of the NumberBox.</returns>
     private static int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
     {
         if (!int.TryParse(numberBox.Value.ToString(CultureInfo.InvariantCulture), out int value))
@@ -121,6 +174,10 @@ public sealed partial class MainPage : Page
         return value;
     }
 
+    /// <summary>
+    /// Gets the interval in milliseconds.
+    /// </summary>
+    /// <returns>The interval in milliseconds.</returns>
     private int GetIntervalMilliseconds()
     {
         int hours = GetNumberBoxValue(NumberBoxHours, 0);
@@ -139,35 +196,53 @@ public sealed partial class MainPage : Page
         return totalTimeInMilliseconds;
     }
 
-    private async void StartToggleButton_OnChecked(object sender, RoutedEventArgs e)
+    /// <summary>
+    /// Handles the Checked event of the ToggleButtonStart control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
+    private async void ToggleButtonStart_OnChecked(object sender, RoutedEventArgs e)
     {
-        StartToggleButton.IsEnabled = false;
+        // Update controls
+        ToggleButtonStart.IsEnabled = false;
         SetControlsEnabled(false);
+        await Task.Delay(1000);
+        FontIconStart.Glyph = "\uEDB4";
+        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
+        SetNotificationBadge(BadgeNotificationGlyph.Playing);
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStop".GetLocalized());
 
-        // 3-second countdown
-        for (int i = 3; i > 0; i--)
-        {
-            StartToggleButton.Content = i.ToString();
-            await Task.Delay(1000);
-        }
-
-        StartToggleButton.IsEnabled = true;
-        StartToggleButton.Content = "Stop";
-
+        // Start auto clicker
         int clickInterval = GetIntervalMilliseconds();
-        int repeatAmount = ClickRepeatCheckBox.IsEnabled == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
+        int repeatAmount = ClickRepeatCheckBox.IsChecked == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
         int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
         int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
         AutoClicker.Start(clickInterval, repeatAmount, mouseButton, clickOffset);
+        ToggleButtonStart.IsEnabled = true;
     }
 
-    private void StartToggleButton_OnUnchecked(object sender, RoutedEventArgs e)
+    /// <summary>
+    /// Handles the Unchecked event of the ToggleButtonStart control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
+    private void ToggleButtonStart_OnUnchecked(object sender, RoutedEventArgs e)
     {
-        StartToggleButton.Content = "Start";
-        AutoClicker.Stop();
+        // Update controls
         SetControlsEnabled(true);
+        FontIconStart.Glyph = "\uEE4A";
+        SetNotificationBadge(BadgeNotificationGlyph.Paused);
+        ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
+
+        // Stop auto clicker
+        AutoClicker.Stop();
     }
 
+    /// <summary>
+    /// Handles the Click event of the CheckBox controls.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private void CheckBox_Click(object sender, RoutedEventArgs e)
     {
         if (sender.Equals(ClickRepeatCheckBox))
@@ -178,5 +253,15 @@ public sealed partial class MainPage : Page
         {
             ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
         }
+    }
+
+    /// <summary>
+    /// Handles the Click event of the SettingsButton control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
+    private void SettingsButton_Click(object sender, RoutedEventArgs e)
+    {
+        _ = Frame.Navigate(typeof(SettingsPage));
     }
 }

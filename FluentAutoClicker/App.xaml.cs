@@ -25,8 +25,11 @@ namespace FluentAutoClicker;
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
 /// </summary>
-public partial class App : Application
+public partial class App
 {
+    /// <summary>
+    /// The main window of the application.
+    /// </summary>
     public static readonly MainWindow MainWindow = new();
 
     /// <summary>
@@ -42,7 +45,7 @@ public partial class App : Application
     /// Invoked when the application is launched.
     /// </summary>
     /// <param name="args">Details about the launch request and process.</param>
-    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+    protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
         MainWindow.Activate();
     }

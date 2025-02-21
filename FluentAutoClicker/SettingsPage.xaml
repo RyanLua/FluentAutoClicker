@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Page
+    x:Class="FluentAutoClicker.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:CommunityToolkit.WinUI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI"
+    xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <x:Double x:Key="SettingsCardSpacing">4</x:Double>
+        <Thickness x:Key="HyperlinkButtonNegativeMargin">-12,0,0,0</Thickness>
+        <Thickness x:Key="XSmallTopBottomMargin">0,8,0,8</Thickness>
+        <Style
+            x:Key="SettingsSectionHeaderTextBlockStyle"
+            BasedOn="{StaticResource BodyTextBlockStyle}"
+            TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="FontWeight" Value="SemiBold" />
+                <Setter Property="Margin" Value="1,20,0,6" />
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+
+    <ScrollViewer>
+        <Grid Margin="{StaticResource ContentMargin}">
+            <StackPanel
+                MaxWidth="1000"
+                HorizontalAlignment="Stretch"
+                Spacing="{StaticResource SettingsCardSpacing}">
+
+                <TextBlock x:Uid="SettingsSubtitleTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" />
+
+                <TextBlock x:Uid="AppearanceSettingsSectionHeaderTextBlock" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
+
+                <!--  App theme  -->
+                <controls:SettingsCard x:Uid="SettingsCardAppTheme" HeaderIcon="{ui:FontIcon Glyph=&#xE790;}">
+                    <ComboBox SelectedIndex="{x:Bind ThemeSelectedIndex, Mode=TwoWay}">
+                        <ComboBoxItem x:Uid="ComboBoxItemAppThemeSystem" />
+                        <ComboBoxItem x:Uid="ComboBoxItemAppThemeLight" />
+                        <ComboBoxItem x:Uid="ComboBoxItemAppThemeDark" />
+                    </ComboBox>
+                </controls:SettingsCard>
+
+                <!--  Backdrop material  -->
+                <controls:SettingsCard x:Uid="SettingsCardBackdropMaterial" HeaderIcon="{ui:FontIcon Glyph=&#xEF1F;}">
+                    <ComboBox SelectedIndex="{x:Bind BackdropSelectedIndex, Mode=TwoWay}">
+                        <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialMica" />
+                        <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialMicaAlt" />
+                        <ComboBoxItem x:Uid="ComboBoxItemBackdropMaterialAcrylic" />
+                    </ComboBox>
+                </controls:SettingsCard>
+
+                <TextBlock x:Uid="TextBlockBehavior" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
+
+                <!--  Always on top  -->
+                <controls:SettingsCard x:Uid="SettingsCardAlwaysOnTop" HeaderIcon="{ui:FontIcon Glyph=&#xE7C4;}">
+                    <ToggleSwitch IsOn="{x:Bind IsAlwaysOnTop, Mode=TwoWay}" />
+                </controls:SettingsCard>
+
+                <!--  Notification badge  -->
+                <controls:SettingsExpander x:Uid="SettingsExpanderNotificationBadge" HeaderIcon="{ui:FontIcon Glyph=&#xEDAD;}">
+                    <controls:SettingsExpander.Items>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox x:Uid="CheckBoxNotificationBadgePlaying" IsChecked="{x:Bind NotificationBadgePlaying, Mode=TwoWay}" />
+                        </controls:SettingsCard>
+                        <controls:SettingsCard ContentAlignment="Left">
+                            <CheckBox x:Uid="CheckBoxNotificationBadgePaused" IsChecked="{x:Bind NotificationBadgePaused, Mode=TwoWay}" />
+                        </controls:SettingsCard>
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
+                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
+
+                <!--  App version  -->
+                <controls:SettingsExpander
+                    x:Name="AppAboutSettingsExpander"
+                    Description="Copyright © 2025 Ryan Luu"
+                    HeaderIcon="{ui:BitmapIcon Source=/Assets/WindowIcon.ico}">
+                    <TextBlock
+                        x:Name="AppVersionTextBlock"
+                        win:IsTextSelectionEnabled="True"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <controls:SettingsExpander.Items>
+
+                        <!--  Terms  -->
+                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
+                            <StackPanel>
+                                <HyperlinkButton x:Uid="HyperlinkButtonPrivacyPolicy" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonLicense" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                            </StackPanel>
+                        </controls:SettingsCard>
+
+                        <!--  Related links  -->
+                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
+                            <StackPanel>
+                                <TextBlock Margin="{StaticResource XSmallTopBottomMargin}" Text="Related links" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonWebsite" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonDiscord" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonTranslate" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton x:Uid="HyperlinkButtonSource" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                            </StackPanel>
+                        </controls:SettingsCard>
+
+                    </controls:SettingsExpander.Items>
+                </controls:SettingsExpander>
+
+                <!--  Send feedback  -->
+                <HyperlinkButton
+                    x:Uid="HyperlinkButtonFeedback"
+                    Margin="{StaticResource XSmallTopBottomMargin}"
+                    Click="HyperlinkButtonFeedback_Click" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
