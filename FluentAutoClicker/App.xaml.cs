@@ -27,6 +27,9 @@ namespace FluentAutoClicker;
 /// </summary>
 public partial class App
 {
+    /// <summary>
+    /// The main window of the application.
+    /// </summary>
     public static readonly MainWindow MainWindow = new();
 
     /// <summary>

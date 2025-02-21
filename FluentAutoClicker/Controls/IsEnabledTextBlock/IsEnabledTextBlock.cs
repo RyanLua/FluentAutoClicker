@@ -24,15 +24,24 @@ using System.ComponentModel;
 
 namespace FluentAutoClicker.Controls;
 
+/// <summary>
+/// A custom control that displays text and changes its visual state based on its enabled state.
+/// </summary>
 [TemplateVisualState(Name = "Normal", GroupName = "CommonStates")]
 [TemplateVisualState(Name = "Disabled", GroupName = "CommonStates")]
 public partial class IsEnabledTextBlock : Control
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IsEnabledTextBlock"/> class.
+    /// </summary>
     public IsEnabledTextBlock()
     {
         DefaultStyleKey = typeof(IsEnabledTextBlock);
     }
 
+    /// <summary>
+    /// Applies the control template and sets up the initial visual state.
+    /// </summary>
     protected override void OnApplyTemplate()
     {
         IsEnabledChanged -= IsEnabledTextBlock_IsEnabledChanged;
@@ -41,12 +50,18 @@ public partial class IsEnabledTextBlock : Control
         base.OnApplyTemplate();
     }
 
+    /// <summary>
+    /// Identifies the <see cref="Text"/> dependency property.
+    /// </summary>
     public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
        "Text",
        typeof(string),
        typeof(IsEnabledTextBlock),
        null);
 
+    /// <summary>
+    /// Gets or sets the text content of the control.
+    /// </summary>
     [Localizable(true)]
     public string Text
     {
@@ -54,11 +69,19 @@ public partial class IsEnabledTextBlock : Control
         set => SetValue(TextProperty, value);
     }
 
+    /// <summary>
+    /// Handles the IsEnabledChanged event and updates the visual state.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private void IsEnabledTextBlock_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
     {
         SetEnabledState();
     }
 
+    /// <summary>
+    /// Sets the visual state of the control based on its enabled state.
+    /// </summary>
     private void SetEnabledState()
     {
         _ = VisualStateManager.GoToState(this, IsEnabled ? "Normal" : "Disabled", true);

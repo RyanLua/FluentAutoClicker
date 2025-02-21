@@ -29,6 +29,9 @@ namespace FluentAutoClicker;
 /// </summary>
 public sealed partial class MainWindow
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainWindow"/> class.
+    /// </summary>
     public MainWindow()
     {
         InitializeComponent();
@@ -44,6 +47,11 @@ public sealed partial class MainWindow
         _ = NavFrame.Navigate(typeof(MainPage));
     }
 
+    /// <summary>
+    /// Handles the BackRequested event of the AppTitleBar control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="args">The event data.</param>
     private void AppTitleBar_BackRequested(TitleBar sender, object args)
     {
         if (NavFrame.CanGoBack)
@@ -52,6 +60,11 @@ public sealed partial class MainWindow
         }
     }
 
+    /// <summary>
+    /// Handles the Navigated event of the NavFrame control.
+    /// </summary>
+    /// <param name="sender">The source of the event.</param>
+    /// <param name="e">The event data.</param>
     private void NavFrame_Navigated(object sender, NavigationEventArgs e)
     {
         AppTitleBar.IsBackButtonVisible = e.SourcePageType != typeof(MainPage);
