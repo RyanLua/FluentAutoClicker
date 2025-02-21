@@ -61,6 +61,6 @@ public partial class IsEnabledTextBlock : Control
 
     private void SetEnabledState()
     {
-        VisualStateManager.GoToState(this, IsEnabled ? "Normal" : "Disabled", true);
+        _ = VisualStateManager.GoToState(this, IsEnabled ? "Normal" : "Disabled", true);
     }
 }

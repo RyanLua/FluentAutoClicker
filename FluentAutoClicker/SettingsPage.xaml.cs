@@ -126,8 +126,8 @@ public sealed partial class SettingsPage
             localSettings.Values[nameof(BackdropSelectedIndex)] = value;
 
             // HACK: Prevent changing the backdrop so it doesn't flash between pages
-            var currentBackdrop = MainWindow.SystemBackdrop;
-            var needsChange = value switch
+            Microsoft.UI.Xaml.Media.SystemBackdrop currentBackdrop = MainWindow.SystemBackdrop;
+            bool needsChange = value switch
             {
                 1 => currentBackdrop is not MicaBackdrop { Kind: MicaKind.BaseAlt },
                 2 => currentBackdrop is not DesktopAcrylicBackdrop,
@@ -193,6 +193,6 @@ public sealed partial class SettingsPage
     {
         Uri uri = new($"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
 
-        await Launcher.LaunchUriAsync(uri);
+        _ = await Launcher.LaunchUriAsync(uri);
     }
 }
