@@ -42,6 +42,7 @@ public sealed partial class MainPage
         ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
     }
 
+    private static readonly SettingsPage settingsPage = new();
     private bool IsHotKeyRegistered { get; set; }
 
     private async void MainPage_Loaded(object sender, RoutedEventArgs e)
@@ -99,8 +100,6 @@ public sealed partial class MainPage
 
     private static void SetNotificationBadge(BadgeNotificationGlyph glyph)
     {
-        SettingsPage settingsPage = new();
-
         if (glyph == BadgeNotificationGlyph.Paused && settingsPage.NotificationBadgePaused)
         {
             BadgeNotificationManager.Current.SetBadgeAsGlyph(glyph);
