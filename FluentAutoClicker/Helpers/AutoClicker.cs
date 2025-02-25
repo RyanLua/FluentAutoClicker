@@ -26,23 +26,24 @@ namespace FluentAutoClicker.Helpers;
 /// </summary>
 public static class AutoClicker
 {
+    public static int millisecondsDelay = 100;
+    public static int secondsDelay = 0;
+    public static int minutesDelay = 0;
+    public static int hoursDelay = 0;
+    public static int clickAmount = 0;
+    public static int mouseButtonType = 0;
+    public static int clickDelayOffset = 0;
+
     private static Thread? _autoClickerThread;
     private static bool _isAutoClickerRunning;
 
     /// <summary>
     /// Starts the auto clicker thread.
     /// </summary>
-    /// <param name="millisecondsDelay">The number of milliseconds to wait before clicks.</param>
-    /// <param name="clickAmount">The number of clicks before stopping the auto clicker thread.</param>
-    /// <param name="mouseButtonType">The mouse button used to click.</param>
-    /// <param name="clickDelayOffset">Milliseconds to add randomly to delay between clicks.</param>
-    public static void Start(int millisecondsDelay = 100, int clickAmount = 0,
-        int mouseButtonType = 0, int clickDelayOffset = 0)
+    public static void Start()
     {
-        // TODO: Move the parameters to another function to be able to change parameters while the thread is running.
         _isAutoClickerRunning = true;
-        _autoClickerThread = new Thread(() =>
-            AutoClickerThread(millisecondsDelay, clickAmount, mouseButtonType, clickDelayOffset));
+        _autoClickerThread = new Thread(AutoClickerThread);
         _autoClickerThread.Start();
     }
 
@@ -55,27 +56,31 @@ public static class AutoClicker
         _autoClickerThread?.Join();
     }
 
-    private static async void AutoClickerThread(int clickInterval, int repeatAmount, int mouseButton,
-        int clickOffset)
+    private static async void AutoClickerThread()
     {
         int clickCount = 0;
 
         while (_isAutoClickerRunning)
         {
             // Stop if we click more than repeat amount
-            if (clickCount >= repeatAmount && repeatAmount != 0)
+            if (clickCount >= clickAmount && clickAmount != 0)
             {
                 Stop();
                 break;
             }
 
             // Click mouse and increment click count
-            ClickMouse(mouseButton);
+            ClickMouse(mouseButtonType);
             clickCount++;
 
             // Delay before next click
-            int randomClickOffset = new Random().Next(0, clickOffset);
-            await Task.Delay(clickInterval + randomClickOffset);
+            int randomClickOffset = new Random().Next(0, clickDelayOffset);
+            int clickDelay = millisecondsDelay
+                             + (secondsDelay * 1000)
+                             + (minutesDelay * 60 * 1000)
+                             + (hoursDelay * 60 * 60 * 1000)
+                             + randomClickOffset;
+            await Task.Delay(clickDelay + randomClickOffset);
         }
     }
 
