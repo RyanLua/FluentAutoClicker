@@ -18,6 +18,7 @@
 using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.Windows.BadgeNotifications;
 using System.Globalization;
 using Windows.Win32;
@@ -262,6 +263,6 @@ public sealed partial class MainPage
     /// <param name="e">The event data.</param>
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
-        _ = Frame.Navigate(typeof(SettingsPage));
+        _ = Frame.Navigate(typeof(SettingsPage), null, new SuppressNavigationTransitionInfo());
     }
 }
