@@ -33,7 +33,20 @@
 
         <!--  Click Interval  -->
         <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelSpacing}">
-            <controls:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
+            <StackPanel Orientation="Horizontal">
+                <controls:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
+                <Button Margin="8,-4,0,0" Padding="4">
+                    <FontIcon
+                        FontSize="14"
+                        Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                        Glyph="&#xE946;" />
+                    <Button.Flyout>
+                        <Flyout>
+                            <TextBlock>How long between clicks</TextBlock>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+            </StackPanel>
             <Grid ColumnSpacing="{StaticResource NumberBoxColumnSpacing}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
