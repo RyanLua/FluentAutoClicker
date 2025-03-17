@@ -15,11 +15,14 @@
     <Page.Resources>
         <x:Double x:Key="NumberBoxColumnSpacing">4</x:Double>
         <x:Double x:Key="ButtonColumnSpacing">8</x:Double>
-        <x:Double x:Key="GridRowSpacing">8</x:Double>
+        <x:Double x:Key="GridSpacing">4</x:Double>
         <x:Double x:Key="StackPanelSpacing">8</x:Double>
     </Page.Resources>
 
-    <Grid Margin="{StaticResource ContentMargin}" RowSpacing="{StaticResource GridRowSpacing}">
+    <Grid
+        Margin="{StaticResource ContentMargin}"
+        ColumnSpacing="{StaticResource GridSpacing}"
+        RowSpacing="{StaticResource GridSpacing}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -32,7 +35,14 @@
         </Grid.ColumnDefinitions>
 
         <!--  Click Interval  -->
-        <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelSpacing}">
+        <StackPanel
+            Grid.ColumnSpan="2"
+            Padding="12"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="8"
+            Spacing="{StaticResource StackPanelSpacing}">
             <controls:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
             <Grid ColumnSpacing="{StaticResource NumberBoxColumnSpacing}">
                 <Grid.ColumnDefinitions>
@@ -90,28 +100,47 @@
         </StackPanel>
 
         <!--  Mouse Button  -->
-        <ComboBox
-            x:Name="MouseButtonTypeComboBox"
-            x:Uid="ComboBoxMouseButton"
+        <StackPanel
             Grid.Row="1"
             Grid.Column="0"
-            SelectedIndex="0">
-            <ComboBoxItem x:Uid="ComboBoxItemLeft" />
-            <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
-            <ComboBoxItem x:Uid="ComboBoxItemRight" />
-        </ComboBox>
+            Padding="12"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="8">
+            <ComboBox
+                x:Name="MouseButtonTypeComboBox"
+                x:Uid="ComboBoxMouseButton"
+                SelectedIndex="0">
+                <ComboBoxItem x:Uid="ComboBoxItemLeft" />
+                <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
+                <ComboBoxItem x:Uid="ComboBoxItemRight" />
+            </ComboBox>
+        </StackPanel>
 
         <!--  Hotkey  -->
         <StackPanel
             Grid.Row="2"
             Grid.Column="0"
+            Padding="12"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="8"
             Spacing="{StaticResource StackPanelSpacing}">
             <controls:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
             <Button Content="F6" IsEnabled="False" />
         </StackPanel>
 
         <!--  Click Repeat  -->
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Padding="12"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="8">
             <CheckBox
                 x:Name="ClickRepeatCheckBox"
                 x:Uid="ClickRepeatCheckBox"
@@ -129,7 +158,14 @@
         </StackPanel>
 
         <!--  Click Offset  -->
-        <StackPanel Grid.Row="2" Grid.Column="1">
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1"
+            Padding="12"
+            Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="8">
             <CheckBox
                 x:Name="ClickOffsetCheckBox"
                 x:Uid="ClickOffsetCheckBox"
