@@ -8,11 +8,10 @@
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
     <Authors>Ryan Luu</Authors>
     <Copyright>Copyright (C) 2025 Ryan Luu</Copyright>
@@ -21,7 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Assets\**" />
+    <Content Include="Assets\*" />
   </ItemGroup>
 
   <ItemGroup>
