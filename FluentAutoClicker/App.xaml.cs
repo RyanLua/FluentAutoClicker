@@ -42,7 +42,7 @@ public partial class App
     {
         InitializeComponent();
 
-        PROCESS_POWER_THROTTLING_STATE PowerThrottling = new()
+        PROCESS_POWER_THROTTLING_STATE powerThrottling = new()
         {
             ControlMask = PInvoke.PROCESS_POWER_THROTTLING_EXECUTION_SPEED,
             StateMask = PInvoke.PROCESS_POWER_THROTTLING_EXECUTION_SPEED,
@@ -52,7 +52,9 @@ public partial class App
         // Set the process power throttling to efficiency mode
         unsafe
         {
-            _ = PInvoke.SetProcessInformation(PInvoke.GetCurrentProcess(), PROCESS_INFORMATION_CLASS.ProcessPowerThrottling, &PowerThrottling, (uint)sizeof(PROCESS_POWER_THROTTLING_STATE));
+            _ = PInvoke.SetProcessInformation(PInvoke.GetCurrentProcess(),
+                PROCESS_INFORMATION_CLASS.ProcessPowerThrottling, &powerThrottling,
+                (uint)sizeof(PROCESS_POWER_THROTTLING_STATE));
         }
 
         // Set the process priority to idle
