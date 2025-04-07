@@ -52,7 +52,7 @@ public partial class App
         // Set the process power throttling to efficiency mode
         unsafe
         {
-            PInvoke.SetProcessInformation(PInvoke.GetCurrentProcess(), PROCESS_INFORMATION_CLASS.ProcessPowerThrottling, &PowerThrottling, (uint)sizeof(PROCESS_POWER_THROTTLING_STATE));
+            _ = PInvoke.SetProcessInformation(PInvoke.GetCurrentProcess(), PROCESS_INFORMATION_CLASS.ProcessPowerThrottling, &PowerThrottling, (uint)sizeof(PROCESS_POWER_THROTTLING_STATE));
         }
 
         // Set the process priority to idle
