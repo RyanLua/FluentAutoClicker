@@ -15,6 +15,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with Fluent Auto Clicker. If not, see <https://www.gnu.org/licenses/>.
 
+using FluentAutoClicker.Helpers;
 using Microsoft.UI.Xaml;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -39,6 +40,7 @@ public partial class App
     public App()
     {
         InitializeComponent();
+        EfficiencyModeHelper.SetEfficiencyMode(true);
     }
 
     /// <summary>
