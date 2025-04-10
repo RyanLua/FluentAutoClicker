@@ -9,14 +9,14 @@
 
   <Identity
     Name="RyanLuu.FluentAutoClicker"
-    Publisher="CN=Ryan Luu"
+    Publisher="CN=Ryan Luu, S=California, C=US"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="c8834b5e-5154-437f-b765-e88d593041ac" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="62b4d151-1b7e-431e-b183-aef00cbd46a2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ms-resource:AppDisplayName</DisplayName>
-    <PublisherDisplayName>ms-resource:AppPublisherDisplayName</PublisherDisplayName>
+    <DisplayName>Fluent Auto Clicker (Preview)</DisplayName>
+    <PublisherDisplayName>Ryan Luu</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
