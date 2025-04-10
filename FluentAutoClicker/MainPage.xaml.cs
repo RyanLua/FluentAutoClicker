@@ -124,18 +124,6 @@ public sealed partial class MainPage
     /// <param name="glyph">The badge notification glyph.</param>
     private static void SetNotificationBadge(BadgeNotificationGlyph glyph)
     {
-        if (glyph == BadgeNotificationGlyph.Paused && settingsPage.NotificationBadgePaused)
-        {
-            BadgeNotificationManager.Current.SetBadgeAsGlyph(glyph);
-        }
-        else if (glyph == BadgeNotificationGlyph.Playing && settingsPage.NotificationBadgePlaying)
-        {
-            BadgeNotificationManager.Current.SetBadgeAsGlyph(glyph);
-        }
-        else
-        {
-            BadgeNotificationManager.Current.ClearBadge();
-        }
     }
 
     /// <summary>
