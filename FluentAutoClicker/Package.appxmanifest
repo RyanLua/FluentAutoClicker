@@ -9,10 +9,10 @@
 
   <Identity
     Name="RyanLuu.FluentAutoClicker"
-    Publisher="CN=Ryan Luu, S=California, C=US"
-    Version="1.0.0.0" />
+    Publisher="CN=F928CF5C-7038-45EB-A55F-2CDFC6B12328"
+    Version="0.1.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="62b4d151-1b7e-431e-b183-aef00cbd46a2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="10060ee9-4239-4473-8ef8-2f9d76c314f6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Fluent Auto Clicker (Preview)</DisplayName>
