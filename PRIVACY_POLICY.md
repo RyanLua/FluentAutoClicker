@@ -14,4 +14,4 @@ We use Microsoft services such as Microsoft Partner Center to collect usage data
 
 ## Changes to This Privacy Policy
 
-We may modify, update, or amend this privacy policy from time to time to reflect changes made to our application. When we change this privacy policy in a material manner, we will inform you of such changes by updating the "Effective date" notice. It is your responsibility to review this privacy policy periodically to stay informed of any updates. Your continued use our application after any modifications to this privacy policy constitutes your acceptance of such changes.
+We may modify, update, or amend this privacy policy from time to time to reflect changes made to our application. When we change this privacy policy in a material manner, we will inform you of such changes by updating the "Effective date" notice. It is your responsibility to review this privacy policy periodically to stay informed of any updates. Your continued use of our application after any modifications to this privacy policy constitutes your acceptance of such changes.
