@@ -1,0 +1,3 @@
+files:
+  - source: /FluentAutoClicker/Strings/en-us/Resources.resw
+    translation: /FluentAutoClicker/Strings/%locale%/%original_file_name%
