@@ -118,139 +118,139 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Pięknie zaprojektowany, płynnie działający program do automatycznego klikania dla systemów Windows 10 i 11.</value>
+    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker (wersja zapoznawcza)</value>
+    <value>Fluent Auto Clicker (Preview)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>Lewy</value>
+    <value>Left</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Środek</value>
+    <value>Middle</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>Prawidłowy</value>
+    <value>Right</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Przycisk myszy</value>
+    <value>Mouse button</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Który przycisk myszy automatycznie kliknąć</value>
+    <value>Which mouse button to automatically click</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>godziny</value>
+    <value>hours</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milisekundy</value>
+    <value>milliseconds</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>protokół</value>
+    <value>minutes</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>towary drugiej jakości</value>
+    <value>seconds</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Dopóki nie zatrzymano</value>
+    <value>Until stopped</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Interwał kliknięcia</value>
+    <value>Click interval</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Jak długi jest czas między kliknięciami</value>
+    <value>How long between clicks</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Skrót klawiszowy</value>
+    <value>Hotkey</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Który przycisk uruchamia automatyczny klikacz</value>
+    <value>Which button to start the auto clicker</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Ustawienia</value>
+    <value>Settings</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Kliknij powtórz</value>
+    <value>Click repeat</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Zatrzymaj klikanie po upływie określonej liczby kliknięć lub do momentu zatrzymania</value>
+    <value>Stop clicking after a certain amount or until stopped</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Losowe przesunięcie</value>
+    <value>Random offset</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Losowe przesunięcie interwału między kliknięciami</value>
+    <value>Random interval offset between clicks</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Opis</value>
+    <value>Description</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>Ustawienia</value>
+    <value>Settings</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Wygląd</value>
+    <value>Appearance</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>Motyw aplikacji</value>
+    <value>App theme</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Wybierz motyw aplikacji, który chcesz wyświetlić</value>
+    <value>Select which app theme to display</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Użyj ustawień systemowych</value>
+    <value>Use system setting</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Światło</value>
+    <value>Light</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Ciemny</value>
+    <value>Dark</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>Materiał tła</value>
+    <value>Backdrop material</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>Materiał tła systemowego na tło okna</value>
+    <value>System backdrop material for window background</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>Mika</value>
+    <value>Mica</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>Mika Alt</value>
+    <value>Mica Alt</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Akryl</value>
+    <value>Acrylic</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Zawsze na szczycie</value>
+    <value>Always on top</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Zawsze pokazuj okno aplikacji na wierzchu innych</value>
+    <value>Always show the app's window on top of others</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Zachowanie</value>
+    <value>Behavior</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
     <value>Ryan Luu</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Zapowiedź</value>
+    <value>Preview</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Płynny automatyczny klikacz</value>
+    <value>Fluent Auto Clicker</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Polityka prywatności</value>
+    <value>Privacy policy</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Kod źródłowy</value>
+    <value>Source code</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>Strona internetowa</value>
+    <value>Website</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
     <value>https://fluentautoclicker.com</value>
@@ -259,39 +259,45 @@
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Tłumaczyć</value>
+    <value>Translate</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>Niezgoda</value>
+    <value>Discord</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>Wyślij opinię</value>
+    <value>Send feedback</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>Licencja</value>
+    <value>License</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Odznaka powiadomienia</value>
+    <value>Notification badge</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Pokaż odznakę powiadomienia o stanie na ikonie aplikacji na pasku zadań</value>
+    <value>Show the status notification badge on the app's taskbar icon</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Pokaż odznakę podczas klikania</value>
+    <value>Show badge while clicking</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Pokaż odznakę podczas pauzy</value>
+    <value>Show badge while paused</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Pauza</value>
+    <value>Pause</value>
+  </data>
+  <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
+    <value>Related links</value>
+  </data>
+  <data name="TextBlockAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
 </root>
