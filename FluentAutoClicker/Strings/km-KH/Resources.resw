@@ -118,139 +118,139 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>កម្មវិធីចុចស្វ័យប្រវត្តរចនាយ៉ាងស្រស់ស្អាតសម្រាប់ Windows 10 &amp; 11 ។</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker (Preview)</value>
+    <value>អ្នក​ចុច​ស្វ័យ​ប្រវត្តិ​ស្ទាត់​ជំនាញ (មើល​ជា​មុន)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>Left</value>
+    <value>ឆ្វេង</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Middle</value>
+    <value>កណ្តាល</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>Right</value>
+    <value>ត្រូវហើយ។</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Mouse button</value>
+    <value>ប៊ូតុងកណ្ដុរ</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which mouse button to automatically click</value>
+    <value>ប៊ូតុងកណ្ដុរមួយណាដែលត្រូវចុចដោយស្វ័យប្រវត្តិ</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>hours</value>
+    <value>ម៉ោង</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milliseconds</value>
+    <value>មិល្លីវិនាទី</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minutes</value>
+    <value>នាទី</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>seconds</value>
+    <value>វិនាទី</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Until stopped</value>
+    <value>រហូតដល់ឈប់</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Click interval</value>
+    <value>ចុចចន្លោះពេល</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>How long between clicks</value>
+    <value>រយៈពេលប៉ុន្មានរវាងការចុច</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>គ្រាប់ចុចក្តៅ</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which button to start the auto clicker</value>
+    <value>ប៊ូតុងមួយណាដែលត្រូវចាប់ផ្តើមកម្មវិធីចុចដោយស្វ័យប្រវត្តិ</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Settings</value>
+    <value>ការកំណត់</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Start</value>
+    <value>ចាប់ផ្តើម</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Click repeat</value>
+    <value>ចុចម្តងទៀត</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop clicking after a certain amount or until stopped</value>
+    <value>បញ្ឈប់ការចុចបន្ទាប់ពីចំនួនជាក់លាក់មួយឬរហូតដល់ឈប់</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Random offset</value>
+    <value>អុហ្វសិតចៃដន្យ</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Random interval offset between clicks</value>
+    <value>ចន្លោះពេលចៃដន្យអុហ្វសិតរវាងការចុច</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Description</value>
+    <value>ការពិពណ៌នា</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>ការកំណត់</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Appearance</value>
+    <value>រូបរាង</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>App theme</value>
+    <value>ប្រធានបទកម្មវិធី</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Select which app theme to display</value>
+    <value>ជ្រើសរើសរចនាប័ទ្មកម្មវិធីណាមួយដែលត្រូវបង្ហាញ</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Use system setting</value>
+    <value>ប្រើការកំណត់ប្រព័ន្ធ</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>ពន្លឺ</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>ងងឹត</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>Backdrop material</value>
+    <value>សម្ភារៈផ្ទៃខាងក្រោយ</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>System backdrop material for window background</value>
+    <value>សម្ភារៈផ្ទៃខាងក្រោយប្រព័ន្ធសម្រាប់ផ្ទៃខាងក្រោយបង្អួច</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>Mica</value>
+    <value>មីកា</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
     <value>Mica Alt</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrylic</value>
+    <value>អាគ្រីលីក</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Always on top</value>
+    <value>តែងតែនៅលើកំពូល</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Always show the app's window on top of others</value>
+    <value>តែងតែបង្ហាញបង្អួចរបស់កម្មវិធីនៅលើកំពូលនៃកម្មវិធីផ្សេងទៀត។</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Behavior</value>
+    <value>អាកប្បកិរិយា</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
     <value>Ryan Luu</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Preview</value>
+    <value>មើលជាមុន</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Fluent Auto Clicker</value>
+    <value>ស្វ័យ​ប្រវត្តិ Clicker</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Privacy policy</value>
+    <value>គោលការណ៍ឯកជនភាព</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Source code</value>
+    <value>កូដប្រភព</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>Website</value>
+    <value>គេហទំព័រ</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
     <value>https://fluentautoclicker.com</value>
@@ -259,45 +259,45 @@
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Translate</value>
+    <value>បកប្រែ</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>Discord</value>
+    <value>ការមិនចុះសម្រុងគ្នា។</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>Send feedback</value>
+    <value>ផ្ញើមតិកែលម្អ</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>License</value>
+    <value>អាជ្ញាប័ណ្ណ</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Notification badge</value>
+    <value>ផ្លាកសញ្ញាជូនដំណឹង</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Show the status notification badge on the app's taskbar icon</value>
+    <value>បង្ហាញផ្លាកសញ្ញាជូនដំណឹងស្ថានភាពនៅលើរូបតំណាងរបារភារកិច្ចរបស់កម្មវិធី</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Show badge while clicking</value>
+    <value>បង្ហាញផ្លាកសញ្ញាពេលចុច</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Show badge while paused</value>
+    <value>បង្ហាញផ្លាកសញ្ញាខណៈពេលផ្អាក</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Pause</value>
+    <value>ផ្អាក</value>
   </data>
   <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
-    <value>Related links</value>
+    <value>តំណភ្ជាប់ដែលពាក់ព័ន្ធ</value>
   </data>
   <data name="TextBlockAbout.Text" xml:space="preserve">
-    <value>About</value>
+    <value>អំពី</value>
   </data>
 </root>
