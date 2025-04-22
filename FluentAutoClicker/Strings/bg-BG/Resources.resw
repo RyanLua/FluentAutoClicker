@@ -118,139 +118,139 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>Красиво проектиран автоматичен кликер с плавен дизайн за Windows 10 и 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker (Preview)</value>
+    <value>Fluent Auto Clicker (Преглед)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>Left</value>
+    <value>наляво</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Middle</value>
+    <value>Среден</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>Right</value>
+    <value>вярно</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Mouse button</value>
+    <value>Бутон на мишката</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which mouse button to automatically click</value>
+    <value>Кой бутон на мишката да щракнете автоматично</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>hours</value>
+    <value>часове</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milliseconds</value>
+    <value>милисекунди</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minutes</value>
+    <value>минути</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>seconds</value>
+    <value>секунди</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Until stopped</value>
+    <value>До спиране</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Click interval</value>
+    <value>Щракнете интервал</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>How long between clicks</value>
+    <value>Колко време между кликванията</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>Бърз клавиш</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which button to start the auto clicker</value>
+    <value>С кой бутон да стартирате автоматичния кликер</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Settings</value>
+    <value>Настройки</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Start</value>
+    <value>Започнете</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Click repeat</value>
+    <value>Щракнете върху повторение</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop clicking after a certain amount or until stopped</value>
+    <value>Спрете щракването след определена сума или докато спрете</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Random offset</value>
+    <value>Случаен офсет</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Random interval offset between clicks</value>
+    <value>Произволно интервално отместване между кликванията</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Description</value>
+    <value>Описание</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Настройки</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Външен вид</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>App theme</value>
+    <value>Тема на приложението</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Select which app theme to display</value>
+    <value>Изберете коя тема на приложението да се показва</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Use system setting</value>
+    <value>Използвайте системни настройки</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>светлина</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>Тъмно</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>Backdrop material</value>
+    <value>Материал за фона</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>System backdrop material for window background</value>
+    <value>Системен фонов материал за фон на прозорец</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>Mica</value>
+    <value>слюда</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>Mica Alt</value>
+    <value>Слюда Alt</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrylic</value>
+    <value>Акрил</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Always on top</value>
+    <value>Винаги на върха</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Always show the app's window on top of others</value>
+    <value>Винаги показвайте прозореца на приложението върху другите</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Behavior</value>
+    <value>Поведение</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>Ryan Luu</value>
+    <value>Райън Луу</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Preview</value>
+    <value>Преглед</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
     <value>Fluent Auto Clicker</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Privacy policy</value>
+    <value>Политика за поверителност</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Source code</value>
+    <value>Изходен код</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>Website</value>
+    <value>уебсайт</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
     <value>https://fluentautoclicker.com</value>
@@ -259,45 +259,45 @@
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Translate</value>
+    <value>Превеждай</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>Discord</value>
+    <value>Раздор</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>Send feedback</value>
+    <value>Изпратете обратна връзка</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>License</value>
+    <value>Лиценз</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Notification badge</value>
+    <value>Значка за известяване</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Show the status notification badge on the app's taskbar icon</value>
+    <value>Показване на значката за известие за състояние върху иконата на лентата на задачите на приложението</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Show badge while clicking</value>
+    <value>Показване на значка при кликване</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Show badge while paused</value>
+    <value>Показване на значка, докато е на пауза</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Pause</value>
+    <value>Пауза</value>
   </data>
   <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
-    <value>Related links</value>
+    <value>Свързани връзки</value>
   </data>
   <data name="TextBlockAbout.Text" xml:space="preserve">
-    <value>About</value>
+    <value>За</value>
   </data>
 </root>
