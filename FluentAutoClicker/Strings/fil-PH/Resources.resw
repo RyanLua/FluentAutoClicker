@@ -118,100 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>Isang magandang idinisenyong matatas na disenyo na auto clicker para sa Windows 10 at 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
     <value>Fluent Auto Clicker (Preview)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>Left</value>
+    <value>Kaliwa</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Middle</value>
+    <value>Gitna</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>Right</value>
+    <value>Tama</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Mouse button</value>
+    <value>Button ng mouse</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which mouse button to automatically click</value>
+    <value>Aling pindutan ng mouse ang awtomatikong i-click</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>hours</value>
+    <value>oras</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milliseconds</value>
+    <value>millisecond</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minutes</value>
+    <value>minuto</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>seconds</value>
+    <value>segundo</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Until stopped</value>
+    <value>Hanggang sa huminto</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Click interval</value>
+    <value>I-click ang pagitan</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>How long between clicks</value>
+    <value>Gaano katagal sa pagitan ng mga pag-click</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
     <value>Hotkey</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which button to start the auto clicker</value>
+    <value>Aling button ang magsisimula sa auto clicker</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Settings</value>
+    <value>Mga setting</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Start</value>
+    <value>Magsimula</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Click repeat</value>
+    <value>I-click ang ulitin</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop clicking after a certain amount or until stopped</value>
+    <value>Itigil ang pag-click pagkatapos ng isang tiyak na halaga o hanggang sa tumigil</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Random offset</value>
+    <value>Random na offset</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Random interval offset between clicks</value>
+    <value>Random na pagitan ng offset sa pagitan ng mga pag-click</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Description</value>
+    <value>Paglalarawan</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>Mga setting</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Appearance</value>
+    <value>Hitsura</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>App theme</value>
+    <value>Tema ng app</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Select which app theme to display</value>
+    <value>Piliin kung aling tema ng app ang ipapakita</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Use system setting</value>
+    <value>Gamitin ang setting ng system</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>Liwanag</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>Madilim</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>Backdrop material</value>
+    <value>Materyal sa backdrop</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>System backdrop material for window background</value>
+    <value>Material ng backdrop ng system para sa background ng window</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
     <value>Mica</value>
@@ -223,25 +223,25 @@
     <value>Acrylic</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Always on top</value>
+    <value>Laging nasa ibabaw</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Always show the app's window on top of others</value>
+    <value>Palaging ipakita ang window ng app sa ibabaw ng iba</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Behavior</value>
+    <value>Pag-uugali</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
     <value>Ryan Luu</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Preview</value>
+    <value>Silipin</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Fluent Auto Clicker</value>
+    <value>Matatas na Auto Clicker</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Privacy policy</value>
+    <value>Patakaran sa privacy</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
@@ -259,7 +259,7 @@
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Translate</value>
+    <value>Isalin</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
@@ -271,33 +271,33 @@
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>Send feedback</value>
+    <value>Magpadala ng feedback</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>License</value>
+    <value>Lisensya</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Notification badge</value>
+    <value>Badge ng notification</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Show the status notification badge on the app's taskbar icon</value>
+    <value>Ipakita ang status notification badge sa icon ng taskbar ng app</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Show badge while clicking</value>
+    <value>Ipakita ang badge habang nagki-click</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Show badge while paused</value>
+    <value>Ipakita ang badge habang naka-pause</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Pause</value>
+    <value>I-pause</value>
   </data>
   <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
-    <value>Related links</value>
+    <value>Mga kaugnay na link</value>
   </data>
   <data name="TextBlockAbout.Text" xml:space="preserve">
-    <value>About</value>
+    <value>Tungkol sa</value>
   </data>
 </root>
