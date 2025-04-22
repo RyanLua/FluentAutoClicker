@@ -118,180 +118,186 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>വിൻഡോസ് 10 &amp; 11 നായി മനോഹരമായി രൂപകൽപ്പന ചെയ്‌ത ഫ്ലൂയിഡ് ഡിസൈൻ ഓട്ടോ ക്ലിക്കർ.</value>
+    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>ഫ്ലുവന്റ് ഓട്ടോ ക്ലിക്കർ (പ്രിവ്യൂ)</value>
+    <value>Fluent Auto Clicker (Preview)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>ഇടത്</value>
+    <value>Left</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>മധ്യഭാഗം</value>
+    <value>Middle</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>ശരിയാണ്</value>
+    <value>Right</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>മൗസ് ബട്ടൺ</value>
+    <value>Mouse button</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ഏത് മൗസ് ബട്ടണാണ് യാന്ത്രികമായി ക്ലിക്ക് ചെയ്യേണ്ടത്</value>
+    <value>Which mouse button to automatically click</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>മണിക്കൂറുകൾ</value>
+    <value>hours</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>മില്ലിസെക്കൻഡ്</value>
+    <value>milliseconds</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>മിനിറ്റ്</value>
+    <value>minutes</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>സെക്കൻഡുകൾ</value>
+    <value>seconds</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>നിർത്തുന്നത് വരെ</value>
+    <value>Until stopped</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>ക്ലിക്ക് ഇടവേള</value>
+    <value>Click interval</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ക്ലിക്കുകൾക്കിടയിൽ എത്ര സമയം</value>
+    <value>How long between clicks</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>ഹോട്ട്കീ</value>
+    <value>Hotkey</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ഓട്ടോ ക്ലിക്കർ ആരംഭിക്കേണ്ട ബട്ടൺ ഏതാണ്</value>
+    <value>Which button to start the auto clicker</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ക്രമീകരണങ്ങൾ</value>
+    <value>Settings</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>ആരംഭിക്കുക</value>
+    <value>Start</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>ആവർത്തിക്കുക ക്ലിക്ക് ചെയ്യുക</value>
+    <value>Click repeat</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ഒരു നിശ്ചിത തുകയ്ക്ക് ശേഷം അല്ലെങ്കിൽ നിർത്തുന്നത് വരെ ക്ലിക്ക് ചെയ്യുന്നത് നിർത്തുക.</value>
+    <value>Stop clicking after a certain amount or until stopped</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>ക്രമരഹിതമായ ഓഫ്‌സെറ്റ്</value>
+    <value>Random offset</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ക്ലിക്കുകൾക്കിടയിലുള്ള ക്രമരഹിത ഇടവേള ഓഫ്‌സെറ്റ്</value>
+    <value>Random interval offset between clicks</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>വിവരണം</value>
+    <value>Description</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>ക്രമീകരണങ്ങൾ</value>
+    <value>Settings</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>രൂപഭാവം</value>
+    <value>Appearance</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>ആപ്പ് തീം</value>
+    <value>App theme</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>പ്രദർശിപ്പിക്കേണ്ട ആപ്പ് തീം തിരഞ്ഞെടുക്കുക</value>
+    <value>Select which app theme to display</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>സിസ്റ്റം ക്രമീകരണം ഉപയോഗിക്കുക</value>
+    <value>Use system setting</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>വെളിച്ചം</value>
+    <value>Light</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>ഇരുണ്ടത്</value>
+    <value>Dark</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>പശ്ചാത്തല മെറ്റീരിയൽ</value>
+    <value>Backdrop material</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>വിൻഡോ പശ്ചാത്തലത്തിനായുള്ള സിസ്റ്റം ബാക്ക്‌ഡ്രോപ്പ് മെറ്റീരിയൽ</value>
+    <value>System backdrop material for window background</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>മൈക്ക</value>
+    <value>Mica</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>മൈക്ക ആൾട്ട്</value>
+    <value>Mica Alt</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>അക്രിലിക്</value>
+    <value>Acrylic</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>എപ്പോഴും മുകളിലാണ്</value>
+    <value>Always on top</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>എപ്പോഴും ആപ്പിന്റെ വിൻഡോ മറ്റുള്ളവയുടെ മുകളിൽ കാണിക്കുക</value>
+    <value>Always show the app's window on top of others</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>പെരുമാറ്റം</value>
+    <value>Behavior</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>റയാൻ ലു</value>
+    <value>Ryan Luu</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>പ്രിവ്യൂ</value>
+    <value>Preview</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>ഫ്ലൂയന്റ് ഓട്ടോ ക്ലിക്കർ</value>
+    <value>Fluent Auto Clicker</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>സ്വകാര്യതാ നയം</value>
+    <value>Privacy policy</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>ഉറവിട കോഡ്</value>
+    <value>Source code</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>വെബ്സൈറ്റ്</value>
+    <value>Website</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
-    <value>https://fluentautoclicker.com/ എന്ന വിലാസത്തിൽ ക്ലിക്ക് ചെയ്യുക.</value>
+    <value>https://fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonSource.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>വിവർത്തനം ചെയ്യുക</value>
+    <value>Translate</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>നിരസിക്കുക</value>
+    <value>Discord</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുക</value>
+    <value>Send feedback</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>ലൈസൻസ്</value>
+    <value>License</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>അറിയിപ്പ് ബാഡ്ജ്</value>
+    <value>Notification badge</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>ആപ്പിന്റെ ടാസ്‌ക്‌ബാർ ഐക്കണിൽ സ്റ്റാറ്റസ് അറിയിപ്പ് ബാഡ്ജ് കാണിക്കുക</value>
+    <value>Show the status notification badge on the app's taskbar icon</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>ക്ലിക്ക് ചെയ്യുമ്പോൾ ബാഡ്ജ് കാണിക്കുക</value>
+    <value>Show badge while clicking</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>താൽക്കാലികമായി നിർത്തിയിരിക്കുമ്പോൾ ബാഡ്ജ് കാണിക്കുക</value>
+    <value>Show badge while paused</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>താൽക്കാലികമായി നിർത്തുക</value>
+    <value>Pause</value>
+  </data>
+  <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
+    <value>Related links</value>
+  </data>
+  <data name="TextBlockAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
 </root>
