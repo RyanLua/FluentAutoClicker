@@ -118,139 +118,139 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>ለዊንዶውስ 10 እና 11 በጥሩ ሁኔታ የተነደፈ አቀላጥፎ ንድፍ አውቶ ጠቅ ማድረጊያ።</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker (Preview)</value>
+    <value>አቀላጥፎ ራስ-ጠቅ ማድረጊያ (ቅድመ እይታ)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>Left</value>
+    <value>ግራ</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Middle</value>
+    <value>መካከለኛ</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>Right</value>
+    <value>ቀኝ</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Mouse button</value>
+    <value>የመዳፊት አዝራር</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which mouse button to automatically click</value>
+    <value>የትኛውን የመዳፊት ቁልፍ በራስ-ሰር ጠቅ ያድርጉ</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>hours</value>
+    <value>ሰዓታት</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milliseconds</value>
+    <value>ሚሊሰከንዶች</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minutes</value>
+    <value>ደቂቃዎች</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>seconds</value>
+    <value>ሰከንዶች</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Until stopped</value>
+    <value>እስኪቆም ድረስ</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Click interval</value>
+    <value>ክፍተቱን ጠቅ ያድርጉ</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>How long between clicks</value>
+    <value>ጠቅታዎች መካከል ለምን ያህል ጊዜ</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>ሆትኪ</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which button to start the auto clicker</value>
+    <value>ራስ-ጠቅ ማድረጊያውን ለመጀመር የትኛው አዝራር</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Settings</value>
+    <value>ቅንብሮች</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Start</value>
+    <value>ጀምር</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Click repeat</value>
+    <value>ድገም የሚለውን ጠቅ ያድርጉ</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop clicking after a certain amount or until stopped</value>
+    <value>ከተወሰነ መጠን በኋላ ወይም እስኪቆም ድረስ ጠቅ ማድረግ ያቁሙ</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Random offset</value>
+    <value>የዘፈቀደ ማካካሻ</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Random interval offset between clicks</value>
+    <value>በጠቅታዎች መካከል የዘፈቀደ ክፍተት ማካካሻ</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Description</value>
+    <value>መግለጫ</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>ቅንብሮች</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Appearance</value>
+    <value>መልክ</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>App theme</value>
+    <value>የመተግበሪያ ገጽታ</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Select which app theme to display</value>
+    <value>የትኛውን መተግበሪያ ገጽታ እንደሚታይ ይምረጡ</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Use system setting</value>
+    <value>የስርዓት ቅንብርን ተጠቀም</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>ብርሃን</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>ጨለማ</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>Backdrop material</value>
+    <value>Backdrop ቁሳቁስ</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>System backdrop material for window background</value>
+    <value>ለዊንዶው ዳራ የስርዓት ዳራ ቁሳቁስ</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>Mica</value>
+    <value>ሚካ</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>Mica Alt</value>
+    <value>ሚካ አልት</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrylic</value>
+    <value>አክሬሊክስ</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Always on top</value>
+    <value>ሁልጊዜም ከላይ</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Always show the app's window on top of others</value>
+    <value>ሁልጊዜ የመተግበሪያውን መስኮት በሌሎች ላይ አሳይ</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Behavior</value>
+    <value>ባህሪ</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>Ryan Luu</value>
+    <value>ራያን ሉ</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Preview</value>
+    <value>ቅድመ እይታ</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Fluent Auto Clicker</value>
+    <value>አቀላጥፎ ራስ-ጠቅ ማድረጊያ</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Privacy policy</value>
+    <value>የግላዊነት ፖሊሲ</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Source code</value>
+    <value>ምንጭ ኮድ</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>Website</value>
+    <value>ድህረገፅ</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
     <value>https://fluentautoclicker.com</value>
@@ -259,39 +259,39 @@
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Translate</value>
+    <value>ተርጉም።</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>Discord</value>
+    <value>አለመግባባት</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>Send feedback</value>
+    <value>ግብረ መልስ ላክ</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>License</value>
+    <value>ፍቃድ</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Notification badge</value>
+    <value>የማሳወቂያ ባጅ</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Show the status notification badge on the app's taskbar icon</value>
+    <value>የሁኔታ ማሳወቂያ ባጅ በመተግበሪያው የተግባር አሞሌ አዶ ላይ አሳይ</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Show badge while clicking</value>
+    <value>ጠቅ ስታደርግ ባጅ አሳይ</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Show badge while paused</value>
+    <value>ባለበት ቆሞ ባጅ አሳይ</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Pause</value>
+    <value>ለአፍታ አቁም</value>
   </data>
 </root>
