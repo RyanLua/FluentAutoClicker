@@ -18,6 +18,7 @@ jobs:
       - name: Synchronize with Crowdin
         uses: crowdin/github-action@v2
         with:
+          download_translations: true
           create_pull_request: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
