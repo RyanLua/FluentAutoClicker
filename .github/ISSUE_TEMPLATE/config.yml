@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Get Community Support
+  - name: Report translation issue
+    url: https://translate.fluentautoclicker.com
+    about: Help improve translations on Crowdin
+  - name: Get community support
     url: https://github.com/RyanLua/FluentAutoClicker/discussions
-    about: Get support/help from the GitHub Discussions community.
-  - name: Get in touch with us
-    url: mailto:support@ryanluu.dev
-    about: Send us an email at support@ryanluu.dev.
+    about: Get support/help from the GitHub Discussions community
