@@ -74,7 +74,7 @@
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
 
-                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
+                <TextBlock x:Uid="TextBlockAbout" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
 
                 <!--  App version  -->
                 <controls:SettingsExpander
