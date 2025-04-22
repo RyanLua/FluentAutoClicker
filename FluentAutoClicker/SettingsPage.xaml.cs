@@ -173,8 +173,7 @@ public sealed partial class SettingsPage
         string messageBody = $"""
 
 
-                              ----- Add your feedback above -----
-
+                              --- System Information ---
                               .NET installation: {RuntimeInformation.FrameworkDescription}
                               App version: {AppVersion}
                               App architecture: {RuntimeInformation.ProcessArchitecture}
