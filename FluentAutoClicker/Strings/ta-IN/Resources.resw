@@ -118,180 +118,186 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>விண்டோஸ் 10 &amp; 11க்கான அழகாக வடிவமைக்கப்பட்ட சரளமான வடிவமைப்பு ஆட்டோ கிளிக்கர்.</value>
+    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>சரளமான ஆட்டோ கிளிக்கர் (முன்னோட்டம்)</value>
+    <value>Fluent Auto Clicker (Preview)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>இடது</value>
+    <value>Left</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>நடுத்தர</value>
+    <value>Middle</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>சரி</value>
+    <value>Right</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>சுட்டி பொத்தான்</value>
+    <value>Mouse button</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>எந்த சுட்டி பொத்தானை தானாக சொடுக்க வேண்டும்</value>
+    <value>Which mouse button to automatically click</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>மணிகள்</value>
+    <value>hours</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>மில்லி விநாடிகள்</value>
+    <value>milliseconds</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>நிமிடங்கள்</value>
+    <value>minutes</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>வினாடிகள்</value>
+    <value>seconds</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>நிறுத்தப்படும் வரை</value>
+    <value>Until stopped</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>கிளிக் இடைவெளி</value>
+    <value>Click interval</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>கிளிக்குகளுக்கு இடையில் எவ்வளவு நேரம்</value>
+    <value>How long between clicks</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>ஹாட்கீ</value>
+    <value>Hotkey</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ஆட்டோ கிளிக்கரை எந்த பட்டனில் தொடங்க வேண்டும்</value>
+    <value>Which button to start the auto clicker</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>அமைப்புகள்</value>
+    <value>Settings</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>தொடங்கு</value>
+    <value>Start</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>மீண்டும் கிளிக் செய்யவும்</value>
+    <value>Click repeat</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>ஒரு குறிப்பிட்ட அளவுக்குப் பிறகு அல்லது நிறுத்தப்படும் வரை கிளிக் செய்வதை நிறுத்துங்கள்.</value>
+    <value>Stop clicking after a certain amount or until stopped</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>சீரற்ற ஆஃப்செட்</value>
+    <value>Random offset</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>கிளிக்குகளுக்கு இடையே சீரற்ற இடைவெளி ஆஃப்செட்</value>
+    <value>Random interval offset between clicks</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>விளக்கம்</value>
+    <value>Description</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>அமைப்புகள்</value>
+    <value>Settings</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>தோற்றம்</value>
+    <value>Appearance</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>பயன்பாட்டு தீம்</value>
+    <value>App theme</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>எந்த ஆப்ஸ் தீம் காட்ட வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்</value>
+    <value>Select which app theme to display</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>சிஸ்டம் அமைப்பைப் பயன்படுத்து</value>
+    <value>Use system setting</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>ஒளி</value>
+    <value>Light</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>இருள்</value>
+    <value>Dark</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>பின்னணிப் பொருள்</value>
+    <value>Backdrop material</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>சாளர பின்னணிக்கான சிஸ்டம் பின்னணி பொருள்</value>
+    <value>System backdrop material for window background</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>மைக்கா</value>
+    <value>Mica</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>மைக்கா ஆல்ட்</value>
+    <value>Mica Alt</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>அக்ரிலிக்</value>
+    <value>Acrylic</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>எப்போதும் மேலே</value>
+    <value>Always on top</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>எப்போதும் பயன்பாட்டின் சாளரத்தை மற்றவற்றின் மேல் காட்டு.</value>
+    <value>Always show the app's window on top of others</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>நடத்தை</value>
+    <value>Behavior</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>ரியான் லூ</value>
+    <value>Ryan Luu</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>முன்னோட்டம்</value>
+    <value>Preview</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>சரளமாக ஆட்டோ கிளிக் செய்பவர்</value>
+    <value>Fluent Auto Clicker</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>தனியுரிமைக் கொள்கை</value>
+    <value>Privacy policy</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>மூல குறியீடு</value>
+    <value>Source code</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>வலைத்தளம்</value>
+    <value>Website</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
-    <value>https://fluentautoclicker.com/ தமிழ்</value>
+    <value>https://fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonSource.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>மொழிபெயர்</value>
+    <value>Translate</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>கருத்து வேறுபாடு</value>
+    <value>Discord</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>கருத்து அனுப்பு</value>
+    <value>Send feedback</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>உரிமம்</value>
+    <value>License</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>அறிவிப்பு பேட்ஜ்</value>
+    <value>Notification badge</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>பயன்பாட்டின் பணிப்பட்டி ஐகானில் நிலை அறிவிப்பு பேட்ஜைக் காட்டு.</value>
+    <value>Show the status notification badge on the app's taskbar icon</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>கிளிக் செய்யும் போது பேட்ஜைக் காட்டு</value>
+    <value>Show badge while clicking</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>இடைநிறுத்தப்பட்டிருக்கும் போது பேட்ஜைக் காட்டு</value>
+    <value>Show badge while paused</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>இடைநிறுத்து</value>
+    <value>Pause</value>
+  </data>
+  <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
+    <value>Related links</value>
+  </data>
+  <data name="TextBlockAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
 </root>
