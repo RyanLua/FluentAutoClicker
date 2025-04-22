@@ -294,4 +294,10 @@
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
     <value>Pause</value>
   </data>
+  <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
+    <value>Related links</value>
+  </data>
+  <data name="TextBlockAbout.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
 </root>
