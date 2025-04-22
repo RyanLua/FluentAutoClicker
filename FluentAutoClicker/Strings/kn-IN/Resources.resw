@@ -118,180 +118,180 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>ವಿಂಡೋಸ್ 10 ಮತ್ತು 11 ಗಾಗಿ ಸುಂದರವಾಗಿ ವಿನ್ಯಾಸಗೊಳಿಸಲಾದ ಫ್ಲೂಲಿ ವಿನ್ಯಾಸ ಆಟೋ ಕ್ಲಿಕ್ಕರ್.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker (Preview)</value>
+    <value>ಫ್ಲೂಯೆಂಟ್ ಆಟೋ ಕ್ಲಿಕ್ಕರ್ (ಪೂರ್ವವೀಕ್ಷಣೆ)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>Left</value>
+    <value>ಎಡಕ್ಕೆ</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Middle</value>
+    <value>ಮಧ್ಯಮ</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>Right</value>
+    <value>ಸರಿ</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Mouse button</value>
+    <value>ಮೌಸ್ ಬಟನ್</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which mouse button to automatically click</value>
+    <value>ಯಾವ ಮೌಸ್ ಗುಂಡಿಯನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಬೇಕು</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>hours</value>
+    <value>ಗಂಟೆಗಳು</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milliseconds</value>
+    <value>ಮಿಲಿಸೆಕೆಂಡುಗಳು</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minutes</value>
+    <value>ನಿಮಿಷಗಳು</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>seconds</value>
+    <value>ಸೆಕೆಂಡುಗಳು</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Until stopped</value>
+    <value>ನಿಲ್ಲಿಸುವವರೆಗೆ</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Click interval</value>
+    <value>ಕ್ಲಿಕ್ ಮಧ್ಯಂತರ</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>How long between clicks</value>
+    <value>ಕ್ಲಿಕ್‌ಗಳ ನಡುವೆ ಎಷ್ಟು ಸಮಯ</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Hotkey</value>
+    <value>ಹಾಟ್‌ಕೀ</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Which button to start the auto clicker</value>
+    <value>ಸ್ವಯಂ ಕ್ಲಿಕ್ಕರ್ ಅನ್ನು ಪ್ರಾರಂಭಿಸಲು ಯಾವ ಬಟನ್</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Settings</value>
+    <value>ಸೆಟ್ಟಿಂಗ್‌ಗಳು</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Start</value>
+    <value>ಪ್ರಾರಂಭಿಸಿ</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Click repeat</value>
+    <value>ಪುನರಾವರ್ತಿಸು ಕ್ಲಿಕ್ ಮಾಡಿ</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop clicking after a certain amount or until stopped</value>
+    <value>ನಿರ್ದಿಷ್ಟ ಪ್ರಮಾಣದ ನಂತರ ಅಥವಾ ನಿಲ್ಲಿಸುವವರೆಗೆ ಕ್ಲಿಕ್ ಮಾಡುವುದನ್ನು ನಿಲ್ಲಿಸಿ</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Random offset</value>
+    <value>ಯಾದೃಚ್ಛಿಕ ಆಫ್‌ಸೆಟ್</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Random interval offset between clicks</value>
+    <value>ಕ್ಲಿಕ್‌ಗಳ ನಡುವಿನ ಯಾದೃಚ್ಛಿಕ ಮಧ್ಯಂತರ ಆಫ್‌ಸೆಟ್</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Description</value>
+    <value>ವಿವರಣೆ</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>ಸೆಟ್ಟಿಂಗ್‌ಗಳು</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Appearance</value>
+    <value>ಗೋಚರತೆ</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>App theme</value>
+    <value>ಅಪ್ಲಿಕೇಶನ್ ಥೀಮ್</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Select which app theme to display</value>
+    <value>ಯಾವ ಅಪ್ಲಿಕೇಶನ್ ಥೀಮ್ ಪ್ರದರ್ಶಿಸಬೇಕೆಂದು ಆಯ್ಕೆಮಾಡಿ</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Use system setting</value>
+    <value>ಸಿಸ್ಟಂ ಸೆಟ್ಟಿಂಗ್ ಬಳಸಿ</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Light</value>
+    <value>ಬೆಳಕು</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Dark</value>
+    <value>ಕತ್ತಲೆ</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>Backdrop material</value>
+    <value>ಹಿನ್ನೆಲೆ ವಸ್ತು</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>System backdrop material for window background</value>
+    <value>ವಿಂಡೋ ಹಿನ್ನೆಲೆಗಾಗಿ ಸಿಸ್ಟಮ್ ಬ್ಯಾಕ್‌ಡ್ರಾಪ್ ವಸ್ತು</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>Mica</value>
+    <value>ಅಭ್ರಕ</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>Mica Alt</value>
+    <value>ಮೈಕಾ ಆಲ್ಟ್</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrylic</value>
+    <value>ಅಕ್ರಿಲಿಕ್</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Always on top</value>
+    <value>ಯಾವಾಗಲೂ ಮೇಲಿರುತ್ತದೆ</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Always show the app's window on top of others</value>
+    <value>ಯಾವಾಗಲೂ ಅಪ್ಲಿಕೇಶನ್‌ನ ವಿಂಡೋವನ್ನು ಇತರರ ಮೇಲೆ ತೋರಿಸಿ</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Behavior</value>
+    <value>ನಡವಳಿಕೆ</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>Ryan Luu</value>
+    <value>ರಯಾನ್ ಲುವು</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Preview</value>
+    <value>ಪೂರ್ವವೀಕ್ಷಣೆ</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Fluent Auto Clicker</value>
+    <value>ನಿರರ್ಗಳ ಆಟೋ ಕ್ಲಿಕ್ಕರ್</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Privacy policy</value>
+    <value>ಗೌಪ್ಯತಾ ನೀತಿ</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Source code</value>
+    <value>ಮೂಲ ಕೋಡ್</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>Website</value>
+    <value>ವೆಬ್‌ಸೈಟ್</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
-    <value>https://fluentautoclicker.com</value>
+    <value>https://fluentautoclicker.com/ ಈ ಅಪ್ಲಿಕೇಶನ್ ನಿಮಗೆ ಉಚಿತ ಆಟೋಕ್ಲಿಕ್ಕರ್‌ಗಳನ್ನು ನೀಡುತ್ತದೆ.</value>
   </data>
   <data name="HyperlinkButtonSource.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Translate</value>
+    <value>ಅನುವಾದಿಸಿ</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>Discord</value>
+    <value>ಅಪಶ್ರುತಿ</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>Send feedback</value>
+    <value>ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>License</value>
+    <value>ಪರವಾನಗಿ</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Notification badge</value>
+    <value>ಅಧಿಸೂಚನೆ ಬ್ಯಾಡ್ಜ್</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Show the status notification badge on the app's taskbar icon</value>
+    <value>ಅಪ್ಲಿಕೇಶನ್‌ನ ಕಾರ್ಯಪಟ್ಟಿ ಐಕಾನ್‌ನಲ್ಲಿ ಸ್ಥಿತಿ ಅಧಿಸೂಚನೆ ಬ್ಯಾಡ್ಜ್ ಅನ್ನು ತೋರಿಸಿ</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Show badge while clicking</value>
+    <value>ಕ್ಲಿಕ್ ಮಾಡುವಾಗ ಬ್ಯಾಡ್ಜ್ ತೋರಿಸಿ</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Show badge while paused</value>
+    <value>ವಿರಾಮಗೊಳಿಸಿದಾಗ ಬ್ಯಾಡ್ಜ್ ತೋರಿಸಿ</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Pause</value>
+    <value>ವಿರಾಮಗೊಳಿಸಿ</value>
   </data>
 </root>
