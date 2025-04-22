@@ -118,139 +118,139 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Windows 10 および 11 用の美しくデザインされた流暢なデザインのオートクリッカー。</value>
+    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker（プレビュー）</value>
+    <value>Fluent Auto Clicker (Preview)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>左</value>
+    <value>Left</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>真ん中</value>
+    <value>Middle</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>右</value>
+    <value>Right</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>マウスボタン</value>
+    <value>Mouse button</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>自動的にクリックするマウスボタン</value>
+    <value>Which mouse button to automatically click</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>時間</value>
+    <value>hours</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>ミリ秒</value>
+    <value>milliseconds</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>分</value>
+    <value>minutes</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>秒</value>
+    <value>seconds</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>止まるまで</value>
+    <value>Until stopped</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>クリック間隔</value>
+    <value>Click interval</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>クリック間隔</value>
+    <value>How long between clicks</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>ホットキー</value>
+    <value>Hotkey</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>オートクリッカーを起動するボタン</value>
+    <value>Which button to start the auto clicker</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>設定</value>
+    <value>Settings</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>始める</value>
+    <value>Start</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>クリックリピート</value>
+    <value>Click repeat</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>一定量クリックした後、または止まるまでクリックを止めます</value>
+    <value>Stop clicking after a certain amount or until stopped</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>ランダムオフセット</value>
+    <value>Random offset</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>クリック間のランダム間隔オフセット</value>
+    <value>Random interval offset between clicks</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>説明</value>
+    <value>Description</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>設定</value>
+    <value>Settings</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>外観</value>
+    <value>Appearance</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>アプリのテーマ</value>
+    <value>App theme</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>表示するアプリのテーマを選択する</value>
+    <value>Select which app theme to display</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>システム設定を使用する</value>
+    <value>Use system setting</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>ライト</value>
+    <value>Light</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>暗い</value>
+    <value>Dark</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>背景素材</value>
+    <value>Backdrop material</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>ウィンドウ背景用のシステム背景素材</value>
+    <value>System backdrop material for window background</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>雲母</value>
+    <value>Mica</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>マイカ・アルト</value>
+    <value>Mica Alt</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>アクリル</value>
+    <value>Acrylic</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>常にトップ</value>
+    <value>Always on top</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>アプリのウィンドウを常に他のウィンドウの上に表示する</value>
+    <value>Always show the app's window on top of others</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>行動</value>
+    <value>Behavior</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>ライアン・ルー</value>
+    <value>Ryan Luu</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>プレビュー</value>
+    <value>Preview</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
     <value>Fluent Auto Clicker</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>プライバシーポリシー</value>
+    <value>Privacy policy</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>ソースコード</value>
+    <value>Source code</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>Webサイト</value>
+    <value>Website</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
     <value>https://fluentautoclicker.com</value>
@@ -259,39 +259,45 @@
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>翻訳する</value>
+    <value>Translate</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
   </data>
   <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
-    <value>不和</value>
+    <value>Discord</value>
   </data>
   <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>フィードバックを送信</value>
+    <value>Send feedback</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>ライセンス</value>
+    <value>License</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>通知バッジ</value>
+    <value>Notification badge</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>アプリのタスクバーアイコンにステータス通知バッジを表示する</value>
+    <value>Show the status notification badge on the app's taskbar icon</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>クリック中にバッジを表示</value>
+    <value>Show badge while clicking</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>一時停止中にバッジを表示する</value>
+    <value>Show badge while paused</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>一時停止</value>
+    <value>Pause</value>
+  </data>
+  <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
+    <value>Related links</value>
+  </data>
+  <data name="TextBlockAbout.Text" xml:space="preserve">
+    <value>About</value>
   </data>
 </root>
