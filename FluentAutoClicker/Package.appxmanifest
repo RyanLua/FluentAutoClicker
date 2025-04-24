@@ -15,7 +15,7 @@
   <mp:PhoneIdentity PhoneProductId="10060ee9-4239-4473-8ef8-2f9d76c314f6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Fluent Auto Clicker (Preview)</DisplayName>
+    <DisplayName>ms-resource:AppDisplayName</DisplayName>
     <PublisherDisplayName>Ryan Luu</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
