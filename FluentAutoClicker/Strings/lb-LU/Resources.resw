@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Eng schéin entworfene fléisseg Design Auto-Clicker fir Windows 10 &amp; 11.</value>
+  </data>
+  <data name="AppDisplayName" xml:space="preserve">
+    <value>Fluent Auto Clicker (Viruergend)</value>
+  </data>
+  <data name="ComboBoxItemLeft.Content" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
+    <value>Mënsch</value>
+  </data>
+  <data name="ComboBoxItemRight.Content" xml:space="preserve">
+    <value>Rechts</value>
+  </data>
+  <data name="ComboBoxMouseButton.Header" xml:space="preserve">
+    <value>Mausknapp</value>
+  </data>
+  <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Welchen Mausknapp soll automatesch geklickt ginn</value>
+  </data>
+  <data name="NumberBoxHours.Description" xml:space="preserve">
+    <value>Stonnen</value>
+  </data>
+  <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
+    <value>Millisekonnen</value>
+  </data>
+  <data name="NumberBoxMinutes.Description" xml:space="preserve">
+    <value>Minutten</value>
+  </data>
+  <data name="NumberBoxSeconds.Description" xml:space="preserve">
+    <value>Sekonnen</value>
+  </data>
+  <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
+    <value>Bis gestoppt</value>
+  </data>
+  <data name="TextBlockClickInterval.Text" xml:space="preserve">
+    <value>Klick Intervall</value>
+  </data>
+  <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wéi laang tëscht de Klicken</value>
+  </data>
+  <data name="TextBlockHotkey.Text" xml:space="preserve">
+    <value>Hotkey</value>
+  </data>
+  <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Welchen Knapp fir de Auto-Clicker z'aktivéieren</value>
+  </data>
+  <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Astellungen</value>
+  </data>
+  <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
+    <value>Starten</value>
+  </data>
+  <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
+    <value>Klicken widderhuelen</value>
+  </data>
+  <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Klicken stoppen nodeems eng gewëssen Zuel erreecht ass oder bis gestoppt</value>
+  </data>
+  <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
+    <value>Zoufällegen Off</value>
+  </data>
+  <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Zoufällegen Intervall Off tëscht Klicken</value>
+  </data>
+  <data name="ClickOffsetAmount" xml:space="preserve">
+    <value>Beschreiwung</value>
+  </data>
+  <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
+    <value>Astellungen</value>
+  </data>
+  <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
+    <value>Erscheinung</value>
+  </data>
+  <data name="SettingsCardAppTheme.Header" xml:space="preserve">
+    <value>App Thema</value>
+  </data>
+  <data name="SettingsCardAppTheme.Description" xml:space="preserve">
+    <value>Wielt wéi eng App Thema ze weisen</value>
+  </data>
+  <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
+    <value>Systèmeinstellungen benotzen</value>
+  </data>
+  <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
+    <value>Liicht</value>
+  </data>
+  <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
+    <value>Däischter</value>
+  </data>
+  <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
+    <value>Backdrop Material</value>
+  </data>
+  <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
+    <value>System Backdrop Material fir fënster Hannergrond</value>
+  </data>
+  <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
+    <value>Mica</value>
+  </data>
+  <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
+    <value>Mica Alt</value>
+  </data>
+  <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
+    <value>Acrylic</value>
+  </data>
+  <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
+    <value>Immer uewen</value>
+  </data>
+  <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
+    <value>Immer d'Mënschfënster uewen weisen</value>
+  </data>
+  <data name="TextBlockBehavior.Text" xml:space="preserve">
+    <value>Verhaltnes</value>
+  </data>
+  <data name="AppPublisherDisplayName" xml:space="preserve">
+    <value>Ryan Luu</value>
+  </data>
+  <data name="AppTitleBar.Subtitle" xml:space="preserve">
+    <value>Viruergend</value>
+  </data>
+  <data name="AppTitleBar.Title" xml:space="preserve">
+    <value>Fluent Auto Clicker</value>
+  </data>
+  <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
+    <value>Privacy Politik</value>
+  </data>
+  <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
+    <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
+  </data>
+  <data name="HyperlinkButtonSource.Content" xml:space="preserve">
+    <value>Quellcode</value>
+  </data>
+  <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
+    <value>Websäit</value>
+  </data>
+  <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
+    <value>https://fluentautoclicker.com</value>
+  </data>
+  <data name="HyperlinkButtonSource.NavigateUri" xml:space="preserve">
+    <value>https://github.com/RyanLua/FluentAutoClicker</value>
+  </data>
+  <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
+    <value>Iwwersetzen</value>
+  </data>
+  <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
+    <value>https://translate.fluentautoclicker.com</value>
+  </data>
+  <data name="HyperlinkButtonDiscord.Content" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="HyperlinkButtonDiscord.NavigateUri" xml:space="preserve">
+    <value>https://discord.gg/32AMskrpFf</value>
+  </data>
+  <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
+    <value>Feedback schécken</value>
+  </data>
+  <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
+    <value>Lizenz</value>
+  </data>
+  <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
+    <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
+  </data>
+  <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
+    <value>Notifikatiouns Badge</value>
+  </data>
+  <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
+    <value>Wiesen de Status Notifikatiouns Badge um App Taskbar Ikon</value>
+  </data>
+  <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
+    <value>Badge weisen während dem klicken</value>
+  </data>
+  <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
+    <value>Badge weisen während der Paus</value>
+  </data>
+  <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
+    <value>Pauséieren</value>
+  </data>
+  <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
+    <value>Verbonnen Links</value>
+  </data>
+  <data name="TextBlockAbout.Text" xml:space="preserve">
+    <value>Iwwer</value>
+  </data>
+</root>
