@@ -228,9 +228,6 @@
   <data name="TextBlockBehavior.Text" xml:space="preserve">
     <value>السلوك</value>
   </data>
-  <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>رايان لوو</value>
-  </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
     <value>معاينة</value>
   </data>

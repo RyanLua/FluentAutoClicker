@@ -228,9 +228,6 @@
   <data name="TextBlockBehavior.Text" xml:space="preserve">
     <value>Portaera</value>
   </data>
-  <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>Ryan Luu</value>
-  </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
     <value>Aurrebista</value>
   </data>

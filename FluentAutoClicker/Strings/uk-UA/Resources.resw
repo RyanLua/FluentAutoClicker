@@ -228,9 +228,6 @@
   <data name="TextBlockBehavior.Text" xml:space="preserve">
     <value>Поведение</value>
   </data>
-  <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>Раян Лу</value>
-  </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
     <value>Попередній перегляд</value>
   </data>

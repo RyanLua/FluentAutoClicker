@@ -228,9 +228,6 @@
   <data name="TextBlockBehavior.Text" xml:space="preserve">
     <value>התנהגות</value>
   </data>
-  <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>ריאן לואו</value>
-  </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
     <value>תצוגה מקדימה</value>
   </data>

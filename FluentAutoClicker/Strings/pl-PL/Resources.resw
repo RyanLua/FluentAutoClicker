@@ -228,9 +228,6 @@
   <data name="TextBlockBehavior.Text" xml:space="preserve">
     <value>Zachowanie</value>
   </data>
-  <data name="AppPublisherDisplayName" xml:space="preserve">
-    <value>Ryan Luu</value>
-  </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
     <value>Podgląd</value>
   </data>
