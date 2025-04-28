@@ -183,9 +183,6 @@
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
     <value>Random interval offset between clicks</value>
   </data>
-  <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Description</value>
-  </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
