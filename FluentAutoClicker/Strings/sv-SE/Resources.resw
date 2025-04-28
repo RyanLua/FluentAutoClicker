@@ -118,100 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Un auto clicker frumos proiectat și cu design fluent pentru Windows 10 și 11.</value>
+    <value>En vackert designad flytande designautomatisk klickare för Windows 10 &amp; 11.</value>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Fluent Auto Clicker (Preview)</value>
+    <value>Flytande automatiskt klickare (Förhandsvisning)</value>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
-    <value>Stâng</value>
+    <value>Vänster</value>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Mijlociu</value>
+    <value>Mitten</value>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
-    <value>Drept</value>
+    <value>Höger</value>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Butonul mouse-ului</value>
+    <value>Musknapp</value>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Care buton al mouse-ului va face clic automat</value>
+    <value>Vilken musknapp som ska klickas automatiskt</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>ore</value>
+    <value>timmar</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milisecunde</value>
+    <value>millisekunder</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minute</value>
+    <value>minuter</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>secunde</value>
+    <value>sekunder</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Până la oprire</value>
+    <value>Tills stoppad</value>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Interval între clicuri</value>
+    <value>Klickintervall</value>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Cât timp între clicuri</value>
+    <value>Hur länge mellan klick</value>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Scurtătură</value>
+    <value>Genväg</value>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Care buton va porni auto clicker-ul</value>
+    <value>Vilken knapp som ska starta den automatiska klickaren</value>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Setări</value>
+    <value>Inställningar</value>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Start</value>
+    <value>Starta</value>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Repetare clic</value>
+    <value>Klicka upprepning</value>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Încetează din a mai face clic după un anumit număr sau până la oprire</value>
+    <value>Sluta klicka efter en viss mängd eller tills stoppad</value>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Offset aleatoriu</value>
+    <value>Slumpoffset</value>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Offset aleatoriu între clicuri</value>
+    <value>Slumptalsintervall mellan klick</value>
   </data>
   <data name="ClickOffsetAmount" xml:space="preserve">
-    <value>Descriere</value>
+    <value>Beskrivning</value>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
-    <value>Setări</value>
+    <value>Inställningar</value>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Aspect</value>
+    <value>Utseende</value>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>Tema aplicației</value>
+    <value>Appens tema</value>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Selectează tema aplicației care să fie afișată</value>
+    <value>Välj vilket apptema som ska visas</value>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Folosește setarea sistemului</value>
+    <value>Använd systeminställning</value>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Luminoasă</value>
+    <value>Ljus</value>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Întunecată</value>
+    <value>Mörk</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>Materialul pentru fundal</value>
+    <value>Bakgrundsmaterial</value>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>Materialul pentru fundal al sistemului pentru fundalul ferestrei</value>
+    <value>Systembakgrundsmaterial för fönsterbakgrund</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
     <value>Mica</value>
@@ -220,37 +220,37 @@
     <value>Mica Alt</value>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrilic</value>
+    <value>Acrylic</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Întotdeauna deasupra</value>
+    <value>Alltid överst</value>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Arată întotdeauna fereastra aplicației deasupra celorlalte</value>
+    <value>Visa alltid appens fönster över andra</value>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Comportament</value>
+    <value>Beteende</value>
   </data>
   <data name="AppPublisherDisplayName" xml:space="preserve">
     <value>Ryan Luu</value>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Preview</value>
+    <value>Förhandsvisning</value>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Fluent Auto Clicker</value>
+    <value>Flytande automatiskt klickare</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Politica de confidențialitate</value>
+    <value>Integritetspolicy</value>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md</value>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Cod sursă</value>
+    <value>Källkod</value>
   </data>
   <data name="HyperlinkButtonWebsite.Content" xml:space="preserve">
-    <value>Website</value>
+    <value>Webbplats</value>
   </data>
   <data name="HyperlinkButtonWebsite.NavigateUri" xml:space="preserve">
     <value>https://fluentautoclicker.com</value>
@@ -259,7 +259,7 @@
     <value>https://github.com/RyanLua/FluentAutoClicker</value>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Tradu</value>
+    <value>Översätt</value>
   </data>
   <data name="HyperlinkButtonTranslate.NavigateUri" xml:space="preserve">
     <value>https://translate.fluentautoclicker.com</value>
@@ -271,33 +271,33 @@
     <value>https://discord.gg/32AMskrpFf</value>
   </data>
   <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>Trimite feedback</value>
+    <value>Skicka feedback</value>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>Licență</value>
+    <value>Licens</value>
   </data>
   <data name="HyperlinkButtonLicense.NavigateUri" xml:space="preserve">
     <value>https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Insigna de notificare</value>
+    <value>Notifieringsmärke</value>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Afișează insigna de notificare pentru stare pe pictograma aplicației din bara de activități</value>
+    <value>Visa status notifieringsmärke på appens aktivitetsfältikon</value>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Afișează insigna în timp ce se dă clic</value>
+    <value>Visa märke när du klickar</value>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Afișează insigna în timp ce este întrerupt</value>
+    <value>Visa märke när du är pausad</value>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Pauză</value>
+    <value>Paus</value>
   </data>
   <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
-    <value>Linkuri relevante</value>
+    <value>Relaterade länkar</value>
   </data>
   <data name="TextBlockAbout.Text" xml:space="preserve">
-    <value>Despre</value>
+    <value>Om</value>
   </data>
 </root>

@@ -139,16 +139,16 @@
     <value>Melyik egérgombot kattintsa automatikusan</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>hours</value>
+    <value>órák</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milliseconds</value>
+    <value>ezredmásodpercek</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minutes</value>
+    <value>percek</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>seconds</value>
+    <value>másodpercek</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
     <value>Megállításig</value>
