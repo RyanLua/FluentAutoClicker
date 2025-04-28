@@ -139,16 +139,16 @@
     <value>Welche Maustaste automatisch klicken</value>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>hours</value>
+    <value>Stunden</value>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milliseconds</value>
+    <value>Millisekunden</value>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minutes</value>
+    <value>Minuten</value>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>seconds</value>
+    <value>Sekunden</value>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
     <value>Bis gestoppt</value>
