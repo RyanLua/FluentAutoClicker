@@ -25,7 +25,7 @@
             x:Uid="AppTitleBar"
             BackRequested="AppTitleBar_BackRequested">
             <TitleBar.IconSource>
-                <BitmapIconSource ShowAsMonochrome="False" UriSource="ms-appx:///Assets/WindowIcon.ico" />
+                <ImageIconSource ImageSource="ms-appx:///Assets/StoreLogo.png" />
             </TitleBar.IconSource>
         </TitleBar>
 
