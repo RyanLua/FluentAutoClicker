@@ -7,6 +7,7 @@
     xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     xmlns:controls="using:FluentAutoClicker.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="using:FluentAutoClicker.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="using:CommunityToolkit.WinUI"
     NavigationCacheMode="Enabled"
@@ -44,48 +45,38 @@
                 <NumberBox
                     x:Name="NumberBoxHours"
                     x:Uid="NumberBoxHours"
-                    HorizontalAlignment="Stretch"
                     AcceptsExpression="True"
-                    Maximum="48"
                     Minimum="0"
                     PlaceholderText="0-24"
-                    Value="0" />
+                    Value="{x:Bind helpers:AutoClicker.hoursDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxMinutes"
                     x:Uid="NumberBoxMinutes"
                     Grid.Column="1"
-                    HorizontalAlignment="Stretch"
                     AcceptsExpression="True"
-                    LargeChange="10"
                     Maximum="60"
                     Minimum="0"
                     PlaceholderText="0-60"
-                    SmallChange="1"
-                    Value="0" />
+                    Value="{x:Bind helpers:AutoClicker.minutesDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxSeconds"
                     x:Uid="NumberBoxSeconds"
                     Grid.Column="2"
-                    HorizontalAlignment="Stretch"
                     AcceptsExpression="True"
-                    LargeChange="5"
                     Maximum="60"
                     Minimum="0"
                     PlaceholderText="0-60"
-                    SmallChange="1"
-                    Value="0" />
+                    Value="{x:Bind helpers:AutoClicker.secondsDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxMilliseconds"
                     x:Uid="NumberBoxMilliseconds"
                     Grid.Column="3"
-                    HorizontalAlignment="Stretch"
                     AcceptsExpression="True"
-                    LargeChange="25"
                     Maximum="1000"
                     Minimum="0"
                     PlaceholderText="0-1000"
-                    SmallChange="5"
-                    Value="100" />
+                    SmallChange="10"
+                    Value="{x:Bind helpers:AutoClicker.millisecondsDelay, Mode=TwoWay}" />
             </Grid>
         </StackPanel>
 
@@ -95,7 +86,7 @@
             x:Uid="ComboBoxMouseButton"
             Grid.Row="1"
             Grid.Column="0"
-            SelectedIndex="0">
+            SelectedIndex="{x:Bind helpers:AutoClicker.mouseButtonType, Mode=TwoWay}">
             <ComboBoxItem x:Uid="ComboBoxItemLeft" />
             <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
             <ComboBoxItem x:Uid="ComboBoxItemRight" />
@@ -125,7 +116,7 @@
                 PlaceholderText="100"
                 SmallChange="1"
                 SpinButtonPlacementMode="Compact"
-                Value="100" />
+                Value="{x:Bind helpers:AutoClicker.clickAmount, Mode=TwoWay}" />
         </StackPanel>
 
         <!--  Click Offset  -->
@@ -145,7 +136,7 @@
                 PlaceholderText="0-1000"
                 SmallChange="5"
                 SpinButtonPlacementMode="Compact"
-                Value="10" />
+                Value="{x:Bind helpers:AutoClicker.clickDelayOffset, Mode=TwoWay}" />
         </StackPanel>
 
         <Grid
