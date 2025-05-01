@@ -208,7 +208,7 @@ public sealed partial class MainPage
         else if (sender.Equals(ClickOffsetCheckBox))
         {
             ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
-            AutoClicker.clickDelayOffsetEnabled = ClickRepeatCheckBox.IsChecked == true;
+            AutoClicker.clickDelayOffsetEnabled = ClickOffsetCheckBox.IsChecked == true;
         }
     }
 
