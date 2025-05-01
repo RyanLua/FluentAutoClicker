@@ -62,7 +62,7 @@ public static class AutoClicker
     {
         int clickCount = 0;
         int effectiveClickAmount = clickAmountEnabled ? clickAmount : 0;
-        
+
         while (_isAutoClickerRunning)
         {
             // Stop if we click more than repeat amount (only if enabled)
@@ -79,7 +79,7 @@ public static class AutoClicker
             // Delay before next click
             int effectiveClickDelayOffset = clickDelayOffsetEnabled ? clickDelayOffset : 0;
             int randomClickOffset = effectiveClickDelayOffset > 0 ? new Random().Next(0, effectiveClickDelayOffset) : 0;
-            
+
             int clickDelay = millisecondsDelay
                              + (secondsDelay * 1000)
                              + (minutesDelay * 60 * 1000)
