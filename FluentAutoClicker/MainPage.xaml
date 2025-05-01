@@ -116,7 +116,7 @@
                 PlaceholderText="100"
                 SmallChange="1"
                 SpinButtonPlacementMode="Compact"
-                Value="100" />
+                Value="{x:Bind helpers:AutoClicker.clickAmount, Mode=TwoWay}" />
         </StackPanel>
 
         <!--  Click Offset  -->
@@ -136,7 +136,7 @@
                 PlaceholderText="0-1000"
                 SmallChange="5"
                 SpinButtonPlacementMode="Compact"
-                Value="10" />
+                Value="{x:Bind helpers:AutoClicker.clickDelayOffset, Mode=TwoWay}" />
         </StackPanel>
 
         <Grid

@@ -30,9 +30,11 @@ public static class AutoClicker
     public static int secondsDelay = 0;
     public static int minutesDelay = 0;
     public static int hoursDelay = 0;
-    public static int clickAmount = 0;
+    public static int clickAmount = 100;
     public static int mouseButtonType = 0;
-    public static int clickDelayOffset = 0;
+    public static int clickDelayOffset = 10;
+    public static bool clickAmountEnabled = false;
+    public static bool clickDelayOffsetEnabled = false;
 
     private static Thread? _autoClickerThread;
     private static bool _isAutoClickerRunning;
@@ -59,11 +61,12 @@ public static class AutoClicker
     private static async void AutoClickerThread()
     {
         int clickCount = 0;
-
+        int effectiveClickAmount = clickAmountEnabled ? clickAmount : 0;
+        
         while (_isAutoClickerRunning)
         {
-            // Stop if we click more than repeat amount
-            if (clickCount >= clickAmount && clickAmount != 0)
+            // Stop if we click more than repeat amount (only if enabled)
+            if (effectiveClickAmount > 0 && clickCount >= effectiveClickAmount)
             {
                 Stop();
                 break;
@@ -74,13 +77,15 @@ public static class AutoClicker
             clickCount++;
 
             // Delay before next click
-            int randomClickOffset = new Random().Next(0, clickDelayOffset);
+            int effectiveClickDelayOffset = clickDelayOffsetEnabled ? clickDelayOffset : 0;
+            int randomClickOffset = effectiveClickDelayOffset > 0 ? new Random().Next(0, effectiveClickDelayOffset) : 0;
+            
             int clickDelay = millisecondsDelay
                              + (secondsDelay * 1000)
                              + (minutesDelay * 60 * 1000)
                              + (hoursDelay * 60 * 60 * 1000)
                              + randomClickOffset;
-            await Task.Delay(clickDelay + randomClickOffset);
+            await Task.Delay(clickDelay);
         }
     }
 
