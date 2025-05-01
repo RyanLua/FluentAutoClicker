@@ -220,22 +220,4 @@ public sealed partial class MainPage
     {
         _ = Frame.Navigate(typeof(SettingsPage));
     }
-
-    private async void HotkeyButton_Click(object sender, RoutedEventArgs e)
-    {
-        ContentDialog dialog = new()
-        {
-            // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-            XamlRoot = XamlRoot,
-            Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-            Title = "Activation shortcut",
-            Content = "Press a combination of keys to change this shortcut",
-            PrimaryButtonText = "Save",
-            SecondaryButtonText = "Reset",
-            CloseButtonText = "Cancel",
-            DefaultButton = ContentDialogButton.Primary
-        };
-
-        _ = await dialog.ShowAsync();
-    }
 }

@@ -98,7 +98,7 @@
             Grid.Column="0"
             Spacing="{StaticResource StackPanelSpacing}">
             <controls:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
-            <Button Click="HotkeyButton_Click" Content="F6" />
+            <Button Content="F6" IsEnabled="False" />
         </StackPanel>
 
         <!--  Click Repeat  -->
