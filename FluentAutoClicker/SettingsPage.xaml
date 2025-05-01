@@ -79,7 +79,7 @@
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
 
-                <TextBlock Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" Text="About" />
+                <TextBlock x:Uid="TextBlockAbout" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
 
                 <!--  App version  -->
                 <controls:SettingsExpander
@@ -103,7 +103,7 @@
                         <!--  Related links  -->
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
                             <StackPanel>
-                                <TextBlock Margin="{StaticResource XSmallTopBottomMargin}" Text="Related links" />
+                                <TextBlock x:Uid="TextBlockRelatedLinks" Margin="{StaticResource XSmallTopBottomMargin}" />
                                 <HyperlinkButton x:Uid="HyperlinkButtonWebsite" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
                                 <HyperlinkButton x:Uid="HyperlinkButtonDiscord" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
                                 <HyperlinkButton x:Uid="HyperlinkButtonTranslate" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />

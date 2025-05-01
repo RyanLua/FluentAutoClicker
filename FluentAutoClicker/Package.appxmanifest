@@ -9,14 +9,14 @@
 
   <Identity
     Name="RyanLuu.FluentAutoClicker"
-    Publisher="CN=Ryan Luu"
-    Version="1.0.0.0" />
+    Publisher="CN=F928CF5C-7038-45EB-A55F-2CDFC6B12328"
+    Version="0.0.1.0" />
 
-  <mp:PhoneIdentity PhoneProductId="c8834b5e-5154-437f-b765-e88d593041ac" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="10060ee9-4239-4473-8ef8-2f9d76c314f6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>ms-resource:AppDisplayName</DisplayName>
-    <PublisherDisplayName>ms-resource:AppPublisherDisplayName</PublisherDisplayName>
+    <PublisherDisplayName>Ryan Luu</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -39,9 +39,6 @@
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">
-                <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png"
-                                 Square310x310Logo="Assets\LargeTile.png"/>
-                <uap:SplashScreen Image="Assets\SplashScreen.png"/>
       </uap:VisualElements>
     </Application>
   </Applications>
