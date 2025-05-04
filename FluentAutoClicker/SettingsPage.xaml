@@ -33,6 +33,11 @@
                 HorizontalAlignment="Stretch"
                 Spacing="{StaticResource SettingsCardSpacing}">
 
+                <win:StackPanel.ChildrenTransitions>
+                    <win:EntranceThemeTransition FromVerticalOffset="50" />
+                    <win:RepositionThemeTransition IsStaggeringEnabled="False" />
+                </win:StackPanel.ChildrenTransitions>
+
                 <TextBlock x:Uid="SettingsSubtitleTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" />
 
                 <TextBlock x:Uid="AppearanceSettingsSectionHeaderTextBlock" Style="{StaticResource SettingsSectionHeaderTextBlockStyle}" />
