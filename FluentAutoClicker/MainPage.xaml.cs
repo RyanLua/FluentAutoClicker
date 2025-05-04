@@ -20,7 +20,6 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.Windows.BadgeNotifications;
-using System.Globalization;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
@@ -159,45 +158,6 @@ public sealed partial class MainPage
     }
 
     /// <summary>
-    /// Gets the value of the specified NumberBox.
-    /// </summary>
-    /// <param name="numberBox">The NumberBox control.</param>
-    /// <param name="defaultValue">The default value.</param>
-    /// <returns>The value of the NumberBox.</returns>
-    private static int GetNumberBoxValue(NumberBox numberBox, int defaultValue)
-    {
-        if (!int.TryParse(numberBox.Value.ToString(CultureInfo.InvariantCulture), out int value))
-        {
-            value = defaultValue;
-            numberBox.Value = value;
-        }
-
-        return value;
-    }
-
-    /// <summary>
-    /// Gets the interval in milliseconds.
-    /// </summary>
-    /// <returns>The interval in milliseconds.</returns>
-    private int GetIntervalMilliseconds()
-    {
-        int hours = GetNumberBoxValue(NumberBoxHours, 0);
-        int minutes = GetNumberBoxValue(NumberBoxMinutes, 0);
-        int seconds = GetNumberBoxValue(NumberBoxSeconds, 0);
-        int milliseconds = GetNumberBoxValue(NumberBoxMilliseconds, 100);
-
-        int totalTimeInMilliseconds = (((((hours * 60) + minutes) * 60) + seconds) * 1000) + milliseconds;
-
-        if (totalTimeInMilliseconds == 0)
-        {
-            totalTimeInMilliseconds = 1;
-            NumberBoxMilliseconds.Value = 1;
-        }
-
-        return totalTimeInMilliseconds;
-    }
-
-    /// <summary>
     /// Handles the Checked event of the ToggleButtonStart control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
@@ -209,16 +169,11 @@ public sealed partial class MainPage
         SetControlsEnabled(false);
         await Task.Delay(1000);
         FontIconStart.Glyph = "\uEDB4";
-        BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
         SetNotificationBadge(BadgeNotificationGlyph.Playing);
         ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStop".GetLocalized());
 
         // Start auto clicker
-        int clickInterval = GetIntervalMilliseconds();
-        int repeatAmount = ClickRepeatCheckBox.IsChecked == true ? Convert.ToInt32(ClickRepeatAmount.Value) : 0;
-        int mouseButton = MouseButtonTypeComboBox.SelectedIndex;
-        int clickOffset = ClickOffsetCheckBox.IsChecked == true ? Convert.ToInt32(ClickOffsetAmount.Value) : 0;
-        AutoClicker.Start(clickInterval, repeatAmount, mouseButton, clickOffset);
+        AutoClicker.Start();
         ToggleButtonStart.IsEnabled = true;
     }
 
@@ -249,10 +204,12 @@ public sealed partial class MainPage
         if (sender.Equals(ClickRepeatCheckBox))
         {
             ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true;
+            AutoClicker.clickAmountEnabled = ClickRepeatCheckBox.IsChecked == true;
         }
         else if (sender.Equals(ClickOffsetCheckBox))
         {
             ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
+            AutoClicker.clickDelayOffsetEnabled = ClickOffsetCheckBox.IsChecked == true;
         }
     }
 
