@@ -15,6 +15,8 @@
 </picture>
 
 ## 🚀 Features
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRyanLua%2FFluentAutoClicker.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRyanLua%2FFluentAutoClicker?ref=badge_shield)
+
 
 * ⚡ **Lightning-Fast Clicking**: 1ms intervals between clicks, allowing for up to 1000 clicks per second.
 
@@ -41,3 +43,6 @@ Fluent Auto Clicker is free software: you can redistribute it and/or modify it u
 Fluent Auto Clicker is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License along with this program. A copy of the GNU Affero General Public License is available in the [`COPYING.md`](COPYING.md) file in the root of this repository. If not, see <https://www.gnu.org/licenses/>.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRyanLua%2FFluentAutoClicker.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRyanLua%2FFluentAutoClicker?ref=badge_large)
