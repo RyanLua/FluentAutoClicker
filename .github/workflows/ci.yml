@@ -24,7 +24,7 @@ jobs:
         platform: [x64, x86, ARM64]
 
     env:
-      Solution_Name: FluentAutoClicker.sln
+      Solution_Name: FluentAutoClicker.slnx
       Dir_Name: FluentAutoClicker
 
     steps:
