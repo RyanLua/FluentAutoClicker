@@ -10,17 +10,20 @@
 
     <Grid>
         <ContentDialog
-            x:Name="ContentDialog"
+            x:Name="HotkeyContentDialog"
             Title="Toggle hotkey"
-            CloseButtonClick="ContentDialog_CloseButtonClick"
+            CloseButtonClick="HotkeyContentDialog_CloseButtonClick"
             CloseButtonText="Cancel"
             DefaultButton="Primary"
-            PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+            PrimaryButtonClick="HotkeyContentDialog_PrimaryButtonClick"
             PrimaryButtonText="Save"
-            SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+            SecondaryButtonClick="HotkeyContentDialog_SecondaryButtonClick"
             SecondaryButtonText="Reset">
 
-            <TextBox IsReadOnly="True" />
+            <TextBox
+                x:Name="HotkeyTextBox"
+                IsReadOnly="True"
+                KeyDown="TextBox_KeyDown" />
         </ContentDialog>
 
         <Button

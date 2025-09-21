@@ -17,6 +17,7 @@
 
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -32,21 +33,25 @@ public sealed partial class HotkeyControl : UserControl
 
     private void HotkeyButton_Click(object sender, RoutedEventArgs e)
     {
-        _ = ContentDialog.ShowAsync();
+        _ = HotkeyContentDialog.ShowAsync();
     }
 
-    private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+    private void HotkeyContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
     {
 
     }
 
-    private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+    private void HotkeyContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
     {
 
     }
-    private void ContentDialog_CloseButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+    private void HotkeyContentDialog_CloseButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
     {
-
     }
 
+    private void TextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+    {
+        // Show the pressed key in the textbox
+        HotkeyTextBox.Text = e.Key.ToString();
+    }
 }
