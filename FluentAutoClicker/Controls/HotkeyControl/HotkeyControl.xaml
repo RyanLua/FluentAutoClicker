@@ -8,34 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" Spacing="{StaticResource ButtonColumnSpacing}">
-        <TextBox
-            x:Name="HotkeyTextBox"
-            Grid.Column="0"
-            IsEnabled="False"
-            IsReadOnly="True"
-            KeyDown="TextBox_KeyDown"
-            Text="F6" />
-        <Button
-            x:Name="EditButton"
-            x:Uid="HotkeyButtonEdit"
-            Click="EditButton_Click">
-            <FontIcon Glyph="&#xE70F;" />
-        </Button>
-        <Button
-            x:Name="CancelButton"
-            x:Uid="HotkeyButtonCancel"
-            Click="CancelButton_Click"
-            Visibility="Collapsed">
-            <FontIcon Glyph="&#xE711;" />
-        </Button>
-        <Button
-            x:Name="AcceptButton"
-            x:Uid="HotkeyButtonAccept"
-            Click="AcceptButton_Click"
-            Style="{StaticResource AccentButtonStyle}"
-            Visibility="Collapsed">
-            <FontIcon Glyph="&#xE8FB;" />
-        </Button>
-    </StackPanel>
+    <Button
+        x:Name="HotkeyButton"
+        Click="HotkeyButton_Click"
+        Content="F6" />
 </UserControl>
