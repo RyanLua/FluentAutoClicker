@@ -22,143 +22,164 @@
 
     <Grid Margin="{StaticResource ContentMargin}" RowSpacing="{StaticResource GridRowSpacing}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
         <win:Grid.ChildrenTransitions>
             <win:EntranceThemeTransition FromVerticalOffset="50" />
             <win:RepositionThemeTransition IsStaggeringEnabled="False" />
         </win:Grid.ChildrenTransitions>
 
-        <!--  Click Interval  -->
-        <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelSpacing}">
-            <local:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
-            <Grid ColumnSpacing="{StaticResource NumberBoxColumnSpacing}">
+        <ScrollViewer>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <NumberBox
-                    x:Name="NumberBoxHours"
-                    x:Uid="NumberBoxHours"
-                    AcceptsExpression="True"
-                    Minimum="0"
-                    PlaceholderText="0-24"
-                    Value="{x:Bind helpers:AutoClicker.hoursDelay, Mode=TwoWay}" />
-                <NumberBox
-                    x:Name="NumberBoxMinutes"
-                    x:Uid="NumberBoxMinutes"
-                    Grid.Column="1"
-                    AcceptsExpression="True"
-                    Maximum="60"
-                    Minimum="0"
-                    PlaceholderText="0-60"
-                    Value="{x:Bind helpers:AutoClicker.minutesDelay, Mode=TwoWay}" />
-                <NumberBox
-                    x:Name="NumberBoxSeconds"
-                    x:Uid="NumberBoxSeconds"
-                    Grid.Column="2"
-                    AcceptsExpression="True"
-                    Maximum="60"
-                    Minimum="0"
-                    PlaceholderText="0-60"
-                    Value="{x:Bind helpers:AutoClicker.secondsDelay, Mode=TwoWay}" />
-                <NumberBox
-                    x:Name="NumberBoxMilliseconds"
-                    x:Uid="NumberBoxMilliseconds"
-                    Grid.Column="3"
-                    AcceptsExpression="True"
-                    Maximum="1000"
-                    Minimum="0"
-                    PlaceholderText="0-1000"
-                    SmallChange="10"
-                    Value="{x:Bind helpers:AutoClicker.millisecondsDelay, Mode=TwoWay}" />
+
+                <!--  Click Interval  -->
+                <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelSpacing}">
+                    <local:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
+                    <Grid ColumnSpacing="{StaticResource NumberBoxColumnSpacing}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <NumberBox
+                            x:Name="NumberBoxHours"
+                            x:Uid="NumberBoxHours"
+                            AcceptsExpression="True"
+                            Minimum="0"
+                            PlaceholderText="0-24"
+                            Value="{x:Bind helpers:AutoClicker.hoursDelay, Mode=TwoWay}" />
+                        <NumberBox
+                            x:Name="NumberBoxMinutes"
+                            x:Uid="NumberBoxMinutes"
+                            Grid.Column="1"
+                            AcceptsExpression="True"
+                            Maximum="60"
+                            Minimum="0"
+                            PlaceholderText="0-60"
+                            Value="{x:Bind helpers:AutoClicker.minutesDelay, Mode=TwoWay}" />
+                        <NumberBox
+                            x:Name="NumberBoxSeconds"
+                            x:Uid="NumberBoxSeconds"
+                            Grid.Column="2"
+                            AcceptsExpression="True"
+                            Maximum="60"
+                            Minimum="0"
+                            PlaceholderText="0-60"
+                            Value="{x:Bind helpers:AutoClicker.secondsDelay, Mode=TwoWay}" />
+                        <NumberBox
+                            x:Name="NumberBoxMilliseconds"
+                            x:Uid="NumberBoxMilliseconds"
+                            Grid.Column="3"
+                            AcceptsExpression="True"
+                            Maximum="1000"
+                            Minimum="0"
+                            PlaceholderText="0-1000"
+                            SmallChange="10"
+                            Value="{x:Bind helpers:AutoClicker.millisecondsDelay, Mode=TwoWay}" />
+                    </Grid>
+                </StackPanel>
+
+                <!--  Mouse Button  -->
+                <ComboBox
+                    x:Name="MouseButtonTypeComboBox"
+                    x:Uid="ComboBoxMouseButton"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    SelectedIndex="{x:Bind helpers:AutoClicker.mouseButtonType, Mode=TwoWay}">
+                    <ComboBoxItem x:Uid="ComboBoxItemLeft" />
+                    <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
+                    <ComboBoxItem x:Uid="ComboBoxItemRight" />
+                </ComboBox>
+
+                <!--  Hotkey  -->
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Spacing="{StaticResource StackPanelSpacing}">
+                    <local:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
+                    <local:HotkeyControl />
+                </StackPanel>
+
+                <!--  Click Repeat  -->
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <CheckBox
+                        x:Name="ClickRepeatCheckBox"
+                        x:Uid="ClickRepeatCheckBox"
+                        Click="CheckBox_Click" />
+                    <NumberBox
+                        x:Name="ClickRepeatAmount"
+                        HorizontalAlignment="Left"
+                        IsEnabled="False"
+                        LargeChange="10"
+                        Minimum="1"
+                        PlaceholderText="100"
+                        SmallChange="1"
+                        SpinButtonPlacementMode="Compact"
+                        Value="{x:Bind helpers:AutoClicker.clickAmount, Mode=TwoWay}" />
+                </StackPanel>
+
+                <!--  Click Offset  -->
+                <StackPanel Grid.Row="2" Grid.Column="1">
+                    <CheckBox
+                        x:Name="ClickOffsetCheckBox"
+                        x:Uid="ClickOffsetCheckBox"
+                        Click="CheckBox_Click" />
+                    <NumberBox
+                        x:Name="ClickOffsetAmount"
+                        HorizontalAlignment="Left"
+                        AcceptsExpression="True"
+                        IsEnabled="False"
+                        LargeChange="25"
+                        Maximum="1000"
+                        Minimum="1"
+                        PlaceholderText="0-1000"
+                        SmallChange="5"
+                        SpinButtonPlacementMode="Compact"
+                        Value="{x:Bind helpers:AutoClicker.clickDelayOffset, Mode=TwoWay}" />
+                </StackPanel>
             </Grid>
-        </StackPanel>
-
-        <!--  Mouse Button  -->
-        <ComboBox
-            x:Name="MouseButtonTypeComboBox"
-            x:Uid="ComboBoxMouseButton"
-            Grid.Row="1"
-            Grid.Column="0"
-            SelectedIndex="{x:Bind helpers:AutoClicker.mouseButtonType, Mode=TwoWay}">
-            <ComboBoxItem x:Uid="ComboBoxItemLeft" />
-            <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
-            <ComboBoxItem x:Uid="ComboBoxItemRight" />
-        </ComboBox>
-
-        <!--  Hotkey  -->
-        <StackPanel
-            Grid.Row="2"
-            Grid.Column="0"
-            Spacing="{StaticResource StackPanelSpacing}">
-            <local:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
-            <local:HotkeyControl />
-        </StackPanel>
-
-        <!--  Click Repeat  -->
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <CheckBox
-                x:Name="ClickRepeatCheckBox"
-                x:Uid="ClickRepeatCheckBox"
-                Click="CheckBox_Click" />
-            <NumberBox
-                x:Name="ClickRepeatAmount"
-                HorizontalAlignment="Left"
-                IsEnabled="False"
-                LargeChange="10"
-                Minimum="1"
-                PlaceholderText="100"
-                SmallChange="1"
-                SpinButtonPlacementMode="Compact"
-                Value="{x:Bind helpers:AutoClicker.clickAmount, Mode=TwoWay}" />
-        </StackPanel>
-
-        <!--  Click Offset  -->
-        <StackPanel Grid.Row="2" Grid.Column="1">
-            <CheckBox
-                x:Name="ClickOffsetCheckBox"
-                x:Uid="ClickOffsetCheckBox"
-                Click="CheckBox_Click" />
-            <NumberBox
-                x:Name="ClickOffsetAmount"
-                HorizontalAlignment="Left"
-                AcceptsExpression="True"
-                IsEnabled="False"
-                LargeChange="25"
-                Maximum="1000"
-                Minimum="1"
-                PlaceholderText="0-1000"
-                SmallChange="5"
-                SpinButtonPlacementMode="Compact"
-                Value="{x:Bind helpers:AutoClicker.clickDelayOffset, Mode=TwoWay}" />
-        </StackPanel>
+        </ScrollViewer>
 
         <Grid
-            Grid.Row="3"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
+            Grid.Row="1"
             VerticalAlignment="Bottom"
-            ColumnSpacing="{StaticResource ButtonColumnSpacing}">
+            ColumnSpacing="{StaticResource ButtonColumnSpacing}"
+            RowSpacing="{StaticResource GridRowSpacing}">
 
-            <!--  Start Auto Clicker  -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+
+            <!--  Info Bar  -->
+            <InfoBar
+                Title="Hotkey conflict"
+                Grid.ColumnSpan="2"
+                Message="This hotkey is already in use by another application."
+                Severity="Error" />
+
+            <!--  Start Auto Clicker  -->
             <ToggleButton
                 x:Name="ToggleButtonStart"
                 x:Uid="ToggleButtonStart"
+                Grid.Row="1"
                 Height="32"
                 HorizontalAlignment="Stretch"
                 Checked="ToggleButtonStart_OnChecked"
@@ -169,6 +190,7 @@
             <!--  Open Settings  -->
             <Button
                 x:Uid="ButtonSettings"
+                Grid.Row="1"
                 Grid.Column="1"
                 Height="32"
                 Click="SettingsButton_Click">
