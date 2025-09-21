@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Un auto-cliquer au design fluide et magnifique pour Windows 10 et 11.</value>
+    <value>Un auto-clicker au design fluide et magnifique pour Windows 10 et 11.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Quel bouton de la souris cliquer automatiquement</value>
+    <value>Quel bouton de la souris à faire cliquer automatiquement</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
@@ -166,7 +166,7 @@
     <comment>Label for click repeat until stopped option</comment>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Intervalle de clic</value>
+    <value>Intervalle de clics</value>
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
@@ -174,11 +174,11 @@
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Touche de raccourci</value>
+    <value>Raccourci</value>
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Quel bouton pour démarrer l'auto-cliquer</value>
+    <value>Quel bouton pour démarrer l'auto-clicker</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Title of App theme expander</comment>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Sélectionnez quel thème d'application afficher</value>
+    <value>Sélectionnez le thème d'application affiché</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">

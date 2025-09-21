@@ -24,17 +24,17 @@ jobs:
         platform: [x64, x86, ARM64]
 
     env:
-      Solution_Name: FluentAutoClicker.sln
+      Solution_Name: FluentAutoClicker.slnx
       Dir_Name: FluentAutoClicker
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0
 
     - name: Install .NET Core
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 9.0.x
 
