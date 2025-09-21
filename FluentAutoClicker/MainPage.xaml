@@ -32,7 +32,7 @@
         </win:Grid.ChildrenTransitions>
 
         <ScrollViewer>
-            <Grid>
+            <Grid RowSpacing="{StaticResource GridRowSpacing}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
