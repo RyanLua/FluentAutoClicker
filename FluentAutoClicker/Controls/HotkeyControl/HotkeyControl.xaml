@@ -8,8 +8,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Button
-        x:Name="HotkeyButton"
-        Click="HotkeyButton_Click"
-        Content="F6" />
+    <Grid>
+        <ContentDialog
+            x:Name="HotkeyContentDialog"
+            Title="Toggle hotkey"
+            CloseButtonText="Cancel"
+            DefaultButton="Primary"
+            PrimaryButtonText="Save"
+            SecondaryButtonText="Reset">
+            <StackPanel>
+                <TextBlock>Press the keys you want to use</TextBlock>
+                <TextBox IsReadOnly="True" />
+            </StackPanel>
+        </ContentDialog>
+
+        <Button
+            x:Name="HotkeyButton"
+            Click="HotkeyButton_Click"
+            Content="F6" />
+    </Grid>
 </UserControl>
