@@ -32,6 +32,21 @@ public sealed partial class HotkeyControl : UserControl
 
     private void HotkeyButton_Click(object sender, RoutedEventArgs e)
     {
-        _ = HotkeyContentDialog.ShowAsync();
+        _ = ContentDialog.ShowAsync();
     }
+
+    private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+    {
+
+    }
+
+    private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+    {
+
+    }
+    private void ContentDialog_CloseButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+    {
+
+    }
+
 }

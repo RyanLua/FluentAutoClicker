@@ -10,16 +10,17 @@
 
     <Grid>
         <ContentDialog
-            x:Name="HotkeyContentDialog"
+            x:Name="ContentDialog"
             Title="Toggle hotkey"
+            CloseButtonClick="ContentDialog_CloseButtonClick"
             CloseButtonText="Cancel"
             DefaultButton="Primary"
+            PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
             PrimaryButtonText="Save"
+            SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
             SecondaryButtonText="Reset">
-            <StackPanel>
-                <TextBlock>Press the keys you want to use</TextBlock>
-                <TextBox IsReadOnly="True" />
-            </StackPanel>
+
+            <TextBox IsReadOnly="True" />
         </ContentDialog>
 
         <Button
