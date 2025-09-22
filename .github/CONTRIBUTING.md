@@ -23,13 +23,6 @@ To suggest a feature or enhancement, [create a new feature request issue](https:
 
 Learn how to configure your environment to develop this project. This assumes you meet the [system requirements for Windows app development](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/system-requirements).
 
-### Using Dev Home or WinGet
-
-You can use the [`configuration.dsc.yaml` configuration file](../.configurations/configuration.dsc.yaml) to configure your environment. This can be applied by either:
-
-* Dev Home's machine configuration tool
-* WinGet configuration. If you have WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases), run `winget configure .configurations/configuration.dsc.yaml` in an elevated shell from the project root so relative paths resolve correctly
-
 ### Using Visual Studio
 
 If you already have Visual Studio installed and have developer mode enabled, you may import the [`.vsconfig` installation configuration file](../.vsconfig).
