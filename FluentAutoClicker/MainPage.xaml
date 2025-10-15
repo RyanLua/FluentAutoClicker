@@ -7,6 +7,7 @@
     xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     xmlns:controls="using:FluentAutoClicker.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dev="using:DevWinUI"
     xmlns:helpers="using:FluentAutoClicker.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="using:CommunityToolkit.WinUI"
@@ -40,7 +41,7 @@
 
         <!--  Click Interval  -->
         <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelSpacing}">
-            <controls:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
+            <dev:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
             <Grid ColumnSpacing="{StaticResource NumberBoxColumnSpacing}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -103,7 +104,7 @@
             Grid.Row="2"
             Grid.Column="0"
             Spacing="{StaticResource StackPanelSpacing}">
-            <controls:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
+            <dev:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
             <Button Content="F6" IsEnabled="False" />
         </StackPanel>
 
