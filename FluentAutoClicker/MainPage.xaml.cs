@@ -51,11 +51,6 @@ public sealed partial class MainPage
     }
 
     /// <summary>
-    /// Gets or sets a value indicating whether the hotkey is registered.
-    /// </summary>
-    private bool IsHotKeyRegistered { get; set; }
-
-    /// <summary>
     /// Handles the Loaded event of the MainPage control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
@@ -64,42 +59,6 @@ public sealed partial class MainPage
     {
         // Set badge notification
         SetNotificationBadge(BadgeNotificationGlyph.Paused);
-
-        // Prevent registering multiple hotkeys
-        if (IsHotKeyRegistered)
-        {
-            return;
-        }
-
-        // Get window handle
-        MainWindow window = App.MainWindow;
-        HWND hWnd = new(WindowNative.GetWindowHandle(window));
-
-        // Set up window message monitor
-        WindowMessageMonitor monitor = new(window);
-        monitor.WindowMessageReceived += OnWindowMessageReceived;
-
-        // Register hotkey
-        bool success = PInvoke.RegisterHotKey(hWnd, 0x0000, HOT_KEY_MODIFIERS.MOD_NOREPEAT, 0x75); // F6
-        if (success)
-        {
-            IsHotKeyRegistered = true;
-        }
-        else
-        {
-            ContentDialog dialog = new()
-            {
-                // XamlRoot must be set in the case of a ContentDialog running in a Desktop app
-                XamlRoot = XamlRoot,
-                Style = Application.Current.Resources["DefaultContentDialogStyle"] as Style,
-                Title = "Failed to register hotkey",
-                Content = "Please modify the hotkey setting.",
-                CloseButtonText = "OK",
-                DefaultButton = ContentDialogButton.Primary
-            };
-
-            _ = await dialog.ShowAsync();
-        }
     }
 
     /// <summary>
