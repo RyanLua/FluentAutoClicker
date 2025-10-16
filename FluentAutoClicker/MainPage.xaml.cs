@@ -20,10 +20,6 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.Windows.BadgeNotifications;
-using Windows.Win32;
-using Windows.Win32.Foundation;
-using Windows.Win32.UI.Input.KeyboardAndMouse;
-using WinRT.Interop;
 using WinUIEx.Messaging;
 
 namespace FluentAutoClicker;
@@ -45,6 +41,9 @@ public sealed partial class MainPage
     {
         InitializeComponent();
         Loaded += MainPage_Loaded;
+
+        // Set shortcut keys
+        ToggleShortcut.Keys = ["F6"];
 
         // Set tooltip
         ToolTipService.SetToolTip(ToggleButtonStart, "ToggleButtonStartTooltipStart".GetLocalized());
