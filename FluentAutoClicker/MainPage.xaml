@@ -104,7 +104,7 @@
             Grid.Column="0"
             Spacing="{StaticResource StackPanelSpacing}">
             <dev:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
-            <dev:Shortcut x:Name="ToggleShortcut" />
+            <dev:Shortcut x:Name="ToggleShortcut" HorizontalAlignment="Left" />
         </StackPanel>
 
         <!--  Click Repeat  -->
