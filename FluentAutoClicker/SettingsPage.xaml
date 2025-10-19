@@ -104,8 +104,6 @@
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
                             <StackPanel>
                                 <TextBlock x:Uid="TextBlockRelatedLinks" Margin="{StaticResource XSmallTopBottomMargin}" />
-                                <HyperlinkButton x:Uid="HyperlinkButtonWebsite" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
-                                <HyperlinkButton x:Uid="HyperlinkButtonDiscord" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
                                 <HyperlinkButton x:Uid="HyperlinkButtonTranslate" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
                                 <HyperlinkButton x:Uid="HyperlinkButtonSource" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
                             </StackPanel>
