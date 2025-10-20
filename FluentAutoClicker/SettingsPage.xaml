@@ -95,8 +95,14 @@
                         <!--  Terms  -->
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
                             <StackPanel>
-                                <HyperlinkButton x:Uid="HyperlinkButtonPrivacyPolicy" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
-                                <HyperlinkButton x:Uid="HyperlinkButtonLicense" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton
+                                    x:Uid="HyperlinkButtonPrivacyPolicy"
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    NavigateUri="https://github.com/RyanLua/FluentAutoClicker/blob/main/PRIVACY_POLICY.md" />
+                                <HyperlinkButton
+                                    x:Uid="HyperlinkButtonLicense"
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    NavigateUri="https://github.com/RyanLua/FluentAutoClicker/blob/main/COPYING.md" />
                             </StackPanel>
                         </controls:SettingsCard>
 
@@ -104,21 +110,19 @@
                         <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
                             <StackPanel>
                                 <TextBlock x:Uid="TextBlockRelatedLinks" Margin="{StaticResource XSmallTopBottomMargin}" />
-                                <HyperlinkButton x:Uid="HyperlinkButtonWebsite" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
-                                <HyperlinkButton x:Uid="HyperlinkButtonDiscord" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
-                                <HyperlinkButton x:Uid="HyperlinkButtonTranslate" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
-                                <HyperlinkButton x:Uid="HyperlinkButtonSource" Margin="{StaticResource HyperlinkButtonNegativeMargin}" />
+                                <HyperlinkButton
+                                    x:Uid="HyperlinkButtonTranslate"
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    NavigateUri="https://crowdin.com/project/fluentautoclicker" />
+                                <HyperlinkButton
+                                    x:Uid="HyperlinkButtonSource"
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    NavigateUri="https://github.com/RyanLua/FluentAutoClicker" />
                             </StackPanel>
                         </controls:SettingsCard>
 
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
-
-                <!--  Send feedback  -->
-                <HyperlinkButton
-                    x:Uid="HyperlinkButtonFeedback"
-                    Margin="{StaticResource XSmallTopBottomMargin}"
-                    Click="HyperlinkButtonFeedback_Click" />
             </StackPanel>
         </Grid>
     </ScrollViewer>

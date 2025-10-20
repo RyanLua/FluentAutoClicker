@@ -19,10 +19,8 @@ using FluentAutoClicker.Helpers;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
-using System.Runtime.InteropServices;
 using Windows.ApplicationModel;
 using Windows.Storage;
-using Windows.System;
 using WinUIEx;
 using SystemBackdrop = Microsoft.UI.Xaml.Media.SystemBackdrop;
 
@@ -159,42 +157,5 @@ public sealed partial class SettingsPage
             localSettings.Values[nameof(IsAlwaysOnTop)] = value;
             MainWindow.IsAlwaysOnTop = value;
         }
-    }
-
-    /// <summary>
-    /// Handles the click event of the feedback hyperlink button.
-    /// </summary>
-    /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The event data.</param>
-    private async void HyperlinkButtonFeedback_Click(object sender, RoutedEventArgs e)
-    {
-        string recipientEmail = "feedback@fluentautoclicker.com";
-        string subject = $"{AppName} App Feedback";
-        string messageBody = $"""
-
-
-                              --- System Information ---
-                              .NET installation: {RuntimeInformation.FrameworkDescription}
-                              App version: {AppVersion}
-                              App architecture: {RuntimeInformation.ProcessArchitecture}
-                              OS version: {RuntimeInformation.OSDescription}
-                              OS architecture: {RuntimeInformation.OSArchitecture}
-                              """;
-
-        await ComposeEmailAsync(recipientEmail, subject, messageBody);
-    }
-
-    /// <summary>
-    /// Composes and launches an email with the specified recipient, subject, and message body.
-    /// </summary>
-    /// <param name="recipientEmail">The recipient email address.</param>
-    /// <param name="subject">The email subject.</param>
-    /// <param name="messageBody">The email message body.</param>
-    private static async Task ComposeEmailAsync(string recipientEmail, string subject, string messageBody)
-    {
-        Uri uri = new(
-            $"mailto:{recipientEmail}?subject={Uri.EscapeDataString(subject)}&body={Uri.EscapeDataString(messageBody)}");
-
-        _ = await Launcher.LaunchUriAsync(uri);
     }
 }
