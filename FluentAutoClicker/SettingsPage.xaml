@@ -123,12 +123,6 @@
 
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>
-
-                <!--  Send feedback  -->
-                <HyperlinkButton
-                    x:Uid="HyperlinkButtonFeedback"
-                    Margin="{StaticResource XSmallTopBottomMargin}"
-                    Click="HyperlinkButtonFeedback_Click" />
             </StackPanel>
         </Grid>
     </ScrollViewer>

@@ -285,10 +285,6 @@
     <value>แปล</value>
     <comment>Displayed on a link to Crowdin for helping translate the app on the About panel</comment>
   </data>
-  <data name="HyperlinkButtonFeedback.Content" xml:space="preserve">
-    <value>ส่งข้อเสนอแนะแนวทาง</value>
-    <comment>The text that gives the user the option to send feedback about the app and opens an email</comment>
-  </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
     <value>ใบอนุญาต</value>
     <comment>Displayed on a link to the app open source license on the About panel</comment>
