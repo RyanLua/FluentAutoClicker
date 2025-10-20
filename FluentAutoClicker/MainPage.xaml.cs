@@ -20,6 +20,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.Windows.BadgeNotifications;
+using System.Diagnostics;
 using WinUIEx.Messaging;
 
 namespace FluentAutoClicker;
@@ -179,5 +180,13 @@ public sealed partial class MainPage
     private void SettingsButton_Click(object sender, RoutedEventArgs e)
     {
         _ = Frame.Navigate(typeof(SettingsPage), null, new SuppressNavigationTransitionInfo());
+    }
+
+    private void ToggleShortcut_PrimaryButtonClick(object sender, ContentDialogButtonClickEventArgs e)
+    {
+        ToggleShortcut.UpdatePreviewKeys();
+        ToggleShortcut.CloseContentDialog();
+
+        Debug.WriteLine("New hotkey saved: " + string.Join(" + ", ToggleShortcut.Keys));
     }
 }
