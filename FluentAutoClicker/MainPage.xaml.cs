@@ -110,6 +110,7 @@ public sealed partial class MainPage
         NumberBoxMilliseconds.IsEnabled = isEnabled;
         MouseButtonTypeComboBox.IsEnabled = isEnabled;
         HotkeyTextBlock.IsEnabled = isEnabled;
+        ToggleShortcut.IsEnabled = isEnabled;
         ClickRepeatCheckBox.IsEnabled = isEnabled;
         ClickOffsetCheckBox.IsEnabled = isEnabled;
         ClickOffsetAmount.IsEnabled = isEnabled && ClickOffsetCheckBox.IsChecked == true;
