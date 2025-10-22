@@ -1,6 +1,5 @@
 RegisterHotKey
 UnregisterHotKey
-CallWindowProc
 SendInput
 SetProcessInformation
 GetCurrentProcess
