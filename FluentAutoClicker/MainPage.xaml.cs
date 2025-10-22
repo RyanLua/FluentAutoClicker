@@ -59,6 +59,13 @@ public sealed partial class MainPage
     {
         // Set badge notification
         SetNotificationBadge(BadgeNotificationGlyph.Paused);
+
+        // Get window handle
+        MainWindow window = App.MainWindow;
+
+        // Set up window message monitor
+        WindowMessageMonitor monitor = new(window);
+        monitor.WindowMessageReceived += OnWindowMessageReceived;
     }
 
     /// <summary>
