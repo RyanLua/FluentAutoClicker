@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: Report translation issue
-    url: https://translate.fluentautoclicker.com
+    url: https://crowdin.com/project/fluentautoclicker
     about: Help improve translations on Crowdin
   - name: Get community support
     url: https://github.com/RyanLua/FluentAutoClicker/discussions
