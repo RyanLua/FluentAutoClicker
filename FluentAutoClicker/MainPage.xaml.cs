@@ -195,25 +195,6 @@ public sealed partial class MainPage
     }
 
     /// <summary>
-    /// Handles the Click event of the CheckBox controls.
-    /// </summary>
-    /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The event data.</param>
-    private void CheckBox_Click(object sender, RoutedEventArgs e)
-    {
-        if (sender.Equals(ClickRepeatCheckBox))
-        {
-            ClickRepeatAmount.IsEnabled = ClickRepeatCheckBox.IsChecked == true;
-            AutoClicker.clickAmountEnabled = ClickRepeatCheckBox.IsChecked == true;
-        }
-        else if (sender.Equals(ClickOffsetCheckBox))
-        {
-            ClickOffsetAmount.IsEnabled = ClickOffsetCheckBox.IsChecked == true;
-            AutoClicker.clickDelayOffsetEnabled = ClickOffsetCheckBox.IsChecked == true;
-        }
-    }
-
-    /// <summary>
     /// Handles the Click event of the SettingsButton control.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
