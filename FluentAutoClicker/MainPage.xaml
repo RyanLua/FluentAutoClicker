@@ -57,40 +57,36 @@
                 <NumberBox
                     x:Name="NumberBoxHours"
                     x:Uid="NumberBoxHours"
-                    AcceptsExpression="True"
                     IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Minimum="0"
-                    PlaceholderText="0-24"
+                    PlaceholderText="24"
                     Value="{x:Bind helpers:AutoClicker.hoursDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxMinutes"
                     x:Uid="NumberBoxMinutes"
                     Grid.Column="1"
-                    AcceptsExpression="True"
                     IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Maximum="60"
                     Minimum="0"
-                    PlaceholderText="0-60"
+                    PlaceholderText="60"
                     Value="{x:Bind helpers:AutoClicker.minutesDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxSeconds"
                     x:Uid="NumberBoxSeconds"
                     Grid.Column="2"
-                    AcceptsExpression="True"
                     IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Maximum="60"
                     Minimum="0"
-                    PlaceholderText="0-60"
+                    PlaceholderText="60"
                     Value="{x:Bind helpers:AutoClicker.secondsDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxMilliseconds"
                     x:Uid="NumberBoxMilliseconds"
                     Grid.Column="3"
-                    AcceptsExpression="True"
                     IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Maximum="1000"
                     Minimum="0"
-                    PlaceholderText="0-1000"
+                    PlaceholderText="1000"
                     SmallChange="10"
                     Value="{x:Bind helpers:AutoClicker.millisecondsDelay, Mode=TwoWay}" />
             </Grid>
@@ -133,8 +129,6 @@
                 IsEnabled="{x:Bind IsControlEnabled(ClickRepeatCheckBox.IsChecked, ToggleButtonStart.IsChecked), Mode=OneWay}"
                 LargeChange="10"
                 Minimum="1"
-                PlaceholderText="100"
-                SmallChange="1"
                 SpinButtonPlacementMode="Compact"
                 Value="{x:Bind helpers:AutoClicker.clickAmount, Mode=TwoWay}" />
         </StackPanel>
@@ -151,9 +145,7 @@
                 AcceptsExpression="True"
                 IsEnabled="{x:Bind IsControlEnabled(ClickOffsetCheckBox.IsChecked, ToggleButtonStart.IsChecked), Mode=OneWay}"
                 LargeChange="25"
-                Maximum="1000"
                 Minimum="1"
-                PlaceholderText="0-1000"
                 SmallChange="5"
                 SpinButtonPlacementMode="Compact"
                 Value="{x:Bind helpers:AutoClicker.clickDelayOffset, Mode=TwoWay}" />
