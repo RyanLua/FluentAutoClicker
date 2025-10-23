@@ -114,7 +114,10 @@
                 x:Name="HotkeyTextBlock"
                 x:Uid="TextBlockHotkey"
                 IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}" />
-            <dev:Shortcut x:Name="ToggleShortcut" PrimaryButtonClick="ToggleShortcut_PrimaryButtonClick" />
+            <dev:Shortcut
+                x:Name="ToggleShortcut"
+                IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
+                PrimaryButtonClick="ToggleShortcut_PrimaryButtonClick" />
         </StackPanel>
 
         <!--  Click Repeat  -->
