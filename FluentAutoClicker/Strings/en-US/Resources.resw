@@ -309,7 +309,7 @@
     <value>Pause</value>
     <comment>This is the tool tip automation name for the Stop button.</comment>
   </data>
-  <data name="TextBlockRelatedLinks.Text" xml:space="preserve">
+  <data name="SettingsCardRelatedLinks.Header" xml:space="preserve">
     <value>Related links</value>
     <comment>Header text of Related links on the About panel</comment>
   </data>

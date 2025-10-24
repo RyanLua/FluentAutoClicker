@@ -108,9 +108,11 @@
                         </controls:SettingsCard>
 
                         <!--  Related links  -->
-                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
+                        <controls:SettingsCard
+                            x:Uid="SettingsCardRelatedLinks"
+                            HorizontalContentAlignment="Left"
+                            ContentAlignment="Vertical">
                             <StackPanel>
-                                <TextBlock x:Uid="TextBlockRelatedLinks" Margin="{StaticResource XSmallTopBottomMargin}" />
                                 <HyperlinkButton
                                     x:Uid="HyperlinkButtonTranslate"
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
