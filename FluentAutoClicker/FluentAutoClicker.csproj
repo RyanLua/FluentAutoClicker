@@ -36,7 +36,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevWinUI.Controls" Version="9.2.0" />
+    <PackageReference Include="DevWinUI.Controls" Version="9.3.0" />
     <PackageReference Include="CommunityToolkit.WinUI.Converters" Version="8.2.250402" />
     <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.213">
       <PrivateAssets>all</PrivateAssets>
