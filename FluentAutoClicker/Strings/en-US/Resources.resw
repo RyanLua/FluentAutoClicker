@@ -317,4 +317,7 @@
     <value>About</value>
     <comment>Subtitle of about message on Settings page</comment>
   </data>
+  <data name="SettingsCardDependencies.Header" xml:space="preserve">
+    <value>Dependencies</value>
+  </data>
 </root>
