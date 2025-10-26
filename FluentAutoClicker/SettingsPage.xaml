@@ -29,10 +29,7 @@
 
     <ScrollViewer>
         <Grid Margin="{StaticResource ContentMargin}">
-            <StackPanel
-                MaxWidth="1000"
-                HorizontalAlignment="Stretch"
-                Spacing="{StaticResource SettingsCardSpacing}">
+            <StackPanel Spacing="{StaticResource SettingsCardSpacing}">
 
                 <win:StackPanel.ChildrenTransitions>
                     <win:EntranceThemeTransition FromVerticalOffset="50" />
@@ -108,9 +105,11 @@
                         </controls:SettingsCard>
 
                         <!--  Related links  -->
-                        <controls:SettingsCard HorizontalContentAlignment="Left" ContentAlignment="Left">
+                        <controls:SettingsCard
+                            x:Uid="SettingsCardRelatedLinks"
+                            HorizontalContentAlignment="Left"
+                            ContentAlignment="Vertical">
                             <StackPanel>
-                                <TextBlock x:Uid="TextBlockRelatedLinks" Margin="{StaticResource XSmallTopBottomMargin}" />
                                 <HyperlinkButton
                                     x:Uid="HyperlinkButtonTranslate"
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
@@ -119,6 +118,27 @@
                                     x:Uid="HyperlinkButtonSource"
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
                                     NavigateUri="https://github.com/RyanLua/FluentAutoClicker" />
+                            </StackPanel>
+                        </controls:SettingsCard>
+
+                        <!--  Dependencies  -->
+                        <controls:SettingsCard
+                            x:Uid="SettingsCardDependencies"
+                            HorizontalContentAlignment="Left"
+                            ContentAlignment="Vertical">
+                            <StackPanel>
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="Windows App SDK"
+                                    NavigateUri="https://github.com/microsoft/WindowsAppSDK" />
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="Windows Community Toolkit"
+                                    NavigateUri="https://github.com/CommunityToolkit/Windows" />
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="CsWin32"
+                                    NavigateUri="https://github.com/Microsoft/CsWin32" />
                             </StackPanel>
                         </controls:SettingsCard>
 
