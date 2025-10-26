@@ -310,7 +310,7 @@
     <comment>This is the tool tip automation name for the Stop button.</comment>
   </data>
   <data name="SettingsCardRelatedLinks.Header" xml:space="preserve">
-    <value>Related links</value>
+    <value>الروابط ذات الصلة</value>
     <comment>Header text of Related links on the About panel</comment>
   </data>
   <data name="TextBlockAbout.Text" xml:space="preserve">
@@ -318,7 +318,7 @@
     <comment>Subtitle of about message on Settings page</comment>
   </data>
   <data name="SettingsCardDependencies.Header" xml:space="preserve">
-    <value>Dependencies</value>
+    <value>التبعيات</value>
     <comment>Header text of Dependencies on the About panel</comment>
   </data>
 </root>
