@@ -29,10 +29,7 @@
 
     <ScrollViewer>
         <Grid Margin="{StaticResource ContentMargin}">
-            <StackPanel
-                MaxWidth="1000"
-                HorizontalAlignment="Stretch"
-                Spacing="{StaticResource SettingsCardSpacing}">
+            <StackPanel Spacing="{StaticResource SettingsCardSpacing}">
 
                 <win:StackPanel.ChildrenTransitions>
                     <win:EntranceThemeTransition FromVerticalOffset="50" />
