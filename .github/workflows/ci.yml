@@ -3,11 +3,12 @@ name: Continuous Integration
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'FluentAutoClicker/**'
   pull_request:
     branches: [ "main" ]
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
+    paths:
+      - 'FluentAutoClicker/**'
 
 permissions:
   contents: read
