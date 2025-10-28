@@ -6,15 +6,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     xmlns:controls="using:FluentAutoClicker.Controls"
+    xmlns:converters="using:CommunityToolkit.WinUI.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:helpers="using:FluentAutoClicker.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="using:CommunityToolkit.WinUI"
     xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    x:DefaultBindMode="OneWay"
     NavigationCacheMode="Enabled"
     mc:Ignorable="d">
 
     <Page.Resources>
+        <converters:BoolNegationConverter x:Key="BoolNegationConverter" />
         <x:Double x:Key="NumberBoxColumnSpacing">4</x:Double>
         <x:Double x:Key="ButtonColumnSpacing">8</x:Double>
         <x:Double x:Key="GridRowSpacing">8</x:Double>
@@ -40,7 +43,10 @@
 
         <!--  Click Interval  -->
         <StackPanel Grid.ColumnSpan="2" Spacing="{StaticResource StackPanelSpacing}">
-            <controls:IsEnabledTextBlock x:Name="ClickIntervalTextBlock" x:Uid="TextBlockClickInterval" />
+            <controls:IsEnabledTextBlock
+                x:Name="ClickIntervalTextBlock"
+                x:Uid="TextBlockClickInterval"
+                IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}" />
             <Grid ColumnSpacing="{StaticResource NumberBoxColumnSpacing}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -51,36 +57,36 @@
                 <NumberBox
                     x:Name="NumberBoxHours"
                     x:Uid="NumberBoxHours"
-                    AcceptsExpression="True"
+                    IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Minimum="0"
-                    PlaceholderText="0-24"
+                    PlaceholderText="24"
                     Value="{x:Bind helpers:AutoClicker.hoursDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxMinutes"
                     x:Uid="NumberBoxMinutes"
                     Grid.Column="1"
-                    AcceptsExpression="True"
+                    IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Maximum="60"
                     Minimum="0"
-                    PlaceholderText="0-60"
+                    PlaceholderText="60"
                     Value="{x:Bind helpers:AutoClicker.minutesDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxSeconds"
                     x:Uid="NumberBoxSeconds"
                     Grid.Column="2"
-                    AcceptsExpression="True"
+                    IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Maximum="60"
                     Minimum="0"
-                    PlaceholderText="0-60"
+                    PlaceholderText="60"
                     Value="{x:Bind helpers:AutoClicker.secondsDelay, Mode=TwoWay}" />
                 <NumberBox
                     x:Name="NumberBoxMilliseconds"
                     x:Uid="NumberBoxMilliseconds"
                     Grid.Column="3"
-                    AcceptsExpression="True"
+                    IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
                     Maximum="1000"
                     Minimum="0"
-                    PlaceholderText="0-1000"
+                    PlaceholderText="1000"
                     SmallChange="10"
                     Value="{x:Bind helpers:AutoClicker.millisecondsDelay, Mode=TwoWay}" />
             </Grid>
@@ -92,6 +98,7 @@
             x:Uid="ComboBoxMouseButton"
             Grid.Row="1"
             Grid.Column="0"
+            IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}"
             SelectedIndex="{x:Bind helpers:AutoClicker.mouseButtonType, Mode=TwoWay}">
             <ComboBoxItem x:Uid="ComboBoxItemLeft" />
             <ComboBoxItem x:Uid="ComboBoxItemMiddle" />
@@ -103,7 +110,10 @@
             Grid.Row="2"
             Grid.Column="0"
             Spacing="{StaticResource StackPanelSpacing}">
-            <controls:IsEnabledTextBlock x:Name="HotkeyTextBlock" x:Uid="TextBlockHotkey" />
+            <controls:IsEnabledTextBlock
+                x:Name="HotkeyTextBlock"
+                x:Uid="TextBlockHotkey"
+                IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}" />
             <Button Content="F6" IsEnabled="False" />
         </StackPanel>
 
@@ -112,15 +122,13 @@
             <CheckBox
                 x:Name="ClickRepeatCheckBox"
                 x:Uid="ClickRepeatCheckBox"
-                Click="CheckBox_Click" />
+                IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}" />
             <NumberBox
                 x:Name="ClickRepeatAmount"
                 HorizontalAlignment="Left"
-                IsEnabled="False"
+                IsEnabled="{x:Bind IsControlEnabled(ClickRepeatCheckBox.IsChecked, ToggleButtonStart.IsChecked), Mode=OneWay}"
                 LargeChange="10"
                 Minimum="1"
-                PlaceholderText="100"
-                SmallChange="1"
                 SpinButtonPlacementMode="Compact"
                 Value="{x:Bind helpers:AutoClicker.clickAmount, Mode=TwoWay}" />
         </StackPanel>
@@ -130,16 +138,14 @@
             <CheckBox
                 x:Name="ClickOffsetCheckBox"
                 x:Uid="ClickOffsetCheckBox"
-                Click="CheckBox_Click" />
+                IsEnabled="{x:Bind ToggleButtonStart.IsChecked.Value, Converter={StaticResource BoolNegationConverter}}" />
             <NumberBox
                 x:Name="ClickOffsetAmount"
                 HorizontalAlignment="Left"
                 AcceptsExpression="True"
-                IsEnabled="False"
+                IsEnabled="{x:Bind IsControlEnabled(ClickOffsetCheckBox.IsChecked, ToggleButtonStart.IsChecked), Mode=OneWay}"
                 LargeChange="25"
-                Maximum="1000"
                 Minimum="1"
-                PlaceholderText="0-1000"
                 SmallChange="5"
                 SpinButtonPlacementMode="Compact"
                 Value="{x:Bind helpers:AutoClicker.clickDelayOffset, Mode=TwoWay}" />
