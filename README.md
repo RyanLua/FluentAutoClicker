@@ -8,12 +8,6 @@
 
 A beautifully designed auto clicker for Windows 10 and 11, made with the [Fluent Design Guidelines](https://learn.microsoft.com/en-us/windows/apps/design/basics/).
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/ScreenshotDark.png">
-  <source media="(prefers-color-scheme: light)" srcset="assets/ScreenshotLight.png">
-  <img src="assets/ScreenshotLight.png">
-</picture>
-
 ## ⭐ Features
 
 - **Lightning-Fast Clicking:** 1ms intervals between clicks, allowing for up to 1000 clicks per second.
