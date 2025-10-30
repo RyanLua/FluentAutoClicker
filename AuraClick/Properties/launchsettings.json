@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "Fluent Auto Clicker (Package)": {
+    "Aura Click (Package)": {
       "commandName": "MsixPackage"
     },
-    "Fluent Auto Clicker (Unpackaged)": {
+    "Aura Click (Unpackaged)": {
       "commandName": "Project"
     }
   }
