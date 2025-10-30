@@ -30,7 +30,7 @@ using SystemBackdrop = Microsoft.UI.Xaml.Media.SystemBackdrop;
 namespace AuraClick;
 
 /// <summary>
-/// Represents the settings page of the Fluent Auto Clicker application.
+/// Represents the settings page.
 /// </summary>
 public sealed partial class SettingsPage
 {
