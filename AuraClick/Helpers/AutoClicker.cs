@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 using Windows.Win32;
 using Windows.Win32.UI.Input.KeyboardAndMouse;
 
-namespace FluentAutoClicker.Helpers;
+namespace AuraClick.Helpers;
 
 /// <summary>
 /// Helper for creating threads to synthesize mouse input.

@@ -17,7 +17,7 @@
 
 using Microsoft.Windows.ApplicationModel.Resources;
 
-namespace FluentAutoClicker.Helpers;
+namespace AuraClick.Helpers;
 
 /// <summary>
 /// Helper for getting localized strings from resources.

@@ -8,7 +8,7 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="RyanLuu.FluentAutoClicker"
+    Name="RyanLuu.AuraClick"
     Publisher="CN=F928CF5C-7038-45EB-A55F-2CDFC6B12328"
     Version="0.0.1.0" />
 

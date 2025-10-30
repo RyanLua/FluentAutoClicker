@@ -22,7 +22,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using WinRT;
 
-namespace FluentAutoClicker;
+namespace AuraClick;
 
 /// <summary>
 /// Customized <c>Program.cs</c> file to implement
@@ -60,7 +60,7 @@ public partial class Program
     {
         bool isRedirect = false;
         AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
-        AppInstance keyInstance = AppInstance.FindOrRegisterForKey("FluentAutoClickerApp");
+        AppInstance keyInstance = AppInstance.FindOrRegisterForKey("AuraClickApp");
 
         if (keyInstance.IsCurrent)
         {

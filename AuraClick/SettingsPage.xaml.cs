@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with Aura Click. If not, see <https://www.gnu.org/licenses/>.
 
-using FluentAutoClicker.Helpers;
+using AuraClick.Helpers;
 using Microsoft.UI.Composition.SystemBackdrops;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
@@ -27,7 +27,7 @@ using SystemBackdrop = Microsoft.UI.Xaml.Media.SystemBackdrop;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace FluentAutoClicker;
+namespace AuraClick;
 
 /// <summary>
 /// Represents the settings page of the Fluent Auto Clicker application.

@@ -15,14 +15,14 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with Aura Click. If not, see <https://www.gnu.org/licenses/>.
 
-using FluentAutoClicker.Helpers;
+using AuraClick.Helpers;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace FluentAutoClicker;
+namespace AuraClick;
 
 /// <summary>
 /// An window that displays a page's contents.

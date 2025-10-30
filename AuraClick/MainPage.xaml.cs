@@ -15,7 +15,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with Aura Click. If not, see <https://www.gnu.org/licenses/>.
 
-using FluentAutoClicker.Helpers;
+using AuraClick.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Animation;
@@ -26,7 +26,7 @@ using Windows.Win32.UI.Input.KeyboardAndMouse;
 using WinRT.Interop;
 using WinUIEx.Messaging;
 
-namespace FluentAutoClicker;
+namespace AuraClick;
 
 /// <summary>
 /// The main page containing all controls displayed on the main window.

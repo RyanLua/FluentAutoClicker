@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Page
-    x:Class="FluentAutoClicker.SettingsPage"
+    x:Class="AuraClick.SettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls"
@@ -113,7 +113,7 @@
                                 <HyperlinkButton
                                     x:Uid="HyperlinkButtonTranslate"
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
-                                    NavigateUri="https://crowdin.com/project/fluentautoclicker" />
+                                    NavigateUri="https://crowdin.com/project/AuraClick" />
                                 <HyperlinkButton
                                     x:Uid="HyperlinkButtonSource"
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
