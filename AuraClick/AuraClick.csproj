@@ -9,12 +9,11 @@
     <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
+    <WinUISDKReferences>false</WinUISDKReferences>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-    <Authors>Ryan Luu</Authors>
-    <Copyright>Copyright (C) 2025 Ryan Luu</Copyright>
     <ApplicationIcon>Assets\WindowIcon.ico</ApplicationIcon>
     <AssemblyTitle>Aura Click</AssemblyTitle>
   </PropertyGroup>
