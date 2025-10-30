@@ -19,7 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Assets\*" />
+    <Folder Include="Assets\" />
   </ItemGroup>
 
   <ItemGroup>
