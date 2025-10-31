@@ -1,6 +1,6 @@
 <h1 align="center">Aura Click</h1>
 
-An high performance modern auto clicker for Windows.
+An high performance modern auto clicker for Windows. Automate mouse clicks with a hotkey and customize click intervals, click types, and more.
 
 <p align="center">
   <a href="https://apps.microsoft.com/detail/9P567Q0980BH?referrer=appbadge&mode=full">
