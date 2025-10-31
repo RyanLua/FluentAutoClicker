@@ -83,7 +83,7 @@
                 <controls:SettingsExpander
                     x:Name="AppAboutSettingsExpander"
                     Description="Copyright © 2025 Ryan Luu"
-                    HeaderIcon="{ui:BitmapIcon Source=/Assets/WindowIcon.ico}">
+                    HeaderIcon="{ui:BitmapIcon Source=ms-appx:///Assets/StoreLogo.png}">
                     <TextBlock
                         x:Name="AppVersionTextBlock"
                         win:IsTextSelectionEnabled="True"
