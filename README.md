@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="assets/logo.png" alt="Aura Click logo" width="128">
+  <img src="assets/logo.svg" alt="Aura Click logo" width="64">
   <br>
   Aura Click
 </h1>
@@ -8,9 +8,8 @@ An high performance modern auto clicker for Windows. Automate mouse clicks with 
 
 <p align="center">
   <img src="assets/screenshot.png" alt="Screenshot of Aura Click" width="500"/>
-</p>
-
-<p align="center">
+  <br>
+  <br>
   <a href="https://apps.microsoft.com/detail/9P567Q0980BH?referrer=appbadge&mode=full">
     <picture>
       <source media="(prefers-color-scheme: dark)" width="200" srcset="https://get.microsoft.com/images/en-us%20light.svg">
