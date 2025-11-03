@@ -16,8 +16,10 @@
 // along with Aura Click. If not, see <https://www.gnu.org/licenses/>.
 
 using AuraClick.Helpers;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
+using Windows.Graphics;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -45,6 +47,19 @@ public sealed partial class MainWindow
 
         // Set up frame
         _ = NavFrame.Navigate(typeof(MainPage));
+
+        // Center the window on the screen.
+        CenterWindow();
+    }
+
+    /// <summary>
+    /// Centers the given AppWindow on the screen based on the available display area.
+    /// </summary>
+    private void CenterWindow()
+    {
+        var area = DisplayArea.GetFromWindowId(AppWindow.Id, DisplayAreaFallback.Nearest)?.WorkArea;
+        if (area == null) return;
+        AppWindow.Move(new PointInt32((area.Value.Width - AppWindow.Size.Width) / 2, (area.Value.Height - AppWindow.Size.Height) / 2));
     }
 
     /// <summary>
