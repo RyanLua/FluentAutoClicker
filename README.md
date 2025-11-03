@@ -7,7 +7,10 @@
 An high performance modern auto clicker for Windows. Automate mouse clicks with a hotkey and customize click intervals, click types, and more.
 
 <p align="center">
-  <img src="assets/screenshot.png" alt="Screenshot of Aura Click" width="500"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" width="500" srcset="assets/screenshot-dark.png">
+    <img width="500" src="assets/screenshot-light.png">
+  </picture>
   <br>
   <br>
   <a href="https://apps.microsoft.com/detail/9P567Q0980BH?referrer=appbadge&mode=full">
