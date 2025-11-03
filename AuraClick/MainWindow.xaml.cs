@@ -17,9 +17,8 @@
 
 using AuraClick.Helpers;
 using Microsoft.UI.Windowing;
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
-using Windows.Graphics;
+using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -48,18 +47,8 @@ public sealed partial class MainWindow
         // Set up frame
         _ = NavFrame.Navigate(typeof(MainPage));
 
-        // Center the window on the screen.
-        CenterWindow();
-    }
-
-    /// <summary>
-    /// Centers the given AppWindow on the screen based on the available display area.
-    /// </summary>
-    private void CenterWindow()
-    {
-        var area = DisplayArea.GetFromWindowId(AppWindow.Id, DisplayAreaFallback.Nearest)?.WorkArea;
-        if (area == null) return;
-        AppWindow.Move(new PointInt32((area.Value.Width - AppWindow.Size.Width) / 2, (area.Value.Height - AppWindow.Size.Height) / 2));
+        // Center the window on the screen
+        WindowExtensions.CenterOnScreen(this);
     }
 
     /// <summary>
@@ -67,7 +56,7 @@ public sealed partial class MainWindow
     /// </summary>
     /// <param name="sender">The source of the event.</param>
     /// <param name="args">The event data.</param>
-    private void AppTitleBar_BackRequested(TitleBar sender, object args)
+    private void AppTitleBar_BackRequested(Microsoft.UI.Xaml.Controls.TitleBar sender, object args)
     {
         if (NavFrame.CanGoBack)
         {
