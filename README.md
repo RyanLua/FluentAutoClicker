@@ -1,8 +1,11 @@
 <h1 align="center">
   <img src="assets/logo.svg" alt="Aura Click logo" width="64">
   <br>
-  Aura Click
+  Aura Click (Preview)
 </h1>
+
+> [!IMPORTANT]
+> This app is currently in developer preview and not publicly available. To install this app as a developer, [see the build instructions](.github/CONTRIBUTING.md).
 
 An high performance modern auto clicker for Windows. Automate mouse clicks with a hotkey and customize click intervals, click types, and more.
 
