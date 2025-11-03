@@ -1,4 +1,8 @@
-<h1 align="center">Aura Click</h1>
+<h1 align="center">
+  <img src="assets/logo.png" alt="Aura Click logo" width="128">
+  <br>
+  Aura Click
+</h1>
 
 An high performance modern auto clicker for Windows. Automate mouse clicks with a hotkey and customize click intervals, click types, and more.
 
