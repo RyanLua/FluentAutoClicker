@@ -31,6 +31,10 @@ An high performance modern auto clicker for Windows. Automate mouse clicks with 
   </a> -->
 </p>
 
+## 🌐 Translating
+
+Help us translate Aura Click into more languages! Join our [Crowdin project](https://crowdin.com/project/auraclick) and start contributing translations.
+
 ## 👏 Contributing
 
 We welcome contributions from everyone. Before contributing, read the [contribution guidelines](.github/CONTRIBUTING.md).
