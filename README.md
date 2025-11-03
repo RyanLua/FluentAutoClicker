@@ -4,6 +4,13 @@
   Aura Click (Preview)
 </h1>
 
+<div align="center">
+
+  [![CI](https://github.com/RyanLua/AuraClick/actions/workflows/ci.yml/badge.svg)](https://github.com/RyanLua/AuraClick/actions/workflows/ci.yml)
+  [![Crowdin](https://badges.crowdin.net/fluentautoclicker/localized.svg)](https://crowdin.com/project/auraclick)
+
+</div>
+
 > [!IMPORTANT]
 > This app is currently in developer preview and not publicly available. To install this app as a developer, [see the build instructions](.github/CONTRIBUTING.md).
 
