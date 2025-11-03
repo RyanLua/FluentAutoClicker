@@ -113,7 +113,7 @@
                                 <HyperlinkButton
                                     x:Uid="HyperlinkButtonTranslate"
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
-                                    NavigateUri="https://crowdin.com/project/AuraClick" />
+                                    NavigateUri="https://crowdin.com/project/auraclick" />
                                 <HyperlinkButton
                                     x:Uid="HyperlinkButtonSource"
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
