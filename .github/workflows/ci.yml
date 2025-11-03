@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'FluentAutoClicker/**'
+      - 'AuraClick/**'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'FluentAutoClicker/**'
+      - 'AuraClick/**'
 
 permissions:
   contents: read
@@ -25,8 +25,8 @@ jobs:
         platform: [x64, x86, ARM64]
 
     env:
-      Solution_Name: FluentAutoClicker.slnx
-      Dir_Name: FluentAutoClicker
+      Solution_Name: AuraClick.slnx
+      Dir_Name: AuraClick
 
     steps:
     - name: Checkout repository
