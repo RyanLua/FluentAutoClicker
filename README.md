@@ -40,3 +40,7 @@ Help us translate Aura Click into more languages! Join our [Crowdin project](htt
 We welcome contributions from everyone. Before contributing, read the [contribution guidelines](.github/CONTRIBUTING.md).
 
 When you're ready, [make your first contribution](https://github.com/RyanLua/AuraClick/contribute) to this repository by tackling an issue.
+
+## 💖 Sponsors
+
+Help support this app by [sponsoring us](https://github.com/sponsors/RyanLua) to support it's development and future updates.
