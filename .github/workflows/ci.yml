@@ -1,13 +1,14 @@
-name: Continuous Integration
+name: CI
 
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'AuraClick/**'
   pull_request:
     branches: [ "main" ]
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
+    paths:
+      - 'AuraClick/**'
 
 permissions:
   contents: read
@@ -24,8 +25,8 @@ jobs:
         platform: [x64, x86, ARM64]
 
     env:
-      Solution_Name: FluentAutoClicker.slnx
-      Dir_Name: FluentAutoClicker
+      Solution_Name: AuraClick.slnx
+      Dir_Name: AuraClick
 
     steps:
     - name: Checkout repository
@@ -65,7 +66,7 @@ jobs:
       run: Remove-Item -path GitHubActionsWorkflow.pfx
 
     - name: Upload MSIX package
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: MSIX Package (${{ matrix.configuration }}, ${{ matrix.platform }})
         path: ${{ github.workspace }}\${{ env.Dir_Name }}\Packages\**

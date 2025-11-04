@@ -4,21 +4,6 @@ We welcome contributions from the community. If you would like to contribute, pl
 
 If this is your first time contributing, [learn how to contribute to a project through forking](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
 
-## Create a new issue
-
-General support should be a [discussion](https://github.com/RyanLua/FluentAutoClicker/discussions) and not a issue. If you have a question, please ask it in the discussion.
-
-### How to report a bug
-
-> [!CAUTION]
-> **If you find a security vulnerability, do NOT open an issue.** [Create a security advisory](https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/creating-a-repository-security-advisory#creating-a-security-advisory) instead. For more information, see [our security policy](https://github.com/RyanLua/FluentAutoClicker?tab=security-ov-file#readme).
-
-To report a bug, [create a new bug report issue](https://github.com/RyanLua/FluentAutoClicker/issues/new?template=bug_report.yml).
-
-### How to suggest a feature or enhancement
-
-To suggest a feature or enhancement, [create a new feature request issue](https://github.com/RyanLua/FluentAutoClicker/issues/new?template=feature_request.yml).
-
 ## Configure your environment
 
 Learn how to configure your environment to develop this project. This assumes you meet the [system requirements for Windows app development](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/system-requirements).
@@ -67,4 +52,4 @@ Resources to help you contribute to this project and learn more about Windows ap
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the [GNU Affero General Public License v3.0](https://github.com/RyanLua/FluentAutoClicker?tab=AGPL-3.0-1-ov-file#readme).
+By contributing, you agree that your contributions will be licensed under the [GNU General Public License v3.0](https://github.com/RyanLua/AuraClick?tab=AGPL-3.0-1-ov-file#readme).

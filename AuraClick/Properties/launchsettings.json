@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Aura Click (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Aura Click (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
