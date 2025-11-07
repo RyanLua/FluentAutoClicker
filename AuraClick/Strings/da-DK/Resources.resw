@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>A high-performance modern auto clicker for Windows.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment>Label for left mouse button option</comment>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Midt</value>
+    <value>Midterste</value>
     <comment>Label for middle mouse button option</comment>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Hvilken museknap skal automatisk klikkes</value>
+    <value>Hvilken museknap der automatisk skal klikkes</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
@@ -166,11 +166,11 @@
     <comment>Label for click repeat until stopped option</comment>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Klik interval</value>
+    <value>Klikinterval</value>
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Hvor længe imellem klik</value>
+    <value>Tid mellem klik</value>
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Hvilken knap der skal starte auto klikker</value>
+    <value>Hvilken knap der starter auto-clickeren</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -190,19 +190,19 @@
     <comment>This is the tool tip automation name for the Start button.</comment>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Klik gentagelse</value>
+    <value>Gentag klik</value>
     <comment>Header text of Click repeat check box</comment>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Stop med at klikke efter et bestemt beløb eller indtil stoppet</value>
+    <value>Stop med at klikke efter et bestemt antal eller indtil stoppet</value>
     <comment>This is the tool tip automation name for the Click repeat check box.</comment>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Tilfældig offset</value>
+    <value>Tilfældig forskydning</value>
     <comment>Header text of Click offset check box</comment>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Tilfældig interval offset imellem klik</value>
+    <value>Tilfældig tidsforskydning mellem klik</value>
     <comment>This is the tool tip automation name for the Random offset check box.</comment>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Title of App theme expander</comment>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Vælg hvilket app-tema der skal vises</value>
+    <value>Vælg hvilket app-tema, der skal vises</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
@@ -250,7 +250,7 @@
     <comment>Label for mica alt material option</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrylic</value>
+    <value>Akryl</value>
     <comment>Label for acrylic material option</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
@@ -258,7 +258,7 @@
     <comment>Title of Always on top settings card</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Vis altid appens vindue øverst på andre</value>
+    <value>Vis altid appens vindue over andre</value>
     <comment>Description of Always on top settings card</comment>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
@@ -270,11 +270,11 @@
     <comment>Subtitle text of app title bar</comment>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Aura Klik</value>
+    <value>Aura Click</value>
     <comment>Title text of app title bar</comment>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>Fortrolighedspolitik</value>
+    <value>Privatlivspolitik</value>
     <comment>Displayed on a link to the app privacy policy on the About panel</comment>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
@@ -290,19 +290,19 @@
     <comment>Displayed on a link to the app open source license on the About panel</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Notifikationsmærkat</value>
+    <value>Meddelelsesbadge</value>
     <comment>Title of Notification badge expander</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Vis statusnotifikationsmærket på appens proceslinjeikoni</value>
+    <value>Vis statusmeddelelsesbadge på appens proceslinjeikon</value>
     <comment>Description of Notification badge expander</comment>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Vis mærke under klik</value>
+    <value>Vis badge under klik</value>
     <comment>Label for Show badge while clicking check box on the Behavior panel</comment>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Vis mærke mens det er sat på pause</value>
+    <value>Vis badge ved pause</value>
     <comment>Label for Show badge while paused check box on the Behavior panel</comment>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">

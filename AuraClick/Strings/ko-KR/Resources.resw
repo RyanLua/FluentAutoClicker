@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>A high-performance modern auto clicker for Windows.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>자동으로 클릭할 마우스 버튼을 선택하세요</value>
+    <value>자동 클릭에 사용할 마우스 버튼 선택</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
@@ -162,7 +162,7 @@
     <comment>Description text of seconds click interval number box</comment>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>중지될 때까지</value>
+    <value>중지할 때까지</value>
     <comment>Label for click repeat until stopped option</comment>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>클릭 사이의 시간</value>
+    <value>클릭 사이의 시간 간격</value>
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>자동 클릭기를 시작할 버튼을 선택하세요</value>
+    <value>자동 클릭기를 시작할 버튼</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -194,7 +194,7 @@
     <comment>Header text of Click repeat check box</comment>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>정해진 양 또는 중지될 때까지 클릭을 멈춥니다</value>
+    <value>지정 횟수 후 또는 중지할 때까지 클릭 중지</value>
     <comment>This is the tool tip automation name for the Click repeat check box.</comment>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
@@ -210,7 +210,7 @@
     <comment>Header text of Settings page</comment>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>외관</value>
+    <value>모양</value>
     <comment>Subtitle of appearance setting on Settings page</comment>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Title of App theme expander</comment>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>표시할 앱 테마를 선택하세요</value>
+    <value>표시할 앱 테마 선택</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
@@ -234,31 +234,31 @@
     <comment>Label for dark theme option</comment>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
-    <value>백드롭 재질</value>
+    <value>배경 소재</value>
     <comment>Title of Backdrop material expander</comment>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>창 배경을 위한 시스템 백드롭 재질</value>
+    <value>창 배경의 시스템 배경 소재</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>미카</value>
+    <value>Mica</value>
     <comment>Label for mica material option</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>미카 알트</value>
+    <value>Mica 대체</value>
     <comment>Label for mica alt material option</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>아크릴</value>
+    <value>Acrylic</value>
     <comment>Label for acrylic material option</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>항상 위에 고정</value>
+    <value>항상 위에</value>
     <comment>Title of Always on top settings card</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>앱의 창을 다른 창 위에 항상 표시합니다</value>
+    <value>앱 창을 항상 다른 창 위에 표시</value>
     <comment>Description of Always on top settings card</comment>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
@@ -270,11 +270,11 @@
     <comment>Subtitle text of app title bar</comment>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>아우라 클릭</value>
+    <value>Aura Click</value>
     <comment>Title text of app title bar</comment>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
-    <value>개인정보보호 정책</value>
+    <value>개인정보처리방침</value>
     <comment>Displayed on a link to the app privacy policy on the About panel</comment>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
@@ -282,11 +282,11 @@
     <comment>Displayed on a link to the GitHub repository with the app source code on the About panel</comment>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>번역하기</value>
+    <value>번역</value>
     <comment>Displayed on a link to Crowdin for helping translate the app on the About panel</comment>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
-    <value>라이센스</value>
+    <value>라이선스</value>
     <comment>Displayed on a link to the app open source license on the About panel</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
@@ -294,19 +294,19 @@
     <comment>Title of Notification badge expander</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>앱의 작업 표시줄 아이콘에 상태 알림 배지를 표시합니다</value>
+    <value>앱의 작업 표시줄 아이콘에 상태 알림 배지를 표시</value>
     <comment>Description of Notification badge expander</comment>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>클릭할 때 배지 표시</value>
+    <value>클릭 중 배지 표시</value>
     <comment>Label for Show badge while clicking check box on the Behavior panel</comment>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>일시 중지할 때 배지 표시</value>
+    <value>일시정지 중 배지 표시</value>
     <comment>Label for Show badge while paused check box on the Behavior panel</comment>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>일시 중지</value>
+    <value>일시정지</value>
     <comment>This is the tool tip automation name for the Stop button.</comment>
   </data>
   <data name="SettingsCardRelatedLinks.Header" xml:space="preserve">
