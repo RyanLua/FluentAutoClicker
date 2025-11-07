@@ -9,10 +9,10 @@
 
   <Identity
     Name="RyanLuu.AuraClick"
-    Publisher="CN=Ryan Luu, S=California, C=US"
+    Publisher="CN=F928CF5C-7038-45EB-A55F-2CDFC6B12328"
     Version="0.1.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="d6e27458-19ab-400b-87a0-452991e91345" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="2532d4fd-42fb-4b02-a922-9be41e17cb00" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>ms-resource:AppDisplayName</DisplayName>
