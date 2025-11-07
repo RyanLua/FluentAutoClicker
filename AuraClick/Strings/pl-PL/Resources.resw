@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>Wydajny, nowoczesny auto-clicker dla systemu Windows.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Aura Click (Podgląd)</value>
+    <value>Aura Click (Preview)</value>
     <comment>This is the title of the application.</comment>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
@@ -138,27 +138,27 @@
     <comment>Label for right mouse button option</comment>
   </data>
   <data name="ComboBoxMouseButton.Header" xml:space="preserve">
-    <value>Przycisk myszki</value>
+    <value>Przycisk myszy</value>
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Który przycisk myszy ma być automatycznie klikalny</value>
+    <value>Który przycisk myszy ma być klikany automatycznie</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>godziny</value>
+    <value>godzina {count, plural, one {godzina} few {godziny} many {godzin} other {godziny}}</value>
     <comment>Description text of hours click interval number box</comment>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>milisekundy</value>
+    <value>milisekunda {count, plural, one {milisekunda} few {milisekundy} many {milisekund} other {milisekundy}}</value>
     <comment>Description text of milliseconds click interval number box</comment>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>minuty</value>
+    <value>minuta {count, plural, one {minuta} few {minuty} many {minut} other {minuty}}</value>
     <comment>Description text of minutes click interval number box</comment>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>sekundy</value>
+    <value>sekunda {count, plural, one {sekunda} few {sekundy} many {sekund} other {sekundy}}</value>
     <comment>Description text of seconds click interval number box</comment>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
@@ -170,15 +170,15 @@
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Jak długo między kliknięciami</value>
+    <value>Jak długi czas między kliknięciami</value>
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
-    <value>Skrót klawiaturowy</value>
+    <value>Skrót klawiszowy</value>
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Który przycisk uruchamia automatyczny klikacz</value>
+    <value>Który przycisk uruchamia automatyczne klikanie</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -186,23 +186,23 @@
     <comment>This is the tool tip automation name for the Settings button.</comment>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Rozpocznij</value>
+    <value>Start</value>
     <comment>This is the tool tip automation name for the Start button.</comment>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Powtarzaj kliknięcia</value>
+    <value>Powtarzanie kliknięć</value>
     <comment>Header text of Click repeat check box</comment>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Zatrzymaj klikanie po pewnej liczbie lub do momentu zatrzymania</value>
+    <value>Zatrzymaj klikanie po określonej liczbie lub do zatrzymania ręcznego</value>
     <comment>This is the tool tip automation name for the Click repeat check box.</comment>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Losowy przesunięcie</value>
+    <value>Losowe przesunięcie</value>
     <comment>Header text of Click offset check box</comment>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Losowy interwał przesunięcia między kliknięciami</value>
+    <value>Losowy interwał pomiędzy kliknięciami</value>
     <comment>This is the tool tip automation name for the Random offset check box.</comment>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Title of App theme expander</comment>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Wybierz, który motyw aplikacji ma być wyświetlany</value>
+    <value>Wybierz motyw aplikacji do wyświetlenia</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
@@ -238,7 +238,7 @@
     <comment>Title of Backdrop material expander</comment>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>Materiał tła systemu dla tła okna</value>
+    <value>Systemowy materiał tła dla okna aplikacji</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
@@ -250,7 +250,7 @@
     <comment>Label for mica alt material option</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrylic</value>
+    <value>Akryl</value>
     <comment>Label for acrylic material option</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
@@ -258,7 +258,7 @@
     <comment>Title of Always on top settings card</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Zawsze wyświetlaj okno aplikacji na wierzchu</value>
+    <value>Zawsze pokazuj okno aplikacji nad innymi</value>
     <comment>Description of Always on top settings card</comment>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
@@ -266,7 +266,7 @@
     <comment>Subtitle of behavior setting on Settings page</comment>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Podgląd</value>
+    <value>Preview</value>
     <comment>Subtitle text of app title bar</comment>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
@@ -282,7 +282,7 @@
     <comment>Displayed on a link to the GitHub repository with the app source code on the About panel</comment>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
-    <value>Przełożyć</value>
+    <value>Tłumacz</value>
     <comment>Displayed on a link to Crowdin for helping translate the app on the About panel</comment>
   </data>
   <data name="HyperlinkButtonLicense.Content" xml:space="preserve">
@@ -290,23 +290,23 @@
     <comment>Displayed on a link to the app open source license on the About panel</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Odznaka powiadomień</value>
+    <value>Ikona powiadomień</value>
     <comment>Title of Notification badge expander</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Pokaż odznakę powiadomienia na ikonie aplikacji na pasku zadań</value>
+    <value>Wyświetl ikonę powiadomień na pasku zadań aplikacji</value>
     <comment>Description of Notification badge expander</comment>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Pokaż odznakę podczas klikania</value>
+    <value>Pokaż ikonę podczas klikania</value>
     <comment>Label for Show badge while clicking check box on the Behavior panel</comment>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Pokaż odznakę podczas wstrzymania</value>
+    <value>Pokaż ikonę podczas pauzy</value>
     <comment>Label for Show badge while paused check box on the Behavior panel</comment>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Wstrzymaj</value>
+    <value>Pauza</value>
     <comment>This is the tool tip automation name for the Stop button.</comment>
   </data>
   <data name="SettingsCardRelatedLinks.Header" xml:space="preserve">

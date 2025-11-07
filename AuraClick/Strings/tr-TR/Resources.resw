@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>A beautifully designed fluent design auto clicker for Windows 10 &amp; 11.</value>
+    <value>Windows için yüksek performanslı, modern bir otomatik tıklayıcı.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Aura Tıklama (Önizleme)</value>
+    <value>Aura Click (Preview)</value>
     <comment>This is the title of the application.</comment>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Otomatik tıklamanın hangi fare düğmesi için olduğu</value>
+    <value>Hangi fare düğmesinin otomatik tıklayacağını seçin</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Tıklamalar arasında ne kadar süre</value>
+    <value>Tıklamalar arasındaki süre</value>
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Otomatik tıklayıcıyı başlatmak için hangi düğme</value>
+    <value>Otomatik tıklatıcıyı başlatacak tuşu seçin</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -190,19 +190,19 @@
     <comment>This is the tool tip automation name for the Start button.</comment>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Tıklama tekrarı</value>
+    <value>Tıklamayı tekrarla</value>
     <comment>Header text of Click repeat check box</comment>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Belirli bir miktardan sonra tıklamayı durdur veya durdurulana kadar</value>
+    <value>Belirli bir miktardan sonra veya durdurulana kadar tıklamayı durdur</value>
     <comment>This is the tool tip automation name for the Click repeat check box.</comment>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Rastgele kaydırma</value>
+    <value>Rastgele ofset</value>
     <comment>Header text of Click offset check box</comment>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Tıklamalar arasında rastgele aralık kaydırma</value>
+    <value>Tıklamalar arasındaki rastgele aralık ofseti</value>
     <comment>This is the tool tip automation name for the Random offset check box.</comment>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
@@ -218,7 +218,7 @@
     <comment>Title of App theme expander</comment>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Hangi uygulama temasını göstereceğinizi seçin</value>
+    <value>Gösterilecek uygulama temasını seçin</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
@@ -226,11 +226,11 @@
     <comment>Label for the app theme option to use system setting</comment>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
-    <value>Aydınlık</value>
+    <value>Açık</value>
     <comment>Label for light theme option</comment>
   </data>
   <data name="ComboBoxItemAppThemeDark.Content" xml:space="preserve">
-    <value>Karanlık</value>
+    <value>Koyu</value>
     <comment>Label for dark theme option</comment>
   </data>
   <data name="SettingsCardBackdropMaterial.Header" xml:space="preserve">
@@ -242,11 +242,11 @@
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
-    <value>Mika</value>
+    <value>Mica</value>
     <comment>Label for mica material option</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialMicaAlt.Content" xml:space="preserve">
-    <value>Mika Alt</value>
+    <value>Mica Alt</value>
     <comment>Label for mica alt material option</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
@@ -258,7 +258,7 @@
     <comment>Title of Always on top settings card</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Uygulamanın penceresini diğerlerinin üstünde her zaman göstermek</value>
+    <value>Uygulamanın penceresini her zaman diğerlerinin üzerinde göster</value>
     <comment>Description of Always on top settings card</comment>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
@@ -266,11 +266,11 @@
     <comment>Subtitle of behavior setting on Settings page</comment>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Önizleme</value>
+    <value>Preview</value>
     <comment>Subtitle text of app title bar</comment>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Aura Tıklama</value>
+    <value>Aura Click</value>
     <comment>Title text of app title bar</comment>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
@@ -294,15 +294,15 @@
     <comment>Title of Notification badge expander</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Uygulamanın görev çubuğu simgesinde durum bildirim rozeti göstersin</value>
+    <value>Uygulamanın görev çubuğu simgesinde durum bildirim rozetini göster</value>
     <comment>Description of Notification badge expander</comment>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Tıklarken rozeti göster</value>
+    <value>Tıklanırken rozeti göster</value>
     <comment>Label for Show badge while clicking check box on the Behavior panel</comment>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Duraklatırken rozeti göster</value>
+    <value>Duraklatıldığında rozeti göster</value>
     <comment>Label for Show badge while paused check box on the Behavior panel</comment>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
