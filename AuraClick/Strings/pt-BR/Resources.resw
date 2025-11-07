@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Um auto clicador com design fluido e bonito para Windows 10 e 11.</value>
+    <value>Um auto clicker moderno e de alto desempenho para Windows.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Aura Click (Prévia)</value>
+    <value>Aura Click (Preview)</value>
     <comment>This is the title of the application.</comment>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Qual botão do mouse deve ser clicado automaticamente</value>
+    <value>Qual botão do mouse clicar automaticamente</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Quanto tempo entre os cliques</value>
+    <value>Tempo entre cliques</value>
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Qual botão para iniciar o auto clicador</value>
+    <value>Qual tecla para iniciar o auto clicker</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -190,11 +190,11 @@
     <comment>This is the tool tip automation name for the Start button.</comment>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Repetição de clique</value>
+    <value>Repetir clique</value>
     <comment>Header text of Click repeat check box</comment>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Parar de clicar após um certo tempo ou até parar</value>
+    <value>Parar de clicar após uma certa quantidade ou até parar</value>
     <comment>This is the tool tip automation name for the Click repeat check box.</comment>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
@@ -202,7 +202,7 @@
     <comment>Header text of Click offset check box</comment>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Deslocamento de intervalo aleatório entre cliques</value>
+    <value>Intervalo aleatório entre os cliques</value>
     <comment>This is the tool tip automation name for the Random offset check box.</comment>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
@@ -238,7 +238,7 @@
     <comment>Title of Backdrop material expander</comment>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>Material de fundo do sistema para plano de fundo da janela</value>
+    <value>Material de fundo do sistema para o fundo da janela</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
@@ -254,7 +254,7 @@
     <comment>Label for acrylic material option</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Sempre por cima</value>
+    <value>Sempre no topo</value>
     <comment>Title of Always on top settings card</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
@@ -266,7 +266,7 @@
     <comment>Subtitle of behavior setting on Settings page</comment>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Prévia</value>
+    <value>Preview</value>
     <comment>Subtitle text of app title bar</comment>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
@@ -278,7 +278,7 @@
     <comment>Displayed on a link to the app privacy policy on the About panel</comment>
   </data>
   <data name="HyperlinkButtonSource.Content" xml:space="preserve">
-    <value>Código fonte</value>
+    <value>Código-fonte</value>
     <comment>Displayed on a link to the GitHub repository with the app source code on the About panel</comment>
   </data>
   <data name="HyperlinkButtonTranslate.Content" xml:space="preserve">
@@ -290,19 +290,19 @@
     <comment>Displayed on a link to the app open source license on the About panel</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Selo de notificação</value>
+    <value>Insígnia de notificação</value>
     <comment>Title of Notification badge expander</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Mostrar o selo de notificação de status no ícone da barra de tarefas do aplicativo</value>
+    <value>Mostrar a insígnia de notificação de status no ícone do aplicativo na barra de tarefas</value>
     <comment>Description of Notification badge expander</comment>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Mostrar selo enquanto clica</value>
+    <value>Mostrar insígnia enquanto estiver clicando</value>
     <comment>Label for Show badge while clicking check box on the Behavior panel</comment>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Mostrar selo enquanto pausado</value>
+    <value>Mostrar insígnia enquanto estiver pausado</value>
     <comment>Label for Show badge while paused check box on the Behavior panel</comment>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">

@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Kauniisti muotoiltu sujuva suunnittelun automaattinen klikkaaja Windows 10:lle ja 11:lle.</value>
+    <value>Tehokas, nykyaikainen automaattinen klikkaustyökalu Windowsille.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Aura Click (Esikatselu)</value>
+    <value>Aura Click (Preview)</value>
     <comment>This is the title of the application.</comment>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment>Label for left mouse button option</comment>
   </data>
   <data name="ComboBoxItemMiddle.Content" xml:space="preserve">
-    <value>Keskellä</value>
+    <value>Keskimmäinen</value>
     <comment>Label for middle mouse button option</comment>
   </data>
   <data name="ComboBoxItemRight.Content" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Mikä hiiren painike klikataan automaattisesti</value>
+    <value>Mikä hiiren painike napsautetaan automaattisesti</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
@@ -166,11 +166,11 @@
     <comment>Label for click repeat until stopped option</comment>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
-    <value>Napsautusaika</value>
+    <value>Napsautusväli</value>
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Kuinka kauan napsautusten välillä</value>
+    <value>Aika napsautusten välillä</value>
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Mikä painike aloittaa automaattisen klikkaamisen</value>
+    <value>Mikä painike käynnistää automaattinapsauttajan</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -186,23 +186,23 @@
     <comment>This is the tool tip automation name for the Settings button.</comment>
   </data>
   <data name="ToggleButtonStartTooltipStart" xml:space="preserve">
-    <value>Aloita</value>
+    <value>Käynnistä</value>
     <comment>This is the tool tip automation name for the Start button.</comment>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Napsautusten uusinta</value>
+    <value>Toista napsautus</value>
     <comment>Header text of Click repeat check box</comment>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Pysäytä napsautus tietyn määrän jälkeen tai kunnes pysäytetään</value>
+    <value>Lopeta napsautus tietyn määrän jälkeen tai kunnes pysäytetään</value>
     <comment>This is the tool tip automation name for the Click repeat check box.</comment>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
-    <value>Satunnaisoffset</value>
+    <value>Satunnainen siirtymä</value>
     <comment>Header text of Click offset check box</comment>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Satunnaisväli napsautusten välillä</value>
+    <value>Satunnainen aikasiirtymä napsautusten välillä</value>
     <comment>This is the tool tip automation name for the Random offset check box.</comment>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
@@ -210,19 +210,19 @@
     <comment>Header text of Settings page</comment>
   </data>
   <data name="AppearanceSettingsSectionHeaderTextBlock.Text" xml:space="preserve">
-    <value>Ulkonäkö</value>
+    <value>Ulkoasu</value>
     <comment>Subtitle of appearance setting on Settings page</comment>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>Sovellusteema</value>
+    <value>Sovelluksen teema</value>
     <comment>Title of App theme expander</comment>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Valitse mikä sovellusteema näytetään</value>
+    <value>Valitse, mikä sovelluksen teema näytetään</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
-    <value>Käytä järjestelmäasetusta</value>
+    <value>Käytä järjestelmän asetusta</value>
     <comment>Label for the app theme option to use system setting</comment>
   </data>
   <data name="ComboBoxItemAppThemeLight.Content" xml:space="preserve">
@@ -250,23 +250,23 @@
     <comment>Label for mica alt material option</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialAcrylic.Content" xml:space="preserve">
-    <value>Acrylic</value>
+    <value>Akryyli</value>
     <comment>Label for acrylic material option</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Aina päällä</value>
+    <value>Aina päällimmäisenä</value>
     <comment>Title of Always on top settings card</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Näytä aina sovelluksen ikkuna muiden päällä</value>
+    <value>Näytä sovelluksen ikkuna aina muiden päällä</value>
     <comment>Description of Always on top settings card</comment>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
-    <value>Käyttäytyminen</value>
+    <value>Käytös</value>
     <comment>Subtitle of behavior setting on Settings page</comment>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Esikatselu</value>
+    <value>Preview</value>
     <comment>Subtitle text of app title bar</comment>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
@@ -290,23 +290,23 @@
     <comment>Displayed on a link to the app open source license on the About panel</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Header" xml:space="preserve">
-    <value>Ilmoitustunnus</value>
+    <value>Ilmoitusmerkki</value>
     <comment>Title of Notification badge expander</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Näytä tilan ilmoitustunnus sovelluksen tehtäväpalkki-ikonia</value>
+    <value>Näytä tilailmoitusmerkki sovelluksen tehtäväpalkin kuvakkeessa</value>
     <comment>Description of Notification badge expander</comment>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Näytä tunnus napsautettaessa</value>
+    <value>Näytä merkki napsautettaessa</value>
     <comment>Label for Show badge while clicking check box on the Behavior panel</comment>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Näytä tunnus keskeytettynä</value>
+    <value>Näytä merkki tauon aikana</value>
     <comment>Label for Show badge while paused check box on the Behavior panel</comment>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
-    <value>Keskeytä</value>
+    <value>Tauko</value>
     <comment>This is the tool tip automation name for the Stop button.</comment>
   </data>
   <data name="SettingsCardRelatedLinks.Header" xml:space="preserve">
