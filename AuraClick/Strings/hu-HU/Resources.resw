@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Gyönyörűen megtervezett, folyékony dizájnú automatikus kattintó Windows 10 és 11 rendszerekhez.</value>
+    <value>Egy nagy teljesítményű, modern automatikus kattintó Windowsra.</value>
     <comment>This is the description of the application.</comment>
   </data>
   <data name="AppDisplayName" xml:space="preserve">
-    <value>Aura Click (Előnézet)</value>
+    <value>Aura Click (Preview)</value>
     <comment>This is the title of the application.</comment>
   </data>
   <data name="ComboBoxItemLeft.Content" xml:space="preserve">
@@ -142,27 +142,27 @@
     <comment>Header text of Mouse button combo box</comment>
   </data>
   <data name="ComboBoxMouseButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Melyik egérgombot kattintsa automatikusan</value>
+    <value>Melyik egérgomb legyen automatikusan kattintva</value>
     <comment>This is the tool tip automation name for the Mouse button combo box.</comment>
   </data>
   <data name="NumberBoxHours.Description" xml:space="preserve">
-    <value>órák</value>
+    <value>óra</value>
     <comment>Description text of hours click interval number box</comment>
   </data>
   <data name="NumberBoxMilliseconds.Description" xml:space="preserve">
-    <value>ezredmásodpercek</value>
+    <value>ezredmásodperc</value>
     <comment>Description text of milliseconds click interval number box</comment>
   </data>
   <data name="NumberBoxMinutes.Description" xml:space="preserve">
-    <value>percek</value>
+    <value>perc</value>
     <comment>Description text of minutes click interval number box</comment>
   </data>
   <data name="NumberBoxSeconds.Description" xml:space="preserve">
-    <value>másodpercek</value>
+    <value>másodperc</value>
     <comment>Description text of seconds click interval number box</comment>
   </data>
   <data name="RadioButtonUntilStopped.Content" xml:space="preserve">
-    <value>Megállításig</value>
+    <value>Amíg le nem állítják</value>
     <comment>Label for click repeat until stopped option</comment>
   </data>
   <data name="TextBlockClickInterval.Text" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Header text of Click interval number boxes</comment>
   </data>
   <data name="TextBlockClickInterval.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Hogyan telik el az idő kattintások között</value>
+    <value>Mennyi idő telik el két kattintás között</value>
     <comment>This is the tool tip automation name for the Click interval number boxes.</comment>
   </data>
   <data name="TextBlockHotkey.Text" xml:space="preserve">
@@ -178,7 +178,7 @@
     <comment>Header text of Hotkey button</comment>
   </data>
   <data name="TextBlockHotkey.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Melyik gombot használja az automatikus kattintó indításához</value>
+    <value>Melyik billentyű indítja el az automatikus kattintót</value>
     <comment>This is the tool tip automation name for the Hotkey button.</comment>
   </data>
   <data name="ButtonSettings.ToolTipService.ToolTip" xml:space="preserve">
@@ -190,11 +190,11 @@
     <comment>This is the tool tip automation name for the Start button.</comment>
   </data>
   <data name="ClickRepeatCheckBox.Content" xml:space="preserve">
-    <value>Kattintások megismétlése</value>
+    <value>Kattintás ismétlése</value>
     <comment>Header text of Click repeat check box</comment>
   </data>
   <data name="ClickRepeatCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Állj meg a kattintásokkal egy bizonyos mennyiség után vagy a leállításhoz</value>
+    <value>A kattintás leállítása egy bizonyos mennyiség után vagy amíg le nem állítják</value>
     <comment>This is the tool tip automation name for the Click repeat check box.</comment>
   </data>
   <data name="ClickOffsetCheckBox.Content" xml:space="preserve">
@@ -202,7 +202,7 @@
     <comment>Header text of Click offset check box</comment>
   </data>
   <data name="ClickOffsetCheckBox.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Véletlenszerű intervallum eltérés a kattintások között</value>
+    <value>Véletlenszerű időeltolás a kattintások között</value>
     <comment>This is the tool tip automation name for the Random offset check box.</comment>
   </data>
   <data name="SettingsSubtitleTextBlock.Text" xml:space="preserve">
@@ -214,11 +214,11 @@
     <comment>Subtitle of appearance setting on Settings page</comment>
   </data>
   <data name="SettingsCardAppTheme.Header" xml:space="preserve">
-    <value>Alkalmazás téma</value>
+    <value>Alkalmazás témája</value>
     <comment>Title of App theme expander</comment>
   </data>
   <data name="SettingsCardAppTheme.Description" xml:space="preserve">
-    <value>Válassza ki, melyik alkalmazás témát szeretné megjeleníteni</value>
+    <value>Válassza ki, melyik alkalmazás témát jelenítse meg</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemAppThemeSystem.Content" xml:space="preserve">
@@ -238,7 +238,7 @@
     <comment>Title of Backdrop material expander</comment>
   </data>
   <data name="SettingsCardBackdropMaterial.Description" xml:space="preserve">
-    <value>Rendszerszintű háttéranyag az ablak hátteréhez</value>
+    <value>Ablakháttér rendszer háttéranyaga</value>
     <comment>Description of App theme expander</comment>
   </data>
   <data name="ComboBoxItemBackdropMaterialMica.Content" xml:space="preserve">
@@ -254,11 +254,11 @@
     <comment>Label for acrylic material option</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Header" xml:space="preserve">
-    <value>Mindig a tetején</value>
+    <value>Mindig felül</value>
     <comment>Title of Always on top settings card</comment>
   </data>
   <data name="SettingsCardAlwaysOnTop.Description" xml:space="preserve">
-    <value>Mindig mutassa az alkalmazás ablakát mások fölött</value>
+    <value>Az alkalmazás ablakának mindig a többi előtt jelenjen meg</value>
     <comment>Description of Always on top settings card</comment>
   </data>
   <data name="TextBlockBehavior.Text" xml:space="preserve">
@@ -266,11 +266,11 @@
     <comment>Subtitle of behavior setting on Settings page</comment>
   </data>
   <data name="AppTitleBar.Subtitle" xml:space="preserve">
-    <value>Előzetes</value>
+    <value>Preview</value>
     <comment>Subtitle text of app title bar</comment>
   </data>
   <data name="AppTitleBar.Title" xml:space="preserve">
-    <value>Aura Kattintás</value>
+    <value>Aura Click</value>
     <comment>Title text of app title bar</comment>
   </data>
   <data name="HyperlinkButtonPrivacyPolicy.Content" xml:space="preserve">
@@ -294,15 +294,15 @@
     <comment>Title of Notification badge expander</comment>
   </data>
   <data name="SettingsExpanderNotificationBadge.Description" xml:space="preserve">
-    <value>Mutassa a státusz értesítési jelvényt az alkalmazás tálcáján</value>
+    <value>Az állapotjelző értesítési jelvény megjelenítése az alkalmazás tálca ikonján</value>
     <comment>Description of Notification badge expander</comment>
   </data>
   <data name="CheckBoxNotificationBadgePlaying.Content" xml:space="preserve">
-    <value>Mutassa a jelvényt kattintás közben</value>
+    <value>Jelvény megjelenítése kattintás közben</value>
     <comment>Label for Show badge while clicking check box on the Behavior panel</comment>
   </data>
   <data name="CheckBoxNotificationBadgePaused.Content" xml:space="preserve">
-    <value>Mutassa a jelvényt szünet alatt</value>
+    <value>Jelvény megjelenítése szüneteltetés közben</value>
     <comment>Label for Show badge while paused check box on the Behavior panel</comment>
   </data>
   <data name="ToggleButtonStartTooltipStop" xml:space="preserve">
@@ -314,7 +314,7 @@
     <comment>Header text of Related links on the About panel</comment>
   </data>
   <data name="TextBlockAbout.Text" xml:space="preserve">
-    <value>Rólunk</value>
+    <value>Névjegy</value>
     <comment>Subtitle of about message on Settings page</comment>
   </data>
   <data name="SettingsCardDependencies.Header" xml:space="preserve">
