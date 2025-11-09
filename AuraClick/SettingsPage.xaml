@@ -139,6 +139,10 @@
                                     Margin="{StaticResource HyperlinkButtonNegativeMargin}"
                                     Content="CsWin32"
                                     NavigateUri="https://github.com/Microsoft/CsWin32" />
+                                <HyperlinkButton
+                                    Margin="{StaticResource HyperlinkButtonNegativeMargin}"
+                                    Content="DevWinUI"
+                                    NavigateUri="https://github.com/ghost1372/DevWinUI" />
                             </StackPanel>
                         </controls:SettingsCard>
 
