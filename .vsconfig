@@ -3,8 +3,6 @@
   "components": [
     "Microsoft.VisualStudio.Component.CoreEditor",
     "Microsoft.VisualStudio.Workload.CoreEditor",
-    "Microsoft.VisualStudio.Component.UWP.VC.ARM64",
-    "Microsoft.VisualStudio.Workload.NativeDesktop",
     "Microsoft.VisualStudio.Workload.Universal"
   ],
   "extensions": [
