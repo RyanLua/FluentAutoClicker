@@ -245,3 +245,8 @@ dotnet_naming_style.begins_with_i.required_prefix = I
 dotnet_naming_style.begins_with_i.required_suffix = 
 dotnet_naming_style.begins_with_i.word_separator = 
 dotnet_naming_style.begins_with_i.capitalization = pascal_case
+
+# Workaround for https://github.com/microsoft/microsoft-ui-xaml/issues/10855
+[XamlTypeInfo.g.cs]
+dotnet_diagnostic.CS0612.severity = none
+dotnet_diagnostic.CS0618.severity = none
