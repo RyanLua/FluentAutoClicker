@@ -34,12 +34,12 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install .NET Core
+    - name: Setup .NET
       uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 10.0.x
 
-    - name: Setup MSBuild.exe
+    - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
     - name: Restore the application
@@ -69,5 +69,4 @@ jobs:
       uses: actions/upload-artifact@v5
       with:
         name: MSIX Package (${{ matrix.configuration }}, ${{ matrix.platform }})
-        path: ${{ github.workspace }}\${{ env.Dir_Name }}\Packages\**
-        compression-level: 0
+        path: ${{ env.Dir_Name }}\Packages\**
