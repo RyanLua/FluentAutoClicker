@@ -3,12 +3,8 @@ name: CI
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - 'AuraClick/**'
   pull_request:
     branches: [ "main" ]
-    paths:
-      - 'AuraClick/**'
 
 permissions:
   contents: read
